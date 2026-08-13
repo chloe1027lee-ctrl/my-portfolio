@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CHLOE — Portfolio</title>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: #0a0a0a;
+  color: #e8e2d9;
+  font-family: Baskerville, 'Baskerville Old Face', 'Goudy Old Style', Garamond, 'Times New Roman', serif;
+  cursor: none;
+}
+
+/* CUSTOM CURSOR */
+#cursor { position: fixed; width: 10px; height: 10px; background: #e8e2d9; border-radius: 50%; pointer-events: none; z-index: 11000; transform: translate(-50%,-50%); transition: transform 0.1s; mix-blend-mode: difference; }
+.particle { position: fixed; pointer-events: none; z-index: 9998; border-radius: 50%; animation: particleFade 1s forwards; }
+@keyframes particleFade { 0% { opacity: 0.6; transform: scale(1); } 100% { opacity: 0; transform: scale(0.2) translate(var(--dx), var(--dy)); } }
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8rem 3rem;
+  border-bottom: 1px solid #333;
+  position: sticky;
+  top: 0;
+  background: #0a0a0a;
+  z-index: 100;
+}
+.nav-name { font-size: 1rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: bold; color: #e8e2d9; }
+.nav-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+.nav-links a { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; color: #999; cursor: none; transition: color 0.2s; font-weight: bold; }
+.nav-links a:hover { color: #e8e2d9; }
+
+/* SECTIONS */
+section { display: none; padding: 4rem 3rem; min-height: 80vh; }
+section.active { display: block; }
+
+/* HERO */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 88vh;
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid #222;
+  padding-bottom: 3rem;
+}
+.hero-eyebrow { font-size: 0.68rem; letter-spacing: 0.4em; text-transform: uppercase; color: #888; margin-bottom: 2rem; }
+.hero-title {
+  font-size: clamp(4rem, 12vw, 9rem);
+  font-weight: bold;
+  line-height: 0.95;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #e8e2d9;
+  cursor: none;
+  transition: letter-spacing 0.4s ease;
+  user-select: none;
+  position: relative;
+}
+.hero-title:hover { letter-spacing: 0.18em; }
+.hero-title-rainbow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ff0066 0%, #ff3d00 14%, #ffe600 28%, #00ff77 42%, #00e5ff 57%, #7c00ff 71%, #ff00cc 85%, #ff0066 100%);
+  background-size: 200% 200%;
+  animation: rainbow-shift 4s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-mask-image: radial-gradient(circle 100px at var(--rx, -300px) var(--ry, -300px), black 0%, transparent 65%);
+  mask-image: radial-gradient(circle 100px at var(--rx, -300px) var(--ry, -300px), black 0%, transparent 65%);
+  pointer-events: none;
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+}
+@keyframes rainbow-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.hero-sub { font-size: 0.75rem; letter-spacing: 0.28em; text-transform: uppercase; color: #888; margin-top: 2.5rem; border-top: 1px solid #222; padding-top: 1.5rem; }
+.hero-years { font-size: 0.65rem; letter-spacing: 0.2em; color: #666; margin-top: 0.8rem; }
+
+/* SECTION HEADER */
+.section-header { font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: #888; margin-bottom: 3rem; border-bottom: 1px solid #222; padding-bottom: 0.5rem; font-weight: bold; }
+.sub-header { font-size: 0.66rem; letter-spacing: 0.3em; text-transform: uppercase; color: #666; margin: 2.5rem 0 1rem; font-weight: bold; }
+
+/* GALLERY GRID */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1px; background: #1a1a1a; }
+.gallery-item { position: relative; aspect-ratio: 3/4; background: #111; display: flex; align-items: center; justify-content: center; overflow: hidden; cursor: none; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; filter: saturate(1.4); }
+.gallery-item:hover img { transform: scale(1.04); filter: saturate(1.7); }
+.gallery-grid--digital .gallery-item img { filter: saturate(1.1); }
+.gallery-grid--digital .gallery-item:hover img { filter: saturate(1.25); }
+.gallery-item:hover .overlay { opacity: 1; }
+.overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.7); color: #e8e2d9; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.2rem; opacity: 0; transition: opacity 0.3s; }
+.overlay-title { font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.3rem; font-weight: bold; }
+.overlay-medium { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: #aaa; }
+.placeholder-art { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem; }
+.placeholder-art svg { opacity: 0.15; }
+.placeholder-art span { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: #666; }
+
+/* DESIGN GRID */
+.design-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1px; background: #1a1a1a; margin-bottom: 0; }
+.design-item { position: relative; background: #111; display: flex; align-items: center; justify-content: center; overflow: hidden; cursor: none; }
+.design-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.design-item:hover img { transform: scale(1.04); }
+.design-item:hover .overlay { opacity: 1; }
+.design-item.square { aspect-ratio: 1/1; }
+.design-item.portrait { aspect-ratio: 2/3; }
+.design-item.landscape { aspect-ratio: 4/3; }
+.design-link { display: inline-block; margin-top: 0.6rem; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: #888; text-decoration: underline; cursor: none; }
+.design-link:hover { color: #e8e2d9; }
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; }
+.about-photo { aspect-ratio: 3/4; background: #111; border: 1px solid #222; overflow: hidden; }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(15%); }
+.about-text h2 { font-size: 2.5rem; font-weight: bold; margin-bottom: 0.3rem; line-height: 1.1; text-transform: uppercase; letter-spacing: 0.05em; }
+.about-text .about-role { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: #888; margin-bottom: 2rem; font-weight: bold; }
+.about-text p { font-size: 1rem; line-height: 1.85; color: #bbb; margin-bottom: 1.2rem; }
+.about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
+.tag { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid #444; padding: 0.3rem 0.8rem; color: #999; font-weight: bold; }
+.about-links { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.8rem; }
+.about-link-row { display: flex; justify-content: space-between; border-top: 1px solid #1e1e1e; padding-top: 0.8rem; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.about-link-row span:first-child { color: #777; font-weight: bold; }
+.about-link-row a { color: #999; text-decoration: none; cursor: none; }
+.about-link-row a:hover { color: #e8e2d9; }
+
+/* MAGAZINE */
+.mag-shelf { display: flex; justify-content: center; align-items: flex-start; gap: 2.5rem; flex-wrap: nowrap; padding: 3rem 1.5rem 5rem; max-width: 1140px; margin: 0 auto; }
+.mag-shelf-item { display: flex; flex-direction: column; align-items: center; gap: 1.1rem; cursor: pointer; flex: 1 1 0; min-width: 0; max-width: 235px; }
+.mag-shelf-cover { position: relative; width: 100%; aspect-ratio: 2/3; overflow: hidden; box-shadow: 10px 12px 40px rgba(0,0,0,0.85), -5px 0 14px rgba(0,0,0,0.5); transition: transform 0.35s cubic-bezier(0.2,0,0,1), box-shadow 0.35s; transform-style: preserve-3d; }
+.mag-shelf-item:hover .mag-shelf-cover { transform: translateY(-12px) scale(1.03) perspective(600px) rotateY(-4deg); box-shadow: 16px 24px 60px rgba(0,0,0,0.95), -8px 0 22px rgba(0,0,0,0.6); }
+.mag-shelf-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.mag-shelf-cover--wip { background: #111; }
+.mag-shelf-cover--wip.no-img { display: flex; align-items: center; justify-content: center; }
+.mag-shelf-cover--wip.no-img img { display: none; }
+.mag-shelf-cover--wip.no-img::after { content: "Cover Coming Soon"; font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: #444; text-align: center; padding: 0 1rem; }
+.mag-shelf-wip-overlay { position: absolute; top: 0.8rem; left: 0.8rem; font-size: 0.52rem; letter-spacing: 0.22em; text-transform: uppercase; color: #e8e2d9; background: rgba(0,0,0,0.7); padding: 0.25rem 0.6rem; border: 1px solid #333; }
+.mag-shelf-hover { position: absolute; inset: 0; background: rgba(0,0,0,0.55); display: flex; align-items: center; justify-content: center; font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: #e8e2d9; opacity: 0; transition: opacity 0.25s; }
+.mag-shelf-item:hover .mag-shelf-hover { opacity: 1; }
+.mag-shelf-label { text-align: center; }
+.mag-shelf-title { font-size: 0.75rem; font-weight: bold; letter-spacing: 0.12em; text-transform: uppercase; color: #e8e2d9; margin-bottom: 0.3rem; }
+.mag-shelf-issue { font-size: 0.58rem; letter-spacing: 0.18em; color: #666; }
+
+/* Book Reader */
+.book-reader { position: fixed; inset: 0; background: rgba(4,4,4,0.97); z-index: 9500; display: none; flex-direction: column; }
+.book-reader.open { display: flex; }
+.book-reader-bar { display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 2.5rem; border-bottom: 1px solid #1a1a1a; flex-shrink: 0; }
+#book-reader-title { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: #999; }
+.book-close-hint { font-size: 0.5rem; letter-spacing: 0.18em; color: #333; font-style: italic; }
+.book-reader-bar-right { display: flex; align-items: center; gap: 2rem; }
+.book-reader-extlink { font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: #666; text-decoration: none; transition: color 0.2s; cursor: none; }
+.book-reader-extlink:hover { color: #e8e2d9; }
+.book-reader-close { background: none; border: 1px solid #2a2a2a; color: #888; font-size: 0.6rem; cursor: none; font-family: inherit; letter-spacing: 0.15em; text-transform: uppercase; transition: border-color 0.2s, color 0.2s; padding: 0.35rem 0.9rem; }
+.book-reader-close:hover { border-color: #e8e2d9; color: #e8e2d9; }
+.book-reader-stage { flex: 1; display: flex; align-items: center; justify-content: center; gap: 2.5rem; padding: 1.5rem 3rem; min-height: 0; }
+.book-scene { display: flex; flex-direction: column; align-items: center; gap: 1.2rem; min-height: 0; }
+.book-nav-btn { background: none; border: 1px solid #222; color: #555; font-size: 1.3rem; width: 48px; height: 48px; cursor: none; transition: border-color 0.2s, color 0.2s; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: inherit; }
+.book-nav-btn:hover { border-color: #e8e2d9; color: #e8e2d9; }
+.book-nav-btn:disabled { opacity: 0.12; pointer-events: none; }
+.book-body { position: relative; display: flex; height: calc(100vh - 11rem); max-height: 720px; box-shadow: 0 50px 120px rgba(0,0,0,0.95), 0 0 0 1px #181818; flex-shrink: 0; transform-style: preserve-3d; }
+.book-page { width: clamp(300px, 37vw, 490px); height: 100%; overflow: hidden; position: relative; background: #0d0d0d; flex-shrink: 0; }
+.book-page--left { border-radius: 4px 0 0 4px; }
+.book-page--right { border-radius: 0 4px 4px 0; }
+.book-page img { width: 100%; height: 100%; object-fit: contain; display: block; background: #0d0d0d; }
+.book-shadow-l { position: absolute; top: 0; right: 0; bottom: 0; width: 55px; background: linear-gradient(to right, transparent, rgba(0,0,0,0.45)); pointer-events: none; z-index: 2; }
+.book-shadow-r { position: absolute; top: 0; left: 0; bottom: 0; width: 55px; background: linear-gradient(to left, transparent, rgba(0,0,0,0.45)); pointer-events: none; z-index: 2; }
+.book-spine { width: 22px; flex-shrink: 0; position: relative; background: linear-gradient(to right, #020202, #1e1e1e 40%, #141414 60%, #020202); }
+.book-spine-inner { position: absolute; inset: 0; background: linear-gradient(to right, rgba(255,255,255,0.04), transparent, rgba(0,0,0,0.3)); }
+@keyframes book-turn-fwd  { 0% { transform: perspective(1800px) rotateY(0deg); } 45% { transform: perspective(1800px) rotateY(-8deg); } 100% { transform: perspective(1800px) rotateY(0deg); } }
+@keyframes book-turn-back { 0% { transform: perspective(1800px) rotateY(0deg); } 45% { transform: perspective(1800px) rotateY(8deg); }  100% { transform: perspective(1800px) rotateY(0deg); } }
+.book-body.turning-fwd  { animation: book-turn-fwd  0.38s ease-in-out; }
+.book-body.turning-back { animation: book-turn-back 0.38s ease-in-out; }
+.book-desc { max-width: calc(clamp(300px,37vw,490px)*2 + 22px); width: 100%; font-size: 0.75rem; line-height: 1.85; color: #666; text-align: center; padding: 0 0.5rem; }
+.book-wip-msg { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding: 2.5rem; text-align: center; gap: 1.2rem; }
+.book-wip-msg strong { font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: #e8e2d9; }
+.book-wip-msg p { font-size: 0.72rem; line-height: 1.85; color: #555; }
+.book-wip-msg em { font-size: 0.62rem; color: #333; }
+.book-reader-footer { padding: 0.7rem 2.5rem; border-top: 1px solid #1a1a1a; text-align: center; flex-shrink: 0; }
+#book-page-counter { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: #555; }
+
+/* COSPLAY */
+.cosplay-social-bar { display: flex; gap: 2.5rem; margin-bottom: 3.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #1a1a1a; }
+.cosplay-social-bar a { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: #555; text-decoration: none; transition: color 0.2s; }
+.cosplay-social-bar a:hover { color: #e8e2d9; }
+.cosplay-social-note { font-size: 0.6rem; letter-spacing: 0.15em; color: #444; margin-bottom: 3.5rem; font-style: italic; }
+
+.cosplay-category { padding: 3rem 0; border-bottom: 1px solid #141414; }
+.cosplay-cat-top { margin-bottom: 1.8rem; }
+.cosplay-cat-title { font-size: 0.9rem; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase; color: #e8e2d9; margin-bottom: 0.35rem; }
+.cosplay-cat-meta { font-size: 0.65rem; letter-spacing: 0.13em; color: #777; }
+.cosplay-cat-main { display: grid; grid-template-columns: 240px 1fr; gap: 3rem; align-items: start; }
+.cosplay-cat-cover { cursor: pointer; position: relative; overflow: hidden; }
+.cosplay-cat-cover img { width: 100%; aspect-ratio: 2/3; object-fit: cover; object-position: top; display: block; filter: saturate(0.85); transition: filter 0.35s; }
+.cosplay-cat-cover:hover img { filter: saturate(1.1); }
+.cosplay-cat-expand-hint { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.72)); padding: 2.5rem 1rem 0.9rem; font-size: 0.54rem; letter-spacing: 0.22em; text-transform: uppercase; color: #e8e2d9; opacity: 0; transition: opacity 0.25s; }
+.cosplay-cat-cover:hover .cosplay-cat-expand-hint,
+.cosplay-category.expanded .cosplay-cat-expand-hint { opacity: 1; }
+.cosplay-cat-text { padding-top: 0.4rem; }
+.cosplay-cat-placeholder { font-size: 0.82rem; line-height: 1.95; color: #666; font-style: italic; margin-bottom: 2rem; padding-left: 1.5rem; border-left: 1px solid #1e1e1e; }
+.cosplay-cat-count { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: #666; }
+.cosplay-cat-strip { max-height: 0; overflow: hidden; transition: max-height 0.55s cubic-bezier(0.4,0,0.2,1); }
+.cosplay-category.expanded .cosplay-cat-strip { max-height: 420px; margin-top: 1.5rem; }
+.cosplay-cat-strip-inner { display: flex; gap: 3px; overflow-x: auto; padding-bottom: 6px; }
+.cosplay-cat-strip-inner::-webkit-scrollbar { height: 2px; }
+.cosplay-cat-strip-inner::-webkit-scrollbar-track { background: #0d0d0d; }
+.cosplay-cat-strip-inner::-webkit-scrollbar-thumb { background: #2a2a2a; }
+.cosplay-cat-strip-item { flex-shrink: 0; width: 155px; height: 232px; cursor: pointer; overflow: hidden; }
+.cosplay-cat-strip-item img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; filter: saturate(0.85); transition: transform 0.3s, filter 0.3s; }
+.cosplay-cat-strip-item:hover img { transform: scale(1.05); filter: saturate(1.25); }
+
+.cosplay-resume { margin-top: 4.5rem; }
+.cosplay-resume-section-title { font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: #777; margin-bottom: 2rem; padding-bottom: 0.8rem; border-bottom: 1px solid #1a1a1a; }
+.cosplay-resume-year-block { display: grid; grid-template-columns: 72px 1fr; gap: 0 2rem; margin-bottom: 0.5rem; }
+.cosplay-resume-year { font-size: 0.62rem; letter-spacing: 0.2em; color: #777; padding-top: 0.65rem; text-transform: uppercase; }
+.cosplay-resume-entries { display: flex; flex-direction: column; }
+.cosplay-resume-row { display: grid; grid-template-columns: 210px 1fr 90px; gap: 1rem; padding: 0.6rem 0; border-bottom: 1px solid #1a1a1a; align-items: baseline; }
+.cosplay-resume-character { font-size: 0.72rem; letter-spacing: 0.07em; color: #d8d2c9; }
+.cosplay-resume-event { font-size: 0.65rem; letter-spacing: 0.04em; color: #888; }
+.cosplay-resume-date { font-size: 0.62rem; letter-spacing: 0.1em; color: #777; text-align: right; }
+.cosplay-resume-note { font-size: 0.62rem; letter-spacing: 0.15em; color: #666; font-style: italic; margin: 0.3rem 0 0.8rem; }
+
+.cosplay-shoots { margin-top: 3rem; }
+.cosplay-shoot-row { display: grid; grid-template-columns: 200px 1fr 120px; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid #0d0d0d; align-items: baseline; }
+.cosplay-shoot-club { grid-template-columns: 70px 170px 1fr 120px; }
+.cosplay-shoot-label { font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase; color: #666; }
+.cosplay-shoot-character { font-size: 0.72rem; letter-spacing: 0.07em; color: #aaa; }
+.cosplay-shoot-detail { font-size: 0.62rem; letter-spacing: 0.04em; color: #777; }
+
+/* MAGAZINE */
+.mag-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1px; background: #1a1a1a; }
+.mag-item { position: relative; aspect-ratio: 2/3; background: #111; overflow: hidden; cursor: none; }
+.mag-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.mag-item:hover img { transform: scale(1.03); }
+.mag-item:hover .overlay { opacity: 1; }
+.mag-caption { margin-top: 1rem; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #555; font-weight: bold; }
+
+/* JOURNAL */
+.journal-intro { font-size: 0.95rem; line-height: 1.9; color: #666; max-width: 560px; margin-bottom: 3rem; font-style: italic; }
+.journal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1px; background: #1a1a1a; }
+.journal-item { aspect-ratio: 1/1; background: #111; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; cursor: none; }
+.journal-item span { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: #333; font-weight: bold; }
+
+/* CONTACT */
+.contact-wrap { max-width: 520px; }
+.contact-wrap h2 { font-size: 2.8rem; font-weight: bold; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.contact-wrap p { font-size: 0.85rem; letter-spacing: 0.05em; color: #555; margin-bottom: 3rem; line-height: 1.7; }
+.contact-line { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1e1e1e; padding: 1.2rem 0; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: bold; }
+.contact-line:last-child { border-bottom: 1px solid #1e1e1e; }
+.contact-line span:first-child { color: #444; }
+.contact-line a { color: #777; text-decoration: none; cursor: none; }
+.contact-line a:hover { color: #e8e2d9; }
+</style>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+<div id="cursor"></div>
+
+<nav>
+  <span class="nav-name">Chloe</span>
+  <ul class="nav-links">
+    <li><a onclick="show('home')">Home</a></li>
+    <li><a onclick="show('art')">Art</a></li>
+    <li><a onclick="show('cosplay')">Cosplay</a></li>
+    <li><a onclick="show('magazine')">Magazine</a></li>
+    <li><a onclick="show('design')">Design</a></li>
+    <li><a onclick="show('fashion')">Fashion</a></li>
+    <li><a onclick="show('photography')">Photography</a></li>
+    <li><a onclick="show('journal')">Journal</a></li>
+    <li><a onclick="show('about')">About</a></li>
+    <li><a onclick="show('contact')">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="active">
+  <div class="hero">
+    <div class="hero-eyebrow">Creative Portfolio</div>
+    <h1 class="hero-title">CHLOE'S<br>PORTFOLIO</h1>
+    <div class="hero-sub">Art &nbsp;·&nbsp; Design &nbsp;·&nbsp; Cosplay &nbsp;·&nbsp; Photography</div>
+    <div class="hero-years">2022 — 2026</div>
+  </div>
+</section>
+
+<!-- ART -->
+<section id="art">
+  <div class="section-header">Art</div>
+  <div class="gallery-grid">
+    <div class="gallery-item" data-work="noctilucent">
+      <img src="images/thumbs/art/noctilucent-1.jpg" alt="Noctilucent" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Noctilucent</div>
+        <div class="overlay-medium">2026 · Acrylic Pour, Silicone Oil · UV Activated · Diptych</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="penumbra">
+      <img src="images/art/penumbra-1.jpg" alt="Penumbra" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Penumbra</div>
+        <div class="overlay-medium">2026 · Oil Pastel, Acrylic, Neon Paint, Resin · UV Reactive</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="specimen-of-absence">
+      <img src="images/art/specimen-1.jpg" alt="Specimen of Absence" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Specimen of Absence</div>
+        <div class="overlay-medium">2026 · Vitrine · Oil Pastel, Modelling Paste, Acrylic, Found Objects</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="untitled-pour">
+      <img src="images/art/untitled-pour-1.jpg" alt="Untitled" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Untitled</div>
+        <div class="overlay-medium">Resin, Pouring Acrylic on Canvas · 53 × 55 cm</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="kabukicho">
+      <img src="images/art/kabukicho-1.jpg" alt="Shibuya × Kabukicho" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Shibuya × Kabukicho</div>
+        <div class="overlay-medium">2026 · Ink Relief Printmaking, Highlighter, Marker</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="old-quarter">
+      <img src="images/art/old-quarter-1.jpg" alt="Old Quarter" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Old Quarter</div>
+        <div class="overlay-medium">2025 · Acrylic Monoprint</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="kabukicho-street">
+      <img src="images/art/kabukicho-street-1.jpg" alt="歌舞伎町" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">歌舞伎町</div>
+        <div class="overlay-medium">2025 · Coloured Pencil, Marker, Fineliner</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="stop-moving">
+      <img src="images/art/stop-moving-1.jpg" alt="Stop Moving" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Stop Moving</div>
+        <div class="overlay-medium">2026 · Oil Pastel, Coloured Pencil · Cut Paper</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="obsidian">
+      <img src="images/art/obsidian-1.jpg" alt="Obsidian and Prismatic Light" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Obsidian and Prismatic Light</div>
+        <div class="overlay-medium">2025 · Charcoal Transfer Monoprint, Watercolour, Coloured Pencil</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="behind-the-pink">
+      <img src="images/art/behind-the-pink-1.jpg" alt="Behind the Pink" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Behind the Pink</div>
+        <div class="overlay-medium">2025 · Acrylic Paint, Mixed Media · Canvas</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="reality-hurts">
+      <img src="images/art/reality-hurts-1.jpg" alt="現実が痛いから" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">現実が痛いから</div>
+        <div class="overlay-medium">2025 · Pen, Pencil, Highlighter</div>
+      </div>
+    </div>
+    <div class="gallery-item"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Untitled I</div><div class="overlay-medium">Digital</div></div></div>
+    <div class="gallery-item"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Vitrine</div><div class="overlay-medium">Mixed Media</div></div></div>
+    <div class="gallery-item"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Soft Study</div><div class="overlay-medium">Painting</div></div></div>
+    <div class="gallery-item"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Juxtapose</div><div class="overlay-medium">Mixed Media</div></div></div>
+    <div class="gallery-item"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Emotion Study</div><div class="overlay-medium">Sketch</div></div></div>
+    <div class="gallery-item"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Cheki Series</div><div class="overlay-medium">Illustration</div></div></div>
+  </div>
+
+  <div class="photo-category" style="margin-top:0.5rem;">Digital Art</div>
+  <div class="gallery-grid gallery-grid--digital">
+    <div class="gallery-item" data-work="gensou">
+      <img src="images/art/gensou-1.jpg" alt="幻想の中で" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">幻想の中で</div>
+        <div class="overlay-medium">2024 · Digital Illustration</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="anime-club-mascot">
+      <img src="images/art/anime-club-mascot-1.jpg" alt="アニメで繋がる夢 (Dreams Connected Through Anime)" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">アニメで繋がる夢</div>
+        <div class="overlay-medium">2024 · Digital Illustration · Anime Club Mascot</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="blue-tongue">
+      <img src="images/art/blue-tongue-1.jpg" alt="青い舌 (Blue Tongue)" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">青い舌</div>
+        <div class="overlay-medium">2025 · Digital Illustration · トー横キッズ</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="aisaretai">
+      <img src="images/art/aisaretai-1.jpg" alt="愛されたいという病 (The Sickness of Wanting to Be Loved)" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">愛されたいという病</div>
+        <div class="overlay-medium">2025 · Digital Illustration · 地雷系</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="homete">
+      <img src="images/art/homete-1.jpg" alt="褒めてくれるなら何でもする (I'll Do Anything if You Praise Me)" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">褒めてくれるなら何でもする</div>
+        <div class="overlay-medium">2024 · Digital Illustration · 地雷系</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="kawaikunai">
+      <img src="images/art/kawaikunai-1.jpg" alt="可愛くないとダメ？ (Am I Not Enough Without Being Cute?)" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">可愛くないとダメ？</div>
+        <div class="overlay-medium">2023 · Digital Illustration · 地雷系</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="fan-no-ai">
+      <img src="images/art/fan-no-ai-1.jpg" alt="ファンの愛に包まれて (Embraced by Fans' Love)" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">ファンの愛に包まれて</div>
+        <div class="overlay-medium">2023 · Digital Illustration · Idol Culture</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="art-wip-header">
+    <span>Unresolved / Works in Progress</span>
+    <span class="art-wip-note">Unfinished / Ongoing</span>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item gallery-item--wip" data-work="media-test-1">
+      <img src="images/art/media-test-1.jpg" alt="Media Test I (Resin & Alcohol Ink)" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Media Test I</div>
+        <div class="overlay-medium">Resin, Alcohol Ink · Petri Dish Study · In Progress</div>
+      </div>
+    </div>
+    <div class="gallery-item gallery-item--wip" data-work="media-test-2">
+      <img src="images/art/media-test-2.jpg" alt="Media Test II (Resin & Alcohol Ink)" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Media Test II</div>
+        <div class="overlay-medium">Resin, Alcohol Ink · Petri Dish Study · In Progress</div>
+      </div>
+    </div>
+    <div class="gallery-item gallery-item--wip" data-work="media-test-3">
+      <img src="images/art/media-test-3.jpg" alt="Media Test III (Resin & Alcohol Ink)" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Media Test III</div>
+        <div class="overlay-medium">Resin, Alcohol Ink · Petri Dish Study · In Progress</div>
+      </div>
+    </div>
+    <div class="gallery-item gallery-item--wip" data-work="petri-resin">
+      <img src="images/art/petri-resin-1.jpg" alt="Petri (Resin & Alcohol Ink)" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Petri</div>
+        <div class="overlay-medium">2026 · Resin, Alcohol Ink · In Progress</div>
+      </div>
+    </div>
+    <div class="gallery-item gallery-item--wip" data-work="watched">
+      <img src="images/art/watched-1.jpg" alt="Watched" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Watched</div>
+        <div class="overlay-medium">2025 · Painted Ceramic · Unfired</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGN -->
+<section id="design">
+  <div class="section-header">Design</div>
+
+  <div class="sub-header" style="margin-top:2.5rem;">Editorial</div>
+  <div class="mag-grid">
+    <div class="mag-item" data-work="elle-splash">
+      <img src="images/design/elle-splash-1.jpg" alt="Splash! A Century of Swimming and Style — Editorial Cover" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">SPLASH!</div>
+        <div class="overlay-medium">Editorial · Cover &amp; Feature · 2025</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-header" style="margin-top:2.5rem;">Social Media</div>
+  <div class="design-grid">
+    <div class="design-item square"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Post Design I</div><div class="overlay-medium">Social Media</div></div></div>
+    <div class="design-item square"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Post Design II</div><div class="overlay-medium">Social Media</div></div></div>
+    <div class="design-item square"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Post Design III</div><div class="overlay-medium">Social Media</div></div></div>
+  </div>
+
+  <div class="sub-header" style="margin-top:2.5rem;">Posters</div>
+  <div class="design-grid">
+    <div class="design-item portrait"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Poster I</div><div class="overlay-medium">Print Design</div></div></div>
+    <div class="design-item portrait"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Poster II</div><div class="overlay-medium">Print Design</div></div></div>
+    <div class="design-item portrait"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Poster III</div><div class="overlay-medium">Print Design</div></div></div>
+  </div>
+
+  <div class="sub-header" style="margin-top:2.5rem;">Photography</div>
+  <div class="design-grid">
+    <div class="design-item landscape"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><circle cx="18" cy="18" r="8" stroke="#333" stroke-width="0.5"/></svg><span>Add photo</span></div><div class="overlay"><div class="overlay-title">Photo I</div><div class="overlay-medium">Photography</div></div></div>
+    <div class="design-item landscape"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><circle cx="18" cy="18" r="8" stroke="#333" stroke-width="0.5"/></svg><span>Add photo</span></div><div class="overlay"><div class="overlay-title">Photo II</div><div class="overlay-medium">Photography</div></div></div>
+  </div>
+</section>
+
+<!-- FASHION -->
+<section id="fashion">
+  <div class="section-header">Fashion</div>
+
+  <div class="about-text" style="max-width:780px;margin:1.5rem auto 0;text-align:left;">
+    <h2 style="margin-bottom:0.3rem;">States of Preservation</h2>
+    <div class="about-role">Fashion Collection &nbsp;·&nbsp; Process Book &nbsp;·&nbsp; Fantasy → Reality</div>
+
+    <p><em>Theme &amp; Concept.</em> This collection explores death not as a single ending but as a state of perception. It moves from fantasy to reality, so that the viewer first falls for the beauty of a preserved specimen and only afterward recognises what it represents, mirroring exactly what happens when someone sees a diaphonized organism: captivated before they realise they are looking at something dead.</p>
+
+    <p><strong>Fantasy.</strong> At first glance, the collection presents death as something delicate, vibrant, and almost dreamlike. It is inspired by diaphonized specimens, preserved organisms whose transparent tissues and vividly stained skeletons create an illusion of vitality despite no longer being alive. Bright colours, translucent materials, and flowing silhouettes transform anatomical structures into elegant, wearable forms. Here death appears not as something frightening but as something preserved and beautiful, inviting viewers to question whether death must always be tied to darkness and decay.</p>
+
+    <p><strong>Reality.</strong> As the collection progresses, the fantasy gradually dissolves into reality. The vibrant transparency gives way to muted, earthy tones, and smooth, delicate surfaces become rough, frayed, and fragmented, echoing the natural process of decomposition. The preserved beauty of the specimen is stripped away to reveal the physical reality of death, where flesh decays, colour fades, and the body slowly returns to nature. By presenting fantasy before reality, the collection asks how perception shapes our emotional response. The organism itself has not changed; only the way it is presented has. It leaves a single question: if I found it beautiful before I knew it represented death, what does that say about how I see death?</p>
+  </div>
+
+  <div class="sub-header" style="margin-top:3rem;">Fantasy Looks</div>
+  <div class="gallery-grid">
+    <div class="gallery-item"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add look</span></div><div class="overlay"><div class="overlay-title">Look 1</div><div class="overlay-medium">Fantasy</div></div></div>
+    <div class="gallery-item"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add look</span></div><div class="overlay"><div class="overlay-title">Look 5</div><div class="overlay-medium">Fantasy</div></div></div>
+  </div>
+
+  <div class="sub-header" style="margin-top:2.5rem;">Reality Looks</div>
+  <div class="gallery-grid">
+    <div class="gallery-item"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add look</span></div><div class="overlay"><div class="overlay-title">Look 6</div><div class="overlay-medium">Reality</div></div></div>
+    <div class="gallery-item"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add look</span></div><div class="overlay"><div class="overlay-title">Look 7</div><div class="overlay-medium">Reality</div></div></div>
+  </div>
+
+  <div class="sub-header" style="margin-top:3rem;">Process Book · Table of Contents</div>
+  <div class="fashion-toc">
+    <div class="fashion-toc-chapter">Concept Development</div>
+    <div class="fashion-toc-row"><span class="fashion-toc-pg">1</span><span>Theme &amp; Concept</span></div>
+    <div class="fashion-toc-row"><span class="fashion-toc-pg">2–5</span><span>Fantasy: Five Principles of Design</span></div>
+    <div class="fashion-toc-row"><span class="fashion-toc-pg">6</span><span>Fantasy Fugue</span></div>
+    <div class="fashion-toc-row"><span class="fashion-toc-pg">7–8</span><span>Fantasy Design Collages</span></div>
+
+    <div class="fashion-toc-chapter">Fantasy Collection Development</div>
+    <div class="fashion-toc-row"><span class="fashion-toc-pg">9–10</span><span>Look 1 Iterations</span></div>
+    <div class="fashion-toc-row"><span class="fashion-toc-pg">11–12</span><span>Look 5 Iterations</span></div>
+    <div class="fashion-toc-row"><span class="fashion-toc-pg">13–14</span><span>Look 1 Working Sketch</span></div>
+    <div class="fashion-toc-row"><span class="fashion-toc-pg">15–16</span><span>Look 5 Working Sketch</span></div>
+
+    <div class="fashion-toc-chapter">Transition</div>
+    <div class="fashion-toc-row"><span class="fashion-toc-pg">17</span><span>From Fantasy to Reality</span></div>
+
+    <div class="fashion-toc-chapter">Reality Collection Development</div>
+    <div class="fashion-toc-row"><span class="fashion-toc-pg">17–19</span><span>Reality: Five Principles of Design</span></div>
+    <div class="fashion-toc-row"><span class="fashion-toc-pg">20</span><span>Reality Fugue</span></div>
+    <div class="fashion-toc-row"><span class="fashion-toc-pg">21–22</span><span>Reality Design Collages</span></div>
+    <div class="fashion-toc-row"><span class="fashion-toc-pg">23–24</span><span>Look 1 Iterations</span></div>
+    <div class="fashion-toc-row"><span class="fashion-toc-pg">25–26</span><span>Look 6 Iterations</span></div>
+    <div class="fashion-toc-row"><span class="fashion-toc-pg">27–28</span><span>Look 5 Working Sketch</span></div>
+    <div class="fashion-toc-row"><span class="fashion-toc-pg">29–30</span><span>Look 7 Working Sketch</span></div>
+
+    <div class="fashion-toc-chapter">Final Exploration</div>
+    <div class="fashion-toc-row"><span class="fashion-toc-pg">31–32</span><span>Met Museum-Inspired Designs</span></div>
+    <div class="fashion-toc-row"><span class="fashion-toc-pg">33–34</span><span>Paper Dolls</span></div>
+    <div class="fashion-toc-row"><span class="fashion-toc-pg">35–37</span><span>Collection Refinement &amp; Final Design Development</span></div>
+  </div>
+</section>
+
+<!-- MAGAZINE -->
+<section id="magazine">
+  <div class="section-header">Magazine</div>
+
+  <div class="mag-shelf">
+
+    <div class="mag-shelf-item" data-work="flair">
+      <div class="mag-shelf-cover">
+        <img src="images/thumbs/design/flair-1.jpg" alt="FLAIR Issue 1" loading="lazy">
+        <div class="mag-shelf-hover">Open ↗</div>
+      </div>
+      <div class="mag-shelf-label">
+        <div class="mag-shelf-title">FLAIR</div>
+        <div class="mag-shelf-issue">Issue 1 &nbsp;·&nbsp; 2025</div>
+      </div>
+    </div>
+
+    <div class="mag-shelf-item mag-shelf-item--wip">
+      <div class="mag-shelf-cover mag-shelf-cover--wip">
+        <img src="images/design/flair2-cover.jpg" alt="FLAIR Issue 2" loading="lazy" onerror="this.parentElement.classList.add('no-img')">
+        <div class="mag-shelf-wip-overlay">
+          <span>In Progress</span>
+        </div>
+        <div class="mag-shelf-hover">Preview ↗</div>
+      </div>
+      <div class="mag-shelf-label">
+        <div class="mag-shelf-title">FLAIR</div>
+        <div class="mag-shelf-issue">Issue 2 &nbsp;·&nbsp; Coming Soon</div>
+      </div>
+    </div>
+
+    <div class="mag-shelf-item" data-work="club-magazine">
+      <div class="mag-shelf-cover">
+        <img src="images/thumbs/design/kas-mag-1.jpg" alt="KAS Vol 1" loading="lazy">
+        <div class="mag-shelf-hover">Open ↗</div>
+      </div>
+      <div class="mag-shelf-label">
+        <div class="mag-shelf-title">KAS Cosplay Club</div>
+        <div class="mag-shelf-issue">Vol. 1 &nbsp;·&nbsp; 2024/2025</div>
+      </div>
+    </div>
+
+    <div class="mag-shelf-item" data-work="club-magazine-vol2">
+      <div class="mag-shelf-cover">
+        <img src="images/thumbs/design/kas-mag2-1.jpg" alt="KAS Vol 2" loading="lazy">
+        <div class="mag-shelf-hover">Open ↗</div>
+      </div>
+      <div class="mag-shelf-label">
+        <div class="mag-shelf-title">KAS Cosplay Club</div>
+        <div class="mag-shelf-issue">Vol. 2 &nbsp;·&nbsp; 2025/2026</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── BOOK READER ── -->
+  <div id="book-reader" class="book-reader">
+    <div class="book-reader-bar">
+      <div style="display:flex;align-items:center;gap:1.5rem;">
+        <span id="book-reader-title"></span>
+        <span class="book-close-hint">Esc or click outside to close</span>
+      </div>
+      <div class="book-reader-bar-right">
+        <a id="book-reader-link" href="#" target="_blank" class="book-reader-extlink">↗ Read Online</a>
+        <button class="book-reader-close" onclick="closeBook()">✕ Close</button>
+      </div>
+    </div>
+    <div class="book-reader-stage" id="book-reader-stage" onclick="if(!event.target.closest('.book-page,.book-nav-btn,.book-desc'))closeBook()">
+      <button class="book-nav-btn book-nav--prev" id="book-btn-prev" onclick="bookNav(-1)">&#8592;</button>
+      <div class="book-scene">
+        <div class="book-body" id="book-body">
+          <div class="book-page book-page--left" id="book-page-left"></div>
+          <div class="book-spine"><div class="book-spine-inner"></div></div>
+          <div class="book-page book-page--right" id="book-page-right"></div>
+
+        </div>
+        <div class="book-desc" id="book-desc"></div>
+      </div>
+      <button class="book-nav-btn book-nav--next" id="book-btn-next" onclick="bookNav(1)">&#8594;</button>
+    </div>
+    <div class="book-reader-footer">
+      <span id="book-page-counter"></span>
+    </div>
+  </div>
+
+</section>
+
+<!-- COSPLAY -->
+<section id="cosplay">
+  <div class="section-header">Cosplay</div>
+
+  <div class="cosplay-social-bar">
+    <a href="https://www.instagram.com/kuro1_cos/" target="_blank">↗ Instagram · @kuro1_cos</a>
+    <a href="https://www.facebook.com/klchloe102/" target="_blank">↗ Facebook · Kuroi Chan</a>
+  </div>
+  <div class="cosplay-social-note">Not all photos are shown here. For the full collection, check my social media above.</div>
+
+  <div class="cosplay-category" data-count="17">
+    <div class="cosplay-cat-top">
+      <div class="cosplay-cat-title">Nikke · Cinderella</div>
+      <div class="cosplay-cat-meta">acosta 「アコスタ！」 · April 11, 2026</div>
+    </div>
+    <div class="cosplay-cat-main">
+      <div class="cosplay-cat-cover" onclick="toggleCosplay(this)">
+        <img src="images/cosplay/nikke-cinderella-1.jpg" alt="Nikke · Cinderella" loading="lazy" decoding="async">
+        <div class="cosplay-cat-expand-hint">View all 17 ↓</div>
+      </div>
+      <div class="cosplay-cat-text">
+        <p class="cosplay-cat-placeholder">[ Add a note about this cosplay here — character background, your preparation, the event, or what this look means to you. ]</p>
+        <div class="cosplay-cat-count">17 photos · April 11, 2026</div>
+      </div>
+    </div>
+    <div class="cosplay-cat-strip">
+      <div class="cosplay-cat-strip-inner">
+        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="1"><img src="images/cosplay/nikke-cinderella-2.jpg" alt="Nikke · Cinderella 2" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="2"><img src="images/cosplay/nikke-cinderella-3.jpg" alt="Nikke · Cinderella 3" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="3"><img src="images/cosplay/nikke-cinderella-4.jpg" alt="Nikke · Cinderella 4" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="4"><img src="images/cosplay/nikke-cinderella-5.jpg" alt="Nikke · Cinderella 5" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="5"><img src="images/cosplay/nikke-cinderella-6.jpg" alt="Nikke · Cinderella 6" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="6"><img src="images/cosplay/nikke-cinderella-7.jpg" alt="Nikke · Cinderella 7" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="7"><img src="images/cosplay/nikke-cinderella-8.jpg" alt="Nikke · Cinderella 8" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="8"><img src="images/cosplay/nikke-cinderella-9.jpg" alt="Nikke · Cinderella 9" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="9"><img src="images/cosplay/nikke-cinderella-10.jpg" alt="Nikke · Cinderella 10" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="10"><img src="images/cosplay/nikke-cinderella-11.jpg" alt="Nikke · Cinderella 11" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="11"><img src="images/cosplay/nikke-cinderella-12.jpg" alt="Nikke · Cinderella 12" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="12"><img src="images/cosplay/nikke-cinderella-13.jpg" alt="Nikke · Cinderella 13" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="13"><img src="images/cosplay/nikke-cinderella-14.jpg" alt="Nikke · Cinderella 14" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="14"><img src="images/cosplay/nikke-cinderella-15.jpg" alt="Nikke · Cinderella 15" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="15"><img src="images/cosplay/nikke-cinderella-16.jpg" alt="Nikke · Cinderella 16" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="16"><img src="images/cosplay/nikke-cinderella-17.jpg" alt="Nikke · Cinderella 17" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+  </div>
+  <div class="cosplay-category" data-count="24">
+    <div class="cosplay-cat-top">
+      <div class="cosplay-cat-title">Rapi · Red Hood</div>
+      <div class="cosplay-cat-meta">【CWT-K50】高雄場 · March 08, 2026</div>
+    </div>
+    <div class="cosplay-cat-main">
+      <div class="cosplay-cat-cover" onclick="toggleCosplay(this)">
+        <img src="images/cosplay/rapi-red-hood-1.jpg" alt="Rapi · Red Hood" loading="lazy" decoding="async">
+        <div class="cosplay-cat-expand-hint">View all 24 ↓</div>
+      </div>
+      <div class="cosplay-cat-text">
+        <p class="cosplay-cat-placeholder">[ Add a note about this cosplay here — character background, your preparation, the event, or what this look means to you. ]</p>
+        <div class="cosplay-cat-count">24 photos · March 08, 2026</div>
+      </div>
+    </div>
+    <div class="cosplay-cat-strip">
+      <div class="cosplay-cat-strip-inner">
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="1"><img src="images/cosplay/rapi-red-hood-2.jpg" alt="Rapi · Red Hood 2" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="2"><img src="images/cosplay/rapi-red-hood-3.jpg" alt="Rapi · Red Hood 3" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="3"><img src="images/cosplay/rapi-red-hood-4.jpg" alt="Rapi · Red Hood 4" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="4"><img src="images/cosplay/rapi-red-hood-5.jpg" alt="Rapi · Red Hood 5" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="5"><img src="images/cosplay/rapi-red-hood-6.jpg" alt="Rapi · Red Hood 6" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="6"><img src="images/cosplay/rapi-red-hood-7.jpg" alt="Rapi · Red Hood 7" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="7"><img src="images/cosplay/rapi-red-hood-8.jpg" alt="Rapi · Red Hood 8" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="8"><img src="images/cosplay/rapi-red-hood-9.jpg" alt="Rapi · Red Hood 9" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="9"><img src="images/cosplay/rapi-red-hood-10.jpg" alt="Rapi · Red Hood 10" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="10"><img src="images/cosplay/rapi-red-hood-11.jpg" alt="Rapi · Red Hood 11" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="11"><img src="images/cosplay/rapi-red-hood-12.jpg" alt="Rapi · Red Hood 12" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="12"><img src="images/cosplay/rapi-red-hood-13.jpg" alt="Rapi · Red Hood 13" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="13"><img src="images/cosplay/rapi-red-hood-14.jpg" alt="Rapi · Red Hood 14" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="14"><img src="images/cosplay/rapi-red-hood-15.jpg" alt="Rapi · Red Hood 15" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="15"><img src="images/cosplay/rapi-red-hood-16.jpg" alt="Rapi · Red Hood 16" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="16"><img src="images/cosplay/rapi-red-hood-17.jpg" alt="Rapi · Red Hood 17" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="17"><img src="images/cosplay/rapi-red-hood-18.jpg" alt="Rapi · Red Hood 18" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="18"><img src="images/cosplay/rapi-red-hood-19.jpg" alt="Rapi · Red Hood 19" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="19"><img src="images/cosplay/rapi-red-hood-20.jpg" alt="Rapi · Red Hood 20" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="20"><img src="images/cosplay/rapi-red-hood-21.jpg" alt="Rapi · Red Hood 21" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="21"><img src="images/cosplay/rapi-red-hood-22.jpg" alt="Rapi · Red Hood 22" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="22"><img src="images/cosplay/rapi-red-hood-23.jpg" alt="Rapi · Red Hood 23" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="23"><img src="images/cosplay/rapi-red-hood-24.jpg" alt="Rapi · Red Hood 24" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+  </div>
+  <div class="cosplay-category" data-count="27">
+    <div class="cosplay-cat-top">
+      <div class="cosplay-cat-title">Privaty · Nikke</div>
+      <div class="cosplay-cat-meta">王文辰 · 吳憲松 · 二三室攝影棚 · January 24, 2026</div>
+    </div>
+    <div class="cosplay-cat-main">
+      <div class="cosplay-cat-cover" onclick="toggleCosplay(this)">
+        <img src="images/cosplay/privaty-1.jpg" alt="Privaty · Nikke" loading="lazy" decoding="async">
+        <div class="cosplay-cat-expand-hint">View all 27 ↓</div>
+      </div>
+      <div class="cosplay-cat-text">
+        <p class="cosplay-cat-placeholder">[ Add a note about this cosplay here — character background, your preparation, the event, or what this look means to you. ]</p>
+        <div class="cosplay-cat-count">27 photos · January 24, 2026</div>
+      </div>
+    </div>
+    <div class="cosplay-cat-strip">
+      <div class="cosplay-cat-strip-inner">
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="1"><img src="images/cosplay/privaty-2.jpg" alt="Privaty · Nikke 2" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="2"><img src="images/cosplay/privaty-3.jpg" alt="Privaty · Nikke 3" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="3"><img src="images/cosplay/privaty-4.jpg" alt="Privaty · Nikke 4" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="4"><img src="images/cosplay/privaty-5.jpg" alt="Privaty · Nikke 5" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="5"><img src="images/cosplay/privaty-6.jpg" alt="Privaty · Nikke 6" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="6"><img src="images/cosplay/privaty-7.jpg" alt="Privaty · Nikke 7" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="7"><img src="images/cosplay/privaty-8.jpg" alt="Privaty · Nikke 8" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="8"><img src="images/cosplay/privaty-9.jpg" alt="Privaty · Nikke 9" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="9"><img src="images/cosplay/privaty-10.jpg" alt="Privaty · Nikke 10" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="10"><img src="images/cosplay/privaty-11.jpg" alt="Privaty · Nikke 11" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="11"><img src="images/cosplay/privaty-12.jpg" alt="Privaty · Nikke 12" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="12"><img src="images/cosplay/privaty-13.jpg" alt="Privaty · Nikke 13" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="13"><img src="images/cosplay/privaty-14.jpg" alt="Privaty · Nikke 14" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="14"><img src="images/cosplay/privaty-15.jpg" alt="Privaty · Nikke 15" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="15"><img src="images/cosplay/privaty-16.jpg" alt="Privaty · Nikke 16" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="16"><img src="images/cosplay/privaty-17.jpg" alt="Privaty · Nikke 17" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="17"><img src="images/cosplay/privaty-18.jpg" alt="Privaty · Nikke 18" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="18"><img src="images/cosplay/privaty-19.jpg" alt="Privaty · Nikke 19" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="19"><img src="images/cosplay/privaty-20.jpg" alt="Privaty · Nikke 20" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="20"><img src="images/cosplay/privaty-21.jpg" alt="Privaty · Nikke 21" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="21"><img src="images/cosplay/privaty-22.jpg" alt="Privaty · Nikke 22" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="22"><img src="images/cosplay/privaty-23.jpg" alt="Privaty · Nikke 23" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="23"><img src="images/cosplay/privaty-24.jpg" alt="Privaty · Nikke 24" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="24"><img src="images/cosplay/privaty-25.jpg" alt="Privaty · Nikke 25" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="25"><img src="images/cosplay/privaty-26.jpg" alt="Privaty · Nikke 26" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="26"><img src="images/cosplay/privaty-27.jpg" alt="Privaty · Nikke 27" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+  </div>
+  <div class="cosplay-category" data-count="13">
+    <div class="cosplay-cat-top">
+      <div class="cosplay-cat-title">Yelan</div>
+      <div class="cosplay-cat-meta">2025高雄駁二動漫祭 FFK18 · December 14, 2025</div>
+    </div>
+    <div class="cosplay-cat-main">
+      <div class="cosplay-cat-cover" onclick="toggleCosplay(this)">
+        <img src="images/cosplay/yelan-1.jpg" alt="Yelan" loading="lazy" decoding="async">
+        <div class="cosplay-cat-expand-hint">View all 13 ↓</div>
+      </div>
+      <div class="cosplay-cat-text">
+        <p class="cosplay-cat-placeholder">[ Add a note about this cosplay here — character background, your preparation, the event, or what this look means to you. ]</p>
+        <div class="cosplay-cat-count">13 photos · December 14, 2025</div>
+      </div>
+    </div>
+    <div class="cosplay-cat-strip">
+      <div class="cosplay-cat-strip-inner">
+        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="1"><img src="images/cosplay/yelan-2.jpg" alt="Yelan 2" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="2"><img src="images/cosplay/yelan-3.jpg" alt="Yelan 3" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="3"><img src="images/cosplay/yelan-4.jpg" alt="Yelan 4" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="4"><img src="images/cosplay/yelan-5.jpg" alt="Yelan 5" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="5"><img src="images/cosplay/yelan-6.jpg" alt="Yelan 6" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="6"><img src="images/cosplay/yelan-7.jpg" alt="Yelan 7" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="7"><img src="images/cosplay/yelan-8.jpg" alt="Yelan 8" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="8"><img src="images/cosplay/yelan-9.jpg" alt="Yelan 9" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="9"><img src="images/cosplay/yelan-10.jpg" alt="Yelan 10" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="10"><img src="images/cosplay/yelan-11.jpg" alt="Yelan 11" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="11"><img src="images/cosplay/yelan-12.jpg" alt="Yelan 12" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="12"><img src="images/cosplay/yelan-13.jpg" alt="Yelan 13" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+  </div>
+  <div class="cosplay-category" data-count="14">
+    <div class="cosplay-cat-top">
+      <div class="cosplay-cat-title">Dorothy</div>
+      <div class="cosplay-cat-meta">2025高雄駁二動漫祭 FFK18 · December 13, 2025</div>
+    </div>
+    <div class="cosplay-cat-main">
+      <div class="cosplay-cat-cover" onclick="toggleCosplay(this)">
+        <img src="images/cosplay/dorothy-1.jpg" alt="Dorothy" loading="lazy" decoding="async">
+        <div class="cosplay-cat-expand-hint">View all 14 ↓</div>
+      </div>
+      <div class="cosplay-cat-text">
+        <p class="cosplay-cat-placeholder">[ Add a note about this cosplay here — character background, your preparation, the event, or what this look means to you. ]</p>
+        <div class="cosplay-cat-count">14 photos · December 13, 2025</div>
+      </div>
+    </div>
+    <div class="cosplay-cat-strip">
+      <div class="cosplay-cat-strip-inner">
+        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="1"><img src="images/cosplay/dorothy-2.jpg" alt="Dorothy 2" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="2"><img src="images/cosplay/dorothy-3.jpg" alt="Dorothy 3" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="3"><img src="images/cosplay/dorothy-4.jpg" alt="Dorothy 4" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="4"><img src="images/cosplay/dorothy-5.jpg" alt="Dorothy 5" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="5"><img src="images/cosplay/dorothy-6.jpg" alt="Dorothy 6" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="6"><img src="images/cosplay/dorothy-7.jpg" alt="Dorothy 7" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="7"><img src="images/cosplay/dorothy-8.jpg" alt="Dorothy 8" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="8"><img src="images/cosplay/dorothy-9.jpg" alt="Dorothy 9" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="9"><img src="images/cosplay/dorothy-10.jpg" alt="Dorothy 10" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="10"><img src="images/cosplay/dorothy-11.jpg" alt="Dorothy 11" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="11"><img src="images/cosplay/dorothy-12.jpg" alt="Dorothy 12" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="12"><img src="images/cosplay/dorothy-13.jpg" alt="Dorothy 13" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="13"><img src="images/cosplay/dorothy-14.jpg" alt="Dorothy 14" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+  </div>
+  <div class="cosplay-category" data-count="14">
+    <div class="cosplay-cat-top">
+      <div class="cosplay-cat-title">Marin Kitagawa</div>
+      <div class="cosplay-cat-meta">集福行銷活動團隊 Coser 幻日祭 · 動漫二創交流派對 · November 15, 2025</div>
+    </div>
+    <div class="cosplay-cat-main">
+      <div class="cosplay-cat-cover" onclick="toggleCosplay(this)">
+        <img src="images/cosplay/marin-kitagawa-1.jpg" alt="Marin Kitagawa" loading="lazy" decoding="async">
+        <div class="cosplay-cat-expand-hint">View all 14 ↓</div>
+      </div>
+      <div class="cosplay-cat-text">
+        <p class="cosplay-cat-placeholder">[ Add a note about this cosplay here — character background, your preparation, the event, or what this look means to you. ]</p>
+        <div class="cosplay-cat-count">14 photos · November 15, 2025</div>
+      </div>
+    </div>
+    <div class="cosplay-cat-strip">
+      <div class="cosplay-cat-strip-inner">
+        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="1"><img src="images/cosplay/marin-kitagawa-2.jpg" alt="Marin Kitagawa 2" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="2"><img src="images/cosplay/marin-kitagawa-3.jpg" alt="Marin Kitagawa 3" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="3"><img src="images/cosplay/marin-kitagawa-4.jpg" alt="Marin Kitagawa 4" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="4"><img src="images/cosplay/marin-kitagawa-5.jpg" alt="Marin Kitagawa 5" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="5"><img src="images/cosplay/marin-kitagawa-6.jpg" alt="Marin Kitagawa 6" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="6"><img src="images/cosplay/marin-kitagawa-7.jpg" alt="Marin Kitagawa 7" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="7"><img src="images/cosplay/marin-kitagawa-8.jpg" alt="Marin Kitagawa 8" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="8"><img src="images/cosplay/marin-kitagawa-9.jpg" alt="Marin Kitagawa 9" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="9"><img src="images/cosplay/marin-kitagawa-10.jpg" alt="Marin Kitagawa 10" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="10"><img src="images/cosplay/marin-kitagawa-11.jpg" alt="Marin Kitagawa 11" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="11"><img src="images/cosplay/marin-kitagawa-12.jpg" alt="Marin Kitagawa 12" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="12"><img src="images/cosplay/marin-kitagawa-13.jpg" alt="Marin Kitagawa 13" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="13"><img src="images/cosplay/marin-kitagawa-14.jpg" alt="Marin Kitagawa 14" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+  </div>
+  <div class="cosplay-resume">
+    <div class="cosplay-resume-section-title">Appearance Log</div>
+
+    <div class="cosplay-resume-year-block">
+      <div class="cosplay-resume-year">2026</div>
+      <div class="cosplay-resume-entries">
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Nikke · Cinderella</span>
+          <span class="cosplay-resume-event">acosta 「アコスタ！」</span>
+          <span class="cosplay-resume-date">Apr 11</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Rapi · Red Hood</span>
+          <span class="cosplay-resume-event">【CWT-K50】高雄場</span>
+          <span class="cosplay-resume-date">Mar 08</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cosplay-resume-year-block">
+      <div class="cosplay-resume-year">2025</div>
+      <div class="cosplay-resume-entries">
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Yelan</span>
+          <span class="cosplay-resume-event">2025高雄駁二動漫祭 FFK18</span>
+          <span class="cosplay-resume-date">Dec 14</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Dorothy</span>
+          <span class="cosplay-resume-event">2025高雄駁二動漫祭 FFK18</span>
+          <span class="cosplay-resume-date">Dec 13</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Marin Kitagawa</span>
+          <span class="cosplay-resume-event">集福行銷活動團隊 Coser 幻日祭</span>
+          <span class="cosplay-resume-date">Nov 15</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Blanc</span>
+          <span class="cosplay-resume-event">2025 KICA 高雄國際動漫節</span>
+          <span class="cosplay-resume-date">Oct 11</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Arcana</span>
+          <span class="cosplay-resume-event">【CWT-K48】高雄場</span>
+          <span class="cosplay-resume-date">Sep 06</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Nakano Miku</span>
+          <span class="cosplay-resume-event">集福行銷活動團隊 Coser 幻日祭</span>
+          <span class="cosplay-resume-date">Aug 31</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Nakano Itsuki</span>
+          <span class="cosplay-resume-event">集福行銷活動團隊 Coser 幻日祭</span>
+          <span class="cosplay-resume-date">Aug 30</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Viper</span>
+          <span class="cosplay-resume-event">acosta! 「アコスタ！」</span>
+          <span class="cosplay-resume-date">May 31</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Pekora Usada</span>
+          <span class="cosplay-resume-event">acosta! 「アコスタ！」</span>
+          <span class="cosplay-resume-date">May 30</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Liliel</span>
+          <span class="cosplay-resume-event">NCF 成大同人場</span>
+          <span class="cosplay-resume-date">May 17–18</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Diesel</span>
+          <span class="cosplay-resume-event">動漫遊戲展 Wing Stage AniMkt</span>
+          <span class="cosplay-resume-date">Mar 22</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Hoshino Takanashi</span>
+          <span class="cosplay-resume-event">集福行銷活動團隊 Coser 幻日祭</span>
+          <span class="cosplay-resume-date">Mar 16</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Rem · Yukata Ver.</span>
+          <span class="cosplay-resume-event">【CWT-K47】高雄場</span>
+          <span class="cosplay-resume-date">Mar 09</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Nakano Nino</span>
+          <span class="cosplay-resume-event">(WS49) 永集動漫遊戲展</span>
+          <span class="cosplay-resume-date">Feb 21</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Rizu Kyun</span>
+          <span class="cosplay-resume-event">2025台北國際動漫節</span>
+          <span class="cosplay-resume-date">Feb 09</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Rizu Kyun</span>
+          <span class="cosplay-resume-event">開拓動漫祭 FF44</span>
+          <span class="cosplay-resume-date">Feb 09</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Hatsune Miku · Jirai Kei</span>
+          <span class="cosplay-resume-event">開拓動漫祭 FF44</span>
+          <span class="cosplay-resume-date">Feb 08</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cosplay-resume-year-block">
+      <div class="cosplay-resume-year">2024</div>
+      <div class="cosplay-resume-entries">
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Shizuku Tan</span>
+          <span class="cosplay-resume-event">2024駁二動漫祭同人誌創作展</span>
+          <span class="cosplay-resume-date">Dec 15</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Yae Miko · Bride Ver.</span>
+          <span class="cosplay-resume-event">2024駁二動漫祭同人誌創作展</span>
+          <span class="cosplay-resume-date">Dec 14</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Marin Kitagawa · Christmas Ver.</span>
+          <span class="cosplay-resume-event">動漫遊戲展 Wing Stage 美麗島桌遊節</span>
+          <span class="cosplay-resume-date">Nov 30</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Kinako</span>
+          <span class="cosplay-resume-event">集福行銷活動團隊 Coser 幻日祭</span>
+          <span class="cosplay-resume-date">Nov 10</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Mai Sakurajima</span>
+          <span class="cosplay-resume-event">集福行銷活動團隊 Coser 幻日祭</span>
+          <span class="cosplay-resume-date">Nov 09</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Suigintou</span>
+          <span class="cosplay-resume-event">KICA 高雄國際動漫節</span>
+          <span class="cosplay-resume-date">Oct 13</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Megurine Luka</span>
+          <span class="cosplay-resume-event">KICA 高雄國際動漫節</span>
+          <span class="cosplay-resume-date">Oct 12</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">K-Angel</span>
+          <span class="cosplay-resume-event">KICA 高雄國際動漫節</span>
+          <span class="cosplay-resume-date">Oct 11</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Yae Miko</span>
+          <span class="cosplay-resume-event">KICA 高雄國際動漫節</span>
+          <span class="cosplay-resume-date">Oct 10</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Kinako</span>
+          <span class="cosplay-resume-event">【CWT-K45】高雄場</span>
+          <span class="cosplay-resume-date">Aug 25</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Kurumi Tokisaki</span>
+          <span class="cosplay-resume-event">【CWT-K45】高雄場</span>
+          <span class="cosplay-resume-date">Aug 24</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Suigintou</span>
+          <span class="cosplay-resume-event">【CWT-K44】高雄場</span>
+          <span class="cosplay-resume-date">Mar 10</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cosplay-resume-year-block">
+      <div class="cosplay-resume-year">2022–2023</div>
+      <div class="cosplay-resume-entries">
+        <div class="cosplay-resume-note">Over 145,000 attendees across these events · 48 hours total</div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Diesel</span>
+          <span class="cosplay-resume-event">4th 高雄國際動漫節</span>
+          <span class="cosplay-resume-date">Oct 07, 2023</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Suigintou</span>
+          <span class="cosplay-resume-event">【CWT-K42】高雄場</span>
+          <span class="cosplay-resume-date">Aug 19–20, 2023</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Kobeni Higashiyama</span>
+          <span class="cosplay-resume-event">【CWT-K41】高雄場</span>
+          <span class="cosplay-resume-date">Feb 11–12, 2023</span>
+        </div>
+        <div class="cosplay-resume-row">
+          <span class="cosplay-resume-character">Hu Tao</span>
+          <span class="cosplay-resume-event">Anime Expo AX-22</span>
+          <span class="cosplay-resume-date">Jul 02, 2022</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cosplay-resume cosplay-shoots">
+    <div class="cosplay-resume-section-title">Professional Photoshoots</div>
+    <div class="cosplay-shoot-row">
+      <span class="cosplay-shoot-character">Nino Nakano</span>
+      <span class="cosplay-shoot-detail">Enfeng Tsao · SKM Park Outlets, Kaohsiung · 8 hrs</span>
+      <span class="cosplay-resume-date">Jan 19, 2025</span>
+    </div>
+    <div class="cosplay-shoot-row cosplay-shoot-club">
+      <span class="cosplay-shoot-label">Club Shoot</span>
+      <span class="cosplay-shoot-character">Blanc · Pajama Ver.</span>
+      <span class="cosplay-shoot-detail">Elven Peng (瑤光) · 郭琛 · 王文辰 · 二三室攝影棚 · 9 participants · 7 hrs</span>
+      <span class="cosplay-resume-date">May 04, 2025</span>
+    </div>
+    <div class="cosplay-shoot-row cosplay-shoot-club">
+      <span class="cosplay-shoot-label">Club Shoot</span>
+      <span class="cosplay-shoot-character">Privaty (Nikke)</span>
+      <span class="cosplay-shoot-detail">王文辰 · 吳憲松 · 二三室攝影棚 · 8 participants · 7 hrs</span>
+      <span class="cosplay-resume-date">Jan 24, 2026</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- JOURNAL -->
+<section id="journal">
+  <div class="section-header">Journal + Workspace</div>
+  <p class="journal-intro">A record of process — sketches, notes, experiments, and the space between ideas and finished work. 2022 — 2026.</p>
+  <div class="journal-grid">
+    <div class="journal-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#333" stroke-width="1"/><line x1="8" y1="12" x2="28" y2="12" stroke="#222" stroke-width="0.5"/><line x1="8" y1="18" x2="28" y2="18" stroke="#222" stroke-width="0.5"/><line x1="8" y1="24" x2="20" y2="24" stroke="#222" stroke-width="0.5"/></svg><span>Add page</span></div>
+    <div class="journal-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#333" stroke-width="1"/><line x1="8" y1="12" x2="28" y2="12" stroke="#222" stroke-width="0.5"/><line x1="8" y1="18" x2="28" y2="18" stroke="#222" stroke-width="0.5"/><line x1="8" y1="24" x2="20" y2="24" stroke="#222" stroke-width="0.5"/></svg><span>Add page</span></div>
+    <div class="journal-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#333" stroke-width="1"/><line x1="8" y1="12" x2="28" y2="12" stroke="#222" stroke-width="0.5"/><line x1="8" y1="18" x2="28" y2="18" stroke="#222" stroke-width="0.5"/><line x1="8" y1="24" x2="20" y2="24" stroke="#222" stroke-width="0.5"/></svg><span>Add page</span></div>
+    <div class="journal-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#333" stroke-width="1"/><line x1="8" y1="12" x2="28" y2="12" stroke="#222" stroke-width="0.5"/><line x1="8" y1="18" x2="28" y2="18" stroke="#222" stroke-width="0.5"/><line x1="8" y1="24" x2="20" y2="24" stroke="#222" stroke-width="0.5"/></svg><span>Add page</span></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">About</div>
+  <div class="about-grid">
+    <div>
+      <div class="about-photo">
+        <img src="images/about-chloe.jpg" alt="Chloe" loading="lazy" decoding="async"/>
+      </div>
+    </div>
+    <div class="about-text">
+      <h2>Chloe</h2>
+      <div class="about-role">Artist &nbsp;·&nbsp; Designer &nbsp;·&nbsp; Cosplayer &nbsp;·&nbsp; Taiwan, Kaohsiung</div>
+      <p>Hi, I'm Chloe. I'm a high school student and visual artist based in Kaohsiung, working across cosplay, traditional art, and design. In my work, I'm drawn to using highly saturated colors to express intensity: overwhelm, tension, and sensory overload. I'm interested in how color can move beyond aesthetics to communicate psychological states, and I often explore the complex, internal emotions experienced by adolescent girls.</p>
+      <p>I'm also interested in the intersection between fashion and art. Through cosplay, I explore how clothing, makeup, and presentation can carry cultural meaning, reference history, and communicate personality beyond words. Much of my work focuses on taking something often seen as surface-level and revealing the thought, research, and intention behind it.</p>
+      <p>This idea is central to my cosplay magazine project, FLAIR, where I analyze character designs and connect them to historical and cultural influences. Through my lookbook, I aim to challenge the perception of cosplay as purely costume-based, showing how these designs are shaped by fashion history, cultural context, and visual storytelling.</p>
+      <p>I've collaborated with multiple photographers and directed themed shoots, while also building my own online platform to document my work and creative development. In addition, I founded the first cosplay club at my school, organized photoshoots, led activities, and produced two volumes of a collaborative cosplay magazine. I also led outreach initiatives, including a collaboration with the Love and Hope Child Care Center, where we worked with over 30 children through performances, creative activities, and simple English lessons.</p>
+      <p>I have attended over 35 conventions and continue to actively participate in the cosplay community. Outside of my projects, I'm interested in fashion, visual culture, and the way people present themselves in different contexts. I tend to be more observant than expressive at first, but many of my ideas come from noticing small details and translating them into something visual.</p>
+      <div class="about-tags">
+        <span class="tag">Digital</span>
+        <span class="tag">Mixed Media</span>
+        <span class="tag">Painting</span>
+        <span class="tag">Sketches</span>
+        <span class="tag">Illustration</span>
+        <span class="tag">Cheki</span>
+        <span class="tag">Poster Design</span>
+        <span class="tag">Magazine</span>
+        <span class="tag">Photography</span>
+        <span class="tag">Cosplay</span>
+      </div>
+      <div class="about-links">
+        <div class="about-link-row"><span>Instagram (Personal)</span><a href="https://www.instagram.com/kuro1_cos/" target="_blank">@kuro1_cos</a></div>
+        <div class="about-link-row"><span>Instagram (Club)</span><a href="https://www.instagram.com/kascosplayclub/" target="_blank">@kascosplayclub</a></div>
+        <div class="about-link-row"><span>Facebook</span><a href="https://www.facebook.com/klchloe102/" target="_blank">klchloe102</a></div>
+        <div class="about-link-row"><span>Club Magazine Vol. 1</span><a href="https://canva.link/kascosplayclub2425mag" target="_blank">View →</a></div>
+        <div class="about-link-row"><span>Club Magazine Vol. 2</span><a href="https://canva.link/kascosplayclub202526mag" target="_blank">View →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">Contact</div>
+  <div class="contact-wrap">
+    <h2>Get in touch.</h2>
+    <p>For commissions, collaborations, or inquiries — reach out below.</p>
+    <div class="contact-line"><span>Email</span><a href="mailto:chloe1027lee@gmail.com">chloe1027lee@gmail.com</a></div>
+    <div class="contact-line"><span>Instagram</span><a href="https://www.instagram.com/kuro1_cos/" target="_blank">@kuro1_cos</a></div>
+    <div class="contact-line"><span>Club Instagram</span><a href="https://www.instagram.com/kascosplayclub/" target="_blank">@kascosplayclub</a></div>
+    <div class="contact-line"><span>Facebook</span><a href="https://www.facebook.com/klchloe102/" target="_blank">klchloe102</a></div>
+    <div class="contact-line"><span>Based in</span><span>Taiwan, Kaohsiung</span></div>
+  </div>
+</section>
+
+<!-- PHOTOGRAPHY -->
+<section id="photography">
+  <div class="section-header">Photography</div>
+  <p class="photo-intro">Street, event, and fashion photography. Sony A6400 · Lightroom.</p>
+
+  <div class="photo-category">Unbound Silhouettes · UAL Visual Communications · Fashion</div>
+  <div class="photo-grid">
+
+    <div class="photo-work" data-work="unbound">
+      <div class="photo-work-img" style="background-image:url('images/photography/unbound-1.jpg')"></div>
+      <div class="photo-work-overlay">
+        <span class="photo-work-title">Unbound Silhouettes</span>
+        <span class="photo-work-count">1 / 6</span>
+      </div>
+    </div>
+
+    <div class="photo-work" data-work="unbound">
+      <div class="photo-work-img" style="background-image:url('images/photography/unbound-2.jpg')"></div>
+      <div class="photo-work-overlay">
+        <span class="photo-work-title">Unbound Silhouettes</span>
+        <span class="photo-work-count">2 / 6</span>
+      </div>
+    </div>
+
+    <div class="photo-work" data-work="unbound">
+      <div class="photo-work-img" style="background-image:url('images/photography/unbound-3.jpg')"></div>
+      <div class="photo-work-overlay">
+        <span class="photo-work-title">Unbound Silhouettes</span>
+        <span class="photo-work-count">3 / 6</span>
+      </div>
+    </div>
+
+    <div class="photo-work" data-work="unbound">
+      <div class="photo-work-img" style="background-image:url('images/photography/unbound-4.jpg')"></div>
+      <div class="photo-work-overlay">
+        <span class="photo-work-title">Unbound Silhouettes</span>
+        <span class="photo-work-count">4 / 6</span>
+      </div>
+    </div>
+
+    <div class="photo-work" data-work="unbound">
+      <div class="photo-work-img" style="background-image:url('images/photography/unbound-5.jpg')"></div>
+      <div class="photo-work-overlay">
+        <span class="photo-work-title">Unbound Silhouettes</span>
+        <span class="photo-work-count">5 / 6</span>
+      </div>
+    </div>
+
+    <div class="photo-work" data-work="unbound">
+      <div class="photo-work-img" style="background-image:url('images/photography/unbound-6.jpg')"></div>
+      <div class="photo-work-overlay">
+        <span class="photo-work-title">Unbound Silhouettes</span>
+        <span class="photo-work-count">6 / 6</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="photo-category">London Pride · Soho Street Parties · June 2025</div>
+  <div class="photo-grid">
+
+    <div class="photo-work" data-work="ms-model">
+      <div class="photo-work-img" style="background-image:url('images/photography/ms-model-1.jpg')"></div>
+      <div class="photo-work-overlay">
+        <span class="photo-work-title">The M&amp;S Man</span>
+        <span class="photo-work-count">1 photograph</span>
+      </div>
+    </div>
+
+    <div class="photo-work" data-work="blazer-boots">
+      <div class="photo-work-img" style="background-image:url('images/photography/blazer-boots-1.jpg')"></div>
+      <div class="photo-work-overlay">
+        <span class="photo-work-title">Blazer &amp; Boots</span>
+        <span class="photo-work-count">2 photographs</span>
+      </div>
+    </div>
+
+    <div class="photo-work" data-work="pink-heat">
+      <div class="photo-work-img" style="background-image:url('images/photography/pink-heat-1.jpg')"></div>
+      <div class="photo-work-overlay">
+        <span class="photo-work-title">Pink Heat</span>
+        <span class="photo-work-count">1 photograph</span>
+      </div>
+    </div>
+
+    <div class="photo-work" data-work="electric-green">
+      <div class="photo-work-img" style="background-image:url('images/photography/electric-green-1.jpg')"></div>
+      <div class="photo-work-overlay">
+        <span class="photo-work-title">Electric Green</span>
+        <span class="photo-work-count">1 photograph</span>
+      </div>
+    </div>
+
+    <div class="photo-work" data-work="the-trio">
+      <div class="photo-work-img" style="background-image:url('images/photography/trio-1.jpg')"></div>
+      <div class="photo-work-overlay">
+        <span class="photo-work-title">The Trio</span>
+        <span class="photo-work-count">1 photograph</span>
+      </div>
+    </div>
+
+    <div class="photo-work" data-work="silver-cape">
+      <div class="photo-work-img" style="background-image:url('images/photography/silver-cape-1.jpg')"></div>
+      <div class="photo-work-overlay">
+        <span class="photo-work-title">Silver Hour</span>
+        <span class="photo-work-count">1 photograph</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox-overlay" role="dialog" aria-modal="true">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
+  <div class="lightbox-inner">
+    <div class="lightbox-media">
+      <img id="lb-img" class="lightbox-main-img" src="" alt="" onclick="openZoom()">
+      <div id="lb-thumbs" class="lightbox-thumbs"></div>
+      <div id="lb-nav" class="lightbox-nav">
+        <button onclick="lbNav(-1)">← Prev</button>
+        <span id="lb-counter"></span>
+        <button onclick="lbNav(1)">Next →</button>
+      </div>
+    </div>
+    <div class="lightbox-info">
+      <div id="lb-title" class="lightbox-work-title"></div>
+      <div id="lb-meta" class="lightbox-work-meta"></div>
+      <div id="lb-desc" class="lightbox-work-desc"></div>
+      <div id="lb-link" class="lightbox-work-link"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ZOOM / INSPECT VIEWER ── -->
+<div id="lb-zoom" class="lb-zoom" aria-hidden="true">
+  <button class="lb-zoom-close" onclick="closeZoom()" aria-label="Close zoom">✕</button>
+  <div class="lb-zoom-stage" id="lb-zoom-stage">
+    <img id="lb-zoom-img" class="lb-zoom-img" src="" alt="" draggable="false">
+  </div>
+  <div class="lb-zoom-hint">Scroll or click to zoom · drag to pan · ✕ / Esc to exit</div>
+</div>
+
+<script>
+function show(id) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+// Custom cursor
+const cursor = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+  spawnParticle(e.clientX, e.clientY);
+});
+
+let lastParticle = 0;
+function spawnParticle(x, y) {
+  const now = Date.now();
+  if (now - lastParticle < 40) return;
+  lastParticle = now;
+  const p = document.createElement('div');
+  p.className = 'particle';
+  const size = Math.random() * 5 + 2;
+  const dx = (Math.random() - 0.5) * 20 + 'px';
+  const dy = (Math.random() - 0.5) * 20 + 'px';
+  p.style.cssText = `
+    left:${x}px; top:${y}px;
+    width:${size}px; height:${size}px;
+    background: rgba(232,226,217,${Math.random() * 0.4 + 0.1});
+    --dx:${dx}; --dy:${dy};
+    transform: translate(-50%,-50%);
+  `;
+  document.body.appendChild(p);
+  setTimeout(() => p.remove(), 1000);
+}
+</script>
+<script src="main.js"></script>
+</body>
+</html>

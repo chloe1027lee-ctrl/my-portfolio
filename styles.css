@@ -1,0 +1,440 @@
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+nav,
+section,
+#cursor,
+.particle {
+  position: relative;
+  z-index: 1;
+}
+
+nav { z-index: 100; }
+#cursor { z-index: 10999; }
+.particle { z-index: 9998; }
+
+/* ── PHOTOGRAPHY SECTION ── */
+.photo-category {
+  font-size: 0.68rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #888;
+  font-weight: bold;
+  padding: 2.8rem 0 1.2rem;
+  border-top: 1px solid #1e1e1e;
+  margin-top: 0.5rem;
+}
+
+.photo-category:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.photo-work--featured {
+  aspect-ratio: 4/3;
+}
+
+
+.photo-intro {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #777;
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1px;
+  background: #1a1a1a;
+}
+
+.photo-work {
+  position: relative;
+  aspect-ratio: 3/4;
+  background: #111;
+  overflow: hidden;
+  cursor: none;
+}
+
+.photo-work-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center top;
+  transition: transform 0.5s ease;
+  filter: grayscale(15%);
+}
+
+.photo-work:hover .photo-work-img {
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
+
+.photo-work-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.2rem;
+  background: rgba(0,0,0,0);
+  transition: background 0.3s;
+}
+
+.photo-work:hover .photo-work-overlay {
+  background: rgba(0,0,0,0.6);
+}
+
+.photo-work-title {
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e8e2d9;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.photo-work-count {
+  display: block;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #888;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s 0.05s, transform 0.3s 0.05s;
+}
+
+.photo-work:hover .photo-work-title,
+.photo-work:hover .photo-work-count {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── ART WIP SECTION ── */
+.art-wip-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #888;
+  font-weight: bold;
+  padding: 2.8rem 0 1.2rem;
+  border-top: 1px solid #1e1e1e;
+  margin-top: 0.5rem;
+}
+
+.art-wip-note {
+  font-size: 0.62rem;
+  letter-spacing: 0.25em;
+  color: #666;
+  font-style: italic;
+}
+
+/* ── FASHION · TABLE OF CONTENTS ── */
+.fashion-toc {
+  max-width: 720px;
+  margin-top: 1.2rem;
+}
+.fashion-toc-chapter {
+  font-size: 0.66rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #e8e2d9;
+  font-weight: bold;
+  margin: 1.8rem 0 0.7rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #1e1e1e;
+}
+.fashion-toc-chapter:first-child { margin-top: 0; }
+.fashion-toc-row {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.42rem 0;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+.fashion-toc-pg {
+  flex: 0 0 3.5rem;
+  color: #666;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── LIGHTBOX ── */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.97);
+  z-index: 10000;
+  padding: 2.5rem 3rem;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-overlay.open {
+  display: flex;
+}
+
+.lightbox-inner {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 0;
+  width: 100%;
+  max-width: 1500px;
+  height: calc(100vh - 4rem);
+  max-height: calc(100vh - 4rem);
+}
+
+.lightbox-media {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-height: 0;
+  min-width: 0;
+}
+
+.lightbox-main-img {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  max-height: calc(100vh - 8rem);
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.lightbox-thumbs {
+  display: flex;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.lightbox-thumb {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  border: 1px solid transparent;
+}
+
+.lightbox-thumb.active,
+.lightbox-thumb:hover {
+  opacity: 1;
+  border-color: #e8e2d9;
+}
+
+.lightbox-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.lightbox-nav button {
+  background: none;
+  border: 1px solid #333;
+  color: #888;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  font-family: inherit;
+}
+
+.lightbox-nav button:hover {
+  border-color: #e8e2d9;
+  color: #e8e2d9;
+}
+
+.lightbox-nav span {
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  color: #777;
+}
+
+.lightbox-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2rem 0 2rem 3rem;
+  border-left: 1px solid #1e1e1e;
+  overflow-y: auto;
+  min-height: 0;
+  height: 100%;
+}
+
+.lightbox-work-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #e8e2d9;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.lightbox-work-meta {
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #777;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.lightbox-work-desc {
+  font-size: 0.88rem;
+  line-height: 1.9;
+  color: #888;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 1.8rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  color: #777;
+  font-size: 1.1rem;
+  cursor: none;
+  z-index: 10001;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+  font-family: inherit;
+  padding: 0.3rem 0.5rem;
+}
+
+.lightbox-close:hover { color: #e8e2d9; }
+
+/* Portrait mode (cosplay) — image fills, info shrinks to bottom strip */
+.lightbox-overlay.lightbox-portrait .lightbox-inner {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  max-width: 900px;
+}
+.lightbox-overlay.lightbox-portrait .lightbox-media {
+  align-items: center;
+}
+.lightbox-overlay.lightbox-portrait .lightbox-main-img {
+  max-height: calc(100vh - 8.5rem);
+  width: auto;
+  max-width: 100%;
+}
+.lightbox-overlay.lightbox-portrait .lightbox-info {
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  border-left: none;
+  border-top: 1px solid #1e1e1e;
+  padding: 0.85rem 0 0;
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+  flex-wrap: wrap;
+}
+.lightbox-overlay.lightbox-portrait .lightbox-work-title {
+  font-size: 0.78rem;
+  margin-bottom: 0;
+}
+.lightbox-overlay.lightbox-portrait .lightbox-work-meta {
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+  flex: 1;
+}
+.lightbox-overlay.lightbox-portrait .lightbox-work-desc,
+.lightbox-overlay.lightbox-portrait .lightbox-work-link { display: none; }
+
+.lightbox-overlay,
+.lightbox-overlay * { cursor: none; }
+
+body.lightbox-active #cursor {
+  mix-blend-mode: normal;
+  background: #e8e2d9;
+}
+
+/* ── ZOOM / INSPECT VIEWER ── */
+.lb-zoom {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.96);
+  display: none;
+}
+.lb-zoom.open { display: block; }
+.lb-zoom, .lb-zoom * { cursor: none; }
+
+.lb-zoom-stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  touch-action: none;
+}
+
+.lb-zoom-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+  user-select: none;
+  -webkit-user-drag: none;
+  will-change: transform;
+  display: block;
+}
+
+.lb-zoom-close {
+  position: fixed;
+  top: 1.4rem;
+  right: 1.6rem;
+  z-index: 10001;
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.4rem;
+  font-family: inherit;
+  line-height: 1;
+  padding: 0.3rem 0.5rem;
+  transition: color 0.2s;
+}
+.lb-zoom-close:hover { color: #e8e2d9; }
+
+.lb-zoom-hint {
+  position: fixed;
+  bottom: 1.3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10001;
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #666;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.lightbox-main-img { cursor: zoom-in; }
