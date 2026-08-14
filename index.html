@@ -269,6 +269,7 @@ section.active { display: block; }
 <body>
 
 <canvas id="bg-canvas"></canvas>
+<canvas id="liquid-canvas" style="position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:none;background:#0a0a0a;"></canvas>
 <div id="cursor"></div>
 
 <nav>
@@ -1338,8 +1339,25 @@ section.active { display: block; }
 function show(id) {
   document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
+  applyBackground(id);
   window.scrollTo(0,0);
 }
+
+// Home shows the interactive liquid simulation; other sections keep the
+// particle network. Falls back to particles everywhere if WebGL2 is missing.
+function applyBackground(id) {
+  const home = id === 'home';
+  const liquid = window.LiquidSim;
+  if (liquid) { home ? liquid.start() : liquid.stop(); }
+  const liquidOn = home && liquid && liquid.active;
+  const bg = document.getElementById('bg-canvas');
+  if (bg) bg.style.display = liquidOn ? 'none' : 'block';
+  if (typeof startAnimation === 'function') { liquidOn ? stopAnimation() : startAnimation(); }
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const active = document.querySelector('section.active');
+  applyBackground(active ? active.id : 'home');
+});
 
 // Custom cursor
 const cursor = document.getElementById('cursor');
@@ -1371,5 +1389,6 @@ function spawnParticle(x, y) {
 }
 </script>
 <script src="main.js"></script>
+<script src="liquid.js"></script>
 </body>
 </html>
