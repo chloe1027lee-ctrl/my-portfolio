@@ -223,6 +223,39 @@ section.active { display: block; }
 .cosplay-cat-strip-item img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; filter: saturate(0.85); transition: transform 0.3s, filter 0.3s; }
 .cosplay-cat-strip-item:hover img { transform: scale(1.05); filter: saturate(1.25); }
 
+/* Cosplay · one-row covers, hover to preview the full set, click to keep it open */
+.cosplay-gallery { margin-top: 0.5rem; }
+.cosplay-cover-row { display: flex; gap: 0.9rem; overflow-x: auto; padding: 0.3rem 0 1.1rem; }
+.cosplay-cover-row::-webkit-scrollbar { height: 4px; }
+.cosplay-cover-row::-webkit-scrollbar-track { background: #0d0d0d; }
+.cosplay-cover-row::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+.cosplay-cover { flex: 0 0 auto; width: 165px; cursor: pointer; position: relative; border: none; background: none; padding: 0; text-align: left; font-family: inherit; color: inherit; }
+.cosplay-cover-thumb { position: relative; width: 100%; aspect-ratio: 2/3; overflow: hidden; border: 1px solid #1e1e1e; transition: border-color 0.25s, box-shadow 0.25s; }
+.cosplay-cover-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; filter: saturate(0.82) brightness(0.8); transition: transform 0.4s, filter 0.4s; }
+.cosplay-cover:hover .cosplay-cover-thumb img,
+.cosplay-cover.active .cosplay-cover-thumb img { filter: saturate(1.15) brightness(1); transform: scale(1.05); }
+.cosplay-cover.active .cosplay-cover-thumb { border-color: #e8e2d9; }
+.cosplay-cover.pinned .cosplay-cover-thumb { border-color: #e8e2d9; box-shadow: 0 0 0 1px #e8e2d9; }
+.cosplay-cover-badge { position: absolute; top: 0.5rem; right: 0.5rem; font-size: 0.5rem; letter-spacing: 0.12em; text-transform: uppercase; color: #e8e2d9; background: rgba(0,0,0,0.6); padding: 0.2rem 0.45rem; opacity: 0; transition: opacity 0.25s; }
+.cosplay-cover:hover .cosplay-cover-badge, .cosplay-cover.active .cosplay-cover-badge { opacity: 1; }
+.cosplay-cover-pin { position: absolute; top: 0.5rem; left: 0.5rem; font-size: 0.48rem; letter-spacing: 0.14em; text-transform: uppercase; color: #0a0a0a; background: #e8e2d9; padding: 0.18rem 0.42rem; font-weight: bold; opacity: 0; transition: opacity 0.2s; }
+.cosplay-cover.pinned .cosplay-cover-pin { opacity: 1; }
+.cosplay-cover-cap { margin-top: 0.6rem; }
+.cosplay-cover-name { font-size: 0.66rem; font-weight: bold; letter-spacing: 0.06em; text-transform: uppercase; color: #cfc9bf; transition: color 0.2s; }
+.cosplay-cover:hover .cosplay-cover-name, .cosplay-cover.active .cosplay-cover-name { color: #e8e2d9; }
+.cosplay-cover-sub { font-size: 0.54rem; letter-spacing: 0.1em; color: #666; margin-top: 0.22rem; }
+
+.cosplay-reveal { overflow: hidden; max-height: 0; transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1); }
+.cosplay-reveal.open { max-height: 6000px; }
+.cosplay-panel { display: none; padding: 1.7rem 0 0.5rem; border-top: 1px solid #1a1a1a; }
+.cosplay-panel.open { display: block; }
+.cosplay-panel-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem 1.5rem; flex-wrap: wrap; margin-bottom: 1.3rem; }
+.cosplay-panel-title { font-size: 0.9rem; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase; color: #e8e2d9; margin-bottom: 0.3rem; }
+.cosplay-panel-meta { font-size: 0.62rem; letter-spacing: 0.1em; color: #777; }
+.cosplay-panel-state { font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase; color: #555; white-space: nowrap; }
+.cosplay-panel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 5px; }
+.cosplay-panel-grid .cosplay-cat-strip-item { width: auto; height: auto; aspect-ratio: 2/3; }
+
 .cosplay-resume { margin-top: 4.5rem; }
 .cosplay-resume-section-title { font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: #777; margin-bottom: 2rem; padding-bottom: 0.8rem; border-bottom: 1px solid #1a1a1a; }
 .cosplay-resume-year-block { display: grid; grid-template-columns: 72px 1fr; gap: 0 2rem; margin-bottom: 0.5rem; }
@@ -674,231 +707,10 @@ section.active { display: block; }
     <a href="https://www.instagram.com/kuro1_cos/" target="_blank">↗ Instagram · @kuro1_cos</a>
     <a href="https://www.facebook.com/klchloe102/" target="_blank">↗ Facebook · Kuroi Chan</a>
   </div>
-  <div class="cosplay-social-note">Not all photos are shown here. For the full collection, check my social media above.</div>
+  <div class="cosplay-social-note">Hover a cosplay to preview the full set — click to keep it open. Not all photos are shown here; for the full collection, check my social media above.</div>
 
-  <div class="cosplay-category" data-count="17">
-    <div class="cosplay-cat-top">
-      <div class="cosplay-cat-title">Nikke · Cinderella</div>
-      <div class="cosplay-cat-meta">acosta 「アコスタ！」 · April 11, 2026</div>
-    </div>
-    <div class="cosplay-cat-main">
-      <div class="cosplay-cat-cover" onclick="toggleCosplay(this)">
-        <img src="images/cosplay/nikke-cinderella-1.jpg" alt="Nikke · Cinderella" loading="lazy" decoding="async">
-        <div class="cosplay-cat-expand-hint">View all 17 ↓</div>
-      </div>
-      <div class="cosplay-cat-text">
-        <p class="cosplay-cat-placeholder">[ Add a note about this cosplay here — character background, your preparation, the event, or what this look means to you. ]</p>
-        <div class="cosplay-cat-count">17 photos · April 11, 2026</div>
-      </div>
-    </div>
-    <div class="cosplay-cat-strip">
-      <div class="cosplay-cat-strip-inner">
-        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="1"><img src="images/cosplay/nikke-cinderella-2.jpg" alt="Nikke · Cinderella 2" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="2"><img src="images/cosplay/nikke-cinderella-3.jpg" alt="Nikke · Cinderella 3" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="3"><img src="images/cosplay/nikke-cinderella-4.jpg" alt="Nikke · Cinderella 4" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="4"><img src="images/cosplay/nikke-cinderella-5.jpg" alt="Nikke · Cinderella 5" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="5"><img src="images/cosplay/nikke-cinderella-6.jpg" alt="Nikke · Cinderella 6" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="6"><img src="images/cosplay/nikke-cinderella-7.jpg" alt="Nikke · Cinderella 7" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="7"><img src="images/cosplay/nikke-cinderella-8.jpg" alt="Nikke · Cinderella 8" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="8"><img src="images/cosplay/nikke-cinderella-9.jpg" alt="Nikke · Cinderella 9" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="9"><img src="images/cosplay/nikke-cinderella-10.jpg" alt="Nikke · Cinderella 10" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="10"><img src="images/cosplay/nikke-cinderella-11.jpg" alt="Nikke · Cinderella 11" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="11"><img src="images/cosplay/nikke-cinderella-12.jpg" alt="Nikke · Cinderella 12" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="12"><img src="images/cosplay/nikke-cinderella-13.jpg" alt="Nikke · Cinderella 13" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="13"><img src="images/cosplay/nikke-cinderella-14.jpg" alt="Nikke · Cinderella 14" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="14"><img src="images/cosplay/nikke-cinderella-15.jpg" alt="Nikke · Cinderella 15" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="15"><img src="images/cosplay/nikke-cinderella-16.jpg" alt="Nikke · Cinderella 16" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="nikke-cinderella" data-index="16"><img src="images/cosplay/nikke-cinderella-17.jpg" alt="Nikke · Cinderella 17" loading="lazy" decoding="async"></div>
-      </div>
-    </div>
-  </div>
-  <div class="cosplay-category" data-count="24">
-    <div class="cosplay-cat-top">
-      <div class="cosplay-cat-title">Rapi · Red Hood</div>
-      <div class="cosplay-cat-meta">【CWT-K50】高雄場 · March 08, 2026</div>
-    </div>
-    <div class="cosplay-cat-main">
-      <div class="cosplay-cat-cover" onclick="toggleCosplay(this)">
-        <img src="images/cosplay/rapi-red-hood-1.jpg" alt="Rapi · Red Hood" loading="lazy" decoding="async">
-        <div class="cosplay-cat-expand-hint">View all 24 ↓</div>
-      </div>
-      <div class="cosplay-cat-text">
-        <p class="cosplay-cat-placeholder">[ Add a note about this cosplay here — character background, your preparation, the event, or what this look means to you. ]</p>
-        <div class="cosplay-cat-count">24 photos · March 08, 2026</div>
-      </div>
-    </div>
-    <div class="cosplay-cat-strip">
-      <div class="cosplay-cat-strip-inner">
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="1"><img src="images/cosplay/rapi-red-hood-2.jpg" alt="Rapi · Red Hood 2" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="2"><img src="images/cosplay/rapi-red-hood-3.jpg" alt="Rapi · Red Hood 3" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="3"><img src="images/cosplay/rapi-red-hood-4.jpg" alt="Rapi · Red Hood 4" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="4"><img src="images/cosplay/rapi-red-hood-5.jpg" alt="Rapi · Red Hood 5" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="5"><img src="images/cosplay/rapi-red-hood-6.jpg" alt="Rapi · Red Hood 6" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="6"><img src="images/cosplay/rapi-red-hood-7.jpg" alt="Rapi · Red Hood 7" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="7"><img src="images/cosplay/rapi-red-hood-8.jpg" alt="Rapi · Red Hood 8" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="8"><img src="images/cosplay/rapi-red-hood-9.jpg" alt="Rapi · Red Hood 9" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="9"><img src="images/cosplay/rapi-red-hood-10.jpg" alt="Rapi · Red Hood 10" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="10"><img src="images/cosplay/rapi-red-hood-11.jpg" alt="Rapi · Red Hood 11" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="11"><img src="images/cosplay/rapi-red-hood-12.jpg" alt="Rapi · Red Hood 12" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="12"><img src="images/cosplay/rapi-red-hood-13.jpg" alt="Rapi · Red Hood 13" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="13"><img src="images/cosplay/rapi-red-hood-14.jpg" alt="Rapi · Red Hood 14" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="14"><img src="images/cosplay/rapi-red-hood-15.jpg" alt="Rapi · Red Hood 15" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="15"><img src="images/cosplay/rapi-red-hood-16.jpg" alt="Rapi · Red Hood 16" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="16"><img src="images/cosplay/rapi-red-hood-17.jpg" alt="Rapi · Red Hood 17" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="17"><img src="images/cosplay/rapi-red-hood-18.jpg" alt="Rapi · Red Hood 18" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="18"><img src="images/cosplay/rapi-red-hood-19.jpg" alt="Rapi · Red Hood 19" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="19"><img src="images/cosplay/rapi-red-hood-20.jpg" alt="Rapi · Red Hood 20" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="20"><img src="images/cosplay/rapi-red-hood-21.jpg" alt="Rapi · Red Hood 21" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="21"><img src="images/cosplay/rapi-red-hood-22.jpg" alt="Rapi · Red Hood 22" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="22"><img src="images/cosplay/rapi-red-hood-23.jpg" alt="Rapi · Red Hood 23" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="rapi-red-hood" data-index="23"><img src="images/cosplay/rapi-red-hood-24.jpg" alt="Rapi · Red Hood 24" loading="lazy" decoding="async"></div>
-      </div>
-    </div>
-  </div>
-  <div class="cosplay-category" data-count="27">
-    <div class="cosplay-cat-top">
-      <div class="cosplay-cat-title">Privaty · Nikke</div>
-      <div class="cosplay-cat-meta">王文辰 · 吳憲松 · 二三室攝影棚 · January 24, 2026</div>
-    </div>
-    <div class="cosplay-cat-main">
-      <div class="cosplay-cat-cover" onclick="toggleCosplay(this)">
-        <img src="images/cosplay/privaty-1.jpg" alt="Privaty · Nikke" loading="lazy" decoding="async">
-        <div class="cosplay-cat-expand-hint">View all 27 ↓</div>
-      </div>
-      <div class="cosplay-cat-text">
-        <p class="cosplay-cat-placeholder">[ Add a note about this cosplay here — character background, your preparation, the event, or what this look means to you. ]</p>
-        <div class="cosplay-cat-count">27 photos · January 24, 2026</div>
-      </div>
-    </div>
-    <div class="cosplay-cat-strip">
-      <div class="cosplay-cat-strip-inner">
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="1"><img src="images/cosplay/privaty-2.jpg" alt="Privaty · Nikke 2" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="2"><img src="images/cosplay/privaty-3.jpg" alt="Privaty · Nikke 3" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="3"><img src="images/cosplay/privaty-4.jpg" alt="Privaty · Nikke 4" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="4"><img src="images/cosplay/privaty-5.jpg" alt="Privaty · Nikke 5" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="5"><img src="images/cosplay/privaty-6.jpg" alt="Privaty · Nikke 6" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="6"><img src="images/cosplay/privaty-7.jpg" alt="Privaty · Nikke 7" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="7"><img src="images/cosplay/privaty-8.jpg" alt="Privaty · Nikke 8" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="8"><img src="images/cosplay/privaty-9.jpg" alt="Privaty · Nikke 9" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="9"><img src="images/cosplay/privaty-10.jpg" alt="Privaty · Nikke 10" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="10"><img src="images/cosplay/privaty-11.jpg" alt="Privaty · Nikke 11" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="11"><img src="images/cosplay/privaty-12.jpg" alt="Privaty · Nikke 12" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="12"><img src="images/cosplay/privaty-13.jpg" alt="Privaty · Nikke 13" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="13"><img src="images/cosplay/privaty-14.jpg" alt="Privaty · Nikke 14" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="14"><img src="images/cosplay/privaty-15.jpg" alt="Privaty · Nikke 15" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="15"><img src="images/cosplay/privaty-16.jpg" alt="Privaty · Nikke 16" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="16"><img src="images/cosplay/privaty-17.jpg" alt="Privaty · Nikke 17" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="17"><img src="images/cosplay/privaty-18.jpg" alt="Privaty · Nikke 18" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="18"><img src="images/cosplay/privaty-19.jpg" alt="Privaty · Nikke 19" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="19"><img src="images/cosplay/privaty-20.jpg" alt="Privaty · Nikke 20" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="20"><img src="images/cosplay/privaty-21.jpg" alt="Privaty · Nikke 21" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="21"><img src="images/cosplay/privaty-22.jpg" alt="Privaty · Nikke 22" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="22"><img src="images/cosplay/privaty-23.jpg" alt="Privaty · Nikke 23" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="23"><img src="images/cosplay/privaty-24.jpg" alt="Privaty · Nikke 24" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="24"><img src="images/cosplay/privaty-25.jpg" alt="Privaty · Nikke 25" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="25"><img src="images/cosplay/privaty-26.jpg" alt="Privaty · Nikke 26" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="privaty" data-index="26"><img src="images/cosplay/privaty-27.jpg" alt="Privaty · Nikke 27" loading="lazy" decoding="async"></div>
-      </div>
-    </div>
-  </div>
-  <div class="cosplay-category" data-count="13">
-    <div class="cosplay-cat-top">
-      <div class="cosplay-cat-title">Yelan</div>
-      <div class="cosplay-cat-meta">2025高雄駁二動漫祭 FFK18 · December 14, 2025</div>
-    </div>
-    <div class="cosplay-cat-main">
-      <div class="cosplay-cat-cover" onclick="toggleCosplay(this)">
-        <img src="images/cosplay/yelan-1.jpg" alt="Yelan" loading="lazy" decoding="async">
-        <div class="cosplay-cat-expand-hint">View all 13 ↓</div>
-      </div>
-      <div class="cosplay-cat-text">
-        <p class="cosplay-cat-placeholder">[ Add a note about this cosplay here — character background, your preparation, the event, or what this look means to you. ]</p>
-        <div class="cosplay-cat-count">13 photos · December 14, 2025</div>
-      </div>
-    </div>
-    <div class="cosplay-cat-strip">
-      <div class="cosplay-cat-strip-inner">
-        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="1"><img src="images/cosplay/yelan-2.jpg" alt="Yelan 2" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="2"><img src="images/cosplay/yelan-3.jpg" alt="Yelan 3" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="3"><img src="images/cosplay/yelan-4.jpg" alt="Yelan 4" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="4"><img src="images/cosplay/yelan-5.jpg" alt="Yelan 5" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="5"><img src="images/cosplay/yelan-6.jpg" alt="Yelan 6" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="6"><img src="images/cosplay/yelan-7.jpg" alt="Yelan 7" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="7"><img src="images/cosplay/yelan-8.jpg" alt="Yelan 8" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="8"><img src="images/cosplay/yelan-9.jpg" alt="Yelan 9" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="9"><img src="images/cosplay/yelan-10.jpg" alt="Yelan 10" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="10"><img src="images/cosplay/yelan-11.jpg" alt="Yelan 11" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="11"><img src="images/cosplay/yelan-12.jpg" alt="Yelan 12" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="yelan" data-index="12"><img src="images/cosplay/yelan-13.jpg" alt="Yelan 13" loading="lazy" decoding="async"></div>
-      </div>
-    </div>
-  </div>
-  <div class="cosplay-category" data-count="14">
-    <div class="cosplay-cat-top">
-      <div class="cosplay-cat-title">Dorothy</div>
-      <div class="cosplay-cat-meta">2025高雄駁二動漫祭 FFK18 · December 13, 2025</div>
-    </div>
-    <div class="cosplay-cat-main">
-      <div class="cosplay-cat-cover" onclick="toggleCosplay(this)">
-        <img src="images/cosplay/dorothy-1.jpg" alt="Dorothy" loading="lazy" decoding="async">
-        <div class="cosplay-cat-expand-hint">View all 14 ↓</div>
-      </div>
-      <div class="cosplay-cat-text">
-        <p class="cosplay-cat-placeholder">[ Add a note about this cosplay here — character background, your preparation, the event, or what this look means to you. ]</p>
-        <div class="cosplay-cat-count">14 photos · December 13, 2025</div>
-      </div>
-    </div>
-    <div class="cosplay-cat-strip">
-      <div class="cosplay-cat-strip-inner">
-        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="1"><img src="images/cosplay/dorothy-2.jpg" alt="Dorothy 2" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="2"><img src="images/cosplay/dorothy-3.jpg" alt="Dorothy 3" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="3"><img src="images/cosplay/dorothy-4.jpg" alt="Dorothy 4" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="4"><img src="images/cosplay/dorothy-5.jpg" alt="Dorothy 5" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="5"><img src="images/cosplay/dorothy-6.jpg" alt="Dorothy 6" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="6"><img src="images/cosplay/dorothy-7.jpg" alt="Dorothy 7" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="7"><img src="images/cosplay/dorothy-8.jpg" alt="Dorothy 8" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="8"><img src="images/cosplay/dorothy-9.jpg" alt="Dorothy 9" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="9"><img src="images/cosplay/dorothy-10.jpg" alt="Dorothy 10" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="10"><img src="images/cosplay/dorothy-11.jpg" alt="Dorothy 11" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="11"><img src="images/cosplay/dorothy-12.jpg" alt="Dorothy 12" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="12"><img src="images/cosplay/dorothy-13.jpg" alt="Dorothy 13" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="dorothy" data-index="13"><img src="images/cosplay/dorothy-14.jpg" alt="Dorothy 14" loading="lazy" decoding="async"></div>
-      </div>
-    </div>
-  </div>
-  <div class="cosplay-category" data-count="14">
-    <div class="cosplay-cat-top">
-      <div class="cosplay-cat-title">Marin Kitagawa</div>
-      <div class="cosplay-cat-meta">集福行銷活動團隊 Coser 幻日祭 · 動漫二創交流派對 · November 15, 2025</div>
-    </div>
-    <div class="cosplay-cat-main">
-      <div class="cosplay-cat-cover" onclick="toggleCosplay(this)">
-        <img src="images/cosplay/marin-kitagawa-1.jpg" alt="Marin Kitagawa" loading="lazy" decoding="async">
-        <div class="cosplay-cat-expand-hint">View all 14 ↓</div>
-      </div>
-      <div class="cosplay-cat-text">
-        <p class="cosplay-cat-placeholder">[ Add a note about this cosplay here — character background, your preparation, the event, or what this look means to you. ]</p>
-        <div class="cosplay-cat-count">14 photos · November 15, 2025</div>
-      </div>
-    </div>
-    <div class="cosplay-cat-strip">
-      <div class="cosplay-cat-strip-inner">
-        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="1"><img src="images/cosplay/marin-kitagawa-2.jpg" alt="Marin Kitagawa 2" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="2"><img src="images/cosplay/marin-kitagawa-3.jpg" alt="Marin Kitagawa 3" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="3"><img src="images/cosplay/marin-kitagawa-4.jpg" alt="Marin Kitagawa 4" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="4"><img src="images/cosplay/marin-kitagawa-5.jpg" alt="Marin Kitagawa 5" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="5"><img src="images/cosplay/marin-kitagawa-6.jpg" alt="Marin Kitagawa 6" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="6"><img src="images/cosplay/marin-kitagawa-7.jpg" alt="Marin Kitagawa 7" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="7"><img src="images/cosplay/marin-kitagawa-8.jpg" alt="Marin Kitagawa 8" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="8"><img src="images/cosplay/marin-kitagawa-9.jpg" alt="Marin Kitagawa 9" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="9"><img src="images/cosplay/marin-kitagawa-10.jpg" alt="Marin Kitagawa 10" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="10"><img src="images/cosplay/marin-kitagawa-11.jpg" alt="Marin Kitagawa 11" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="11"><img src="images/cosplay/marin-kitagawa-12.jpg" alt="Marin Kitagawa 12" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="12"><img src="images/cosplay/marin-kitagawa-13.jpg" alt="Marin Kitagawa 13" loading="lazy" decoding="async"></div>
-        <div class="cosplay-cat-strip-item" data-work="marin-kitagawa" data-index="13"><img src="images/cosplay/marin-kitagawa-14.jpg" alt="Marin Kitagawa 14" loading="lazy" decoding="async"></div>
-      </div>
-    </div>
-  </div>
+  <div class="cosplay-gallery" id="cosplay-gallery"></div>
+
   <div class="cosplay-resume">
     <div class="cosplay-resume-section-title">Appearance Log</div>
 

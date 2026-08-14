@@ -736,26 +736,107 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape')     closeBook();
 });
 
-function toggleCosplay(coverEl) {
-  const category = coverEl.closest('.cosplay-category');
-  const isExpanded = category.classList.toggle('expanded');
-  const hint = coverEl.querySelector('.cosplay-cat-expand-hint');
-  if (hint) {
-    const count = category.dataset.count;
-    hint.textContent = isExpanded ? 'Collapse ↑' : `View all ${count} ↓`;
-  }
-  if (isExpanded) {
-    // Force-load any lazy images inside the strip now that it's visible
-    category.querySelectorAll('.cosplay-cat-strip-item img[loading="lazy"]').forEach(img => {
-      if (!img.src || img.src === window.location.href) {
-        img.src = img.dataset.src || img.src;
-      }
-      img.loading = 'eager';
+/* ── COSPLAY GALLERY ──
+   One row of cover thumbnails. Hovering a cover previews that cosplay's full
+   photo set below; clicking a cover pins the set open so it persists. Clicking
+   the pinned cover again closes it. Photos are built from worksData and reuse
+   the existing lightbox (data-work / data-index). */
+(function buildCosplayGallery() {
+  const mount = document.getElementById('cosplay-gallery');
+  if (!mount) return;
+
+  // Display order + a short caption for each cover (full meta comes from worksData)
+  const cats = [
+    { key: 'nikke-cinderella', sub: 'acosta 「アコスタ！」· Apr 2026' },
+    { key: 'rapi-red-hood',    sub: 'CWT-K50 高雄場 · Mar 2026' },
+    { key: 'privaty',          sub: '二三室攝影棚 · Jan 2026' },
+    { key: 'yelan',            sub: '駁二動漫祭 FFK18 · Dec 2025' },
+    { key: 'dorothy',          sub: '駁二動漫祭 FFK18 · Dec 2025' },
+    { key: 'marin-kitagawa',   sub: '幻日祭 · Nov 2025' }
+  ];
+
+  const row = document.createElement('div');
+  row.className = 'cosplay-cover-row';
+  const reveal = document.createElement('div');
+  reveal.className = 'cosplay-reveal';
+
+  const esc = s => String(s).replace(/"/g, '&quot;');
+
+  cats.forEach(cat => {
+    const w = worksData[cat.key];
+    if (!w || !w.images || !w.images.length) return;
+    const n = w.images.length;
+
+    const cover = document.createElement('button');
+    cover.type = 'button';
+    cover.className = 'cosplay-cover';
+    cover.dataset.cat = cat.key;
+    cover.innerHTML =
+      '<div class="cosplay-cover-thumb">' +
+        '<img src="' + w.images[0] + '" alt="' + esc(w.title) + '" loading="lazy" decoding="async">' +
+        '<span class="cosplay-cover-badge">' + n + ' photos</span>' +
+        '<span class="cosplay-cover-pin">Pinned</span>' +
+      '</div>' +
+      '<div class="cosplay-cover-cap">' +
+        '<div class="cosplay-cover-name">' + esc(w.title) + '</div>' +
+        '<div class="cosplay-cover-sub">' + esc(cat.sub) + '</div>' +
+      '</div>';
+    row.appendChild(cover);
+
+    const panel = document.createElement('div');
+    panel.className = 'cosplay-panel';
+    panel.dataset.cat = cat.key;
+    const items = w.images.map((src, i) =>
+      '<div class="cosplay-cat-strip-item" data-work="' + cat.key + '" data-index="' + i + '">' +
+        '<img src="' + src + '" alt="' + esc(w.title) + ' ' + (i + 1) + '" loading="lazy" decoding="async">' +
+      '</div>').join('');
+    panel.innerHTML =
+      '<div class="cosplay-panel-head">' +
+        '<div><div class="cosplay-panel-title">' + esc(w.title) + '</div>' +
+        '<div class="cosplay-panel-meta">' + w.meta + '</div></div>' +
+        '<div class="cosplay-panel-state"></div>' +
+      '</div>' +
+      '<div class="cosplay-panel-grid">' + items + '</div>';
+    reveal.appendChild(panel);
+  });
+
+  mount.appendChild(row);
+  mount.appendChild(reveal);
+
+  const covers = Array.from(row.querySelectorAll('.cosplay-cover'));
+  const panels = Array.from(reveal.querySelectorAll('.cosplay-panel'));
+  let pinned = null, hovered = null;
+
+  function apply() {
+    const key = hovered || pinned;
+    reveal.classList.toggle('open', !!key);
+    panels.forEach(p => p.classList.toggle('open', p.dataset.cat === key));
+    covers.forEach(c => {
+      c.classList.toggle('active', c.dataset.cat === key);
+      c.classList.toggle('pinned', c.dataset.cat === pinned);
     });
-    // Also fire a scroll event after the CSS transition so the browser re-evaluates
-    setTimeout(() => window.dispatchEvent(new Event('scroll')), 100);
+    const active = panels.find(p => p.dataset.cat === key);
+    if (active) {
+      const st = active.querySelector('.cosplay-panel-state');
+      if (st) st.textContent = (pinned === key) ? 'Pinned · click cover to close' : 'Click cover to keep open';
+    }
   }
-}
+
+  covers.forEach(c => {
+    c.addEventListener('mouseenter', () => { hovered = c.dataset.cat; apply(); });
+    c.addEventListener('focus', () => { hovered = c.dataset.cat; apply(); });
+    c.addEventListener('click', () => {
+      pinned = (pinned === c.dataset.cat) ? null : c.dataset.cat;
+      hovered = c.dataset.cat;
+      apply();
+    });
+  });
+  // Leaving the whole gallery (covers + open panel) clears the hover preview,
+  // falling back to the pinned set (or nothing).
+  mount.addEventListener('mouseleave', () => { hovered = null; apply(); });
+
+  apply();
+})();
 
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('open');
