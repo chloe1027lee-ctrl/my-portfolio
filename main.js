@@ -136,6 +136,46 @@ if (heroTitle) {
 
 /* ── WORKS DATA ── */
 const worksData = {
+  'blanc': {
+    title: 'Blanc',
+    meta: 'Goddess of Victory: Nikke · Blanc · 高雄動漫城 KACG2606 · June 14, 2026',
+    description: 'Blanc cosplay from Goddess of Victory: Nikke. Shot at 高雄動漫城 KACG2606.',
+    thumbs: false,
+    images: [
+      'images/cosplay/blanc-1.jpg',
+      'images/cosplay/blanc-2.jpg',
+      'images/cosplay/blanc-3.jpg',
+      'images/cosplay/blanc-4.jpg',
+      'images/cosplay/blanc-5.jpg',
+      'images/cosplay/blanc-6.jpg',
+      'images/cosplay/blanc-7.jpg',
+      'images/cosplay/blanc-8.jpg',
+      'images/cosplay/blanc-9.jpg',
+      'images/cosplay/blanc-10.jpg'
+    ]
+  },
+  'blanc-kica': {
+    title: 'Blanc',
+    meta: 'Goddess of Victory: Nikke · Blanc · 2025 KICA 高雄國際動漫節 · October 11, 2025',
+    description: 'Blanc cosplay from Goddess of Victory: Nikke. Shot at 2025 KICA 高雄國際動漫節.',
+    thumbs: false,
+    images: [
+      'images/cosplay/blanc-kica-1.jpg',
+      'images/cosplay/blanc-kica-2.jpg',
+      'images/cosplay/blanc-kica-3.jpg',
+      'images/cosplay/blanc-kica-4.jpg',
+      'images/cosplay/blanc-kica-5.jpg',
+      'images/cosplay/blanc-kica-6.jpg',
+      'images/cosplay/blanc-kica-7.jpg',
+      'images/cosplay/blanc-kica-8.jpg',
+      'images/cosplay/blanc-kica-9.jpg',
+      'images/cosplay/blanc-kica-10.jpg',
+      'images/cosplay/blanc-kica-11.jpg',
+      'images/cosplay/blanc-kica-12.jpg',
+      'images/cosplay/blanc-kica-13.jpg',
+      'images/cosplay/blanc-kica-14.jpg'
+    ]
+  },
   'nikke-cinderella': {
     title: 'Nikke · Cinderella',
     meta: 'Goddess of Victory: Nikke · Cinderella · acosta 「アコスタ！」· April 11, 2026',
@@ -747,12 +787,14 @@ document.addEventListener('keydown', e => {
 
   // Display order + a short caption for each cover (full meta comes from worksData)
   const cats = [
+    { key: 'blanc',            sub: '高雄動漫城 KACG2606 · Jun 2026' },
     { key: 'nikke-cinderella', sub: 'acosta 「アコスタ！」· Apr 2026' },
     { key: 'rapi-red-hood',    sub: 'CWT-K50 高雄場 · Mar 2026' },
     { key: 'privaty',          sub: '二三室攝影棚 · Jan 2026' },
     { key: 'yelan',            sub: '駁二動漫祭 FFK18 · Dec 2025' },
     { key: 'dorothy',          sub: '駁二動漫祭 FFK18 · Dec 2025' },
-    { key: 'marin-kitagawa',   sub: '幻日祭 · Nov 2025' }
+    { key: 'marin-kitagawa',   sub: '幻日祭 · Nov 2025' },
+    { key: 'blanc-kica',       sub: 'KICA 高雄國際動漫節 · Oct 2025' }
   ];
 
   const row = document.createElement('div');
