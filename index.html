@@ -256,6 +256,42 @@ section.active { display: block; }
 .cosplay-panel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 5px; }
 .cosplay-panel-grid .cosplay-cat-strip-item { width: auto; height: auto; aspect-ratio: 2/3; }
 
+/* Cosplay Club feature (top of Cosplay section) */
+.club-feature { margin: 0 0 3.5rem; padding-bottom: 3rem; border-bottom: 1px solid #1a1a1a; }
+.club-feature-head { margin-bottom: 1.8rem; }
+.club-feature-eyebrow { font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; color: #888; font-weight: bold; margin-bottom: 0.6rem; }
+.club-feature-title { font-size: 1.8rem; font-weight: bold; letter-spacing: 0.04em; text-transform: uppercase; color: #e8e2d9; margin-bottom: 0.4rem; line-height: 1.05; }
+.club-feature-sub { font-size: 0.66rem; letter-spacing: 0.15em; color: #777; }
+.club-feature-main { display: grid; grid-template-columns: 1.25fr 1fr; gap: 2.8rem; align-items: start; }
+.club-feature-photo { position: relative; display: block; width: 100%; padding: 0; border: 1px solid #1e1e1e; background: #111; overflow: hidden; cursor: pointer; font-family: inherit; }
+.club-feature-photo img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform 0.5s, filter 0.5s; filter: saturate(0.9); }
+.club-feature-photo:hover img { transform: scale(1.03); filter: saturate(1.12); }
+.club-feature-photo-hint { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.78)); padding: 2.5rem 1rem 0.9rem; font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: #e8e2d9; opacity: 0; transition: opacity 0.25s; text-align: right; }
+.club-feature-photo:hover .club-feature-photo-hint { opacity: 1; }
+.club-feature-text { padding-top: 0.2rem; }
+.club-feature-desc { font-size: 0.9rem; line-height: 1.9; color: #b0aaa0; margin-bottom: 1.6rem; }
+.club-stats { display: flex; gap: 2.2rem; flex-wrap: wrap; margin-bottom: 1.7rem; padding: 1.1rem 0; border-top: 1px solid #1e1e1e; border-bottom: 1px solid #1e1e1e; }
+.club-stat b { display: block; font-size: 1.35rem; font-weight: bold; color: #e8e2d9; letter-spacing: 0.02em; }
+.club-stat span { display: block; font-size: 0.54rem; letter-spacing: 0.18em; text-transform: uppercase; color: #777; margin-top: 0.35rem; }
+.club-links { display: flex; flex-direction: column; gap: 0.7rem; align-items: flex-start; }
+.club-links a { font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; color: #cfc9bf; text-decoration: none; font-weight: bold; border: 1px solid #3a3a3a; padding: 0.58rem 1.1rem; border-radius: 999px; transition: color 0.2s, background 0.2s, border-color 0.2s; cursor: pointer; }
+.club-links a:hover { color: #0a0a0a; background: #e8e2d9; border-color: #e8e2d9; }
+.club-more { margin-top: 2.6rem; }
+.club-more-label { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: #777; font-weight: bold; margin-bottom: 1rem; }
+.club-more-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 5px; }
+.club-more-grid .cosplay-cat-strip-item { width: auto; height: auto; aspect-ratio: 3/4; }
+@media (max-width: 720px) { .club-feature-main { grid-template-columns: 1fr; gap: 1.6rem; } }
+
+/* Club feature living on the Home page (full-bleed panel below the hero) */
+.home-club { scroll-margin-top: 5.5rem; background: #0a0a0a; border-top: 1px solid #222; margin: 2.5rem -3rem 0; padding: 3.5rem 3rem 2rem; position: relative; z-index: 1; overflow: hidden; }
+.home-club .club-particles { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.home-club .club-feature { position: relative; z-index: 1; margin-bottom: 0; border-bottom: none; padding-bottom: 1rem; }
+
+/* Scroll cue at the bottom of the hero */
+.hero-scroll-cue { position: absolute; left: 50%; transform: translateX(-50%); bottom: 2rem; display: inline-flex; align-items: center; gap: 0.55rem; background: rgba(18,16,26,0.72); border: 1px solid #6a6a6a; color: #e8e2d9; font-family: inherit; font-size: 0.68rem; font-weight: bold; letter-spacing: 0.24em; text-transform: uppercase; padding: 0.8rem 1.6rem; border-radius: 999px; cursor: pointer; box-shadow: 0 0 26px rgba(124,60,255,0.35); transition: color 0.2s, border-color 0.2s, background 0.2s, box-shadow 0.2s; animation: cueBob 2s ease-in-out infinite; z-index: 3; }
+.hero-scroll-cue:hover { color: #0a0a0a; background: #e8e2d9; border-color: #e8e2d9; box-shadow: 0 0 34px rgba(255,255,255,0.4); }
+@keyframes cueBob { 0%,100% { bottom: 2rem; } 50% { bottom: 1.4rem; } }
+
 .cosplay-resume { margin-top: 4.5rem; }
 .cosplay-resume-section-title { font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: #777; margin-bottom: 2rem; padding-bottom: 0.8rem; border-bottom: 1px solid #1a1a1a; }
 .cosplay-resume-year-block { display: grid; grid-template-columns: 72px 1fr; gap: 0 2rem; margin-bottom: 0.5rem; }
@@ -311,6 +347,7 @@ section.active { display: block; }
     <li><a onclick="show('home')">Home</a></li>
     <li><a onclick="show('art')">Art</a></li>
     <li><a onclick="show('cosplay')">Cosplay</a></li>
+    <li><a onclick="showClub()">Cosplay Club</a></li>
     <li><a onclick="show('magazine')">Magazine</a></li>
     <li><a onclick="show('design')">Design</a></li>
     <li><a onclick="show('fashion')">Fashion</a></li>
@@ -328,6 +365,54 @@ section.active { display: block; }
     <h1 class="hero-title">CHLOE'S<br>PORTFOLIO</h1>
     <div class="hero-sub">Art &nbsp;·&nbsp; Design &nbsp;·&nbsp; Cosplay &nbsp;·&nbsp; Photography</div>
     <div class="hero-years">2022 — 2026</div>
+    <button type="button" class="hero-scroll-cue" onclick="document.getElementById('cosplay-club').scrollIntoView({behavior:'smooth',block:'start'})">Cosplay Club ↓</button>
+  </div>
+
+  <!-- ── COSPLAY CLUB (home) ── -->
+  <div id="cosplay-club" class="home-club">
+  <canvas class="club-particles" aria-hidden="true"></canvas>
+  <!-- ── CLUB FEATURE ── -->
+  <div class="club-feature">
+    <div class="club-feature-head">
+      <div class="club-feature-eyebrow">Founder &amp; President</div>
+      <div class="club-feature-title">KAS Cosplay Club</div>
+      <div class="club-feature-sub">Kaohsiung American School · The first cosplay club on campus</div>
+    </div>
+    <div class="club-feature-main">
+      <button type="button" class="club-feature-photo" data-work="kas-club" data-index="0">
+        <img src="images/cosplay/club-1.jpg" alt="KAS Cosplay Club group photo" loading="lazy" decoding="async">
+        <span class="club-feature-photo-hint">View club gallery ↗</span>
+      </button>
+      <div class="club-feature-text">
+        <p class="club-feature-desc">I founded the first cosplay club at Kaohsiung American School. What began as a few friends grew into a community — we run themed photoshoots, host activities, and self-publish a collaborative cosplay magazine, now in its second volume. Beyond campus, I led an outreach collaboration with the Love and Hope Child Care Center (愛與希望兒少關懷中心), working with 30+ children through performances, creative activities, and simple English lessons.</p>
+        <div class="club-stats">
+          <div class="club-stat"><b>2024</b><span>Founded</span></div>
+          <div class="club-stat"><b>2</b><span>Magazine Volumes</span></div>
+          <div class="club-stat"><b>30+</b><span>Children Reached</span></div>
+        </div>
+        <div class="club-links">
+          <a href="https://www.instagram.com/kascosplayclub/" target="_blank">↗ Instagram · @kascosplayclub</a>
+          <a onclick="show('magazine')">↗ Read the Club Magazines</a>
+        </div>
+      </div>
+    </div>
+    <div class="club-more">
+      <div class="club-more-label">More from the Club</div>
+      <div class="club-more-grid">
+        <div class="cosplay-cat-strip-item" data-work="kas-club" data-index="1"><img src="images/cosplay/club-2.jpg" alt="KAS Cosplay Club 2" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="kas-club" data-index="2"><img src="images/cosplay/club-3.jpg" alt="KAS Cosplay Club 3" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="kas-club" data-index="3"><img src="images/cosplay/club-4.jpg" alt="KAS Cosplay Club 4" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="kas-club" data-index="4"><img src="images/cosplay/club-5.jpg" alt="KAS Cosplay Club 5" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="kas-club" data-index="5"><img src="images/cosplay/club-6.jpg" alt="KAS Cosplay Club 6" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="kas-club" data-index="6"><img src="images/cosplay/club-7.jpg" alt="KAS Cosplay Club 7" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="kas-club" data-index="7"><img src="images/cosplay/club-8.jpg" alt="KAS Cosplay Club 8" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="kas-club" data-index="8"><img src="images/cosplay/club-9.jpg" alt="KAS Cosplay Club 9" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="kas-club" data-index="9"><img src="images/cosplay/club-10.jpg" alt="KAS Cosplay Club 10" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="kas-club" data-index="10"><img src="images/cosplay/club-11.jpg" alt="KAS Cosplay Club 11" loading="lazy" decoding="async"></div>
+        <div class="cosplay-cat-strip-item" data-work="kas-club" data-index="11"><img src="images/cosplay/club-12.jpg" alt="KAS Cosplay Club 12" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+  </div>
   </div>
 </section>
 
@@ -1155,6 +1240,13 @@ function show(id) {
   window.scrollTo(0,0);
 }
 
+// Cosplay Club lives on the Home page — jump home, then smooth-scroll to it.
+function showClub() {
+  show('home');
+  const el = document.getElementById('cosplay-club');
+  if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
+}
+
 // Home shows the interactive liquid simulation; other sections keep the
 // particle network. Falls back to particles everywhere if WebGL2 is missing.
 function applyBackground(id) {
@@ -1165,6 +1257,7 @@ function applyBackground(id) {
   const bg = document.getElementById('bg-canvas');
   if (bg) bg.style.display = liquidOn ? 'none' : 'block';
   if (typeof startAnimation === 'function') { liquidOn ? stopAnimation() : startAnimation(); }
+  if (window.ClubField) { home ? window.ClubField.start() : window.ClubField.stop(); }
 }
 document.addEventListener('DOMContentLoaded', () => {
   const active = document.querySelector('section.active');

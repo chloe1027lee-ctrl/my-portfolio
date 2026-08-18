@@ -136,6 +136,26 @@ if (heroTitle) {
 
 /* ── WORKS DATA ── */
 const worksData = {
+  'kas-club': {
+    title: 'KAS Cosplay Club',
+    meta: 'Founder &amp; President · Kaohsiung American School · Founded 2024',
+    description: 'The first cosplay club at Kaohsiung American School. We run themed photoshoots, host activities, and self-publish a collaborative cosplay magazine, now in its second volume. Beyond campus, the club led an outreach collaboration with the Love and Hope Child Care Center (愛與希望兒少關懷中心), working with over 30 children through performances, creative activities, and simple English lessons.',
+    thumbs: true,
+    images: [
+      'images/cosplay/club-1.jpg',
+      'images/cosplay/club-2.jpg',
+      'images/cosplay/club-3.jpg',
+      'images/cosplay/club-4.jpg',
+      'images/cosplay/club-5.jpg',
+      'images/cosplay/club-6.jpg',
+      'images/cosplay/club-7.jpg',
+      'images/cosplay/club-8.jpg',
+      'images/cosplay/club-9.jpg',
+      'images/cosplay/club-10.jpg',
+      'images/cosplay/club-11.jpg',
+      'images/cosplay/club-12.jpg'
+    ]
+  },
   'blanc': {
     title: 'Blanc',
     meta: 'Goddess of Victory: Nikke · Blanc · 高雄動漫城 KACG2606 · June 14, 2026',
@@ -1053,4 +1073,80 @@ document.addEventListener('click', e => {
   window.addEventListener('resize', () => {
     if (overlay.classList.contains('open')) fit();
   });
+})();
+
+/* ── CLUB PARTICLE FIELD ──
+   The same glowy rainbow particle network used behind the other sections,
+   scoped to the Cosplay Club panel on the Home page. Runs only while the
+   panel is actually on screen (IntersectionObserver), so it costs nothing
+   when you're on the hero or another tab. */
+function createParticleField(canvas) {
+  const ctx = canvas.getContext('2d');
+  const COUNT = 46, MOUSE_RADIUS = 130, LINK_RADIUS = 110;
+  const mouse = { x: -9999, y: -9999 };
+  let w = 0, h = 0, raf = null, running = false, ps = [], rect = { left: 0, top: 0 };
+
+  function fit() {
+    const r = canvas.getBoundingClientRect();
+    rect = r;
+    w = canvas.width = Math.max(1, Math.round(r.width));
+    h = canvas.height = Math.max(1, Math.round(r.height));
+  }
+  function seed() {
+    ps = [];
+    for (let i = 0; i < COUNT; i++) ps.push({
+      x: Math.random() * w, y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25,
+      r: Math.random() * 1.6 + 0.9, a: Math.random() * 0.45 + 0.3,
+      hue: Math.random() * 360, hd: (Math.random() - 0.5) * 0.4
+    });
+  }
+  function frame() {
+    if (!running) return;
+    ctx.clearRect(0, 0, w, h);
+    for (let i = 0; i < ps.length; i++) {
+      for (let j = i + 1; j < ps.length; j++) {
+        const dx = ps[i].x - ps[j].x, dy = ps[i].y - ps[j].y, d = Math.hypot(dx, dy);
+        if (d < LINK_RADIUS) {
+          const al = (1 - d / LINK_RADIUS) * 0.13, hue = (ps[i].hue + ps[j].hue) / 2;
+          ctx.beginPath(); ctx.moveTo(ps[i].x, ps[i].y); ctx.lineTo(ps[j].x, ps[j].y);
+          ctx.strokeStyle = `hsla(${hue}, 80%, 65%, ${al})`; ctx.lineWidth = 0.5; ctx.stroke();
+        }
+      }
+    }
+    for (const p of ps) {
+      p.x += p.vx; p.y += p.vy; p.hue = (p.hue + p.hd + 360) % 360;
+      if (p.x < 0) p.x = w; if (p.x > w) p.x = 0; if (p.y < 0) p.y = h; if (p.y > h) p.y = 0;
+      const dx = p.x - mouse.x, dy = p.y - mouse.y, d = Math.hypot(dx, dy);
+      if (d < MOUSE_RADIUS && d > 0) { const f = ((MOUSE_RADIUS - d) / MOUSE_RADIUS) * 1.8; p.x += dx / d * f; p.y += dy / d * f; }
+      ctx.save(); ctx.shadowBlur = 10; ctx.shadowColor = `hsla(${p.hue}, 100%, 70%, 0.9)`;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `hsla(${p.hue}, 100%, 72%, ${p.a})`; ctx.fill(); ctx.restore();
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  function start() { if (running) return; fit(); if (!ps.length) seed(); running = true; raf = requestAnimationFrame(frame); }
+  function stop() { running = false; if (raf) { cancelAnimationFrame(raf); raf = null; } }
+
+  const reFit = () => { if (running) fit(); };
+  window.addEventListener('resize', reFit);
+  window.addEventListener('scroll', () => { rect = canvas.getBoundingClientRect(); }, { passive: true });
+  window.addEventListener('mousemove', e => { mouse.x = e.clientX - rect.left; mouse.y = e.clientY - rect.top; });
+  window.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+  return { start, stop };
+}
+
+(function () {
+  const clubCanvas = document.querySelector('.club-particles');
+  if (!clubCanvas) return;
+  const field = createParticleField(clubCanvas);
+  // Runs while Home is active (started/stopped by applyBackground in index.html).
+  // A short retry after start re-fits once the panel's images have laid out.
+  window.ClubField = {
+    start() { field.start(); setTimeout(() => { field.stop(); field.start(); }, 400); },
+    stop() { field.stop(); }
+  };
+  // Start now if Home is the active section on load.
+  const home = document.getElementById('home');
+  if (home && home.classList.contains('active')) window.ClubField.start();
 })();
