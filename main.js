@@ -139,7 +139,7 @@ const worksData = {
   'kas-club': {
     title: 'KAS Cosplay Club',
     meta: 'Founder &amp; President · Kaohsiung American School · Founded 2024',
-    description: 'The first cosplay club at Kaohsiung American School. We run themed photoshoots, host activities, and self-publish a collaborative cosplay magazine, now in its second volume. Beyond campus, the club led an outreach collaboration with the Love and Hope Child Care Center (愛與希望兒少關懷中心), working with over 30 children through performances, creative activities, and simple English lessons.',
+    description: 'I founded KAS Cosplay Club because cosplay had given me so much happiness — a space to create freely, grow more confident, and connect with people who loved what I loved. I wanted to share that feeling, not keep it to myself. What began as a club for students to explore cosplay grew into something more meaningful: bringing characters to life for children at the Love and Hope Child Care Center (愛與希望兒少關懷中心) through costumes, games, dance, and photography. Watching something that made me happy become a source of happiness for someone else changed what cosplay meant to me — the club became not just a creative community, but a way to turn something I love into something I could give.',
     thumbs: true,
     images: [
       'images/cosplay/club-1.jpg',
