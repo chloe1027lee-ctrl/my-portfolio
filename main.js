@@ -450,6 +450,15 @@ const worksData = {
     description: 'Behind the Pink explores the concealed psychological interior of adolescent girlhood: the gap between how a teenage girl appears and what she actually feels. Drawing from personal experience, the suppression of emotion rather than its expression causes thoughts to loop obsessively inward, accumulating without release.<br><br>A single childlike figure occupies the center of the canvas in deliberate compositional isolation. Her oversized expressionless eyes function as the primary focal point, confrontational and unreadable in equal measure. The hair is deliberately neat and controlled, a visual metaphor for performed composure. The mouth and eyebrows have been removed entirely, preserving psychological ambiguity and preventing any emotion from becoming decipherable to the viewer.<br><br>The pink palette carries a cultural coding of femininity and innocence, but is contaminated with green undertones that produce a dirtied pink: a color that attracts while unsettling, drawing on Damien Hirst\'s use of seductive surfaces that conceal something more disturbing beneath. The obsessive dot background appropriates Yayoi Kusama\'s Infinity Nets, where the serial repetition of marks enacts the psychological pressure that surrounds and closes in on the figure. The figure herself re-interprets kawaii culture, connecting to Yoshitomo Nara\'s subversion of cuteness as a site of hidden intensity. The hand held behind her back references Nara\'s Knife Behind Back directly, implying concealed intention and internalized aggression. The embedded piercings introduce physical tension into the surface, puncturing the performance of softness.<br><br>The work asks: what does an adolescent girl look like when her performance of composure is placed under scrutiny?',
     images: ['images/art/behind-the-pink-1.jpg']
   },
+  'untitled-resin': {
+    title: 'Untitled',
+    meta: 'Lee, Chloe. <em>Untitled</em>. 2026. Epoxy Resin, Alcohol Ink.',
+    description: '',
+    thumbs: true,
+    images: [
+      'images/art/untitled-resin-1.jpg'
+    ]
+  },
   'noctilucent': {
     title: 'Noctilucent',
     meta: 'Lee, Chloe. <em>Noctilucent</em>. 2026. Acrylic Paint, Silicone Oil, White Glue and Mixed Media on Canvas, UV Activated. 53 × 45 cm × 2 (Diptych).',
