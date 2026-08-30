@@ -333,6 +333,81 @@ section.active { display: block; }
 .contact-line span:first-child { color: #444; }
 .contact-line a { color: #777; text-decoration: none; cursor: none; }
 .contact-line a:hover { color: #e8e2d9; }
+
+/* MATERIA — product case study */
+.materia-hero { max-width: 860px; margin: 0 auto; text-align: center; }
+.materia-eyebrow { font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase; color: #7a8bd6; margin-bottom: 1.5rem; font-weight: bold; }
+.materia-title { font-size: clamp(2.6rem, 7vw, 4.4rem); font-weight: bold; line-height: 1.02; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 1.3rem;
+  background: linear-gradient(120deg, #cfd6ff 0%, #9aa6ff 40%, #b6a0ff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.materia-lede { font-size: 1.05rem; line-height: 1.8; color: #bbb; max-width: 640px; margin: 0 auto 2.2rem; }
+.materia-cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.materia-btn { font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: bold; padding: 0.95rem 1.8rem; border: 1px solid #333; color: #cbd0e6; text-decoration: none; cursor: none; transition: border-color 0.2s, color 0.2s, background 0.2s; }
+.materia-btn:hover { border-color: #8b9bff; color: #fff; }
+.materia-btn.primary { background: linear-gradient(120deg, #5b6bd6, #7d6bd6); border-color: transparent; color: #fff; }
+.materia-btn.primary:hover { filter: brightness(1.15); }
+.materia-note { font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: #555; margin-top: 1.5rem; }
+
+.materia-block { max-width: 860px; margin: 4.5rem auto 0; }
+.materia-block > p { font-size: 1rem; line-height: 1.85; color: #bbb; margin-bottom: 1.2rem; }
+.materia-block strong { color: #dfe3f2; }
+
+.materia-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px; background: #1e1e1e; border: 1px solid #1e1e1e; margin: 2.5rem 0; }
+.materia-stat { background: #0c0c0c; padding: 1.6rem 1.2rem; text-align: center; }
+.materia-stat b { display: block; font-size: 1.9rem; font-weight: bold; color: #cbd0e6; line-height: 1; }
+.materia-stat span { display: block; font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: #666; margin-top: 0.6rem; font-weight: bold; }
+
+.materia-verdict { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+@media (max-width: 640px) { .materia-verdict { grid-template-columns: 1fr; } }
+.materia-card { border: 1px solid #1e1e1e; padding: 1.4rem 1.5rem; background: #0c0c0c; }
+.materia-card .vq { font-size: 0.9rem; color: #dfe3f2; font-weight: bold; margin-bottom: 0.7rem; }
+.materia-card .vtag { font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: bold; margin-bottom: 0.6rem; }
+.materia-card.no .vtag { color: #d67a7a; }
+.materia-card.yes .vtag { color: #7ad6a0; }
+.materia-card p { font-size: 0.86rem; line-height: 1.7; color: #999; margin: 0; }
+.materia-card.pain { border-left: 2px solid #d65b5b; }
+.materia-card.pain .ptag { font-size: 0.56rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: bold; margin-bottom: 0.7rem; color: #d67a7a; }
+
+.materia-phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2.5rem 0; }
+@media (max-width: 760px) { .materia-phases { grid-template-columns: 1fr; } }
+.materia-phase { border: 1px solid #1e1e1e; padding: 1.6rem 1.5rem; background: #0c0c0c; }
+.materia-phase .ph-week { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: #7a8bd6; font-weight: bold; }
+.materia-phase .ph-name { font-size: 1.05rem; font-weight: bold; color: #e8e2d9; margin: 0.4rem 0 1rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.materia-phase ul { list-style: none; }
+.materia-phase li { font-size: 0.82rem; line-height: 1.6; color: #999; padding-left: 1rem; position: relative; margin-bottom: 0.6rem; }
+.materia-phase li:before { content: "—"; position: absolute; left: 0; color: #444; }
+
+.materia-okr { border: 1px solid #1e1e1e; background: #0c0c0c; padding: 2rem 2rem 1.5rem; margin: 2.5rem 0; }
+.materia-okr .okr-obj { font-size: 0.95rem; color: #dfe3f2; line-height: 1.6; margin-bottom: 1.5rem; }
+.materia-okr .okr-obj b { color: #7a8bd6; letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.6rem; display: block; margin-bottom: 0.5rem; }
+.materia-kr { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-top: 1px solid #1a1a1a; padding: 0.9rem 0; }
+.materia-kr .kr-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: #cbd0e6; font-weight: bold; }
+.materia-kr .kr-desc { font-size: 0.8rem; color: #888; text-align: right; }
+
+.materia-assets { margin: 2rem 0 0; display: flex; flex-direction: column; gap: 0.8rem; }
+.materia-asset-row { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid #1e1e1e; padding-top: 0.8rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.materia-asset-row span:first-child { color: #777; font-weight: bold; }
+.materia-asset-row a { color: #999; text-decoration: none; cursor: none; }
+.materia-asset-row a:hover { color: #8b9bff; }
+.materia-asset-row .muted { color: #555; text-align: right; }
+
+/* MATERIA — embedded live site */
+.materia-embed-wrap { max-width: 1040px; margin: 3.5rem auto 0; }
+.materia-embed-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: #7a8bd6; font-weight: bold; margin-bottom: 1rem; text-align: center; }
+.materia-browser { border: 1px solid #262636; border-radius: 10px; overflow: hidden; background: #0c0c12; box-shadow: 0 30px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(123,139,214,0.08); }
+.materia-browser-bar { display: flex; align-items: center; gap: 0.7rem; padding: 0.7rem 1rem; background: #14141c; border-bottom: 1px solid #22222e; }
+.materia-dots { display: flex; gap: 0.4rem; flex-shrink: 0; }
+.materia-dots i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+.materia-dots i:nth-child(1) { background: #ff5f57; }
+.materia-dots i:nth-child(2) { background: #febc2e; }
+.materia-dots i:nth-child(3) { background: #28c840; }
+.materia-url { flex: 1; text-align: center; font-size: 0.66rem; letter-spacing: 0.06em; color: #7f8296; background: #0c0c12; border-radius: 5px; padding: 0.35rem 0.9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.materia-url b { color: #b8bce0; font-weight: normal; }
+.materia-open { flex-shrink: 0; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: #7a8bd6; text-decoration: none; cursor: none; font-weight: bold; }
+.materia-open:hover { color: #b8bce0; }
+.materia-frame { position: relative; width: 100%; height: 640px; background: #0a0a12; }
+.materia-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+.materia-embed-cap { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: #555; text-align: center; margin-top: 1rem; }
+@media (max-width: 680px) { .materia-frame { height: 520px; } .materia-open { display: none; } }
 </style>
 </head>
 <body>
@@ -350,6 +425,7 @@ section.active { display: block; }
     <li><a onclick="showClub()">Cosplay Club</a></li>
     <li><a onclick="show('magazine')">Magazine</a></li>
     <li><a onclick="show('design')">Design</a></li>
+    <li><a onclick="show('materia')">Materia</a></li>
     <li><a onclick="show('fashion')">Fashion</a></li>
     <li><a onclick="show('photography')">Photography</a></li>
     <li><a onclick="show('journal')">Journal</a></li>
@@ -641,6 +717,132 @@ section.active { display: block; }
   <div class="design-grid">
     <div class="design-item landscape"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><circle cx="18" cy="18" r="8" stroke="#333" stroke-width="0.5"/></svg><span>Add photo</span></div><div class="overlay"><div class="overlay-title">Photo I</div><div class="overlay-medium">Photography</div></div></div>
     <div class="design-item landscape"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><circle cx="18" cy="18" r="8" stroke="#333" stroke-width="0.5"/></svg><span>Add photo</span></div><div class="overlay"><div class="overlay-title">Photo II</div><div class="overlay-medium">Photography</div></div></div>
+  </div>
+</section>
+
+<!-- MATERIA -->
+<section id="materia">
+  <div class="section-header">Materia · Product Case Study</div>
+
+  <div class="materia-hero">
+    <div class="materia-eyebrow">Founder · Product Design · Built from scratch</div>
+    <h1 class="materia-title">Materia</h1>
+    <p class="materia-lede">A free material companion for junior and self-taught artists. Look up any paint, resin, ink, or glue to see how it behaves and what it safely mixes with. Get it right the first time instead of wasting supplies.</p>
+    <div class="materia-cta-row">
+      <a class="materia-btn primary" href="https://materia-three.vercel.app/prototype/app.html#demo" target="_blank">Try the Live Demo →</a>
+      <a class="materia-btn" href="https://materia-three.vercel.app/" target="_blank">Landing Page ↗</a>
+      <a class="materia-btn" href="https://www.figma.com/board/9GGjdPxIObwZdr3OitTGGz/Untitled?node-id=0-1&t=Gz81idStkDixoRjC-1" target="_blank">FigJam Process ↗</a>
+    </div>
+    <div class="materia-note">An early prototype · No account needed to explore the demo</div>
+  </div>
+
+  <!-- Live embed -->
+  <div class="materia-embed-wrap">
+    <div class="materia-embed-label">Live · Running inside this page</div>
+    <div class="materia-browser">
+      <div class="materia-browser-bar">
+        <div class="materia-dots"><i></i><i></i><i></i></div>
+        <div class="materia-url">🔒 <b>materia-three.vercel.app</b></div>
+        <a class="materia-open" href="https://materia-three.vercel.app/" target="_blank">Open ↗</a>
+      </div>
+      <div class="materia-frame">
+        <iframe src="https://materia-three.vercel.app/" title="Materia live site" loading="lazy"
+          sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
+      </div>
+    </div>
+    <div class="materia-embed-cap">The real site. Scroll and click inside the frame, or open it full-screen.</div>
+  </div>
+
+  <!-- Overview -->
+  <div class="materia-block">
+    <div class="sub-header">Why I Made It</div>
+    <p>Like a lot of self-taught artists, I learned what works by ruining things: a resin coat that never cured, paint that lifted the second I layered over it, an afternoon of allowance gone. The knowledge is out there, but it's buried in forum threads and product pages you only read <em>after</em> something's already gone wrong.</p>
+    <p>Younger artists run into this constantly. They want to experiment, but every wrong guess costs materials, time, and confidence. <strong>Materia is the tool I wish I'd had</strong>: one place that tells you how a material behaves and what it works with, before you commit.</p>
+
+    <div class="materia-verdict">
+      <div class="materia-card pain">
+        <div class="ptag">Pain point 01</div>
+        <div class="vq">Buying on a guess</div>
+        <p>I'd pick materials off a vibe and a thumbnail, then find out mid-piece they didn't work together.</p>
+      </div>
+      <div class="materia-card pain">
+        <div class="ptag">Pain point 02</div>
+        <div class="vq">Wasted money</div>
+        <p>One wrong combo could ruin a whole piece and the supplies with it. On a student budget, that's real money gone.</p>
+      </div>
+      <div class="materia-card pain">
+        <div class="ptag">Pain point 03</div>
+        <div class="vq">Answers scattered everywhere</div>
+        <p>The info existed, but across ten forum tabs, PDFs, and buried comments. Never in one place when I needed it.</p>
+      </div>
+      <div class="materia-card pain">
+        <div class="ptag">Pain point 04</div>
+        <div class="vq">Finding out too late</div>
+        <p>I'd only learn a material's quirk after it cracked, yellowed, or peeled. Too late to undo.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Process -->
+  <div class="materia-block">
+    <div class="sub-header">The Process</div>
+    <div class="materia-phases">
+      <div class="materia-phase">
+        <div class="ph-week">Phase 01</div>
+        <div class="ph-name">Idea Selection</div>
+        <ul>
+          <li>Listed 20 pain points; ran 5 user interviews</li>
+          <li>Scored the top 10 with ICE, then Fast SWOT on each</li>
+          <li>Wrote a Lean Canvas for the top 3 and interviewed people on them</li>
+          <li>Converged on the material-compatibility problem</li>
+        </ul>
+      </div>
+      <div class="materia-phase">
+        <div class="ph-week">Phase 02</div>
+        <div class="ph-name">Build</div>
+        <ul>
+          <li>Defined MVP scope; studied 5+ competitors</li>
+          <li>Drew the v1 user flow and low-fidelity screens</li>
+          <li>Named it Materia, built the logotype and brand</li>
+          <li>Shipped a working prototype + landing page with waitlist</li>
+        </ul>
+      </div>
+      <div class="materia-phase">
+        <div class="ph-week">Phase 03</div>
+        <div class="ph-name">Distribution</div>
+        <ul>
+          <li>Designed a demo storyline: problem → solution → outcome</li>
+          <li>Mapped distribution channels and a feedback loop</li>
+          <li>Set a one-line positioning and next steps</li>
+          <li>Now putting Materia in front of real first users</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- OKR -->
+  <div class="materia-block">
+    <div class="sub-header">Measured With OKRs</div>
+    <p>In the back half I ran the project on OKRs, turning a fuzzy goal into results I could verify, then breaking each into small daily actions.</p>
+    <div class="materia-okr">
+      <div class="okr-obj"><b>Objective</b>Verify if Materia can generate enough interest to launch into the MVP stage.</div>
+      <div class="materia-kr"><span class="kr-label">KR1 · Working Prototype</span><span class="kr-desc">A first-timer completes the core flow unaided</span></div>
+      <div class="materia-kr"><span class="kr-label">KR2 · Landing Page Live</span><span class="kr-desc">Page live, both CTAs working</span></div>
+      <div class="materia-kr"><span class="kr-label">KR3 · 30 Potential Users</span><span class="kr-desc">30 potential users within 2 weeks</span></div>
+      <div class="materia-kr"><span class="kr-label">Key Actions</span><span class="kr-desc">22 small, same-day tasks under the 3 KRs</span></div>
+    </div>
+  </div>
+
+  <!-- Assets -->
+  <div class="materia-block">
+    <div class="sub-header">Explore the Work</div>
+    <div class="materia-assets">
+      <div class="materia-asset-row"><span>Live Prototype</span><a href="https://materia-three.vercel.app/prototype/app.html#demo" target="_blank">materia · material companion →</a></div>
+      <div class="materia-asset-row"><span>Landing Page</span><a href="https://materia-three.vercel.app/" target="_blank">materia-three.vercel.app →</a></div>
+      <div class="materia-asset-row"><span>OKR Board</span><a href="https://pano-okr.artzy.work/" target="_blank">pano-okr.artzy.work →</a></div>
+      <div class="materia-asset-row"><span>Process (FigJam)</span><a href="https://www.figma.com/board/9GGjdPxIObwZdr3OitTGGz/Untitled?node-id=0-1&t=Gz81idStkDixoRjC-1" target="_blank">Full process board →</a></div>
+      <div class="materia-asset-row"><span>Research Artifacts</span><span class="muted">20 pain points · ICE · SWOT · 3× Lean Canvas · competitor research · MVP plan</span></div>
+    </div>
   </div>
 </section>
 
