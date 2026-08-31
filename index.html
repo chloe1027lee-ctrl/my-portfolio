@@ -391,7 +391,7 @@ section.active { display: block; }
 .materia-asset-row .muted { color: #555; text-align: right; }
 
 /* MATERIA — embedded live site */
-.materia-embed-wrap { max-width: 1040px; margin: 3.5rem auto 0; }
+.materia-embed-wrap { max-width: 1240px; margin: 3.5rem auto 0; }
 .materia-embed-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: #7a8bd6; font-weight: bold; margin-bottom: 1rem; text-align: center; }
 .materia-browser { border: 1px solid #262636; border-radius: 10px; overflow: hidden; background: #0c0c12; box-shadow: 0 30px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(123,139,214,0.08); }
 .materia-browser-bar { display: flex; align-items: center; gap: 0.7rem; padding: 0.7rem 1rem; background: #14141c; border-bottom: 1px solid #22222e; }
@@ -404,10 +404,10 @@ section.active { display: block; }
 .materia-url b { color: #b8bce0; font-weight: normal; }
 .materia-open { flex-shrink: 0; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: #7a8bd6; text-decoration: none; cursor: none; font-weight: bold; }
 .materia-open:hover { color: #b8bce0; }
-.materia-frame { position: relative; width: 100%; height: 640px; background: #0a0a12; }
+.materia-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; max-height: 78vh; background: #0a0a12; }
 .materia-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
 .materia-embed-cap { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: #555; text-align: center; margin-top: 1rem; }
-@media (max-width: 680px) { .materia-frame { height: 520px; } .materia-open { display: none; } }
+@media (max-width: 680px) { .materia-frame { aspect-ratio: auto; height: 520px; max-height: none; } .materia-open { display: none; } }
 </style>
 </head>
 <body>
