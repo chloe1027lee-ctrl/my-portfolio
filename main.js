@@ -937,10 +937,10 @@ function closeLightbox() {
 }
 
 document.getElementById('lightbox').addEventListener('click', function(e) {
-  // Close when clicking any empty backdrop area (overlay, inner wrapper, or the
-  // media column's blank space), but keep the image, info panel, thumbnails,
-  // and nav buttons interactive.
-  if (e.target.closest('#lb-img, .lightbox-info, .lightbox-thumbs, .lightbox-nav, .lightbox-close')) return;
+  // Keep the info panel, thumbnails, nav buttons, and close button interactive.
+  if (e.target.closest('.lightbox-info, .lightbox-thumbs, .lightbox-nav, .lightbox-close')) return;
+  // Clicking the photo/artwork zooms in; clicking the blank backdrop exits.
+  if (e.target.closest('#lb-img')) { openZoom(); return; }
   closeLightbox();
 });
 
