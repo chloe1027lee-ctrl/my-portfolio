@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>CHLOE — Portfolio</title>
-<link rel="stylesheet" href="styles.css"/>
+<link rel="stylesheet" href="styles.css?v=2"/>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
 
@@ -36,7 +36,7 @@ nav {
 }
 .nav-name { font-size: 1rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: bold; color: #e8e2d9; }
 .nav-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
-.nav-links a { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; color: #999; cursor: none; transition: color 0.2s; font-weight: bold; }
+.nav-links a { font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: #b5b5b5; cursor: none; transition: color 0.2s; font-weight: bold; }
 .nav-links a:hover { color: #e8e2d9; }
 
 /* SECTIONS */
@@ -55,7 +55,7 @@ section.active { display: block; }
   border-bottom: 1px solid #222;
   padding-bottom: 3rem;
 }
-.hero-eyebrow { font-size: 0.68rem; letter-spacing: 0.4em; text-transform: uppercase; color: #888; margin-bottom: 2rem; }
+.hero-eyebrow { font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: #a8a8a8; margin-bottom: 2rem; }
 .hero-title {
   font-size: clamp(4rem, 12vw, 9rem);
   font-weight: bold;
@@ -94,8 +94,10 @@ section.active { display: block; }
 .hero-years { font-size: 0.65rem; letter-spacing: 0.2em; color: #666; margin-top: 0.8rem; }
 
 /* SECTION HEADER */
-.section-header { font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: #888; margin-bottom: 3rem; border-bottom: 1px solid #222; padding-bottom: 0.5rem; font-weight: bold; }
-.sub-header { font-size: 0.66rem; letter-spacing: 0.3em; text-transform: uppercase; color: #666; margin: 2.5rem 0 1rem; font-weight: bold; }
+.section-header { font-size: 0.8rem; letter-spacing: 0.24em; text-transform: uppercase; color: #b0b0b0; margin-bottom: 3rem; border-bottom: 1px solid #222; padding-bottom: 0.5rem; font-weight: bold; }
+.editorial-link { display: inline-block; margin-top: 1.1rem; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: #cbd0e6; text-decoration: underline; text-underline-offset: 4px; cursor: none; font-weight: bold; transition: color 0.2s; }
+.editorial-link:hover { color: #fff; }
+.sub-header { font-size: 0.74rem; letter-spacing: 0.2em; text-transform: uppercase; color: #a0a0a0; margin: 2.5rem 0 1rem; font-weight: bold; }
 
 /* GALLERY GRID */
 .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1px; background: #1a1a1a; }
@@ -125,23 +127,23 @@ section.active { display: block; }
 .design-link:hover { color: #e8e2d9; }
 
 /* ABOUT */
-.about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; }
+.about-grid { display: grid; grid-template-columns: 1fr 1.7fr; gap: 4rem; align-items: center; }
 .about-photo { aspect-ratio: 3/4; background: #111; border: 1px solid #222; overflow: hidden; }
 .about-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(15%); }
 .about-text h2 { font-size: 2.5rem; font-weight: bold; margin-bottom: 0.3rem; line-height: 1.1; text-transform: uppercase; letter-spacing: 0.05em; }
-.about-text .about-role { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: #888; margin-bottom: 2rem; font-weight: bold; }
+.about-text .about-role { font-size: 0.74rem; letter-spacing: 0.2em; text-transform: uppercase; color: #a8a8a8; margin-bottom: 2rem; font-weight: bold; }
 .about-text p { font-size: 1rem; line-height: 1.85; color: #bbb; margin-bottom: 1.2rem; }
 .about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
 .tag { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid #444; padding: 0.3rem 0.8rem; color: #999; font-weight: bold; }
 .about-links { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.8rem; }
-.about-link-row { display: flex; justify-content: space-between; border-top: 1px solid #1e1e1e; padding-top: 0.8rem; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
-.about-link-row span:first-child { color: #777; font-weight: bold; }
-.about-link-row a { color: #999; text-decoration: none; cursor: none; }
+.about-link-row { display: flex; justify-content: space-between; border-top: 1px solid #1e1e1e; padding-top: 0.8rem; font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.about-link-row span:first-child { color: #9a9a9a; font-weight: bold; }
+.about-link-row a { color: #b5b5b5; text-decoration: none; cursor: none; }
 .about-link-row a:hover { color: #e8e2d9; }
 
 /* MAGAZINE */
-.mag-shelf { display: flex; justify-content: center; align-items: flex-start; gap: 2.5rem; flex-wrap: nowrap; padding: 3rem 1.5rem 5rem; max-width: 1140px; margin: 0 auto; }
-.mag-shelf-item { display: flex; flex-direction: column; align-items: center; gap: 1.1rem; cursor: pointer; flex: 1 1 0; min-width: 0; max-width: 235px; }
+.mag-shelf { display: flex; justify-content: center; align-items: flex-start; gap: 3rem; flex-wrap: nowrap; padding: 3rem 1.5rem 5rem; max-width: 1440px; margin: 0 auto; }
+.mag-shelf-item { display: flex; flex-direction: column; align-items: center; gap: 1.1rem; cursor: pointer; flex: 1 1 0; min-width: 0; max-width: 300px; }
 .mag-shelf-cover { position: relative; width: 100%; aspect-ratio: 2/3; overflow: hidden; box-shadow: 10px 12px 40px rgba(0,0,0,0.85), -5px 0 14px rgba(0,0,0,0.5); transition: transform 0.35s cubic-bezier(0.2,0,0,1), box-shadow 0.35s; transform-style: preserve-3d; }
 .mag-shelf-item:hover .mag-shelf-cover { transform: translateY(-12px) scale(1.03) perspective(600px) rotateY(-4deg); box-shadow: 16px 24px 60px rgba(0,0,0,0.95), -8px 0 22px rgba(0,0,0,0.6); }
 .mag-shelf-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -330,8 +332,8 @@ section.active { display: block; }
 .contact-wrap p { font-size: 0.85rem; letter-spacing: 0.05em; color: #555; margin-bottom: 3rem; line-height: 1.7; }
 .contact-line { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1e1e1e; padding: 1.2rem 0; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: bold; }
 .contact-line:last-child { border-bottom: 1px solid #1e1e1e; }
-.contact-line span:first-child { color: #444; }
-.contact-line a { color: #777; text-decoration: none; cursor: none; }
+.contact-line span:first-child { color: #8a8a8a; }
+.contact-line a { color: #b0b0b0; text-decoration: none; cursor: none; }
 .contact-line a:hover { color: #e8e2d9; }
 
 /* MATERIA — product case study */
@@ -376,12 +378,6 @@ section.active { display: block; }
 .materia-phase li { font-size: 0.82rem; line-height: 1.6; color: #999; padding-left: 1rem; position: relative; margin-bottom: 0.6rem; }
 .materia-phase li:before { content: "—"; position: absolute; left: 0; color: #444; }
 
-.materia-okr { border: 1px solid #1e1e1e; background: #0c0c0c; padding: 2rem 2rem 1.5rem; margin: 2.5rem 0; }
-.materia-okr .okr-obj { font-size: 0.95rem; color: #dfe3f2; line-height: 1.6; margin-bottom: 1.5rem; }
-.materia-okr .okr-obj b { color: #7a8bd6; letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.6rem; display: block; margin-bottom: 0.5rem; }
-.materia-kr { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-top: 1px solid #1a1a1a; padding: 0.9rem 0; }
-.materia-kr .kr-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: #cbd0e6; font-weight: bold; }
-.materia-kr .kr-desc { font-size: 0.8rem; color: #888; text-align: right; }
 
 .materia-assets { margin: 2rem 0 0; display: flex; flex-direction: column; gap: 0.8rem; }
 .materia-asset-row { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid #1e1e1e; padding-top: 0.8rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
@@ -698,6 +694,7 @@ section.active { display: block; }
       </div>
     </div>
   </div>
+  <a href="https://canva.link/ualmarketingsplash" target="_blank" class="editorial-link">↗ Read the Editorial</a>
 
   <div class="sub-header" style="margin-top:2.5rem;">Social Media</div>
   <div class="design-grid">
@@ -820,17 +817,25 @@ section.active { display: block; }
     </div>
   </div>
 
-  <!-- OKR -->
+  <!-- Research board (interactive FigJam) -->
   <div class="materia-block">
-    <div class="sub-header">Measured With OKRs</div>
-    <p>In the back half I ran the project on OKRs, turning a fuzzy goal into results I could verify, then breaking each into small daily actions.</p>
-    <div class="materia-okr">
-      <div class="okr-obj"><b>Objective</b>Verify if Materia can generate enough interest to launch into the MVP stage.</div>
-      <div class="materia-kr"><span class="kr-label">KR1 · Working Prototype</span><span class="kr-desc">A first-timer completes the core flow unaided</span></div>
-      <div class="materia-kr"><span class="kr-label">KR2 · Landing Page Live</span><span class="kr-desc">Page live, both CTAs working</span></div>
-      <div class="materia-kr"><span class="kr-label">KR3 · 30 Potential Users</span><span class="kr-desc">30 potential users within 2 weeks</span></div>
-      <div class="materia-kr"><span class="kr-label">Key Actions</span><span class="kr-desc">22 small, same-day tasks under the 3 KRs</span></div>
+    <div class="sub-header">The Research Board</div>
+    <p>Everything behind Materia lives on one board: 20 pain points, ICE scoring, SWOT, three Lean Canvases, and competitor research. Pan and zoom through the actual thinking below.</p>
+  </div>
+  <div class="materia-embed-wrap">
+    <div class="materia-embed-label">Interactive · FigJam board</div>
+    <div class="materia-browser">
+      <div class="materia-browser-bar">
+        <div class="materia-dots"><i></i><i></i><i></i></div>
+        <div class="materia-url">✦ <b>FigJam · Materia research</b></div>
+        <a class="materia-open" href="https://www.figma.com/board/9GGjdPxIObwZdr3OitTGGz/Untitled?node-id=0-1&t=Gz81idStkDixoRjC-1" target="_blank">Open ↗</a>
+      </div>
+      <div class="materia-frame">
+        <iframe src="https://embed.figma.com/board/9GGjdPxIObwZdr3OitTGGz/Untitled?node-id=0-1&embed-host=share" title="Materia research board (FigJam)" loading="lazy" allowfullscreen
+          sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
+      </div>
     </div>
+    <div class="materia-embed-cap">The full board behind Materia. Drag to pan, scroll to zoom, or open it full-screen.</div>
   </div>
 
   <!-- Assets -->
@@ -839,7 +844,6 @@ section.active { display: block; }
     <div class="materia-assets">
       <div class="materia-asset-row"><span>Live Prototype</span><a href="https://materia-three.vercel.app/prototype/app.html#demo" target="_blank">materia · material companion →</a></div>
       <div class="materia-asset-row"><span>Landing Page</span><a href="https://materia-three.vercel.app/" target="_blank">materia-three.vercel.app →</a></div>
-      <div class="materia-asset-row"><span>OKR Board</span><a href="https://pano-okr.artzy.work/" target="_blank">pano-okr.artzy.work →</a></div>
       <div class="materia-asset-row"><span>Process (FigJam)</span><a href="https://www.figma.com/board/9GGjdPxIObwZdr3OitTGGz/Untitled?node-id=0-1&t=Gz81idStkDixoRjC-1" target="_blank">Full process board →</a></div>
       <div class="materia-asset-row"><span>Research Artifacts</span><span class="muted">20 pain points · ICE · SWOT · 3× Lean Canvas · competitor research · MVP plan</span></div>
     </div>
@@ -1256,11 +1260,9 @@ section.active { display: block; }
     <div class="about-text">
       <h2>Chloe</h2>
       <div class="about-role">Artist &nbsp;·&nbsp; Designer &nbsp;·&nbsp; Cosplayer &nbsp;·&nbsp; Taiwan, Kaohsiung</div>
-      <p>Hi, I'm Chloe. I'm a high school student and visual artist based in Kaohsiung, working across cosplay, traditional art, and design. In my work, I'm drawn to using highly saturated colors to express intensity: overwhelm, tension, and sensory overload. I'm interested in how color can move beyond aesthetics to communicate psychological states, and I often explore the complex, internal emotions experienced by adolescent girls.</p>
-      <p>I'm also interested in the intersection between fashion and art. Through cosplay, I explore how clothing, makeup, and presentation can carry cultural meaning, reference history, and communicate personality beyond words. Much of my work focuses on taking something often seen as surface-level and revealing the thought, research, and intention behind it.</p>
-      <p>This idea is central to my cosplay magazine project, FLAIR, where I analyze character designs and connect them to historical and cultural influences. Through my lookbook, I aim to challenge the perception of cosplay as purely costume-based, showing how these designs are shaped by fashion history, cultural context, and visual storytelling.</p>
-      <p>I've collaborated with multiple photographers and directed themed shoots, while also building my own online platform to document my work and creative development. In addition, I founded the first cosplay club at my school, organized photoshoots, led activities, and produced two volumes of a collaborative cosplay magazine. I also led outreach initiatives, including a collaboration with the Love and Hope Child Care Center, where we worked with over 30 children through performances, creative activities, and simple English lessons.</p>
-      <p>I have attended over 35 conventions and continue to actively participate in the cosplay community. Outside of my projects, I'm interested in fashion, visual culture, and the way people present themselves in different contexts. I tend to be more observant than expressive at first, but many of my ideas come from noticing small details and translating them into something visual.</p>
+      <p>Hi, I'm Chloe, a high school student and visual artist based in Kaohsiung, working across cosplay, traditional art, and design. I'm drawn to highly saturated color to express intensity: overwhelm, tension, and sensory overload. Much of my work explores the complex inner emotions of adolescent girls, and how color can communicate a psychological state rather than just an aesthetic.</p>
+      <p>I'm just as interested in where fashion and art meet. Through cosplay I explore how clothing, makeup, and presentation carry cultural meaning and reference history, taking something often seen as surface-level and revealing the thought behind it. That idea drives my personal magazine, FLAIR, where I analyze character designs and connect them to fashion history and visual storytelling.</p>
+      <p>I founded the first cosplay club at my school, directed themed shoots with photographers, and produced two volumes of a collaborative magazine. I also led outreach with the Love and Hope Child Care Center, working with over 30 children through performances and creative activities. I've attended 35+ conventions, and many of my ideas begin with noticing a small detail and translating it into something visual.</p>
       <div class="about-tags">
         <span class="tag">Digital</span>
         <span class="tag">Mixed Media</span>
@@ -1277,6 +1279,8 @@ section.active { display: block; }
         <div class="about-link-row"><span>Instagram (Personal)</span><a href="https://www.instagram.com/kuro1_cos/" target="_blank">@kuro1_cos</a></div>
         <div class="about-link-row"><span>Instagram (Club)</span><a href="https://www.instagram.com/kascosplayclub/" target="_blank">@kascosplayclub</a></div>
         <div class="about-link-row"><span>Facebook</span><a href="https://www.facebook.com/klchloe102/" target="_blank">klchloe102</a></div>
+        <div class="about-link-row"><span>FLAIR · Issue 1</span><a href="https://canva.link/ckuroi24magc" target="_blank">View →</a></div>
+        <div class="about-link-row"><span>FLAIR · Issue 2</span><span style="color:#555;">Coming soon</span></div>
         <div class="about-link-row"><span>Club Magazine Vol. 1</span><a href="https://canva.link/kascosplayclub2425mag" target="_blank">View →</a></div>
         <div class="about-link-row"><span>Club Magazine Vol. 2</span><a href="https://canva.link/kascosplayclub202526mag" target="_blank">View →</a></div>
       </div>
@@ -1304,6 +1308,7 @@ section.active { display: block; }
   <p class="photo-intro">Street, event, and fashion photography. Sony A6400 · Lightroom.</p>
 
   <div class="photo-category">Unbound Silhouettes · UAL Visual Communications · Fashion</div>
+  <p class="photo-category-desc">A fashion-direction series that warps and exaggerates corporate silhouettes, turning disciplined, contained professional dress into a shape all her own. Photography and editing by Chloe Lee; models Arisa Slavu and Adriana Malik.</p>
   <div class="photo-grid">
 
     <div class="photo-work" data-work="unbound">
@@ -1357,6 +1362,7 @@ section.active { display: block; }
   </div>
 
   <div class="photo-category">London Pride · Soho Street Parties · June 2025</div>
+  <p class="photo-category-desc">Candid street portraits from the Soho street parties at London Pride 2025. Strangers caught mid-crowd, unposed and electric, each one a complete world in a single frame.</p>
   <div class="photo-grid">
 
     <div class="photo-work" data-work="ms-model">
@@ -1415,7 +1421,7 @@ section.active { display: block; }
   <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
   <div class="lightbox-inner">
     <div class="lightbox-media">
-      <img id="lb-img" class="lightbox-main-img" src="" alt="" onclick="openZoom()">
+      <img id="lb-img" class="lightbox-main-img" src="" alt="">
       <div id="lb-thumbs" class="lightbox-thumbs"></div>
       <div id="lb-nav" class="lightbox-nav">
         <button onclick="lbNav(-1)">← Prev</button>
@@ -1502,7 +1508,7 @@ function spawnParticle(x, y) {
   setTimeout(() => p.remove(), 1000);
 }
 </script>
-<script src="main.js"></script>
+<script src="main.js?v=2"></script>
 <script src="liquid.js"></script>
 </body>
 </html>
