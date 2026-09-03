@@ -196,10 +196,10 @@ section.active { display: block; }
 #book-page-counter { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: #555; }
 
 /* COSPLAY */
-.cosplay-social-bar { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3.5rem; padding-bottom: 1.8rem; border-bottom: 1px solid #1a1a1a; }
+.cosplay-social-bar { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.8rem; padding-bottom: 1.8rem; border-bottom: 1px solid #1a1a1a; }
 .cosplay-social-bar a { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: #cfc9bf; text-decoration: none; font-weight: bold; border: 1px solid #3a3a3a; padding: 0.6rem 1.15rem; border-radius: 999px; transition: color 0.2s, border-color 0.2s, background 0.2s; }
 .cosplay-social-bar a:hover { color: #0a0a0a; background: #e8e2d9; border-color: #e8e2d9; }
-.cosplay-social-note { font-size: 0.6rem; letter-spacing: 0.15em; color: #444; margin-bottom: 3.5rem; font-style: italic; }
+.cosplay-social-note { font-size: 0.82rem; letter-spacing: 0.02em; color: #9a9a9a; margin-bottom: 1.8rem; font-style: italic; }
 
 .cosplay-category { padding: 3rem 0; border-bottom: 1px solid #141414; }
 .cosplay-cat-top { margin-bottom: 1.8rem; }
@@ -227,11 +227,17 @@ section.active { display: block; }
 
 /* Cosplay · one-row covers, hover to preview the full set, click to keep it open */
 .cosplay-gallery { margin-top: 0.5rem; }
-.cosplay-cover-row { display: flex; gap: 0.9rem; overflow-x: auto; padding: 0.3rem 0 1.1rem; }
-.cosplay-cover-row::-webkit-scrollbar { height: 4px; }
-.cosplay-cover-row::-webkit-scrollbar-track { background: #0d0d0d; }
-.cosplay-cover-row::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
-.cosplay-cover { flex: 0 0 auto; width: 165px; cursor: pointer; position: relative; border: none; background: none; padding: 0; text-align: left; font-family: inherit; color: inherit; }
+.cosplay-cover-row { display: flex; gap: 0.9rem; overflow-x: auto; padding: 0.3rem 0 0.5rem; scrollbar-width: none; -ms-overflow-style: none; }
+.cosplay-cover-row::-webkit-scrollbar { display: none; }
+.cosplay-scrollbar { position: relative; height: 8px; background: #191919; border-radius: 4px; margin: 0.15rem 0 1.5rem; cursor: pointer; overflow: hidden; }
+.cosplay-scrollbar-thumb { position: absolute; top: 0; left: 0; height: 100%; border-radius: 4px; min-width: 46px;
+  background: linear-gradient(90deg, #e8455a, #ef8f3c, #ecd54a, #46bd77, #3f97d6, #9668cf, #e8455a);
+  background-size: 200% 100%;
+  animation: cosplayRainbow 5.5s linear infinite;
+  opacity: 0.92; transition: opacity 0.2s; }
+.cosplay-scrollbar:hover .cosplay-scrollbar-thumb { opacity: 1; }
+@keyframes cosplayRainbow { from { background-position: 0% 50%; } to { background-position: -200% 50%; } }
+.cosplay-cover { flex: 0 0 auto; width: 200px; cursor: pointer; position: relative; border: none; background: none; padding: 0; text-align: left; font-family: inherit; color: inherit; }
 .cosplay-cover-thumb { position: relative; width: 100%; aspect-ratio: 2/3; overflow: hidden; border: 1px solid #1e1e1e; transition: border-color 0.25s, box-shadow 0.25s; }
 .cosplay-cover-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; filter: saturate(0.82) brightness(0.8); transition: transform 0.4s, filter 0.4s; }
 .cosplay-cover:hover .cosplay-cover-thumb img,
@@ -255,7 +261,7 @@ section.active { display: block; }
 .cosplay-panel-title { font-size: 0.9rem; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase; color: #e8e2d9; margin-bottom: 0.3rem; }
 .cosplay-panel-meta { font-size: 0.62rem; letter-spacing: 0.1em; color: #777; }
 .cosplay-panel-state { font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase; color: #555; white-space: nowrap; }
-.cosplay-panel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 5px; }
+.cosplay-panel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(165px, 1fr)); gap: 5px; }
 .cosplay-panel-grid .cosplay-cat-strip-item { width: auto; height: auto; aspect-ratio: 2/3; }
 
 /* Cosplay Club feature (top of Cosplay section) */
@@ -1453,6 +1459,95 @@ function show(id) {
   document.getElementById(id).classList.add('active');
   applyBackground(id);
   window.scrollTo(0,0);
+  if (id === 'cosplay') { setupCosplayScrollbar(); hintCosplayScroll(); }
+}
+
+// Custom always-visible scrollbar under the cover row (macOS hides the native
+// one until you scroll). Reflects position, and is draggable / clickable.
+function setupCosplayScrollbar() {
+  const row = document.querySelector('#cosplay .cosplay-cover-row');
+  if (!row) return;
+  let bar = document.getElementById('cosplay-scrollbar');
+  if (!bar) {
+    bar = document.createElement('div');
+    bar.id = 'cosplay-scrollbar';
+    bar.className = 'cosplay-scrollbar';
+    const thumb = document.createElement('div');
+    thumb.className = 'cosplay-scrollbar-thumb';
+    bar.appendChild(thumb);
+    row.parentNode.insertBefore(bar, row.nextSibling);
+
+    const update = () => {
+      const sw = row.scrollWidth, cw = row.clientWidth, bw = bar.clientWidth;
+      if (sw <= cw + 4) { bar.style.display = 'none'; return; }
+      bar.style.display = 'block';
+      const tw = Math.max(40, bw * cw / sw);
+      const left = (row.scrollLeft / (sw - cw)) * (bw - tw);
+      thumb.style.width = tw + 'px';
+      thumb.style.transform = 'translateX(' + left + 'px)';
+    };
+    row.addEventListener('scroll', () => {
+      update();
+      // The visitor scrolled it themselves — stop the auto-slide hint.
+      cosplayUserScrolled = true;
+      clearTimeout(cosplayHintTimer);
+      clearInterval(cosplayNudgeTimer);
+    });
+    window.addEventListener('resize', update);
+
+    let dragging = false, startX = 0, startScroll = 0;
+    thumb.addEventListener('pointerdown', e => {
+      dragging = true; startX = e.clientX; startScroll = row.scrollLeft;
+      thumb.setPointerCapture(e.pointerId); e.preventDefault();
+    });
+    thumb.addEventListener('pointermove', e => {
+      if (!dragging) return;
+      const bw = bar.clientWidth, tw = thumb.clientWidth;
+      row.scrollLeft = startScroll + (e.clientX - startX) * (row.scrollWidth - row.clientWidth) / (bw - tw);
+    });
+    const stop = () => { dragging = false; };
+    thumb.addEventListener('pointerup', stop);
+    thumb.addEventListener('pointercancel', stop);
+    bar.addEventListener('pointerdown', e => {
+      if (e.target !== bar) return;
+      const rect = bar.getBoundingClientRect(), tw = thumb.clientWidth;
+      const pos = (e.clientX - rect.left - tw / 2) / (rect.width - tw);
+      row.scrollLeft = Math.max(0, Math.min(1, pos)) * (row.scrollWidth - row.clientWidth);
+    });
+    bar._update = update;
+  }
+  bar._update();
+}
+
+// Gentle "you can scroll sideways" hint: glide the cover row out a touch and
+// back so the rainbow scrollbar visibly slides. Repeats every few seconds
+// until the visitor scrolls it themselves.
+let cosplayUserScrolled = false, cosplayHintTimer = null, cosplayNudgeTimer = null;
+function cosplayDoNudge() {
+  const bar = document.getElementById('cosplay-scrollbar');
+  const row = document.querySelector('#cosplay .cosplay-cover-row');
+  if (!bar || !row || row.scrollWidth <= row.clientWidth + 8) return;
+  const thumb = bar.querySelector('.cosplay-scrollbar-thumb');
+  const dist = Math.min(bar.clientWidth - thumb.clientWidth, 46);   // thumb travel
+  if (dist < 4) return;
+  const steps = 56, iv = 20;
+  let i = 0;
+  clearInterval(cosplayNudgeTimer);
+  cosplayNudgeTimer = setInterval(() => {
+    i++;
+    // Slide only the line out and back; the cover images stay put.
+    thumb.style.transform = 'translateX(' + (dist * Math.sin((i / steps) * Math.PI)) + 'px)';
+    if (i >= steps) { clearInterval(cosplayNudgeTimer); thumb.style.transform = 'translateX(0px)'; }
+  }, iv);
+}
+function hintCosplayScroll() {
+  clearTimeout(cosplayHintTimer);
+  if (cosplayUserScrolled) return;
+  cosplayHintTimer = setTimeout(function loop() {
+    if (cosplayUserScrolled || !document.getElementById('cosplay').classList.contains('active')) return;
+    cosplayDoNudge();
+    cosplayHintTimer = setTimeout(loop, 5000);
+  }, 600);
 }
 
 // Cosplay Club lives on the Home page — jump home, then smooth-scroll to it.
