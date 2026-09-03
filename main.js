@@ -216,6 +216,28 @@ const worksData = {
       'images/cosplay/arcana-12.jpg'
     ]
   },
+  'rizu-kyun': {
+    title: 'Rizu Kyun',
+    meta: '開拓動漫祭 FF44 · February 09, 2025',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/cosplay/rizu-kyun-1.jpg',
+      'images/cosplay/rizu-kyun-2.jpg',
+      'images/cosplay/rizu-kyun-3.jpg',
+      'images/cosplay/rizu-kyun-4.jpg',
+      'images/cosplay/rizu-kyun-5.jpg',
+      'images/cosplay/rizu-kyun-6.jpg',
+      'images/cosplay/rizu-kyun-7.jpg',
+      'images/cosplay/rizu-kyun-8.jpg',
+      'images/cosplay/rizu-kyun-9.jpg',
+      'images/cosplay/rizu-kyun-10.jpg',
+      'images/cosplay/rizu-kyun-11.jpg',
+      'images/cosplay/rizu-kyun-12.jpg',
+      'images/cosplay/rizu-kyun-13.jpg',
+      'images/cosplay/rizu-kyun-14.jpg'
+    ]
+  },
   'nikke-cinderella': {
     title: 'Nikke · Cinderella',
     meta: 'Goddess of Victory: Nikke · Cinderella · acosta 「アコスタ！」· April 11, 2026',
@@ -844,7 +866,8 @@ document.addEventListener('keydown', e => {
     { key: 'dorothy',          sub: '駁二動漫祭 FFK18 · Dec 2025' },
     { key: 'marin-kitagawa',   sub: '幻日祭 · Nov 2025' },
     { key: 'blanc-kica',       sub: 'KICA 高雄國際動漫節 · Oct 2025' },
-    { key: 'arcana',           sub: '【CWT-K48】高雄場 · Sep 2025' }
+    { key: 'arcana',           sub: '【CWT-K48】高雄場 · Sep 2025' },
+    { key: 'rizu-kyun',        sub: '開拓動漫祭 FF44 · Feb 2025' }
   ];
 
   const row = document.createElement('div');
