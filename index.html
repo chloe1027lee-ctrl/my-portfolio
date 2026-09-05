@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>CHLOE — Portfolio</title>
-<link rel="stylesheet" href="styles.css?v=2"/>
+<link rel="stylesheet" href="styles.css?v=3"/>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
 
@@ -906,30 +906,66 @@ section.active { display: block; }
 <section id="fashion">
   <div class="section-header">Fashion</div>
 
-  <div class="about-text" style="max-width:780px;margin:1.5rem auto 0;text-align:left;">
-    <h2 style="margin-bottom:0.3rem;">States of Preservation</h2>
-    <div class="about-role">Fashion Collection &nbsp;·&nbsp; Process Book &nbsp;·&nbsp; Fantasy → Reality</div>
-
-    <p><em>Theme &amp; Concept.</em> This collection explores death not as a single ending but as a state of perception. It moves from fantasy to reality, so that the viewer first falls for the beauty of a preserved specimen and only afterward recognises what it represents, mirroring exactly what happens when someone sees a diaphonized organism: captivated before they realise they are looking at something dead.</p>
-
-    <p><strong>Fantasy.</strong> At first glance, the collection presents death as something delicate, vibrant, and almost dreamlike. It is inspired by diaphonized specimens, preserved organisms whose transparent tissues and vividly stained skeletons create an illusion of vitality despite no longer being alive. Bright colours, translucent materials, and flowing silhouettes transform anatomical structures into elegant, wearable forms. Here death appears not as something frightening but as something preserved and beautiful, inviting viewers to question whether death must always be tied to darkness and decay.</p>
-
-    <p><strong>Reality.</strong> As the collection progresses, the fantasy gradually dissolves into reality. The vibrant transparency gives way to muted, earthy tones, and smooth, delicate surfaces become rough, frayed, and fragmented, echoing the natural process of decomposition. The preserved beauty of the specimen is stripped away to reveal the physical reality of death, where flesh decays, colour fades, and the body slowly returns to nature. By presenting fantasy before reality, the collection asks how perception shapes our emotional response. The organism itself has not changed; only the way it is presented has. It leaves a single question: if I found it beautiful before I knew it represented death, what does that say about how I see death?</p>
+  <!-- CONCEPT HERO -->
+  <div class="fashion-hero">
+    <div class="fashion-eyebrow">Fashion Collection · Process Book</div>
+    <h1 class="fashion-title">States of<br>Preservation</h1>
+    <p class="fashion-hook">A collection about death not as an ending, but as a state of <em>perception</em> — you fall for the beauty first, and only afterward realise what you are actually looking at.</p>
+    <div class="fashion-tags">
+      <span>Fantasy → Reality</span>
+      <span>Diaphonized Specimens</span>
+      <span>37-Page Process Book</span>
+    </div>
   </div>
 
-  <div class="sub-header" style="margin-top:3rem;">Fantasy Looks</div>
-  <div class="gallery-grid">
-    <div class="gallery-item"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add look</span></div><div class="overlay"><div class="overlay-title">Look 1</div><div class="overlay-medium">Fantasy</div></div></div>
-    <div class="gallery-item"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add look</span></div><div class="overlay"><div class="overlay-title">Look 5</div><div class="overlay-medium">Fantasy</div></div></div>
+  <!-- PULL QUOTE -->
+  <div class="fashion-quote">If I found it beautiful before I knew it represented death, what does that say about how I see death?</div>
+
+  <!-- FANTASY vs REALITY -->
+  <div class="fashion-split">
+    <div class="fashion-panel fashion-panel--fantasy">
+      <div class="fashion-panel-label">01 · Fantasy</div>
+      <h3>Beautiful, preserved, almost alive.</h3>
+      <p>Inspired by diaphonized specimens: organisms turned transparent, their skeletons vividly stained. Bright colour, translucent material and flowing silhouettes turn anatomy into something elegant and wearable. Death, made delicate.</p>
+      <div class="fashion-look-row">
+        <div class="fashion-ph"><svg width="30" height="30" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span class="fashion-ph-label">Look 1 · Fantasy</span><span class="fashion-ph-hint">Add sketch</span></div>
+        <div class="fashion-ph"><svg width="30" height="30" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span class="fashion-ph-label">Look 5 · Fantasy</span><span class="fashion-ph-hint">Add sketch</span></div>
+      </div>
+    </div>
+    <div class="fashion-panel fashion-panel--reality">
+      <div class="fashion-panel-label">02 · Reality</div>
+      <h3>The beauty decays into truth.</h3>
+      <p>The transparency fades to muted, earthy tones; smooth surfaces fray and fragment. The preserved illusion strips away to reveal decay, the body returning to nature. The same organism, seen through a different lens.</p>
+      <div class="fashion-look-row">
+        <div class="fashion-ph"><svg width="30" height="30" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span class="fashion-ph-label">Look 6 · Reality</span><span class="fashion-ph-hint">Add sketch</span></div>
+        <div class="fashion-ph"><svg width="30" height="30" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span class="fashion-ph-label">Look 7 · Reality</span><span class="fashion-ph-hint">Add sketch</span></div>
+      </div>
+    </div>
   </div>
 
-  <div class="sub-header" style="margin-top:2.5rem;">Reality Looks</div>
-  <div class="gallery-grid">
-    <div class="gallery-item"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add look</span></div><div class="overlay"><div class="overlay-title">Look 6</div><div class="overlay-medium">Reality</div></div></div>
-    <div class="gallery-item"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add look</span></div><div class="overlay"><div class="overlay-title">Look 7</div><div class="overlay-medium">Reality</div></div></div>
+  <!-- SKETCHES & DEVELOPMENT -->
+  <div class="sub-header" style="margin-top:3.5rem;">Sketches &amp; Development</div>
+  <p class="fashion-note">Design collages, look iterations and working sketches from the process book, where the concept becomes garments.</p>
+  <div class="fashion-sketch-grid">
+    <div class="fashion-ph"><svg width="30" height="30" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span class="fashion-ph-label">Design Collage</span><span class="fashion-ph-hint">Add sketch</span></div>
+    <div class="fashion-ph"><svg width="30" height="30" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span class="fashion-ph-label">Look Iterations</span><span class="fashion-ph-hint">Add sketch</span></div>
+    <div class="fashion-ph"><svg width="30" height="30" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span class="fashion-ph-label">Working Sketch</span><span class="fashion-ph-hint">Add sketch</span></div>
+    <div class="fashion-ph"><svg width="30" height="30" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span class="fashion-ph-label">Fantasy Fugue</span><span class="fashion-ph-hint">Add sketch</span></div>
+    <div class="fashion-ph"><svg width="30" height="30" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span class="fashion-ph-label">Reality Fugue</span><span class="fashion-ph-hint">Add sketch</span></div>
+    <div class="fashion-ph"><svg width="30" height="30" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span class="fashion-ph-label">Final Design</span><span class="fashion-ph-hint">Add sketch</span></div>
   </div>
 
-  <div class="sub-header" style="margin-top:3rem;">Process Book · Table of Contents</div>
+  <!-- REFERENCES -->
+  <div class="sub-header" style="margin-top:3rem;">References &amp; Inspiration</div>
+  <p class="fashion-note">The research behind the collection: diaphonized specimens, anatomical forms and Met Museum study.</p>
+  <div class="fashion-ref-row">
+    <div class="fashion-ph"><svg width="26" height="26" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><circle cx="18" cy="18" r="8" stroke="#333" stroke-width="0.5"/></svg><span class="fashion-ph-label">Diaphonized Specimen</span><span class="fashion-ph-hint">Add reference</span></div>
+    <div class="fashion-ph"><svg width="26" height="26" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><circle cx="18" cy="18" r="8" stroke="#333" stroke-width="0.5"/></svg><span class="fashion-ph-label">Anatomical Form</span><span class="fashion-ph-hint">Add reference</span></div>
+    <div class="fashion-ph"><svg width="26" height="26" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><circle cx="18" cy="18" r="8" stroke="#333" stroke-width="0.5"/></svg><span class="fashion-ph-label">Met Museum Study</span><span class="fashion-ph-hint">Add reference</span></div>
+    <div class="fashion-ph"><svg width="26" height="26" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><circle cx="18" cy="18" r="8" stroke="#333" stroke-width="0.5"/></svg><span class="fashion-ph-label">Colour &amp; Material</span><span class="fashion-ph-hint">Add reference</span></div>
+  </div>
+
+  <div class="sub-header" style="margin-top:3rem;">Process Book · 37 Pages</div>
   <div class="fashion-toc">
     <div class="fashion-toc-chapter">Concept Development</div>
     <div class="fashion-toc-row"><span class="fashion-toc-pg">1</span><span>Theme &amp; Concept</span></div>
