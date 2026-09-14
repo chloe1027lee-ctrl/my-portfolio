@@ -457,6 +457,58 @@ const worksData = {
     description: '<em>March – 17 August 2025. A major exhibition celebrating our enduring love of the water over the last 100 years.</em><br><br><strong>Fashion\'s Smallest Pieces, the Biggest Rebellions</strong><br><br>Dive into the exhibition Splash! A Century of Swimming and Style, and you\'ll realize that swimwear has never just been about swimming. From conservative bathing suits to scandalous bikinis and surrealist designs, what we wear in the water has always influenced culture, politics, and personal freedom, pushing the limits of what society deems acceptable.<br><br>One of the most striking pieces in the exhibition was the original bikini itself. In July 1946, Louis Réard introduced his creation at a press conference held at Paris\'s popular Piscine Molitor pool: a bold two-piece with a G-string back, made from just 30 square inches of fabric printed in a newspaper pattern, which he named the bikini.',
     images: ['images/design/elle-splash-1.jpg']
   },
+  'charity-film': {
+    title: 'Film Event',
+    meta: 'Charity Art Club · Instagram · Grade 9 · 2025',
+    description: 'A club event where members shoot on film cameras around a chosen theme, then develop the prints from those rolls. I designed the promotional posts for the event.',
+    thumbs: false,
+    images: [
+      'images/design/charity-film-1.jpg',
+      'images/design/charity-film-2.jpg'
+    ]
+  },
+  'charity-chiikawa': {
+    title: 'Christmas Chiikawa Event',
+    meta: 'Charity Art Club · Instagram · Grade 9 · 2025',
+    description: 'A community event where we visited a local library and decorated it for the people there with a Chiikawa theme. I designed the posts announcing and documenting the event.',
+    thumbs: false,
+    images: [
+      'images/design/charity-chiikawa-1.jpg',
+      'images/design/charity-chiikawa-2.jpg',
+      'images/design/charity-chiikawa-3.jpg',
+      'images/design/charity-chiikawa-4.jpg'
+    ]
+  },
+  'charity-redbloom': {
+    title: 'Red Bloom Event',
+    meta: 'Charity Art Club · Instagram · Grade 10 · 2025',
+    description: 'A collaboration with the Zonta Club, which advocates for women\'s rights, where we created art using period pads to open up conversation around menstruation and stigma. I designed the full set of posts for the campaign.',
+    thumbs: false,
+    images: [
+      'images/design/charity-redbloom-1.jpg',
+      'images/design/charity-redbloom-2.jpg',
+      'images/design/charity-redbloom-3.jpg',
+      'images/design/charity-redbloom-4.jpg',
+      'images/design/charity-redbloom-5.jpg',
+      'images/design/charity-redbloom-6.jpg',
+      'images/design/charity-redbloom-7.jpg',
+      'images/design/charity-redbloom-8.jpg',
+      'images/design/charity-redbloom-9.jpg',
+      'images/design/charity-redbloom-10.jpg'
+    ]
+  },
+  'charity-alien': {
+    title: 'Alien Ceramic Event',
+    meta: 'Charity Art Club · Instagram · Grade 11 · 2025',
+    description: 'An event where we made ceramics, sold them, and donated the money to a Red Cross charity supporting Palestine. I designed the posts for the sale and fundraiser.',
+    thumbs: false,
+    images: [
+      'images/design/charity-alien-1.jpg',
+      'images/design/charity-alien-2.jpg',
+      'images/design/charity-alien-3.jpg',
+      'images/design/charity-alien-4.jpg'
+    ]
+  },
   'untitled-pour': {
     title: 'Untitled',
     meta: 'Lee, Chloe. <em>Untitled</em>. Resin and Pouring Acrylic on Canvas. 53 × 55 cm.',
