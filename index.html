@@ -125,6 +125,20 @@ section.active { display: block; }
 .design-item.landscape { aspect-ratio: 4/3; }
 .design-link { display: inline-block; margin-top: 0.6rem; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: #888; text-decoration: underline; cursor: none; }
 .design-link:hover { color: #e8e2d9; }
+.design-note { font-size: 0.82rem; line-height: 1.7; color: #8f8f8f; font-style: italic; max-width: 760px; margin: 0.3rem 0 2rem; }
+.design-box { border: 1px solid #1f1f1f; border-radius: 14px; background: #0c0c0c; padding: 1.5rem 1.6rem 1.6rem; margin-bottom: 1.3rem; }
+.design-box-head { display: flex; align-items: baseline; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 1.1rem; }
+.design-box-title { font-size: 0.92rem; font-weight: bold; letter-spacing: 0.07em; text-transform: uppercase; color: #e8e2d9; }
+.design-box-meta { font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: #8f8f8f; }
+.design-row { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+.design-row .design-item { flex: 0 0 auto; border-radius: 6px; background: #111; }
+.design-row .design-item.square { width: 232px; aspect-ratio: 1/1; }
+.design-row .design-item.portrait { width: 208px; aspect-ratio: 2/3; }
+.design-row .design-item.landscape { width: 300px; aspect-ratio: 4/3; }
+.design-box .editorial-link { margin-top: 1.1rem; }
+.design-event { margin-top: 1.5rem; }
+.design-event:first-of-type { margin-top: 0; }
+.design-event-label { font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase; color: #a8a8a8; font-weight: bold; margin-bottom: 0.7rem; }
 
 /* ABOUT */
 .about-grid { display: grid; grid-template-columns: 1fr 1.7fr; gap: 4rem; align-items: center; }
@@ -310,6 +324,12 @@ section.active { display: block; }
 .club-ig-grid .cosplay-cat-strip-item { width: auto; height: auto; aspect-ratio: 1/1; }
 .club-ig-viewall { display: inline-block; margin-top: 1.1rem; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #cfc9bf; text-decoration: none; font-weight: bold; transition: color 0.2s; }
 .club-ig-viewall:hover { color: #e8e2d9; }
+.club-ig-chip { display: inline-flex; align-items: center; gap: 0.7rem; border: 1px solid #2a2a2a; border-radius: 999px; padding: 0.4rem 0.5rem; background: #0d0d0d; }
+.club-ig-chip .club-ig-avatar { width: 40px; height: 40px; padding: 2px; }
+.club-ig-chip .club-ig-avatar img { border-width: 2px; }
+.club-ig-chip-handle { font-size: 0.74rem; font-weight: bold; letter-spacing: 0.02em; color: #f2ede4; text-decoration: none; padding: 0 0.15rem; transition: color 0.2s; }
+.club-ig-chip-handle:hover { color: #fff; }
+.club-ig-chip .club-ig-follow { font-size: 0.64rem; padding: 0.42rem 0.95rem; }
 @media (max-width: 900px) { .club-feature-main { grid-template-columns: 1fr; gap: 1.6rem; } .club-feature-left { max-width: 440px; } }
 
 /* Club feature living on the Home page (full-bleed panel below the hero) */
@@ -479,34 +499,10 @@ section.active { display: block; }
       <div class="club-feature-sub">Kaohsiung American School · The first cosplay club on campus</div>
     </div>
     <div class="club-feature-main">
-      <div class="club-feature-left">
-        <button type="button" class="club-feature-photo" data-work="kas-club" data-index="0">
-          <img src="images/cosplay/club-1.jpg" alt="KAS Cosplay Club group photo" loading="lazy" decoding="async">
-          <span class="club-feature-photo-hint">View club gallery ↗</span>
-        </button>
-        <div class="club-more">
-          <div class="club-more-label">On Instagram</div>
-          <div class="club-ig-card">
-            <div class="club-ig-head">
-              <span class="club-ig-avatar"><img src="images/cosplay/club-1.jpg" alt="KAS Cosplay Club" loading="lazy" decoding="async"></span>
-              <div class="club-ig-id">
-                <div class="club-ig-handle">@kascosplayclub</div>
-                <div class="club-ig-name">KAS Cosplay Club · Kaohsiung American School</div>
-              </div>
-              <a class="club-ig-follow" href="https://www.instagram.com/kascosplayclub/" target="_blank">Follow</a>
-            </div>
-            <div class="club-ig-grid">
-              <div class="cosplay-cat-strip-item" data-work="kas-club" data-index="1"><img src="images/cosplay/club-2.jpg" alt="KAS Cosplay Club 2" loading="lazy" decoding="async"></div>
-              <div class="cosplay-cat-strip-item" data-work="kas-club" data-index="2"><img src="images/cosplay/club-3.jpg" alt="KAS Cosplay Club 3" loading="lazy" decoding="async"></div>
-              <div class="cosplay-cat-strip-item" data-work="kas-club" data-index="3"><img src="images/cosplay/club-4.jpg" alt="KAS Cosplay Club 4" loading="lazy" decoding="async"></div>
-              <div class="cosplay-cat-strip-item" data-work="kas-club" data-index="4"><img src="images/cosplay/club-5.jpg" alt="KAS Cosplay Club 5" loading="lazy" decoding="async"></div>
-              <div class="cosplay-cat-strip-item" data-work="kas-club" data-index="5"><img src="images/cosplay/club-6.jpg" alt="KAS Cosplay Club 6" loading="lazy" decoding="async"></div>
-              <div class="cosplay-cat-strip-item" data-work="kas-club" data-index="6"><img src="images/cosplay/club-7.jpg" alt="KAS Cosplay Club 7" loading="lazy" decoding="async"></div>
-            </div>
-            <a class="club-ig-viewall" href="https://www.instagram.com/kascosplayclub/" target="_blank">View more on Instagram ↗</a>
-          </div>
-        </div>
-      </div>
+      <button type="button" class="club-feature-photo" data-work="kas-club" data-index="0">
+        <img src="images/cosplay/club-1.jpg" alt="KAS Cosplay Club group photo" loading="lazy" decoding="async">
+        <span class="club-feature-photo-hint">View club gallery ↗</span>
+      </button>
       <div class="club-feature-text">
         <p class="club-feature-desc">I founded KAS Cosplay Club because cosplay had given me so much happiness — a space to create freely, grow more confident, and connect with people who loved what I loved. I wanted to share that feeling, not keep it to myself. What began as a club for students to explore cosplay grew into something more meaningful: bringing characters to life for children at the Love and Hope Child Care Center (愛與希望兒少關懷中心) through costumes, games, dance, and photography. Watching something that made me happy become a source of happiness for someone else changed what cosplay meant to me — the club became not just a creative community, but a way to turn something I love into something I could give.</p>
         <div class="club-stats">
@@ -515,21 +511,25 @@ section.active { display: block; }
           <div class="club-stat"><b>30+</b><span>Children Reached</span></div>
         </div>
         <div class="club-links">
-          <a href="https://www.instagram.com/kascosplayclub/" target="_blank">↗ Instagram · @kascosplayclub</a>
+          <div class="club-ig-chip">
+            <span class="club-ig-avatar"><img src="images/cosplay/club-1.jpg" alt="KAS Cosplay Club" loading="lazy" decoding="async"></span>
+            <a class="club-ig-chip-handle" href="https://www.instagram.com/kascosplayclub/" target="_blank">@kascosplayclub</a>
+            <a class="club-ig-follow" href="https://www.instagram.com/kascosplayclub/" target="_blank">Follow</a>
+          </div>
           <a onclick="show('magazine')">↗ Read the Club Magazines</a>
         </div>
-        <div class="club-mags">
-          <div class="club-mags-label">Club Magazines</div>
-          <div class="club-mags-row">
-            <div class="mag-shelf-item" data-work="club-magazine">
-              <div class="mag-shelf-cover"><img src="images/thumbs/design/kas-mag-1.jpg" alt="KAS Vol 1" loading="lazy"><div class="mag-shelf-hover">Open ↗</div></div>
-              <div class="mag-shelf-label"><div class="mag-shelf-title">KAS Cosplay Club</div><div class="mag-shelf-issue">Vol. 1 &nbsp;·&nbsp; 2024/2025</div></div>
-            </div>
-            <div class="mag-shelf-item" data-work="club-magazine-vol2">
-              <div class="mag-shelf-cover"><img src="images/thumbs/design/kas-mag2-1.jpg" alt="KAS Vol 2" loading="lazy"><div class="mag-shelf-hover">Open ↗</div></div>
-              <div class="mag-shelf-label"><div class="mag-shelf-title">KAS Cosplay Club</div><div class="mag-shelf-issue">Vol. 2 &nbsp;·&nbsp; 2025/2026</div></div>
-            </div>
-          </div>
+      </div>
+    </div>
+    <div class="club-mags">
+      <div class="club-mags-label">Club Magazines</div>
+      <div class="club-mags-row">
+        <div class="mag-shelf-item" data-work="club-magazine">
+          <div class="mag-shelf-cover"><img src="images/thumbs/design/kas-mag-1.jpg" alt="KAS Vol 1" loading="lazy"><div class="mag-shelf-hover">Open ↗</div></div>
+          <div class="mag-shelf-label"><div class="mag-shelf-title">KAS Cosplay Club</div><div class="mag-shelf-issue">Vol. 1 &nbsp;·&nbsp; 2024/2025</div></div>
+        </div>
+        <div class="mag-shelf-item" data-work="club-magazine-vol2">
+          <div class="mag-shelf-cover"><img src="images/thumbs/design/kas-mag2-1.jpg" alt="KAS Vol 2" loading="lazy"><div class="mag-shelf-hover">Open ↗</div></div>
+          <div class="mag-shelf-label"><div class="mag-shelf-title">KAS Cosplay Club</div><div class="mag-shelf-issue">Vol. 2 &nbsp;·&nbsp; 2025/2026</div></div>
         </div>
       </div>
     </div>
@@ -733,36 +733,97 @@ section.active { display: block; }
 <section id="design">
   <div class="section-header">Design</div>
 
-  <div class="sub-header" style="margin-top:2.5rem;">Editorial</div>
-  <div class="mag-grid">
-    <div class="mag-item" data-work="elle-splash">
-      <img src="images/design/elle-splash-1.jpg" alt="Splash! A Century of Swimming and Style — Editorial Cover" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" decoding="async">
-      <div class="overlay">
-        <div class="overlay-title">SPLASH!</div>
-        <div class="overlay-medium">Editorial · Cover &amp; Feature · 2025</div>
+  <div class="design-box">
+    <div class="design-box-head"><span class="design-box-title">Editorial</span><span class="design-box-meta">Cover &amp; Feature · 2025</span></div>
+    <div class="design-row">
+      <div class="design-item portrait" data-work="elle-splash">
+        <img src="images/design/elle-splash-1.jpg" alt="Splash! A Century of Swimming and Style — Editorial Cover" loading="lazy" decoding="async">
+        <div class="overlay"><div class="overlay-title">SPLASH!</div><div class="overlay-medium">Editorial · 2025</div></div>
+      </div>
+    </div>
+    <a href="https://canva.link/ualmarketingsplash" target="_blank" class="editorial-link">↗ Read the Editorial</a>
+  </div>
+
+  <div class="sub-header" style="margin-top:2.5rem;">Social Media Design</div>
+  <p class="design-note">All reference images belong to their original creators — I used them only as source material and designed every layout and graphic from scratch.</p>
+
+  <div class="design-box">
+    <div class="design-box-head"><span class="design-box-title">Charity Art Club</span><span class="design-box-meta">Instagram · Grades 9–11</span></div>
+    <div class="design-event">
+      <div class="design-event-label">Film Event · Grade 9 · 2 posts</div>
+      <div class="design-row">
+        <div class="design-item square"><img src="images/design/charity-film-1.jpg" alt="Charity Art Club · Film Event 1" loading="lazy" decoding="async"></div>
+        <div class="design-item square"><img src="images/design/charity-film-2.jpg" alt="Charity Art Club · Film Event 2" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+    <div class="design-event">
+      <div class="design-event-label">Christmas Chiikawa Event · Grade 9 · 4 posts</div>
+      <div class="design-row">
+        <div class="design-item square"><img src="images/design/charity-chiikawa-1.jpg" alt="Charity Art Club · Christmas Chiikawa Event 1" loading="lazy" decoding="async"></div>
+        <div class="design-item square"><img src="images/design/charity-chiikawa-2.jpg" alt="Charity Art Club · Christmas Chiikawa Event 2" loading="lazy" decoding="async"></div>
+        <div class="design-item square"><img src="images/design/charity-chiikawa-3.jpg" alt="Charity Art Club · Christmas Chiikawa Event 3" loading="lazy" decoding="async"></div>
+        <div class="design-item square"><img src="images/design/charity-chiikawa-4.jpg" alt="Charity Art Club · Christmas Chiikawa Event 4" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+    <div class="design-event">
+      <div class="design-event-label">Red Bloom Event · Grade 10 · 10 posts</div>
+      <div class="design-row">
+        <div class="design-item square"><img src="images/design/charity-redbloom-1.jpg" alt="Charity Art Club · Red Bloom Event 1" loading="lazy" decoding="async"></div>
+        <div class="design-item square"><img src="images/design/charity-redbloom-2.jpg" alt="Charity Art Club · Red Bloom Event 2" loading="lazy" decoding="async"></div>
+        <div class="design-item square"><img src="images/design/charity-redbloom-3.jpg" alt="Charity Art Club · Red Bloom Event 3" loading="lazy" decoding="async"></div>
+        <div class="design-item square"><img src="images/design/charity-redbloom-4.jpg" alt="Charity Art Club · Red Bloom Event 4" loading="lazy" decoding="async"></div>
+        <div class="design-item square"><img src="images/design/charity-redbloom-5.jpg" alt="Charity Art Club · Red Bloom Event 5" loading="lazy" decoding="async"></div>
+        <div class="design-item square"><img src="images/design/charity-redbloom-6.jpg" alt="Charity Art Club · Red Bloom Event 6" loading="lazy" decoding="async"></div>
+        <div class="design-item square"><img src="images/design/charity-redbloom-7.jpg" alt="Charity Art Club · Red Bloom Event 7" loading="lazy" decoding="async"></div>
+        <div class="design-item square"><img src="images/design/charity-redbloom-8.jpg" alt="Charity Art Club · Red Bloom Event 8" loading="lazy" decoding="async"></div>
+        <div class="design-item square"><img src="images/design/charity-redbloom-9.jpg" alt="Charity Art Club · Red Bloom Event 9" loading="lazy" decoding="async"></div>
+        <div class="design-item square"><img src="images/design/charity-redbloom-10.jpg" alt="Charity Art Club · Red Bloom Event 10" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+    <div class="design-event">
+      <div class="design-event-label">Alien Ceramic Event · Grade 11 · 4 posts</div>
+      <div class="design-row">
+        <div class="design-item square"><img src="images/design/charity-alien-1.jpg" alt="Charity Art Club · Alien Ceramic Event 1" loading="lazy" decoding="async"></div>
+        <div class="design-item square"><img src="images/design/charity-alien-2.jpg" alt="Charity Art Club · Alien Ceramic Event 2" loading="lazy" decoding="async"></div>
+        <div class="design-item square"><img src="images/design/charity-alien-3.jpg" alt="Charity Art Club · Alien Ceramic Event 3" loading="lazy" decoding="async"></div>
+        <div class="design-item square"><img src="images/design/charity-alien-4.jpg" alt="Charity Art Club · Alien Ceramic Event 4" loading="lazy" decoding="async"></div>
       </div>
     </div>
   </div>
-  <a href="https://canva.link/ualmarketingsplash" target="_blank" class="editorial-link">↗ Read the Editorial</a>
 
-  <div class="sub-header" style="margin-top:2.5rem;">Social Media</div>
-  <div class="design-grid">
-    <div class="design-item square"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Post Design I</div><div class="overlay-medium">Social Media</div></div></div>
-    <div class="design-item square"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Post Design II</div><div class="overlay-medium">Social Media</div></div></div>
-    <div class="design-item square"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Post Design III</div><div class="overlay-medium">Social Media</div></div></div>
+  <div class="design-box">
+    <div class="design-box-head"><span class="design-box-title">Club Name</span><span class="design-box-meta">Instagram · Grade 10</span></div>
+    <div class="design-row">
+      <div class="design-item square"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add post</span></div><div class="overlay"><div class="overlay-title">Post I</div><div class="overlay-medium">Instagram</div></div></div>
+      <div class="design-item square"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add post</span></div><div class="overlay"><div class="overlay-title">Post II</div><div class="overlay-medium">Instagram</div></div></div>
+      <div class="design-item square"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add post</span></div><div class="overlay"><div class="overlay-title">Post III</div><div class="overlay-medium">Instagram</div></div></div>
+    </div>
   </div>
 
-  <div class="sub-header" style="margin-top:2.5rem;">Posters</div>
-  <div class="design-grid">
-    <div class="design-item portrait"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Poster I</div><div class="overlay-medium">Print Design</div></div></div>
-    <div class="design-item portrait"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Poster II</div><div class="overlay-medium">Print Design</div></div></div>
-    <div class="design-item portrait"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Poster III</div><div class="overlay-medium">Print Design</div></div></div>
+  <div class="design-box">
+    <div class="design-box-head"><span class="design-box-title">Club Name</span><span class="design-box-meta">Instagram · Grade 9</span></div>
+    <div class="design-row">
+      <div class="design-item square"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add post</span></div><div class="overlay"><div class="overlay-title">Post I</div><div class="overlay-medium">Instagram</div></div></div>
+      <div class="design-item square"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add post</span></div><div class="overlay"><div class="overlay-title">Post II</div><div class="overlay-medium">Instagram</div></div></div>
+      <div class="design-item square"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add post</span></div><div class="overlay"><div class="overlay-title">Post III</div><div class="overlay-medium">Instagram</div></div></div>
+    </div>
   </div>
 
-  <div class="sub-header" style="margin-top:2.5rem;">Photography</div>
-  <div class="design-grid">
-    <div class="design-item landscape"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><circle cx="18" cy="18" r="8" stroke="#333" stroke-width="0.5"/></svg><span>Add photo</span></div><div class="overlay"><div class="overlay-title">Photo I</div><div class="overlay-medium">Photography</div></div></div>
-    <div class="design-item landscape"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><circle cx="18" cy="18" r="8" stroke="#333" stroke-width="0.5"/></svg><span>Add photo</span></div><div class="overlay"><div class="overlay-title">Photo II</div><div class="overlay-medium">Photography</div></div></div>
+  <div class="design-box">
+    <div class="design-box-head"><span class="design-box-title">Posters</span><span class="design-box-meta">Print Design</span></div>
+    <div class="design-row">
+      <div class="design-item portrait"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Poster I</div><div class="overlay-medium">Print Design</div></div></div>
+      <div class="design-item portrait"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Poster II</div><div class="overlay-medium">Print Design</div></div></div>
+      <div class="design-item portrait"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add image</span></div><div class="overlay"><div class="overlay-title">Poster III</div><div class="overlay-medium">Print Design</div></div></div>
+    </div>
+  </div>
+
+  <div class="design-box">
+    <div class="design-box-head"><span class="design-box-title">Photography</span><span class="design-box-meta">Digital</span></div>
+    <div class="design-row">
+      <div class="design-item landscape"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><circle cx="18" cy="18" r="8" stroke="#333" stroke-width="0.5"/></svg><span>Add photo</span></div><div class="overlay"><div class="overlay-title">Photo I</div><div class="overlay-medium">Photography</div></div></div>
+      <div class="design-item landscape"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><circle cx="18" cy="18" r="8" stroke="#333" stroke-width="0.5"/></svg><span>Add photo</span></div><div class="overlay"><div class="overlay-title">Photo II</div><div class="overlay-medium">Photography</div></div></div>
+    </div>
   </div>
 </section>
 
