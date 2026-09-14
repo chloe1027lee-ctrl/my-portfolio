@@ -338,7 +338,18 @@ section.active { display: block; }
 .club-ig-chip-handle { font-size: 0.74rem; font-weight: bold; letter-spacing: 0.02em; color: #f2ede4; text-decoration: none; padding: 0 0.15rem; transition: color 0.2s; }
 .club-ig-chip-handle:hover { color: #fff; }
 .club-ig-chip .club-ig-follow { font-size: 0.64rem; padding: 0.42rem 0.95rem; }
-@media (max-width: 900px) { .club-feature-main { grid-template-columns: 1fr; gap: 1.6rem; } .club-feature-left { max-width: 440px; } }
+.club-feature-intro { display: grid; grid-template-columns: 1.55fr 1fr; gap: 2.6rem; align-items: start; margin-bottom: 2.4rem; }
+.club-feature-intro .club-feature-desc { margin-bottom: 0; }
+.club-feature-side { display: flex; flex-direction: column; gap: 1.4rem; }
+.club-feature-side .club-stats { margin-bottom: 0; }
+.club-gallery-section { margin-bottom: 2.2rem; }
+.club-gallery-label { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: #9a9a9a; font-weight: bold; margin-bottom: 1.1rem; }
+.club-gallery { columns: 4 220px; column-gap: 0.7rem; }
+.club-gallery-item { break-inside: avoid; margin: 0 0 0.7rem; display: block; position: relative; overflow: hidden; border-radius: 7px; background: #111; cursor: pointer; }
+.club-gallery-item img { width: 100%; display: block; transition: transform 0.45s ease, filter 0.45s ease; filter: saturate(1.06) brightness(1.02); }
+.club-gallery-item:hover img { transform: scale(1.045); filter: saturate(1.14) brightness(1.06); }
+@media (max-width: 900px) { .club-feature-main { grid-template-columns: 1fr; gap: 1.6rem; } .club-feature-left { max-width: 440px; } .club-feature-intro { grid-template-columns: 1fr; gap: 1.6rem; } .club-gallery { columns: 3 150px; } }
+@media (max-width: 560px) { .club-gallery { columns: 2 120px; } }
 
 /* Club feature living on the Home page (full-bleed panel below the hero) */
 .home-club { scroll-margin-top: 5.5rem; background: #0a0a0a; border-top: 1px solid #222; margin: 2.5rem -3rem 0; padding: 3.5rem 3rem 2rem; position: relative; z-index: 1; overflow: hidden; }
@@ -506,13 +517,9 @@ section.active { display: block; }
       <div class="club-feature-title">KAS Cosplay Club</div>
       <div class="club-feature-sub">Kaohsiung American School · The first cosplay club on campus</div>
     </div>
-    <div class="club-feature-main">
-      <button type="button" class="club-feature-photo" data-work="kas-club" data-index="0">
-        <img src="images/cosplay/club-1.jpg" alt="KAS Cosplay Club group photo" loading="lazy" decoding="async">
-        <span class="club-feature-photo-hint">View club gallery ↗</span>
-      </button>
-      <div class="club-feature-text">
+    <div class="club-feature-intro">
         <p class="club-feature-desc">I founded KAS Cosplay Club because cosplay had given me so much happiness — a space to create freely, grow more confident, and connect with people who loved what I loved. I wanted to share that feeling, not keep it to myself. What began as a club for students to explore cosplay grew into something more meaningful: bringing characters to life for children at the Love and Hope Child Care Center (愛與希望兒少關懷中心) through costumes, games, dance, and photography. Watching something that made me happy become a source of happiness for someone else changed what cosplay meant to me — the club became not just a creative community, but a way to turn something I love into something I could give.</p>
+        <div class="club-feature-side">
         <div class="club-stats">
           <div class="club-stat"><b>2024</b><span>Founded</span></div>
           <div class="club-stat"><b>2</b><span>Magazine Volumes</span></div>
@@ -526,8 +533,25 @@ section.active { display: block; }
           </div>
           <a onclick="show('magazine')">↗ Read the Club Magazines</a>
         </div>
+        </div>
       </div>
-    </div>
+      <div class="club-gallery-section">
+        <div class="club-gallery-label">Club Gallery</div>
+        <div class="club-gallery">
+          <div class="club-gallery-item" data-work="kas-club" data-index="0"><img src="images/cosplay/club-1.jpg" alt="KAS Cosplay Club 1" loading="lazy" decoding="async"></div>
+          <div class="club-gallery-item" data-work="kas-club" data-index="1"><img src="images/cosplay/club-2.jpg" alt="KAS Cosplay Club 2" loading="lazy" decoding="async"></div>
+          <div class="club-gallery-item" data-work="kas-club" data-index="2"><img src="images/cosplay/club-3.jpg" alt="KAS Cosplay Club 3" loading="lazy" decoding="async"></div>
+          <div class="club-gallery-item" data-work="kas-club" data-index="3"><img src="images/cosplay/club-4.jpg" alt="KAS Cosplay Club 4" loading="lazy" decoding="async"></div>
+          <div class="club-gallery-item" data-work="kas-club" data-index="4"><img src="images/cosplay/club-5.jpg" alt="KAS Cosplay Club 5" loading="lazy" decoding="async"></div>
+          <div class="club-gallery-item" data-work="kas-club" data-index="5"><img src="images/cosplay/club-6.jpg" alt="KAS Cosplay Club 6" loading="lazy" decoding="async"></div>
+          <div class="club-gallery-item" data-work="kas-club" data-index="6"><img src="images/cosplay/club-7.jpg" alt="KAS Cosplay Club 7" loading="lazy" decoding="async"></div>
+          <div class="club-gallery-item" data-work="kas-club" data-index="7"><img src="images/cosplay/club-8.jpg" alt="KAS Cosplay Club 8" loading="lazy" decoding="async"></div>
+          <div class="club-gallery-item" data-work="kas-club" data-index="8"><img src="images/cosplay/club-9.jpg" alt="KAS Cosplay Club 9" loading="lazy" decoding="async"></div>
+          <div class="club-gallery-item" data-work="kas-club" data-index="9"><img src="images/cosplay/club-10.jpg" alt="KAS Cosplay Club 10" loading="lazy" decoding="async"></div>
+          <div class="club-gallery-item" data-work="kas-club" data-index="10"><img src="images/cosplay/club-11.jpg" alt="KAS Cosplay Club 11" loading="lazy" decoding="async"></div>
+          <div class="club-gallery-item" data-work="kas-club" data-index="11"><img src="images/cosplay/club-12.jpg" alt="KAS Cosplay Club 12" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
     <div class="club-mags">
       <div class="club-mags-label">Club Magazines</div>
       <div class="club-mags-row">
