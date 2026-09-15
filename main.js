@@ -153,7 +153,13 @@ const worksData = {
       'images/cosplay/club-9.jpg',
       'images/cosplay/club-10.jpg',
       'images/cosplay/club-11.jpg',
-      'images/cosplay/club-12.jpg'
+      'images/cosplay/club-12.jpg',
+      'images/cosplay/club-13.jpg',
+      'images/cosplay/club-14.jpg',
+      'images/cosplay/club-15.jpg',
+      'images/cosplay/club-16.jpg',
+      'images/cosplay/club-17.jpg',
+      'images/cosplay/club-18.jpg'
     ]
   },
   'blanc': {
