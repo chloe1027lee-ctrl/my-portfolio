@@ -300,9 +300,10 @@ section.active { display: block; }
 .club-mags { margin-top: 1.9rem; padding-top: 1.5rem; border-top: 1px solid #1e1e1e; }
 .club-mags-label { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: #9a9a9a; font-weight: bold; margin-bottom: 1rem; }
 .club-mags-row { display: flex; gap: 1.4rem; align-items: flex-start; flex-wrap: wrap; }
-.club-mags-row .mag-shelf-item { flex: 0 1 220px; max-width: 240px; }
-.club-collage { flex: 1 1 380px; min-width: 300px; position: relative; display: block; padding: 0; border: 1px solid #1e1e1e; border-radius: 4px; background: #111; overflow: hidden; cursor: pointer; font-family: inherit; }
-.club-collage img { width: 100%; height: auto; display: block; transition: transform 0.5s; }
+.club-mags-row .mag-shelf-item { flex: 0 0 auto; width: 240px; max-width: 240px; }
+.club-collage { flex: 0 0 auto; height: 360px; position: relative; display: block; padding: 0; border: 1px solid #1e1e1e; border-radius: 4px; background: #111; overflow: hidden; cursor: pointer; font-family: inherit; }
+.club-collage img { width: auto; height: 100%; display: block; transition: transform 0.5s; }
+@media (max-width: 760px) { .club-collage { height: auto; width: 100%; } .club-collage img { width: 100%; height: auto; } }
 .club-collage:hover img { transform: scale(1.02); }
 .club-collage-hint { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); padding: 2.5rem 1rem 0.9rem; font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: #e8e2d9; opacity: 0; transition: opacity 0.25s; text-align: right; }
 .club-collage:hover .club-collage-hint { opacity: 1; }
