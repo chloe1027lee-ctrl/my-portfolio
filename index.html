@@ -100,7 +100,7 @@ section.active { display: block; }
 .sub-header { font-size: 0.74rem; letter-spacing: 0.2em; text-transform: uppercase; color: #a0a0a0; margin: 2.5rem 0 1rem; font-weight: bold; }
 
 /* GALLERY GRID */
-.gallery-grid { columns: 4 250px; column-gap: 10px; }
+.gallery-grid { columns: 5 200px; column-gap: 10px; }
 .gallery-item { position: relative; break-inside: avoid; margin: 0 0 10px; background: #111; overflow: hidden; cursor: none; display: block; }
 .gallery-item img { width: 100%; height: auto; display: block; transition: transform 0.5s ease; filter: saturate(1.4); }
 .gallery-item:has(.placeholder-art) { aspect-ratio: 3/4; }
@@ -343,8 +343,8 @@ section.active { display: block; }
 .club-ig-chip { display: inline-flex; align-items: center; gap: 0.7rem; border: 1px solid #2a2a2a; border-radius: 999px; padding: 0.4rem 0.5rem; background: #0d0d0d; }
 .club-ig-chip .club-ig-avatar { width: 40px; height: 40px; padding: 2px; }
 .club-ig-chip .club-ig-avatar img { border-width: 2px; }
-.club-ig-chip-handle { font-size: 0.74rem; font-weight: bold; letter-spacing: 0.02em; color: #f2ede4; text-decoration: none; padding: 0 0.15rem; transition: color 0.2s; }
-.club-ig-chip-handle:hover { color: #fff; }
+.club-ig-chip .club-ig-chip-handle { font-size: 0.74rem; font-weight: bold; letter-spacing: 0.02em; color: #f2ede4; text-decoration: none; padding: 0 0.15rem; border: none; background: none; transition: color 0.2s; }
+.club-ig-chip .club-ig-chip-handle:hover { color: #fff; background: none; border-color: transparent; }
 .club-ig-chip .club-ig-follow { font-size: 0.64rem; padding: 0.42rem 0.95rem; }
 .club-feature-intro { display: grid; grid-template-columns: 1.55fr 1fr; gap: 2.6rem; align-items: start; margin-bottom: 2.4rem; }
 .club-feature-intro .club-feature-desc { margin-bottom: 0; }
