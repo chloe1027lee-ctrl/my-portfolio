@@ -100,9 +100,10 @@ section.active { display: block; }
 .sub-header { font-size: 0.74rem; letter-spacing: 0.2em; text-transform: uppercase; color: #a0a0a0; margin: 2.5rem 0 1rem; font-weight: bold; }
 
 /* GALLERY GRID */
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1px; background: #1a1a1a; }
-.gallery-item { position: relative; aspect-ratio: 3/4; background: #111; display: flex; align-items: center; justify-content: center; overflow: hidden; cursor: none; }
-.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; filter: saturate(1.4); }
+.gallery-grid { columns: 4 250px; column-gap: 10px; }
+.gallery-item { position: relative; break-inside: avoid; margin: 0 0 10px; background: #111; overflow: hidden; cursor: none; display: block; }
+.gallery-item img { width: 100%; height: auto; display: block; transition: transform 0.5s ease; filter: saturate(1.4); }
+.gallery-item:has(.placeholder-art) { aspect-ratio: 3/4; }
 .gallery-item:hover img { transform: scale(1.04); filter: saturate(1.7); }
 .gallery-grid--digital .gallery-item img { filter: saturate(1.1); }
 .gallery-grid--digital .gallery-item:hover img { filter: saturate(1.25); }
@@ -1816,7 +1817,7 @@ function spawnParticle(x, y) {
   setTimeout(() => p.remove(), 1000);
 }
 </script>
-<script src="main.js?v=6"></script>
+<script src="main.js?v=7"></script>
 <script src="liquid.js"></script>
 </body>
 </html>
