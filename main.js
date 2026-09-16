@@ -551,15 +551,6 @@ const worksData = {
     description: 'Behind the Pink explores the concealed interior of adolescent girlhood: the gap between how a teenage girl appears and what she actually feels. Drawn from personal experience, it looks at how suppressing emotion, rather than expressing it, makes thoughts loop obsessively inward, accumulating without release.<br><br>A single childlike figure sits isolated at the center of the canvas. Her oversized, expressionless eyes are the focal point, confrontational and unreadable at once; her neat, controlled hair stands in for performed composure. The mouth and eyebrows are removed entirely, keeping any emotion from becoming decipherable.<br><br>The pink palette codes femininity and innocence but is contaminated with green undertones into a dirtied pink: attractive yet unsettling, echoing Damien Hirst\'s seductive surfaces that hide something darker beneath. The obsessive dot background borrows from Yayoi Kusama\'s Infinity Nets, the repetition enacting the pressure closing in on the figure. The figure reinterprets kawaii culture through Yoshitomo Nara\'s subversion of cuteness, and the hand held behind her back references his Knife Behind Back, implying concealed intention. Embedded piercings puncture the performance of softness.<br><br>The work asks: what does an adolescent girl look like when her composure is placed under scrutiny?',
     images: ['images/art/behind-the-pink-1.jpg']
   },
-  'untitled-resin': {
-    title: 'Untitled',
-    meta: 'Lee, Chloe. <em>Untitled</em>. 2026. Epoxy Resin, Alcohol Ink.',
-    description: '',
-    thumbs: true,
-    images: [
-      'images/art/untitled-resin-1.jpg'
-    ]
-  },
   'noctilucent': {
     title: 'Noctilucent',
     meta: 'Lee, Chloe. <em>Noctilucent</em>. 2026. Acrylic Paint, Silicone Oil, White Glue and Mixed Media on Canvas, UV Activated. 53 × 45 cm × 2 (Diptych).',
