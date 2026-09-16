@@ -556,8 +556,10 @@ const worksData = {
     meta: 'Lee, Chloe. <em>Flux</em>. 2026. Resin and Pouring Acrylic on Canvas. 53 × 55 cm.',
     description: 'This work explores how a change in scale can transform the way an image is perceived. From a distance, the surface appears as a chaotic field of saturated color, but closer observation reveals intricate formations resembling microscopic landscapes and cellular clusters. These details were created through the unexpected interaction between oil and resin, producing textures too small to dominate the work from afar but increasingly complex when examined closely. By shifting between an overview and its minute details, the work suggests that what initially appears chaotic may contain entire hidden systems that only become visible through closer observation.',
     images: [
-      'images/art/untitled-pour-1.jpg',
-      'images/art/untitled-pour-2.jpg'
+      'images/art/flux-1.jpg',
+      'images/art/flux-2.jpg',
+      'images/art/flux-3.jpg',
+      'images/art/flux-4.jpg'
     ]
   },
   'behind-the-pink': {
