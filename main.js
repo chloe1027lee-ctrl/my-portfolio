@@ -136,6 +136,13 @@ if (heroTitle) {
 
 /* ── WORKS DATA ── */
 const worksData = {
+  'club-collage': {
+    title: 'KAS Cosplay Club',
+    meta: 'Club photo collage',
+    description: '',
+    thumbs: false,
+    images: ['images/cosplay/club-collage.jpg']
+  },
   'kas-club': {
     title: 'KAS Cosplay Club',
     meta: 'Founder &amp; President · Kaohsiung American School · Founded 2024',

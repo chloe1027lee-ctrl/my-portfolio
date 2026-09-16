@@ -299,8 +299,13 @@ section.active { display: block; }
 .club-feature-left .club-ig-card { max-width: none; }
 .club-mags { margin-top: 1.9rem; padding-top: 1.5rem; border-top: 1px solid #1e1e1e; }
 .club-mags-label { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: #9a9a9a; font-weight: bold; margin-bottom: 1rem; }
-.club-mags-row { display: flex; gap: 1.4rem; }
-.club-mags-row .mag-shelf-item { flex: 1 1 0; max-width: 300px; }
+.club-mags-row { display: flex; gap: 1.4rem; align-items: flex-start; flex-wrap: wrap; }
+.club-mags-row .mag-shelf-item { flex: 0 1 220px; max-width: 240px; }
+.club-collage { flex: 1 1 380px; min-width: 300px; position: relative; display: block; padding: 0; border: 1px solid #1e1e1e; border-radius: 4px; background: #111; overflow: hidden; cursor: pointer; font-family: inherit; }
+.club-collage img { width: 100%; height: auto; display: block; transition: transform 0.5s; }
+.club-collage:hover img { transform: scale(1.02); }
+.club-collage-hint { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); padding: 2.5rem 1rem 0.9rem; font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: #e8e2d9; opacity: 0; transition: opacity 0.25s; text-align: right; }
+.club-collage:hover .club-collage-hint { opacity: 1; }
 .club-feature-photo { position: relative; display: block; width: 100%; padding: 0; border: 1px solid #1e1e1e; background: #111; overflow: hidden; cursor: pointer; font-family: inherit; }
 .club-feature-photo img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform 0.5s; filter: saturate(1.06) brightness(1.03); }
 .club-feature-photo:hover img { transform: scale(1.03); }
@@ -572,6 +577,10 @@ section.active { display: block; }
           <div class="mag-shelf-cover"><img src="images/thumbs/design/kas-mag2-1.jpg" alt="KAS Vol 2" loading="lazy"><div class="mag-shelf-hover">Open ↗</div></div>
           <div class="mag-shelf-label"><div class="mag-shelf-title">KAS Cosplay Club</div><div class="mag-shelf-issue">Vol. 2 &nbsp;·&nbsp; 2025/2026</div></div>
         </div>
+        <button type="button" class="club-collage" data-work="club-collage" data-index="0">
+          <img src="images/cosplay/club-collage.jpg" alt="KAS Cosplay Club photo collage" loading="lazy" decoding="async">
+          <span class="club-collage-hint">View full collage ↗</span>
+        </button>
       </div>
     </div>
   </div>
@@ -1795,7 +1804,7 @@ function spawnParticle(x, y) {
   setTimeout(() => p.remove(), 1000);
 }
 </script>
-<script src="main.js?v=4"></script>
+<script src="main.js?v=5"></script>
 <script src="liquid.js"></script>
 </body>
 </html>
