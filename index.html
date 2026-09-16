@@ -108,6 +108,7 @@ section.active { display: block; }
 .gallery-grid--digital .gallery-item img { filter: saturate(1.1); }
 .gallery-grid--digital .gallery-item:hover img { filter: saturate(1.25); }
 .gallery-item:hover .overlay { opacity: 1; }
+.art-hint { font-size: 0.82rem; letter-spacing: 0.03em; color: #9a9a9a; font-style: italic; margin: -2rem 0 2.2rem; }
 .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.7); color: #e8e2d9; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.2rem; opacity: 0; transition: opacity 0.3s; }
 .overlay-title { font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.3rem; font-weight: bold; }
 .overlay-medium { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: #aaa; }
@@ -596,6 +597,7 @@ section.active { display: block; }
 <!-- ART -->
 <section id="art">
   <div class="section-header">Art</div>
+  <p class="art-hint">↗ Click any piece to see more photos and details.</p>
   <div class="gallery-grid">
     <div class="gallery-item" data-work="scintilla">
       <img src="images/art/scintilla-1.jpg" alt="Scintilla" loading="lazy" decoding="async">
@@ -646,6 +648,13 @@ section.active { display: block; }
         <div class="overlay-medium">2026 · Ink Relief Printmaking, Highlighter, Marker</div>
       </div>
     </div>
+    <div class="gallery-item" data-work="stop-moving">
+      <img src="images/art/stop-moving-1.jpg" alt="Stop Moving" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Stop Moving</div>
+        <div class="overlay-medium">2026 · Oil Pastel, Coloured Pencil · Cut Paper</div>
+      </div>
+    </div>
     <div class="gallery-item" data-work="old-quarter">
       <img src="images/art/old-quarter-1.jpg" alt="Old Quarter" loading="lazy" decoding="async">
       <div class="overlay">
@@ -658,13 +667,6 @@ section.active { display: block; }
       <div class="overlay">
         <div class="overlay-title">歌舞伎町</div>
         <div class="overlay-medium">2025 · Coloured Pencil, Marker, Fineliner</div>
-      </div>
-    </div>
-    <div class="gallery-item" data-work="stop-moving">
-      <img src="images/art/stop-moving-1.jpg" alt="Stop Moving" loading="lazy" decoding="async">
-      <div class="overlay">
-        <div class="overlay-title">Stop Moving</div>
-        <div class="overlay-medium">2026 · Oil Pastel, Coloured Pencil · Cut Paper</div>
       </div>
     </div>
     <div class="gallery-item" data-work="obsidian">
@@ -697,7 +699,7 @@ section.active { display: block; }
     </div>
   </div>
 
-  <div class="photo-category" style="margin-top:0.5rem;">Digital Art</div>
+  <div class="photo-category" style="margin-top:0.5rem;">Digital Art<span style="text-transform:none; font-style:italic; font-weight:normal; font-size:0.72rem; letter-spacing:0.04em; color:#8f8f8f; margin-left:0.6rem;">· all original characters</span></div>
   <div class="gallery-grid gallery-grid--digital">
     <div class="gallery-item" data-work="gensou">
       <img src="images/art/gensou-1.jpg" alt="幻想の中で" loading="lazy" decoding="async">
