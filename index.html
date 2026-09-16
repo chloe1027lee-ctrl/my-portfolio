@@ -109,6 +109,7 @@ section.active { display: block; }
 .gallery-grid--digital .gallery-item:hover img { filter: saturate(1.25); }
 .gallery-item:hover .overlay { opacity: 1; }
 .art-hint { font-size: 0.82rem; letter-spacing: 0.03em; color: #9a9a9a; font-style: italic; margin: -2rem 0 2.2rem; }
+.gallery-grid.gallery-featured { columns: 4 250px; margin-bottom: 12px; }
 .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.7); color: #e8e2d9; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.2rem; opacity: 0; transition: opacity 0.3s; }
 .overlay-title { font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.3rem; font-weight: bold; }
 .overlay-medium { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: #aaa; }
@@ -598,14 +599,7 @@ section.active { display: block; }
 <section id="art">
   <div class="section-header">Art</div>
   <p class="art-hint">↗ Click any piece to see more photos and details.</p>
-  <div class="gallery-grid">
-    <div class="gallery-item" data-work="scintilla">
-      <img src="images/art/scintilla-1.jpg" alt="Scintilla" loading="lazy" decoding="async">
-      <div class="overlay">
-        <div class="overlay-title">Scintilla</div>
-        <div class="overlay-medium">2026 · Aluminium Wire, Mesh &amp; Iridescent Film · Installation</div>
-      </div>
-    </div>
+  <div class="gallery-grid gallery-featured">
     <div class="gallery-item" data-work="elan-vital">
       <img src="images/art/elan-vital-1.jpg" alt="Élan Vital" loading="lazy" decoding="async">
       <div class="overlay">
@@ -613,6 +607,30 @@ section.active { display: block; }
         <div class="overlay-medium">2026 · Epoxy Resin &amp; Alcohol Ink</div>
       </div>
     </div>
+    <div class="gallery-item" data-work="scintilla">
+      <img src="images/art/scintilla-1.jpg" alt="Scintilla" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Scintilla</div>
+        <div class="overlay-medium">2026 · Aluminium Wire, Mesh &amp; Iridescent Film · Installation</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="specimen-of-absence">
+      <img src="images/art/specimen-1.jpg" alt="Specimen of Absence" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Specimen of Absence</div>
+        <div class="overlay-medium">2026 · Vitrine · Oil Pastel, Modelling Paste, Acrylic, Found Objects</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="behind-the-pink">
+      <img src="images/art/behind-the-pink-1.jpg" alt="Behind the Pink" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Behind the Pink</div>
+        <div class="overlay-medium">2025 · Acrylic Paint, Mixed Media · Canvas</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-grid">
     <div class="gallery-item" data-work="noctilucent">
       <img src="images/thumbs/art/noctilucent-1.jpg" alt="Noctilucent" loading="lazy" decoding="async">
       <div class="overlay">
@@ -625,13 +643,6 @@ section.active { display: block; }
       <div class="overlay">
         <div class="overlay-title">Penumbra</div>
         <div class="overlay-medium">2026 · Oil Pastel, Acrylic, Neon Paint, Resin · UV Reactive</div>
-      </div>
-    </div>
-    <div class="gallery-item" data-work="specimen-of-absence">
-      <img src="images/art/specimen-1.jpg" alt="Specimen of Absence" loading="lazy" decoding="async">
-      <div class="overlay">
-        <div class="overlay-title">Specimen of Absence</div>
-        <div class="overlay-medium">2026 · Vitrine · Oil Pastel, Modelling Paste, Acrylic, Found Objects</div>
       </div>
     </div>
     <div class="gallery-item" data-work="flux">
@@ -674,13 +685,6 @@ section.active { display: block; }
       <div class="overlay">
         <div class="overlay-title">Obsidian and Prismatic Light</div>
         <div class="overlay-medium">2025 · Charcoal Transfer Monoprint, Watercolour, Coloured Pencil</div>
-      </div>
-    </div>
-    <div class="gallery-item" data-work="behind-the-pink">
-      <img src="images/art/behind-the-pink-1.jpg" alt="Behind the Pink" loading="lazy" decoding="async">
-      <div class="overlay">
-        <div class="overlay-title">Behind the Pink</div>
-        <div class="overlay-medium">2025 · Acrylic Paint, Mixed Media · Canvas</div>
       </div>
     </div>
     <div class="gallery-item" data-work="reality-hurts">
