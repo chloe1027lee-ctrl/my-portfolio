@@ -551,10 +551,10 @@ const worksData = {
       'images/design/charity-alien-4.jpg'
     ]
   },
-  'untitled-pour': {
-    title: 'Untitled',
-    meta: 'Lee, Chloe. <em>Untitled</em>. Resin and Pouring Acrylic on Canvas. 53 × 55 cm.',
-    description: 'An untitled acrylic pour finished with a resin coat on canvas. Fluid layers of neon pink, blue, green, and yellow were poured and tilted across the surface, left to find their own currents rather than being drawn. Where the colours meet and resist each other, fine cellular lacing and marbled veins appear, the record of the paint moving on its own.<br><br>The resin surface seals everything under a high, wet gloss, deepening the colour and catching the light so the whole canvas reads as liquid even once cured. The result is entirely non-representational: pure colour, flow, and chemical reaction held in place.',
+  'flux': {
+    title: 'Flux',
+    meta: 'Lee, Chloe. <em>Flux</em>. 2026. Resin and Pouring Acrylic on Canvas. 53 × 55 cm.',
+    description: 'This work explores how a change in scale can transform the way an image is perceived. From a distance, the surface appears as a chaotic field of saturated color, but closer observation reveals intricate formations resembling microscopic landscapes and cellular clusters. These details were created through the unexpected interaction between oil and resin, producing textures too small to dominate the work from afar but increasingly complex when examined closely. By shifting between an overview and its minute details, the work suggests that what initially appears chaotic may contain entire hidden systems that only become visible through closer observation.',
     images: [
       'images/art/untitled-pour-1.jpg',
       'images/art/untitled-pour-2.jpg'
