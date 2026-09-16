@@ -458,6 +458,20 @@ const worksData = {
     description: 'Through anime and shared passions, we\'ve created a place where anyone can belong. A world where imagination takes flight on the wings of a dragon.<br><br>アニメで繋がる夢 is the mascot designed for our school\'s anime club. The design reinterprets the school\'s own emblem and mascot, a dragon, as an anime character: the dragon becomes a girl with curled red horns, small membranous wings tucked into her hair, fanged canines, and heterochromatic eyes of red and blue. A flame pendant and a red bomber jacket carry the school colors and the dragon\'s fire into an everyday, approachable form.<br><br>The goal was to keep the spirit of the original crest, its energy and its fire, while translating it into a friendly face the club could actually rally around: something that reads instantly as ours, but also as anime.',
     images: ['images/art/anime-club-mascot-1.jpg']
   },
+  'scintilla': {
+    title: 'Scintilla',
+    meta: 'Lee, Chloe. <em>Scintilla</em>. 2026. Aluminium Wire, Mesh, and Iridescent Film. Installation.',
+    description: 'Scintilla is a large-scale wire sculpture of a mosquito constructed from aluminium wire, mesh, and iridescent film, installed on top of the locker unit in the KAS locker hallway. The iridescent film embedded within the wire shifts between color and transparency depending on the viewer\'s angle — what reads as threatening from a distance becomes unexpectedly beautiful up close, and then unsettling again.<br><br>The work responds to a simple observation: students avoid their lockers because of mosquitos. Something millimetres long exerts enough psychological force to make a person abandon a space with their name on it. By scaling the creature to monumental size and filling it with color, Scintilla asks whether the fear was ever really about the insect — or about what we project onto things we choose not to look at closely.',
+    thumbs: true,
+    images: [
+      'images/art/scintilla-1.jpg',
+      'images/art/scintilla-2.jpg',
+      'images/art/scintilla-3.jpg',
+      'images/art/scintilla-4.jpg',
+      'images/art/scintilla-5.jpg',
+      'images/art/scintilla-6.jpg'
+    ]
+  },
   'blue-tongue': {
     title: '青い舌 (Blue Tongue)',
     meta: 'Lee, Chloe. <em>青い舌 (Blue Tongue)</em>. 2025. Digital Illustration.',
