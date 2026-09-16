@@ -458,6 +458,21 @@ const worksData = {
     description: 'Through anime and shared passions, we\'ve created a place where anyone can belong. A world where imagination takes flight on the wings of a dragon.<br><br>アニメで繋がる夢 is the mascot designed for our school\'s anime club. The design reinterprets the school\'s own emblem and mascot, a dragon, as an anime character: the dragon becomes a girl with curled red horns, small membranous wings tucked into her hair, fanged canines, and heterochromatic eyes of red and blue. A flame pendant and a red bomber jacket carry the school colors and the dragon\'s fire into an everyday, approachable form.<br><br>The goal was to keep the spirit of the original crest, its energy and its fire, while translating it into a friendly face the club could actually rally around: something that reads instantly as ours, but also as anime.',
     images: ['images/art/anime-club-mascot-1.jpg']
   },
+  'elan-vital': {
+    title: 'Élan Vital',
+    meta: 'Lee, Chloe. <em>Élan Vital</em>. 2026. Epoxy Resin and Alcohol Ink.',
+    description: 'Élan Vital explores how fluid materials can create the illusion of life. I allowed alcohol ink to spread, collide, and react unpredictably within resin, forming structures that resemble petals, cells, and other organic forms. The title refers to Henri Bergson\'s idea of élan vital, or a "vital impulse" associated with life and continual becoming. Influenced by Damien Hirst\'s use of preservation and color, I encased these fluid forms in transparent resin, permanently suspending their movement. Although physically frozen, the saturated colors and expanding forms still appear alive, creating a contradiction between growth and preservation, movement and stillness.',
+    thumbs: true,
+    images: [
+      'images/art/elan-vital-1.jpg',
+      'images/art/elan-vital-2.jpg',
+      'images/art/elan-vital-3.jpg',
+      'images/art/elan-vital-4.jpg',
+      'images/art/elan-vital-5.jpg',
+      'images/art/elan-vital-6.jpg',
+      'images/art/elan-vital-7.jpg'
+    ]
+  },
   'scintilla': {
     title: 'Scintilla',
     meta: 'Lee, Chloe. <em>Scintilla</em>. 2026. Aluminium Wire, Mesh, and Iridescent Film. Installation.',
