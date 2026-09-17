@@ -1278,3 +1278,38 @@ function createParticleField(canvas) {
   const home = document.getElementById('home');
   if (home && home.classList.contains('active')) window.ClubField.start();
 })();
+
+/* ── ART GALLERY MASONRY ──
+   True Pinterest-style packing: each .gallery-item spans the number of grid
+   rows its image actually needs, so tiles of different heights interlock and
+   fill gaps instead of sitting in aligned rows. .gi-big items span 2 columns. */
+function layoutGalleryMasonry() {
+  document.querySelectorAll('.gallery-grid').forEach(function (grid) {
+    var cs = getComputedStyle(grid);
+    var rowH = parseFloat(cs.gridAutoRows) || 8;
+    var gap = parseFloat(cs.rowGap || cs.gap) || 10;
+    grid.querySelectorAll('.gallery-item').forEach(function (item) {
+      var img = item.querySelector('img');
+      var h = (img && img.complete && img.naturalHeight)
+        ? img.getBoundingClientRect().height
+        : item.getBoundingClientRect().height;
+      if (!h) return; // hidden or not yet loaded; recomputed later
+      var span = Math.max(1, Math.ceil((h + gap) / (rowH + gap)));
+      item.style.gridRowEnd = 'span ' + span;
+    });
+  });
+}
+window.layoutGalleryMasonry = layoutGalleryMasonry;
+
+(function () {
+  var t;
+  function schedule() { clearTimeout(t); t = setTimeout(layoutGalleryMasonry, 60); }
+  window.addEventListener('resize', schedule);
+  window.addEventListener('load', layoutGalleryMasonry);
+  document.querySelectorAll('.gallery-grid img').forEach(function (img) {
+    if (img.complete) return;
+    img.addEventListener('load', schedule);
+    img.addEventListener('error', schedule);
+  });
+  layoutGalleryMasonry();
+})();
