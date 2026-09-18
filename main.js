@@ -508,9 +508,28 @@ const worksData = {
     description: '<em>March – 17 August 2025. A major exhibition celebrating our enduring love of the water over the last 100 years.</em><br><br><strong>Fashion\'s Smallest Pieces, the Biggest Rebellions</strong><br><br>Dive into Splash! A Century of Swimming and Style and you\'ll realize swimwear has never just been about swimming. From conservative bathing suits to scandalous bikinis and surrealist designs, what we wear in the water has always shaped culture, politics, and personal freedom, pushing the limits of what society deems acceptable.<br><br>One of the most striking pieces was the original bikini itself. In July 1946, Louis Réard unveiled it at Paris\'s Piscine Molitor pool: a bold two-piece with a G-string back, made from just 30 square inches of newspaper-print fabric, which he named the bikini.',
     images: ['images/design/elle-splash-1.jpg']
   },
+  'next-big-thing': {
+    title: 'The Next Big Thing',
+    meta: 'Business Club · Grades 10–11 · Poster',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/design/next-big-thing-1.jpg'
+    ]
+  },
+  'cosplay-posters': {
+    title: 'Cosplay Club',
+    meta: 'Poster',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/design/cosplay-club-poster-1.jpg',
+      'images/design/cosplay-club-poster-2.jpg'
+    ]
+  },
   'business-club': {
     title: 'Business Club',
-    meta: 'Instagram · Design',
+    meta: 'Instagram · Grades 10–11',
     description: '',
     thumbs: false,
     images: [
@@ -524,7 +543,7 @@ const worksData = {
   },
   'drama-club': {
     title: 'Drama Club',
-    meta: 'Ticket Design · The Little Match Girl',
+    meta: 'Ticket Design · The Little Match Girl · Grade 10',
     description: '',
     thumbs: false,
     images: [
