@@ -144,6 +144,10 @@ section.active { display: block; }
 .design-event:first-of-type { margin-top: 0; }
 .design-event-label { font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase; color: #a8a8a8; font-weight: bold; margin-bottom: 0.35rem; }
 .design-event-note { font-size: 0.8rem; line-height: 1.6; color: #9a9a9a; max-width: 640px; margin: 0 0 0.85rem; }
+.design-ticket { display: block; width: 100%; border-radius: 6px; overflow: hidden; background: #111; cursor: none; margin-bottom: 0.9rem; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.design-ticket:last-child { margin-bottom: 0; }
+.design-ticket img { width: 100%; height: auto; display: block; }
+.design-ticket:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.5); }
 .design-club-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; align-items: start; }
 .design-club-columns > .design-box { margin-bottom: 0; }
 .design-event .design-row, .design-box.club-box .design-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.7rem; }
@@ -862,27 +866,22 @@ section.active { display: block; }
   </div>
 
   <div class="design-box club-box">
-    <div class="design-box-head"><span class="design-box-title">Club Name</span><span class="design-box-meta">Instagram · Grade —</span></div>
-    <div class="design-event">
-      <div class="design-event-label">Event Name · Grade — · 4 posts</div>
-      <p class="design-event-note">Short description of the event and what you designed.</p>
-      <div class="design-row">
-        <div class="design-item square"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add post</span></div></div>
-        <div class="design-item square"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add post</span></div></div>
-        <div class="design-item square"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add post</span></div></div>
-        <div class="design-item square"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add post</span></div></div>
-      </div>
+    <div class="design-box-head"><span class="design-box-title">Business Club</span><span class="design-box-meta">Instagram</span></div>
+    <div class="design-row">
+      <div class="design-item square" data-work="business-club" data-index="0"><img src="images/design/business-club-1.jpg" alt="Business Club · Post 1" loading="lazy" decoding="async"></div>
+      <div class="design-item square" data-work="business-club" data-index="1"><img src="images/design/business-club-2.jpg" alt="Business Club · Post 2" loading="lazy" decoding="async"></div>
+      <div class="design-item square" data-work="business-club" data-index="2"><img src="images/design/business-club-3.jpg" alt="Business Club · Post 3" loading="lazy" decoding="async"></div>
+      <div class="design-item square" data-work="business-club" data-index="3"><img src="images/design/business-club-4.jpg" alt="Business Club · Post 4" loading="lazy" decoding="async"></div>
+      <div class="design-item square" data-work="business-club" data-index="4"><img src="images/design/business-club-5.jpg" alt="Business Club · Post 5" loading="lazy" decoding="async"></div>
+      <div class="design-item square" data-work="business-club" data-index="5"><img src="images/design/business-club-6.jpg" alt="Business Club · Post 6" loading="lazy" decoding="async"></div>
     </div>
   </div>
   </div>
 
-  <div class="design-box club-box">
-    <div class="design-box-head"><span class="design-box-title">Club Name</span><span class="design-box-meta">Instagram · Grade 9</span></div>
-    <div class="design-row">
-      <div class="design-item square"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add post</span></div><div class="overlay"><div class="overlay-title">Post I</div><div class="overlay-medium">Instagram</div></div></div>
-      <div class="design-item square"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add post</span></div><div class="overlay"><div class="overlay-title">Post II</div><div class="overlay-medium">Instagram</div></div></div>
-      <div class="design-item square"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><line x1="2" y1="18" x2="34" y2="18" stroke="#333" stroke-width="0.5"/><line x1="18" y1="2" x2="18" y2="34" stroke="#333" stroke-width="0.5"/></svg><span>Add post</span></div><div class="overlay"><div class="overlay-title">Post III</div><div class="overlay-medium">Instagram</div></div></div>
-    </div>
+  <div class="design-box">
+    <div class="design-box-head"><span class="design-box-title">Drama Club</span><span class="design-box-meta">Ticket Design · The Little Match Girl</span></div>
+    <div class="design-ticket" data-work="drama-club" data-index="0"><img src="images/design/drama-club-1.jpg" alt="Drama Club · The Little Match Girl ticket 1" loading="lazy" decoding="async"></div>
+    <div class="design-ticket" data-work="drama-club" data-index="1"><img src="images/design/drama-club-2.jpg" alt="Drama Club · The Little Match Girl ticket 2" loading="lazy" decoding="async"></div>
   </div>
 
   <div class="design-box">
@@ -1820,7 +1819,7 @@ function spawnParticle(x, y) {
   setTimeout(() => p.remove(), 1000);
 }
 </script>
-<script src="main.js?v=13"></script>
+<script src="main.js?v=14"></script>
 <script src="liquid.js"></script>
 </body>
 </html>
