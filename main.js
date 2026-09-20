@@ -484,7 +484,9 @@ const worksData = {
       'images/art/scintilla-3.jpg',
       'images/art/scintilla-4.jpg',
       'images/art/scintilla-5.jpg',
-      'images/art/scintilla-6.jpg'
+      'images/art/scintilla-6.jpg',
+      'images/art/scintilla-7.jpg',
+      'images/art/scintilla-8.jpg'
     ]
   },
   'ceramic-plate': {
@@ -677,7 +679,8 @@ const worksData = {
     images: [
       'images/art/penumbra-1.jpg',
       'images/art/penumbra-2.jpg',
-      'images/art/penumbra-3.jpg'
+      'images/art/penumbra-3.jpg',
+      'images/art/penumbra-4.jpg'
     ]
   },
   'reality-hurts': {
@@ -752,7 +755,10 @@ const worksData = {
     description: 'A prismatic skeleton crouches inside a white shadow box vitrine, surrounded at its base by empty pill blister packs and a strip of photographic prints. The companion piece renders the same figure in charcoal grey, colour stripped back to structure.<br><br>The display format is borrowed from scientific and museum presentation: the vitrine, the isolated specimen, the clinical white frame. By placing the skeleton within this context, the work reframes a symbol of death as an object of study, carrying the symbolic and emotional weight that institutional display assigns to its specimens.<br><br>Absence asserts itself as loudly as presence. The missing flesh, the hollow pills, the faces preserved on film. What is visible is always shaped by what is no longer there.',
     images: [
       'images/art/specimen-1.jpg',
-      'images/art/specimen-2.jpg'
+      'images/art/specimen-2.jpg',
+      'images/art/specimen-3.jpg',
+      'images/art/specimen-4.jpg',
+      'images/art/specimen-5.jpg'
     ]
   },
   'club-magazine': {
