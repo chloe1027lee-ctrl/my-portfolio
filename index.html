@@ -154,10 +154,13 @@ section.active { display: block; }
 .design-event .design-row .design-item.square, .design-box.club-box .design-row .design-item.square { width: auto; }
 .design-box.club-box.wide-grid .design-row { grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); }
 @media (max-width: 900px) { .design-club-columns { grid-template-columns: 1fr; } }
-.design-top-row { display: grid; grid-template-columns: 1fr 2.4fr; gap: 1.3rem; align-items: start; margin-bottom: 1.3rem; }
-.design-top-row > .design-box { margin-bottom: 0; }
+.design-top-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 4.4fr); gap: 1.3rem; align-items: start; margin-bottom: 1.3rem; }
+.design-top-row > .design-box { margin-bottom: 0; min-width: 0; }
+.design-top-row .design-row { flex-wrap: nowrap; }
 .posters-oneline { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.6rem; }
-.posters-oneline .design-item.portrait { width: auto; }
+.design-top-row .design-item.portrait { width: 100%; min-width: 0; }
+.design-col-stack { display: flex; flex-direction: column; gap: 1.3rem; min-width: 0; }
+.design-col-stack > .design-box { margin-bottom: 0; }
 @media (max-width: 760px) { .design-top-row { grid-template-columns: 1fr; } }
 
 /* ABOUT */
@@ -883,6 +886,7 @@ section.active { display: block; }
     </div>
   </div>
 
+  <div class="design-col-stack">
   <div class="design-box club-box">
     <div class="design-box-head"><span class="design-box-title">Business Club</span><span class="design-box-meta">Instagram · Grades 10–11</span></div>
     <div class="design-row">
@@ -894,8 +898,6 @@ section.active { display: block; }
       <div class="design-item square" data-work="business-club" data-index="5"><img src="images/design/business-club-6.jpg" alt="Business Club · Post 6" loading="lazy" decoding="async"></div>
     </div>
   </div>
-  </div>
-
   <div class="design-box club-box wide-grid">
     <div class="design-box-head"><span class="design-box-title">Cosplay Club</span><span class="design-box-meta">Instagram · Grades 10–12</span></div>
     <div class="design-row">
@@ -922,6 +924,8 @@ section.active { display: block; }
       <div class="design-item square" data-work="cosplay-club-posts" data-index="20"><img src="images/design/cosplay-club-21.jpg" alt="Cosplay Club · Post 21" loading="lazy" decoding="async"></div>
       <div class="design-item square" data-work="cosplay-club-posts" data-index="21"><img src="images/design/cosplay-club-22.jpg" alt="Cosplay Club · Post 22" loading="lazy" decoding="async"></div>
     </div>
+  </div>
+  </div>
   </div>
 
   <div class="design-box">
