@@ -154,11 +154,13 @@ section.active { display: block; }
 .design-event .design-row .design-item.square, .design-box.club-box .design-row .design-item.square { width: auto; }
 .design-box.club-box.wide-grid .design-row { grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); }
 @media (max-width: 900px) { .design-club-columns { grid-template-columns: 1fr; } }
-.design-top-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 4.4fr); gap: 1.3rem; align-items: start; margin-bottom: 1.3rem; }
-.design-top-row > .design-box { margin-bottom: 0; min-width: 0; }
-.design-top-row .design-row { flex-wrap: nowrap; }
-.posters-oneline { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.6rem; }
+.design-top-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; align-items: stretch; margin-bottom: 1.3rem; }
+.design-top-row > .design-box { margin-bottom: 0; min-width: 0; display: flex; flex-direction: column; }
+.design-top-row .design-row { flex-wrap: nowrap; flex: 1; align-items: flex-start; }
+.posters-oneline { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.6rem; align-content: flex-start; }
+.design-top-row .design-row:not(.posters-oneline) { justify-content: center; }
 .design-top-row .design-item.portrait { width: 100%; min-width: 0; }
+.design-top-row .design-row:not(.posters-oneline) .design-item.portrait { max-width: 300px; }
 .design-col-stack { display: flex; flex-direction: column; gap: 1.3rem; min-width: 0; }
 .design-col-stack > .design-box { margin-bottom: 0; }
 @media (max-width: 760px) { .design-top-row { grid-template-columns: 1fr; } }
@@ -921,8 +923,6 @@ section.active { display: block; }
       <div class="design-item square" data-work="cosplay-club-posts" data-index="17"><img src="images/design/cosplay-club-18.jpg" alt="Cosplay Club · Post 18" loading="lazy" decoding="async"></div>
       <div class="design-item square" data-work="cosplay-club-posts" data-index="18"><img src="images/design/cosplay-club-19.jpg" alt="Cosplay Club · Post 19" loading="lazy" decoding="async"></div>
       <div class="design-item square" data-work="cosplay-club-posts" data-index="19"><img src="images/design/cosplay-club-20.jpg" alt="Cosplay Club · Post 20" loading="lazy" decoding="async"></div>
-      <div class="design-item square" data-work="cosplay-club-posts" data-index="20"><img src="images/design/cosplay-club-21.jpg" alt="Cosplay Club · Post 21" loading="lazy" decoding="async"></div>
-      <div class="design-item square" data-work="cosplay-club-posts" data-index="21"><img src="images/design/cosplay-club-22.jpg" alt="Cosplay Club · Post 22" loading="lazy" decoding="async"></div>
     </div>
   </div>
   </div>

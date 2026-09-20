@@ -562,9 +562,7 @@ const worksData = {
       'images/design/cosplay-club-17.jpg',
       'images/design/cosplay-club-18.jpg',
       'images/design/cosplay-club-19.jpg',
-      'images/design/cosplay-club-20.jpg',
-      'images/design/cosplay-club-21.jpg',
-      'images/design/cosplay-club-22.jpg'
+      'images/design/cosplay-club-20.jpg'
     ]
   },
   'business-club': {
