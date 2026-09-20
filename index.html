@@ -152,6 +152,7 @@ section.active { display: block; }
 .design-club-columns > .design-box { margin-bottom: 0; }
 .design-event .design-row, .design-box.club-box .design-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.7rem; }
 .design-event .design-row .design-item.square, .design-box.club-box .design-row .design-item.square { width: auto; }
+.design-box.club-box.wide-grid .design-row { grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); }
 @media (max-width: 900px) { .design-club-columns { grid-template-columns: 1fr; } }
 
 /* ABOUT */
@@ -803,12 +804,17 @@ section.active { display: block; }
   <div class="section-header">Design</div>
 
   <div class="design-box">
-    <div class="design-box-head"><span class="design-box-title">Editorial</span><span class="design-box-meta">Cover &amp; Feature · 2025</span></div>
+    <div class="design-box-head"><span class="design-box-title">Editorial &amp; Posters</span><span class="design-box-meta">Print Design · 2025</span></div>
     <div class="design-row">
       <div class="design-item portrait" data-work="elle-splash">
         <img src="images/design/elle-splash-1.jpg" alt="Splash! A Century of Swimming and Style — Editorial Cover" loading="lazy" decoding="async">
         <div class="overlay"><div class="overlay-title">SPLASH!</div><div class="overlay-medium">Editorial · 2025</div></div>
       </div>
+      <div class="design-item portrait" data-work="next-big-thing" data-index="0"><img src="images/design/next-big-thing-1.jpg" alt="The Next Big Thing poster" loading="lazy" decoding="async"><div class="overlay"><div class="overlay-title">The Next Big Thing</div><div class="overlay-medium">Business Club</div></div></div>
+      <div class="design-item portrait" data-work="cosplay-posters" data-index="0"><img src="images/design/cosplay-club-poster-1.jpg" alt="Cosplay Club poster 1" loading="lazy" decoding="async"><div class="overlay"><div class="overlay-title">Cosplay Club</div><div class="overlay-medium">Poster</div></div></div>
+      <div class="design-item portrait" data-work="cosplay-posters" data-index="1"><img src="images/design/cosplay-club-poster-2.jpg" alt="Cosplay Club poster 2" loading="lazy" decoding="async"><div class="overlay"><div class="overlay-title">Cosplay Club</div><div class="overlay-medium">Poster</div></div></div>
+      <div class="design-item portrait" data-work="cosplay-posters" data-index="2"><img src="images/design/cosplay-club-poster-3.jpg" alt="Cosplay Club poster 3" loading="lazy" decoding="async"><div class="overlay"><div class="overlay-title">Cosplay Club</div><div class="overlay-medium">Poster</div></div></div>
+      <div class="design-item portrait" data-work="charity-poster" data-index="0"><img src="images/design/charity-poster-1.jpg" alt="Charity Art Club poster" loading="lazy" decoding="async"><div class="overlay"><div class="overlay-title">Charity Art Club</div><div class="overlay-medium">Poster</div></div></div>
     </div>
     <a href="https://canva.link/ualmarketingsplash" target="_blank" class="editorial-link">↗ Read the Editorial</a>
   </div>
@@ -884,7 +890,7 @@ section.active { display: block; }
     <div class="design-ticket" data-work="drama-club" data-index="1"><img src="images/design/drama-club-2.jpg" alt="Drama Club · The Little Match Girl ticket 2" loading="lazy" decoding="async"></div>
   </div>
 
-  <div class="design-box club-box">
+  <div class="design-box club-box wide-grid">
     <div class="design-box-head"><span class="design-box-title">Cosplay Club</span><span class="design-box-meta">Instagram · Grades 10–12</span></div>
     <div class="design-row">
       <div class="design-item square" data-work="cosplay-club-posts" data-index="0"><img src="images/design/cosplay-club-1.jpg" alt="Cosplay Club · Post 1" loading="lazy" decoding="async"></div>
@@ -912,24 +918,6 @@ section.active { display: block; }
     </div>
   </div>
 
-  <div class="design-box">
-    <div class="design-box-head"><span class="design-box-title">Posters</span><span class="design-box-meta">Print Design</span></div>
-    <div class="design-row">
-      <div class="design-item portrait" data-work="next-big-thing" data-index="0"><img src="images/design/next-big-thing-1.jpg" alt="The Next Big Thing poster" loading="lazy" decoding="async"><div class="overlay"><div class="overlay-title">The Next Big Thing</div><div class="overlay-medium">Business Club</div></div></div>
-      <div class="design-item portrait" data-work="cosplay-posters" data-index="0"><img src="images/design/cosplay-club-poster-1.jpg" alt="Cosplay Club poster 1" loading="lazy" decoding="async"><div class="overlay"><div class="overlay-title">Cosplay Club</div><div class="overlay-medium">Poster</div></div></div>
-      <div class="design-item portrait" data-work="cosplay-posters" data-index="1"><img src="images/design/cosplay-club-poster-2.jpg" alt="Cosplay Club poster 2" loading="lazy" decoding="async"><div class="overlay"><div class="overlay-title">Cosplay Club</div><div class="overlay-medium">Poster</div></div></div>
-      <div class="design-item portrait" data-work="cosplay-posters" data-index="2"><img src="images/design/cosplay-club-poster-3.jpg" alt="Cosplay Club poster 3" loading="lazy" decoding="async"><div class="overlay"><div class="overlay-title">Cosplay Club</div><div class="overlay-medium">Poster</div></div></div>
-      <div class="design-item portrait" data-work="charity-poster" data-index="0"><img src="images/design/charity-poster-1.jpg" alt="Charity Art Club poster" loading="lazy" decoding="async"><div class="overlay"><div class="overlay-title">Charity Art Club</div><div class="overlay-medium">Poster</div></div></div>
-    </div>
-  </div>
-
-  <div class="design-box">
-    <div class="design-box-head"><span class="design-box-title">Photography</span><span class="design-box-meta">Digital</span></div>
-    <div class="design-row">
-      <div class="design-item landscape"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><circle cx="18" cy="18" r="8" stroke="#333" stroke-width="0.5"/></svg><span>Add photo</span></div><div class="overlay"><div class="overlay-title">Photo I</div><div class="overlay-medium">Photography</div></div></div>
-      <div class="design-item landscape"><div class="placeholder-art"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#555" stroke-width="1"/><circle cx="18" cy="18" r="8" stroke="#333" stroke-width="0.5"/></svg><span>Add photo</span></div><div class="overlay"><div class="overlay-title">Photo II</div><div class="overlay-medium">Photography</div></div></div>
-    </div>
-  </div>
 </section>
 
 <!-- MATERIA -->
