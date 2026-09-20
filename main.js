@@ -225,8 +225,7 @@ const worksData = {
       'images/cosplay/arcana-8.jpg',
       'images/cosplay/arcana-9.jpg',
       'images/cosplay/arcana-10.jpg',
-      'images/cosplay/arcana-11.jpg',
-      'images/cosplay/arcana-12.jpg'
+      'images/cosplay/arcana-11.jpg'
     ]
   },
   'rizu-kyun': {
@@ -1169,6 +1168,15 @@ document.addEventListener('click', e => {
     openLightbox(item.dataset.work, idx);
   }
 });
+
+/* Horizontal photo slider arrows (Unbound Silhouettes) */
+function slidePhotos(btn, dir) {
+  const strip = btn.parentElement.querySelector('.photo-strip');
+  if (!strip) return;
+  const item = strip.querySelector('.photo-work');
+  const step = item ? item.getBoundingClientRect().width + 1 : strip.clientWidth * 0.8;
+  strip.scrollBy({ left: dir * step, behavior: 'smooth' });
+}
 
 /* ── ZOOM / INSPECT VIEWER ──
    Click the big lightbox image to open. Scroll or click to zoom toward the

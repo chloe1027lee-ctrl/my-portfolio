@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>CHLOE — Portfolio</title>
-<link rel="stylesheet" href="styles.css?v=3"/>
+<link rel="stylesheet" href="styles.css?v=4"/>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
 
@@ -1567,9 +1567,11 @@ section.active { display: block; }
 
   <div class="photo-category">Unbound Silhouettes · UAL Visual Communications · Fashion</div>
   <p class="photo-category-desc">A fashion-direction series that warps and exaggerates corporate silhouettes, turning disciplined, contained professional dress into a shape all her own. Photography and editing by Chloe Lee; models Arisa Slavu and Adriana Malik.</p>
-  <div class="photo-grid">
+  <div class="photo-slider">
+    <button type="button" class="photo-slider-arrow prev" aria-label="Previous" onclick="slidePhotos(this,-1)">&#8249;</button>
+    <div class="photo-grid photo-strip">
 
-    <div class="photo-work" data-work="unbound">
+    <div class="photo-work" data-work="unbound" data-index="0">
       <div class="photo-work-img" style="background-image:url('images/photography/unbound-1.jpg')"></div>
       <div class="photo-work-overlay">
         <span class="photo-work-title">Unbound Silhouettes</span>
@@ -1577,7 +1579,7 @@ section.active { display: block; }
       </div>
     </div>
 
-    <div class="photo-work" data-work="unbound">
+    <div class="photo-work" data-work="unbound" data-index="1">
       <div class="photo-work-img" style="background-image:url('images/photography/unbound-2.jpg')"></div>
       <div class="photo-work-overlay">
         <span class="photo-work-title">Unbound Silhouettes</span>
@@ -1585,7 +1587,7 @@ section.active { display: block; }
       </div>
     </div>
 
-    <div class="photo-work" data-work="unbound">
+    <div class="photo-work" data-work="unbound" data-index="2">
       <div class="photo-work-img" style="background-image:url('images/photography/unbound-3.jpg')"></div>
       <div class="photo-work-overlay">
         <span class="photo-work-title">Unbound Silhouettes</span>
@@ -1593,7 +1595,7 @@ section.active { display: block; }
       </div>
     </div>
 
-    <div class="photo-work" data-work="unbound">
+    <div class="photo-work" data-work="unbound" data-index="3">
       <div class="photo-work-img" style="background-image:url('images/photography/unbound-4.jpg')"></div>
       <div class="photo-work-overlay">
         <span class="photo-work-title">Unbound Silhouettes</span>
@@ -1601,7 +1603,7 @@ section.active { display: block; }
       </div>
     </div>
 
-    <div class="photo-work" data-work="unbound">
+    <div class="photo-work" data-work="unbound" data-index="4">
       <div class="photo-work-img" style="background-image:url('images/photography/unbound-5.jpg')"></div>
       <div class="photo-work-overlay">
         <span class="photo-work-title">Unbound Silhouettes</span>
@@ -1609,7 +1611,7 @@ section.active { display: block; }
       </div>
     </div>
 
-    <div class="photo-work" data-work="unbound">
+    <div class="photo-work" data-work="unbound" data-index="5">
       <div class="photo-work-img" style="background-image:url('images/photography/unbound-6.jpg')"></div>
       <div class="photo-work-overlay">
         <span class="photo-work-title">Unbound Silhouettes</span>
@@ -1617,6 +1619,8 @@ section.active { display: block; }
       </div>
     </div>
 
+    </div>
+    <button type="button" class="photo-slider-arrow next" aria-label="Next" onclick="slidePhotos(this,1)">&#8250;</button>
   </div>
 
   <div class="photo-category">London Pride · Soho Street Parties · June 2025</div>
@@ -1856,7 +1860,7 @@ function spawnParticle(x, y) {
   setTimeout(() => p.remove(), 1000);
 }
 </script>
-<script src="main.js?v=17"></script>
+<script src="main.js?v=18"></script>
 <script src="liquid.js"></script>
 </body>
 </html>
