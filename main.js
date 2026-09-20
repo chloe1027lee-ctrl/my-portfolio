@@ -250,8 +250,11 @@ const worksData = {
     description: 'A look behind the scenes of this build — hand-making and styling the wig and props from scratch — alongside the finished photoshoot.',
     thumbs: true,
     bts: true,
+    features: 3,
     images: [
       'images/cosplay/yae-miko-1.jpg',
+      'images/cosplay/yae-miko-2.jpg',
+      'images/cosplay/yae-miko-3.jpg',
       'images/cosplay/yae-miko-bts-1.jpg',
       'images/cosplay/yae-miko-bts-2.jpg',
       'images/cosplay/yae-miko-bts-3.jpg',
@@ -1118,18 +1121,21 @@ document.addEventListener('keydown', e => {
     panel.dataset.cat = cat.key;
     let body;
     if (w.bts) {
-      // Behind-the-scenes layout: one big photoshoot shot + a grid of small BTS pics
-      const shots = w.images.slice(1).map((src, i) =>
-        '<div class="cosplay-cat-strip-item" data-work="' + cat.key + '" data-index="' + (i + 1) + '">' +
+      // Behind-the-scenes layout: big photoshoot shots (stacked) + a grid of small BTS pics
+      const fc = w.features || 1;
+      const feats = w.images.slice(0, fc).map((src, i) =>
+        '<div class="cosplay-bts-feature" data-work="' + cat.key + '" data-index="' + i + '">' +
+          '<img src="' + src + '" alt="' + esc(w.title) + ' ' + (i + 1) + '" loading="lazy" decoding="async">' +
+        '</div>').join('');
+      const shots = w.images.slice(fc).map((src, i) =>
+        '<div class="cosplay-cat-strip-item" data-work="' + cat.key + '" data-index="' + (fc + i) + '">' +
           '<img src="' + src + '" alt="' + esc(w.title) + ' behind the scenes ' + (i + 1) + '" loading="lazy" decoding="async">' +
         '</div>').join('');
       body =
         '<div class="cosplay-bts">' +
           '<div class="cosplay-bts-feature-wrap">' +
             '<div class="cosplay-bts-tag">Photoshoot</div>' +
-            '<div class="cosplay-bts-feature" data-work="' + cat.key + '" data-index="0">' +
-              '<img src="' + w.images[0] + '" alt="' + esc(w.title) + '" loading="lazy" decoding="async">' +
-            '</div>' +
+            '<div class="cosplay-bts-features">' + feats + '</div>' +
           '</div>' +
           '<div class="cosplay-bts-side">' +
             '<div class="cosplay-bts-label">Behind the Scenes · Wig Making</div>' +

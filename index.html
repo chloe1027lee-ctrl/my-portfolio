@@ -308,6 +308,7 @@ section.active { display: block; }
 /* Behind-the-scenes panel: one big photoshoot pic + grid of small BTS pics */
 .cosplay-bts { display: grid; grid-template-columns: minmax(0, 320px) auto; justify-content: start; gap: 2.2rem; align-items: start; }
 .cosplay-bts-tag, .cosplay-bts-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: #9a9a9a; font-weight: bold; margin-bottom: 0.75rem; }
+.cosplay-bts-features { display: flex; flex-direction: column; gap: 0.8rem; }
 .cosplay-bts-feature { position: relative; cursor: pointer; overflow: hidden; border-radius: 4px; background: #111; }
 .cosplay-bts-feature img { width: 100%; aspect-ratio: 2/3; object-fit: cover; object-position: top; display: block; filter: saturate(1.08) brightness(1.03); transition: transform 0.35s; }
 .cosplay-bts-feature:hover img { transform: scale(1.03); }
@@ -1890,7 +1891,7 @@ function spawnParticle(x, y) {
   setTimeout(() => p.remove(), 1000);
 }
 </script>
-<script src="main.js?v=23"></script>
+<script src="main.js?v=24"></script>
 <script src="liquid.js"></script>
 </body>
 </html>
