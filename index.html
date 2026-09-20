@@ -305,6 +305,16 @@ section.active { display: block; }
 .cosplay-panel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(165px, 1fr)); gap: 5px; }
 .cosplay-panel-grid .cosplay-cat-strip-item { width: auto; height: auto; aspect-ratio: 2/3; }
 
+/* Behind-the-scenes panel: one big photoshoot pic + grid of small BTS pics */
+.cosplay-bts { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 2.2rem; align-items: start; }
+.cosplay-bts-tag, .cosplay-bts-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: #9a9a9a; font-weight: bold; margin-bottom: 0.75rem; }
+.cosplay-bts-feature { position: relative; cursor: pointer; overflow: hidden; border-radius: 4px; background: #111; }
+.cosplay-bts-feature img { width: 100%; aspect-ratio: 2/3; object-fit: cover; object-position: top; display: block; filter: saturate(1.08) brightness(1.03); transition: transform 0.35s; }
+.cosplay-bts-feature:hover img { transform: scale(1.03); }
+.cosplay-bts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+.cosplay-bts-grid .cosplay-cat-strip-item { width: auto; height: auto; aspect-ratio: 1/1; border-radius: 4px; }
+@media (max-width: 700px) { .cosplay-bts { grid-template-columns: 1fr; gap: 1.4rem; } .cosplay-bts-feature { max-width: 280px; } }
+
 /* Cosplay Club feature (top of Cosplay section) */
 .club-feature { margin: 0 0 3.5rem; padding-bottom: 3rem; border-bottom: 1px solid #1a1a1a; }
 .club-feature-head { margin-bottom: 1.8rem; }
@@ -1875,7 +1885,7 @@ function spawnParticle(x, y) {
   setTimeout(() => p.remove(), 1000);
 }
 </script>
-<script src="main.js?v=19"></script>
+<script src="main.js?v=21"></script>
 <script src="liquid.js"></script>
 </body>
 </html>

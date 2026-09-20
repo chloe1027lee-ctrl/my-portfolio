@@ -239,6 +239,22 @@ const worksData = {
       'images/cosplay/arcana-11.jpg'
     ]
   },
+  'yae-miko': {
+    title: 'Yae Miko',
+    meta: 'KICA 高雄國際動漫節 · October 10, 2024',
+    description: 'A look behind the scenes of this build — hand-making and styling the wig and props from scratch — alongside the finished photoshoot.',
+    thumbs: true,
+    bts: true,
+    images: [
+      'images/cosplay/yae-miko-1.jpg',
+      'images/cosplay/yae-miko-bts-1.jpg',
+      'images/cosplay/yae-miko-bts-2.jpg',
+      'images/cosplay/yae-miko-bts-3.jpg',
+      'images/cosplay/yae-miko-bts-4.jpg',
+      'images/cosplay/yae-miko-bts-5.jpg',
+      'images/cosplay/yae-miko-bts-6.jpg'
+    ]
+  },
   'rizu-kyun': {
     title: 'Rizu Kyun',
     meta: '開拓動漫祭 FF44 · February 09, 2025',
@@ -1061,10 +1077,12 @@ document.addEventListener('keydown', e => {
     { key: 'blanc-kica',       sub: 'KICA 高雄國際動漫節 · Oct 2025' },
     { key: 'arcana',           sub: '【CWT-K48】高雄場 · Sep 2025' },
     { key: 'rizu-kyun',        sub: '開拓動漫祭 FF44 · Feb 2025' }
+    // Yae Miko (Behind the Scenes) is coded below — re-enable once its photos
+    // are added: { key: 'yae-miko', sub: 'KICA 高雄國際動漫節 · Oct 2024' }
   ];
 
   const row = document.createElement('div');
-  row.className = 'cosplay-cover-row';
+  row.className = 'cosplay-cover-row photo-strip';
   const reveal = document.createElement('div');
   reveal.className = 'cosplay-reveal';
 
@@ -1082,7 +1100,7 @@ document.addEventListener('keydown', e => {
     cover.innerHTML =
       '<div class="cosplay-cover-thumb">' +
         '<img src="' + w.images[0] + '" alt="' + esc(w.title) + '" loading="lazy" decoding="async">' +
-        '<span class="cosplay-cover-badge">' + n + ' photos</span>' +
+        '<span class="cosplay-cover-badge">' + (w.bts ? 'Behind the Scenes' : n + ' photos') + '</span>' +
         '<span class="cosplay-cover-pin">Pinned</span>' +
       '</div>' +
       '<div class="cosplay-cover-cap">' +
@@ -1094,21 +1112,64 @@ document.addEventListener('keydown', e => {
     const panel = document.createElement('div');
     panel.className = 'cosplay-panel';
     panel.dataset.cat = cat.key;
-    const items = w.images.map((src, i) =>
-      '<div class="cosplay-cat-strip-item" data-work="' + cat.key + '" data-index="' + i + '">' +
-        '<img src="' + src + '" alt="' + esc(w.title) + ' ' + (i + 1) + '" loading="lazy" decoding="async">' +
-      '</div>').join('');
+    let body;
+    if (w.bts) {
+      // Behind-the-scenes layout: one big photoshoot shot + a grid of small BTS pics
+      const shots = w.images.slice(1).map((src, i) =>
+        '<div class="cosplay-cat-strip-item" data-work="' + cat.key + '" data-index="' + (i + 1) + '">' +
+          '<img src="' + src + '" alt="' + esc(w.title) + ' behind the scenes ' + (i + 1) + '" loading="lazy" decoding="async">' +
+        '</div>').join('');
+      body =
+        '<div class="cosplay-bts">' +
+          '<div class="cosplay-bts-feature-wrap">' +
+            '<div class="cosplay-bts-tag">Photoshoot</div>' +
+            '<div class="cosplay-bts-feature" data-work="' + cat.key + '" data-index="0">' +
+              '<img src="' + w.images[0] + '" alt="' + esc(w.title) + '" loading="lazy" decoding="async">' +
+            '</div>' +
+          '</div>' +
+          '<div class="cosplay-bts-side">' +
+            '<div class="cosplay-bts-label">Behind the Scenes · Wig Making</div>' +
+            '<div class="cosplay-bts-grid">' + shots + '</div>' +
+          '</div>' +
+        '</div>';
+    } else {
+      const items = w.images.map((src, i) =>
+        '<div class="cosplay-cat-strip-item" data-work="' + cat.key + '" data-index="' + i + '">' +
+          '<img src="' + src + '" alt="' + esc(w.title) + ' ' + (i + 1) + '" loading="lazy" decoding="async">' +
+        '</div>').join('');
+      body = '<div class="cosplay-panel-grid">' + items + '</div>';
+    }
     panel.innerHTML =
       '<div class="cosplay-panel-head">' +
         '<div><div class="cosplay-panel-title">' + esc(w.title) + '</div>' +
         '<div class="cosplay-panel-meta">' + w.meta + '</div></div>' +
         '<div class="cosplay-panel-state"></div>' +
       '</div>' +
-      '<div class="cosplay-panel-grid">' + items + '</div>';
+      body;
     reveal.appendChild(panel);
   });
 
-  mount.appendChild(row);
+  // Wrap the cover row in the same slider chrome as the photography sliders
+  // (auto-scroll motion + arrows + edge fades), keeping the captions intact.
+  const sliderWrap = document.createElement('div');
+  sliderWrap.className = 'photo-slider cosplay-cover-slider';
+  sliderWrap.setAttribute('data-autoscroll', 'pingpong');
+  const prevBtn = document.createElement('button');
+  prevBtn.type = 'button';
+  prevBtn.className = 'photo-slider-arrow prev';
+  prevBtn.setAttribute('aria-label', 'Previous');
+  prevBtn.innerHTML = '&#8249;';
+  prevBtn.addEventListener('click', () => slidePhotos(prevBtn, -1));
+  const nextBtn = document.createElement('button');
+  nextBtn.type = 'button';
+  nextBtn.className = 'photo-slider-arrow next';
+  nextBtn.setAttribute('aria-label', 'Next');
+  nextBtn.innerHTML = '&#8250;';
+  nextBtn.addEventListener('click', () => slidePhotos(nextBtn, 1));
+  sliderWrap.appendChild(prevBtn);
+  sliderWrap.appendChild(row);
+  sliderWrap.appendChild(nextBtn);
+  mount.appendChild(sliderWrap);
   mount.appendChild(reveal);
 
   const covers = Array.from(row.querySelectorAll('.cosplay-cover'));
@@ -1184,8 +1245,8 @@ document.addEventListener('click', e => {
 function slidePhotos(btn, dir) {
   const strip = btn.parentElement.querySelector('.photo-strip');
   if (!strip) return;
-  const item = strip.querySelector('.photo-work');
-  const step = item ? item.getBoundingClientRect().width + 1 : strip.clientWidth * 0.8;
+  const item = strip.querySelector('.photo-work, .cosplay-cover') || strip.firstElementChild;
+  const step = item ? item.getBoundingClientRect().width + 12 : strip.clientWidth * 0.8;
   strip.scrollBy({ left: dir * step, behavior: 'smooth' });
 }
 
@@ -1198,7 +1259,7 @@ function initPhotoSliders() {
     if (!strip || strip.dataset.looped) return;
     strip.dataset.looped = '1';
     if (reduce) return;                       // respect reduced-motion: manual only
-    [...strip.children].forEach(node => strip.appendChild(node.cloneNode(true)));
+    const mode = slider.getAttribute('data-autoscroll') || 'loop';
     let paused = false;
     const pause = () => { paused = true; };
     const play  = () => { paused = false; };
@@ -1208,15 +1269,33 @@ function initPhotoSliders() {
     slider.addEventListener('focusin', pause);
     slider.addEventListener('focusout', play);
     const speed = 0.4;                         // px per frame (~24px/s)
-    function tick() {
-      if (!paused && strip.scrollWidth > strip.clientWidth) {
-        strip.scrollLeft += speed;
-        const half = strip.scrollWidth / 2;
-        if (strip.scrollLeft >= half) strip.scrollLeft -= half;
-      }
+    if (mode === 'pingpong') {
+      // No cloning (items keep their own click/hover behaviour); drift to the
+      // end, then reverse.
+      let d = 1;
+      const tick = () => {
+        if (!paused && strip.scrollWidth > strip.clientWidth) {
+          strip.scrollLeft += speed * d;
+          const max = strip.scrollWidth - strip.clientWidth;
+          if (strip.scrollLeft >= max - 0.5) d = -1;
+          else if (strip.scrollLeft <= 0.5) d = 1;
+        }
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    } else {
+      // Seamless loop: duplicate items once and wrap at the halfway point.
+      [...strip.children].forEach(node => strip.appendChild(node.cloneNode(true)));
+      const tick = () => {
+        if (!paused && strip.scrollWidth > strip.clientWidth) {
+          strip.scrollLeft += speed;
+          const half = strip.scrollWidth / 2;
+          if (strip.scrollLeft >= half) strip.scrollLeft -= half;
+        }
+        requestAnimationFrame(tick);
+      };
       requestAnimationFrame(tick);
     }
-    requestAnimationFrame(tick);
   });
 }
 initPhotoSliders();
