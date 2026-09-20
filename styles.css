@@ -431,7 +431,7 @@ nav { z-index: 100; }
 
 .lightbox-close:hover { color: #e8e2d9; }
 
-/* Portrait mode (cosplay) — image fills, info shrinks to bottom strip */
+/* Portrait mode (cosplay): image fills, info shrinks to bottom strip */
 .lightbox-overlay.lightbox-portrait .lightbox-inner {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr auto;

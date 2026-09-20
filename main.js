@@ -146,7 +146,7 @@ const worksData = {
   'kas-club': {
     title: 'KAS Cosplay Club',
     meta: 'Founder &amp; President · Kaohsiung American School · Founded 2024',
-    description: 'I founded KAS Cosplay Club because cosplay had given me so much happiness — a space to create freely, grow more confident, and connect with people who loved what I loved. I wanted to share that feeling, not keep it to myself. What began as a club for students to explore cosplay grew into something more meaningful: bringing characters to life for children at the Love and Hope Child Care Center (愛與希望兒少關懷中心) through costumes, games, dance, and photography. Watching something that made me happy become a source of happiness for someone else changed what cosplay meant to me — the club became not just a creative community, but a way to turn something I love into something I could give.',
+    description: 'I founded KAS Cosplay Club because cosplay had given me so much happiness: a space to create freely, grow more confident, and connect with people who loved what I loved. I wanted to share that feeling, not keep it to myself. What began as a club for students to explore cosplay grew into something more meaningful: bringing characters to life for children at the Love and Hope Child Care Center (愛與希望兒少關懷中心) through costumes, games, dance, and photography. Watching something that made me happy become a source of happiness for someone else changed what cosplay meant to me. The club became not just a creative community, but a way to turn something I love into something I could give.',
     thumbs: true,
     images: [
       'images/cosplay/club-1.jpg',
@@ -247,7 +247,7 @@ const worksData = {
   'yae-miko': {
     title: 'Yae Miko',
     meta: 'KICA 高雄國際動漫節 · October 10, 2024',
-    description: 'A look behind the scenes of this build — hand-making and styling the wig and props from scratch — alongside the finished photoshoot.',
+    description: 'A look behind the scenes of this build: hand-making and styling the wig and props from scratch, alongside the finished photoshoot.',
     thumbs: true,
     bts: true,
     features: 3,
@@ -510,7 +510,7 @@ const worksData = {
   'scintilla': {
     title: 'Scintilla',
     meta: 'Lee, Chloe. <em>Scintilla</em>. 2026. Aluminium Wire, Mesh, and Iridescent Film. Installation.',
-    description: 'Scintilla is a large-scale wire sculpture of a mosquito constructed from aluminium wire, mesh, and iridescent film, installed on top of the locker unit in the KAS locker hallway. The iridescent film embedded within the wire shifts between color and transparency depending on the viewer\'s angle — what reads as threatening from a distance becomes unexpectedly beautiful up close, and then unsettling again.<br><br>The work responds to a simple observation: students avoid their lockers because of mosquitos. Something millimetres long exerts enough psychological force to make a person abandon a space with their name on it. By scaling the creature to monumental size and filling it with color, Scintilla asks whether the fear was ever really about the insect — or about what we project onto things we choose not to look at closely.',
+    description: 'Scintilla is a large-scale wire sculpture of a mosquito constructed from aluminium wire, mesh, and iridescent film, installed on top of the locker unit in the KAS locker hallway. The iridescent film embedded within the wire shifts between color and transparency depending on the viewer\'s angle: what reads as threatening from a distance becomes unexpectedly beautiful up close, and then unsettling again.<br><br>The work responds to a simple observation: students avoid their lockers because of mosquitos. Something millimetres long exerts enough psychological force to make a person abandon a space with their name on it. By scaling the creature to monumental size and filling it with color, Scintilla asks whether the fear was ever really about the insect, or about what we project onto things we choose not to look at closely.',
     thumbs: true,
     images: [
       'images/art/scintilla-1.jpg',
@@ -786,7 +786,7 @@ const worksData = {
   'specimen-of-absence': {
     title: 'Specimen of Absence',
     meta: 'Lee, Chloe. <em>Specimen of Absence</em>. 2026. Vitrine; Oil Pastel, Modelling Paste, Acrylic Paint, Found Objects. 60 × 45 cm.',
-    description: 'A prismatic skeleton crouches inside a white shadow box vitrine, surrounded at its base by empty pill blister packs and a strip of photographic prints. The companion piece renders the same figure in charcoal grey, colour stripped back to structure.<br><br>The display format is borrowed from scientific and museum presentation: the vitrine, the isolated specimen, the clinical white frame. By placing the skeleton within this context, the work reframes a symbol of death as an object of study, carrying the symbolic and emotional weight that institutional display assigns to its specimens.<br><br>Absence asserts itself as loudly as presence. The missing flesh, the hollow pills, the faces preserved on film. What is visible is always shaped by what is no longer there.',
+    description: 'A prismatic skeleton crouches inside a white shadow box vitrine, surrounded at its base by empty pill blister packs and a strip of photographic prints. The companion piece renders the same figure in charcoal grey, colour stripped back to structure.<br><br>The display format is borrowed from scientific and museum presentation: the vitrine, the isolated specimen, the clinical white frame. By placing the skeleton within this context, the work reframes a symbol of death as an object of study: a contemporary memento mori that carries the symbolic and emotional weight institutional display assigns to its specimens.<br><br>Absence asserts itself as loudly as presence. The missing flesh, the hollow pills, the faces preserved on film. What is visible is always shaped by what is no longer there.',
     images: [
       'images/art/specimen-1.jpg',
       'images/art/specimen-2.jpg',
@@ -796,9 +796,9 @@ const worksData = {
     ]
   },
   'club-magazine': {
-    title: 'KAS Cosplay Club Magazine — Volume 1',
+    title: 'KAS Cosplay Club Magazine · Volume 1',
     meta: 'Kaohsiung American School Cosplay Club · Vol. 1 · 2024/2025',
-    description: 'The official magazine of the KAS Cosplay Club — the first cosplay club at Kaohsiung American School, founded by Chloe Lee.<br><br>Volume 1 documents the founding year: member introductions, photoshoot process, makeup breakdowns, and contact lens guides. Also covers the club\'s community service collaboration with the Love and Hope Child Care Center (愛與希望兒少關懷中心). A physical copy was placed in the school library.<br><br>Conceived, designed, and produced by Chloe Lee, with personal sections by club members.<br><br><a href="https://canva.link/kascosplayclub2425mag" target="_blank" style="color:#e8e2d9;letter-spacing:0.1em;text-decoration:underline;font-size:0.8rem;">↗ Read Volume 1</a>',
+    description: 'The official magazine of the KAS Cosplay Club, the first cosplay club at Kaohsiung American School, founded by Chloe Lee.<br><br>Volume 1 documents the founding year: member introductions, photoshoot process, makeup breakdowns, and contact lens guides. Also covers the club\'s community service collaboration with the Love and Hope Child Care Center (愛與希望兒少關懷中心). A physical copy was placed in the school library.<br><br>Conceived, designed, and produced by Chloe Lee, with personal sections by club members.<br><br><a href="https://canva.link/kascosplayclub2425mag" target="_blank" style="color:#e8e2d9;letter-spacing:0.1em;text-decoration:underline;font-size:0.8rem;">↗ Read Volume 1</a>',
     images: [
       'images/design/kas-mag-1.jpg',
       'images/design/kas-mag-2.jpg',
@@ -815,9 +815,9 @@ const worksData = {
     ]
   },
   'club-magazine-vol2': {
-    title: 'KAS Cosplay Club Magazine — Volume 2',
+    title: 'KAS Cosplay Club Magazine · Volume 2',
     meta: 'Kaohsiung American School Cosplay Club · Vol. 2 · 2025/2026',
-    description: 'Volume 2 of the KAS Cosplay Club Magazine — a step forward in design and scope.<br><br>Covers member profiles, a bakery-themed photoshoot, makeup guides, and the club\'s Fall Festival participation. Also features the proper introduction of ラムネちゃん (Ramune-chan), the club\'s original mascot, with an illustration by Chloe Lee.<br><br>Distributed to the entire school via the weekly newsletter and placed in the school library.<br><br>Conceived, designed, and produced by Chloe Lee, with personal sections by club members.<br><a href="https://canva.link/kascosplayclub202526mag" target="_blank" style="color:#e8e2d9;letter-spacing:0.1em;text-decoration:underline;font-size:0.8rem;">↗ Read Volume 2</a>',
+    description: 'Volume 2 of the KAS Cosplay Club Magazine, a step forward in design and scope.<br><br>Covers member profiles, a bakery-themed photoshoot, makeup guides, and the club\'s Fall Festival participation. Also features the proper introduction of ラムネちゃん (Ramune-chan), the club\'s original mascot, with an illustration by Chloe Lee.<br><br>Distributed to the entire school via the weekly newsletter and placed in the school library.<br><br>Conceived, designed, and produced by Chloe Lee, with personal sections by club members.<br><a href="https://canva.link/kascosplayclub202526mag" target="_blank" style="color:#e8e2d9;letter-spacing:0.1em;text-decoration:underline;font-size:0.8rem;">↗ Read Volume 2</a>',
     images: [
       'images/design/kas-mag2-1.jpg',
       'images/design/kas-mag2-2.jpg',
@@ -972,7 +972,7 @@ const magData = {
             'images/design/kas-mag-7.jpg','images/design/kas-mag-8.jpg','images/design/kas-mag-9.jpg',
             'images/design/kas-mag-10.jpg','images/design/kas-mag-11.jpg','images/design/kas-mag-12.jpg'],
     link: 'https://canva.link/kascosplayclub2425mag',
-    description: 'The official magazine of the KAS Cosplay Club — Vol. 1 documents the founding year: member introductions, photoshoots, makeup guides, and community service with the Love and Hope Child Care Center.'
+    description: 'The official magazine of the KAS Cosplay Club. Vol. 1 documents the founding year: member introductions, photoshoots, makeup guides, and community service with the Love and Hope Child Care Center.'
   },
   'club-vol2': {
     title: 'KAS Cosplay Club · Vol. 2',
