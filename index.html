@@ -277,7 +277,7 @@ section.active { display: block; }
   opacity: 0.92; transition: opacity 0.2s; }
 .cosplay-scrollbar:hover .cosplay-scrollbar-thumb { opacity: 1; }
 @keyframes cosplayRainbow { from { background-position: 0% 50%; } to { background-position: -200% 50%; } }
-.cosplay-cover { flex: 0 0 auto; width: 200px; cursor: pointer; position: relative; border: none; background: none; padding: 0; text-align: left; font-family: inherit; color: inherit; }
+.cosplay-cover { flex: 0 0 auto; width: 250px; cursor: pointer; position: relative; border: none; background: none; padding: 0; text-align: left; font-family: inherit; color: inherit; }
 .cosplay-cover-thumb { position: relative; width: 100%; aspect-ratio: 2/3; overflow: hidden; border: 1px solid #1e1e1e; transition: border-color 0.25s, box-shadow 0.25s; }
 .cosplay-cover-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; filter: saturate(1.08) brightness(1.03); transition: transform 0.4s; }
 .cosplay-cover:hover .cosplay-cover-thumb img,
@@ -306,12 +306,12 @@ section.active { display: block; }
 .cosplay-panel-grid .cosplay-cat-strip-item { width: auto; height: auto; aspect-ratio: 2/3; }
 
 /* Behind-the-scenes panel: one big photoshoot pic + grid of small BTS pics */
-.cosplay-bts { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 2.2rem; align-items: start; }
+.cosplay-bts { display: grid; grid-template-columns: minmax(0, 320px) auto; justify-content: start; gap: 2.2rem; align-items: start; }
 .cosplay-bts-tag, .cosplay-bts-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: #9a9a9a; font-weight: bold; margin-bottom: 0.75rem; }
 .cosplay-bts-feature { position: relative; cursor: pointer; overflow: hidden; border-radius: 4px; background: #111; }
 .cosplay-bts-feature img { width: 100%; aspect-ratio: 2/3; object-fit: cover; object-position: top; display: block; filter: saturate(1.08) brightness(1.03); transition: transform 0.35s; }
 .cosplay-bts-feature:hover img { transform: scale(1.03); }
-.cosplay-bts-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 150px)); gap: 0.6rem; justify-content: start; }
+.cosplay-bts-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 150px)); grid-auto-flow: row; gap: 0.6rem; justify-content: start; }
 .cosplay-bts-grid .cosplay-cat-strip-item { width: auto; height: auto; aspect-ratio: 1/1; border-radius: 4px; }
 @media (max-width: 700px) { .cosplay-bts { grid-template-columns: 1fr; gap: 1.4rem; } .cosplay-bts-feature { max-width: 280px; } }
 
