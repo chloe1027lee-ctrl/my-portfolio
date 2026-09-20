@@ -67,13 +67,12 @@ nav { z-index: 100; }
   background: #1a1a1a;
 }
 
-/* Single-row horizontal slider (Unbound Silhouettes) */
+/* Single-row horizontal slider (Unbound Silhouettes, Soho) */
 .photo-slider { position: relative; }
 .photo-strip {
   display: flex;
   grid-template-columns: none;
   overflow-x: auto;
-  scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -81,6 +80,20 @@ nav { z-index: 100; }
 .photo-strip .photo-work {
   flex: 0 0 clamp(240px, 26vw, 340px);
 }
+/* Edge fades cue that the row continues / is sliding */
+.photo-slider::before,
+.photo-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.9;
+}
+.photo-slider::before { left: 0; background: linear-gradient(to right, #0a0a0a, rgba(10,10,10,0)); }
+.photo-slider::after { right: 0; background: linear-gradient(to left, #0a0a0a, rgba(10,10,10,0)); }
 .photo-slider-arrow {
   position: absolute;
   top: 50%;

@@ -166,7 +166,18 @@ const worksData = {
       'images/cosplay/club-15.jpg',
       'images/cosplay/club-16.jpg',
       'images/cosplay/club-17.jpg',
-      'images/cosplay/club-18.jpg'
+      'images/cosplay/club-18.jpg',
+      'images/cosplay/club-19.jpg',
+      'images/cosplay/club-20.jpg',
+      'images/cosplay/club-21.jpg',
+      'images/cosplay/club-22.jpg',
+      'images/cosplay/club-23.jpg',
+      'images/cosplay/club-24.jpg',
+      'images/cosplay/club-25.jpg',
+      'images/cosplay/club-26.jpg',
+      'images/cosplay/club-27.jpg',
+      'images/cosplay/club-28.jpg',
+      'images/cosplay/club-29.jpg'
     ]
   },
   'blanc': {
@@ -1169,7 +1180,7 @@ document.addEventListener('click', e => {
   }
 });
 
-/* Horizontal photo slider arrows (Unbound Silhouettes) */
+/* Horizontal photo slider arrows (Unbound Silhouettes, Soho) */
 function slidePhotos(btn, dir) {
   const strip = btn.parentElement.querySelector('.photo-strip');
   if (!strip) return;
@@ -1177,6 +1188,38 @@ function slidePhotos(btn, dir) {
   const step = item ? item.getBoundingClientRect().width + 1 : strip.clientWidth * 0.8;
   strip.scrollBy({ left: dir * step, behavior: 'smooth' });
 }
+
+/* Continuously moving auto-scroll sliders. Items are duplicated once so the
+   row loops seamlessly; motion pauses while the viewer hovers or focuses it. */
+function initPhotoSliders() {
+  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.photo-slider[data-autoscroll]').forEach(slider => {
+    const strip = slider.querySelector('.photo-strip');
+    if (!strip || strip.dataset.looped) return;
+    strip.dataset.looped = '1';
+    if (reduce) return;                       // respect reduced-motion: manual only
+    [...strip.children].forEach(node => strip.appendChild(node.cloneNode(true)));
+    let paused = false;
+    const pause = () => { paused = true; };
+    const play  = () => { paused = false; };
+    slider.addEventListener('pointerenter', pause);
+    slider.addEventListener('pointerleave', play);
+    slider.addEventListener('pointerdown', pause);
+    slider.addEventListener('focusin', pause);
+    slider.addEventListener('focusout', play);
+    const speed = 0.4;                         // px per frame (~24px/s)
+    function tick() {
+      if (!paused && strip.scrollWidth > strip.clientWidth) {
+        strip.scrollLeft += speed;
+        const half = strip.scrollWidth / 2;
+        if (strip.scrollLeft >= half) strip.scrollLeft -= half;
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+}
+initPhotoSliders();
 
 /* ── ZOOM / INSPECT VIEWER ──
    Click the big lightbox image to open. Scroll or click to zoom toward the
