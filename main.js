@@ -524,7 +524,47 @@ const worksData = {
     thumbs: false,
     images: [
       'images/design/cosplay-club-poster-1.jpg',
-      'images/design/cosplay-club-poster-2.jpg'
+      'images/design/cosplay-club-poster-2.jpg',
+      'images/design/cosplay-club-poster-3.jpg'
+    ]
+  },
+  'charity-poster': {
+    title: 'Charity Art Club',
+    meta: 'Poster',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/design/charity-poster-1.jpg'
+    ]
+  },
+  'cosplay-club-posts': {
+    title: 'Cosplay Club',
+    meta: 'Instagram · Design',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/design/cosplay-club-1.jpg',
+      'images/design/cosplay-club-2.jpg',
+      'images/design/cosplay-club-3.jpg',
+      'images/design/cosplay-club-4.jpg',
+      'images/design/cosplay-club-5.jpg',
+      'images/design/cosplay-club-6.jpg',
+      'images/design/cosplay-club-7.jpg',
+      'images/design/cosplay-club-8.jpg',
+      'images/design/cosplay-club-9.jpg',
+      'images/design/cosplay-club-10.jpg',
+      'images/design/cosplay-club-11.jpg',
+      'images/design/cosplay-club-12.jpg',
+      'images/design/cosplay-club-13.jpg',
+      'images/design/cosplay-club-14.jpg',
+      'images/design/cosplay-club-15.jpg',
+      'images/design/cosplay-club-16.jpg',
+      'images/design/cosplay-club-17.jpg',
+      'images/design/cosplay-club-18.jpg',
+      'images/design/cosplay-club-19.jpg',
+      'images/design/cosplay-club-20.jpg',
+      'images/design/cosplay-club-21.jpg',
+      'images/design/cosplay-club-22.jpg'
     ]
   },
   'business-club': {
