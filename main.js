@@ -1081,9 +1081,8 @@ document.addEventListener('keydown', e => {
     { key: 'marin-kitagawa',   sub: '幻日祭 · Nov 2025' },
     { key: 'blanc-kica',       sub: 'KICA 高雄國際動漫節 · Oct 2025' },
     { key: 'arcana',           sub: '【CWT-K48】高雄場 · Sep 2025' },
-    { key: 'rizu-kyun',        sub: '開拓動漫祭 FF44 · Feb 2025' }
-    // Yae Miko (Behind the Scenes) is coded below — re-enable once its photos
-    // are added: { key: 'yae-miko', sub: 'KICA 高雄國際動漫節 · Oct 2024' }
+    { key: 'rizu-kyun',        sub: '開拓動漫祭 FF44 · Feb 2025' },
+    { key: 'yae-miko',         sub: 'KICA 高雄國際動漫節 · Oct 2024' }
   ];
 
   const row = document.createElement('div');

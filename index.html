@@ -311,7 +311,7 @@ section.active { display: block; }
 .cosplay-bts-feature { position: relative; cursor: pointer; overflow: hidden; border-radius: 4px; background: #111; }
 .cosplay-bts-feature img { width: 100%; aspect-ratio: 2/3; object-fit: cover; object-position: top; display: block; filter: saturate(1.08) brightness(1.03); transition: transform 0.35s; }
 .cosplay-bts-feature:hover img { transform: scale(1.03); }
-.cosplay-bts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+.cosplay-bts-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 150px)); gap: 0.6rem; justify-content: start; }
 .cosplay-bts-grid .cosplay-cat-strip-item { width: auto; height: auto; aspect-ratio: 1/1; border-radius: 4px; }
 @media (max-width: 700px) { .cosplay-bts { grid-template-columns: 1fr; gap: 1.4rem; } .cosplay-bts-feature { max-width: 280px; } }
 
@@ -1890,7 +1890,7 @@ function spawnParticle(x, y) {
   setTimeout(() => p.remove(), 1000);
 }
 </script>
-<script src="main.js?v=22"></script>
+<script src="main.js?v=23"></script>
 <script src="liquid.js"></script>
 </body>
 </html>
