@@ -1121,26 +1121,20 @@ document.addEventListener('keydown', e => {
     panel.dataset.cat = cat.key;
     let body;
     if (w.bts) {
-      // Behind-the-scenes layout: big photoshoot shots (stacked) + a grid of small BTS pics
+      // Behind-the-scenes layout: big photoshoot shots + small BTS pics, all in one row
       const fc = w.features || 1;
       const feats = w.images.slice(0, fc).map((src, i) =>
         '<div class="cosplay-bts-feature" data-work="' + cat.key + '" data-index="' + i + '">' +
           '<img src="' + src + '" alt="' + esc(w.title) + ' ' + (i + 1) + '" loading="lazy" decoding="async">' +
         '</div>').join('');
       const shots = w.images.slice(fc).map((src, i) =>
-        '<div class="cosplay-cat-strip-item" data-work="' + cat.key + '" data-index="' + (fc + i) + '">' +
+        '<div class="cosplay-bts-thumb" data-work="' + cat.key + '" data-index="' + (fc + i) + '">' +
           '<img src="' + src + '" alt="' + esc(w.title) + ' behind the scenes ' + (i + 1) + '" loading="lazy" decoding="async">' +
         '</div>').join('');
       body =
         '<div class="cosplay-bts">' +
-          '<div class="cosplay-bts-feature-wrap">' +
-            '<div class="cosplay-bts-tag">Photoshoot</div>' +
-            '<div class="cosplay-bts-features">' + feats + '</div>' +
-          '</div>' +
-          '<div class="cosplay-bts-side">' +
-            '<div class="cosplay-bts-label">Behind the Scenes · Wig Making</div>' +
-            '<div class="cosplay-bts-grid">' + shots + '</div>' +
-          '</div>' +
+          '<div class="cosplay-bts-tag">Photoshoot &amp; Behind the Scenes · Wig Making</div>' +
+          '<div class="cosplay-bts-onerow">' + feats + shots + '</div>' +
         '</div>';
     } else {
       const items = w.images.map((src, i) =>
