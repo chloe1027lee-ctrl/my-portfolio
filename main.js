@@ -539,7 +539,7 @@ const worksData = {
   },
   'cosplay-club-posts': {
     title: 'Cosplay Club',
-    meta: 'Instagram · Design',
+    meta: 'Instagram · Grades 10–12',
     description: '',
     thumbs: false,
     images: [
