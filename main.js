@@ -1248,8 +1248,11 @@ document.addEventListener('keydown', e => {
   const row2 = document.createElement('div');
   row2.className = 'cosplay-cover-row photo-strip';
   const coverEls = [];
-  const reveal = document.createElement('div');
-  reveal.className = 'cosplay-reveal';
+  const panelEls = [];
+  const reveal1 = document.createElement('div');
+  reveal1.className = 'cosplay-reveal';
+  const reveal2 = document.createElement('div');
+  reveal2.className = 'cosplay-reveal';
 
   const esc = s => String(s).replace(/"/g, '&quot;');
 
@@ -1308,32 +1311,49 @@ document.addEventListener('keydown', e => {
         '<div class="cosplay-panel-state"></div>' +
       '</div>' +
       body;
-    reveal.appendChild(panel);
+    panelEls.push(panel);
   });
 
-  // Split the covers into two even rows (chronological), each an auto-scrolling
-  // strip with edge fades (same moving style as before, stacked).
-  const half = Math.ceil(coverEls.length / 2);
-  coverEls.forEach((c, i) => (i < half ? row1 : row2).appendChild(c));
-  const rowsWrap = document.createElement('div');
-  rowsWrap.className = 'cosplay-cover-rows';
-  [row1, row2].forEach(r => {
+  // Build a row into a slider strip with prev/next arrows + auto-scroll + fades.
+  function makeRowSlider(rowEl) {
     const s = document.createElement('div');
     s.className = 'photo-slider cosplay-cover-slider';
     s.setAttribute('data-autoscroll', 'pingpong');
-    s.appendChild(r);
-    rowsWrap.appendChild(s);
-  });
-  mount.appendChild(rowsWrap);
-  mount.appendChild(reveal);
+    const prev = document.createElement('button');
+    prev.type = 'button';
+    prev.className = 'photo-slider-arrow prev';
+    prev.setAttribute('aria-label', 'Previous');
+    prev.innerHTML = '&#8249;';
+    prev.addEventListener('click', () => slidePhotos(prev, -1));
+    const next = document.createElement('button');
+    next.type = 'button';
+    next.className = 'photo-slider-arrow next';
+    next.setAttribute('aria-label', 'Next');
+    next.innerHTML = '&#8250;';
+    next.addEventListener('click', () => slidePhotos(next, 1));
+    s.appendChild(prev);
+    s.appendChild(rowEl);
+    s.appendChild(next);
+    return s;
+  }
+
+  // Split covers into two even rows; each row's expanded panels reveal right
+  // beneath that row (top-row sets open between the rows, bottom-row below).
+  const half = Math.ceil(coverEls.length / 2);
+  coverEls.forEach((c, i) => (i < half ? row1 : row2).appendChild(c));
+  panelEls.forEach((p, i) => (i < half ? reveal1 : reveal2).appendChild(p));
+  mount.appendChild(makeRowSlider(row1));
+  mount.appendChild(reveal1);
+  mount.appendChild(makeRowSlider(row2));
+  mount.appendChild(reveal2);
 
   const covers = Array.from(mount.querySelectorAll('.cosplay-cover'));
-  const panels = Array.from(reveal.querySelectorAll('.cosplay-panel'));
+  const panels = Array.from(mount.querySelectorAll('.cosplay-panel'));
   let pinned = null, hovered = null;
 
   function apply() {
     const key = hovered || pinned;
-    reveal.classList.toggle('open', !!key);
+    [reveal1, reveal2].forEach(rv => rv.classList.toggle('open', !!(key && rv.querySelector('.cosplay-panel[data-cat="' + key + '"]'))));
     panels.forEach(p => p.classList.toggle('open', p.dataset.cat === key));
     covers.forEach(c => {
       c.classList.toggle('active', c.dataset.cat === key);
