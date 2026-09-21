@@ -309,6 +309,31 @@ const worksData = {
       'images/cosplay/shizuku-20.jpg'
     ]
   },
+  'kinako': {
+    title: 'Kinako',
+    meta: '集福行銷活動團隊 Coser · 幻日祭 · November 10, 2024',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/cosplay/kinako-1.jpg',
+      'images/cosplay/kinako-2.jpg',
+      'images/cosplay/kinako-3.jpg',
+      'images/cosplay/kinako-4.jpg',
+      'images/cosplay/kinako-5.jpg',
+      'images/cosplay/kinako-6.jpg',
+      'images/cosplay/kinako-7.jpg',
+      'images/cosplay/kinako-8.jpg',
+      'images/cosplay/kinako-9.jpg',
+      'images/cosplay/kinako-10.jpg',
+      'images/cosplay/kinako-11.jpg',
+      'images/cosplay/kinako-12.jpg',
+      'images/cosplay/kinako-13.jpg',
+      'images/cosplay/kinako-14.jpg',
+      'images/cosplay/kinako-15.jpg',
+      'images/cosplay/kinako-16.jpg',
+      'images/cosplay/kinako-17.jpg'
+    ]
+  },
   'blanc': {
     title: 'Blanc',
     meta: 'Goddess of Victory: Nikke · Blanc · 高雄動漫城 KACG2606 · June 14, 2026',
@@ -1214,6 +1239,7 @@ document.addEventListener('keydown', e => {
     { key: 'nino',             sub: '(WS49) 永集動漫遊戲展 · Feb 2025' },
     { key: 'rizu-kyun',        sub: '開拓動漫祭 FF44 · Feb 2025' },
     { key: 'shizuku',          sub: '駁二動漫祭同人誌創作展 · Dec 2024' },
+    { key: 'kinako',           sub: '幻日祭 · Nov 2024' },
     { key: 'yae-miko',         sub: 'KICA 高雄國際動漫節 · Oct 2024' }
   ];
 
