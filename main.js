@@ -255,6 +255,32 @@ const worksData = {
       'images/cosplay/pekora-11.jpg'
     ]
   },
+  'nino': {
+    title: 'Nakano Nino',
+    meta: '(WS49) 永集動漫遊戲展 · February 21, 2025',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/cosplay/nino-1.jpg',
+      'images/cosplay/nino-2.jpg',
+      'images/cosplay/nino-3.jpg',
+      'images/cosplay/nino-4.jpg',
+      'images/cosplay/nino-5.jpg',
+      'images/cosplay/nino-6.jpg',
+      'images/cosplay/nino-7.jpg',
+      'images/cosplay/nino-8.jpg',
+      'images/cosplay/nino-9.jpg',
+      'images/cosplay/nino-10.jpg',
+      'images/cosplay/nino-11.jpg',
+      'images/cosplay/nino-12.jpg',
+      'images/cosplay/nino-13.jpg',
+      'images/cosplay/nino-14.jpg',
+      'images/cosplay/nino-15.jpg',
+      'images/cosplay/nino-16.jpg',
+      'images/cosplay/nino-17.jpg',
+      'images/cosplay/nino-18.jpg'
+    ]
+  },
   'blanc': {
     title: 'Blanc',
     meta: 'Goddess of Victory: Nikke · Blanc · 高雄動漫城 KACG2606 · June 14, 2026',
@@ -1157,6 +1183,7 @@ document.addEventListener('keydown', e => {
     { key: 'pekora',           sub: 'acosta 「アコスタ！」 · May 2025' },
     { key: 'blanc-shoot',       sub: '二三室攝影棚 · May 2025' },
     { key: 'rem-yukata',       sub: '【CWT-K47】高雄場 · Mar 2025' },
+    { key: 'nino',             sub: '(WS49) 永集動漫遊戲展 · Feb 2025' },
     { key: 'rizu-kyun',        sub: '開拓動漫祭 FF44 · Feb 2025' },
     { key: 'yae-miko',         sub: 'KICA 高雄國際動漫節 · Oct 2024' }
   ];
