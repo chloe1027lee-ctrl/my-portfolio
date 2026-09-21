@@ -281,6 +281,34 @@ const worksData = {
       'images/cosplay/nino-18.jpg'
     ]
   },
+  'shizuku': {
+    title: 'Shizuku Tan',
+    meta: '2024駁二動漫祭同人誌創作展 · December 15, 2024',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/cosplay/shizuku-1.jpg',
+      'images/cosplay/shizuku-2.jpg',
+      'images/cosplay/shizuku-3.jpg',
+      'images/cosplay/shizuku-4.jpg',
+      'images/cosplay/shizuku-5.jpg',
+      'images/cosplay/shizuku-6.jpg',
+      'images/cosplay/shizuku-7.jpg',
+      'images/cosplay/shizuku-8.jpg',
+      'images/cosplay/shizuku-9.jpg',
+      'images/cosplay/shizuku-10.jpg',
+      'images/cosplay/shizuku-11.jpg',
+      'images/cosplay/shizuku-12.jpg',
+      'images/cosplay/shizuku-13.jpg',
+      'images/cosplay/shizuku-14.jpg',
+      'images/cosplay/shizuku-15.jpg',
+      'images/cosplay/shizuku-16.jpg',
+      'images/cosplay/shizuku-17.jpg',
+      'images/cosplay/shizuku-18.jpg',
+      'images/cosplay/shizuku-19.jpg',
+      'images/cosplay/shizuku-20.jpg'
+    ]
+  },
   'blanc': {
     title: 'Blanc',
     meta: 'Goddess of Victory: Nikke · Blanc · 高雄動漫城 KACG2606 · June 14, 2026',
@@ -1185,6 +1213,7 @@ document.addEventListener('keydown', e => {
     { key: 'rem-yukata',       sub: '【CWT-K47】高雄場 · Mar 2025' },
     { key: 'nino',             sub: '(WS49) 永集動漫遊戲展 · Feb 2025' },
     { key: 'rizu-kyun',        sub: '開拓動漫祭 FF44 · Feb 2025' },
+    { key: 'shizuku',          sub: '駁二動漫祭同人誌創作展 · Dec 2024' },
     { key: 'yae-miko',         sub: 'KICA 高雄國際動漫節 · Oct 2024' }
   ];
 
