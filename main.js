@@ -187,9 +187,9 @@ const worksData = {
   },
   'blanc-shoot': {
     title: 'Blanc (Pajama Ver.)',
-    meta: '二三室攝影棚 · May 04, 2025',
-    description: 'Blanc (Pajama Ver.) studio photoshoot at <a href="https://ponpai.tw/studio/lockinge2-2" target="_blank" rel="noopener" style="color:#e8e2d9;text-decoration:underline;">二三室攝影棚</a>.<br><br>Photographers: <a href="https://www.facebook.com/profile.php?id=100007716220864" target="_blank" rel="noopener" style="color:#e8e2d9;text-decoration:underline;">Elven Peng (瑤光)</a>, <a href="https://www.facebook.com/chenkuo1991" target="_blank" rel="noopener" style="color:#e8e2d9;text-decoration:underline;">郭琛</a>, <a href="https://www.facebook.com/wenchen.wang.79" target="_blank" rel="noopener" style="color:#e8e2d9;text-decoration:underline;">王文辰</a>.',
-    thumbs: true,
+    meta: '<a href="https://ponpai.tw/studio/lockinge2-2" target="_blank" rel="noopener" style="color:#cfc9bf;text-decoration:underline;">二三室攝影棚</a> · May 04, 2025 · Photographers: <a href="https://www.facebook.com/profile.php?id=100007716220864" target="_blank" rel="noopener" style="color:#cfc9bf;text-decoration:underline;">Elven Peng (瑤光)</a>, <a href="https://www.facebook.com/chenkuo1991" target="_blank" rel="noopener" style="color:#cfc9bf;text-decoration:underline;">郭琛</a>, <a href="https://www.facebook.com/wenchen.wang.79" target="_blank" rel="noopener" style="color:#cfc9bf;text-decoration:underline;">王文辰</a>',
+    description: '',
+    thumbs: false,
     images: [
       'images/cosplay/blanc-shoot-1.jpg',
       'images/cosplay/blanc-shoot-2.jpg',

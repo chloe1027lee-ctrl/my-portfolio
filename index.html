@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>CHLOE · Portfolio</title>
-<link rel="stylesheet" href="styles.css?v=5"/>
+<link rel="stylesheet" href="styles.css?v=6"/>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
 
@@ -1727,6 +1727,7 @@ section.active { display: block; }
   <div class="lightbox-inner">
     <div class="lightbox-media">
       <img id="lb-img" class="lightbox-main-img" src="" alt="">
+      <div class="lb-enlarge-hint" aria-hidden="true">⤢ Click to enlarge</div>
       <div id="lb-thumbs" class="lightbox-thumbs"></div>
       <div id="lb-nav" class="lightbox-nav">
         <button onclick="lbNav(-1)">← Prev</button>
@@ -1903,7 +1904,7 @@ function spawnParticle(x, y) {
   setTimeout(() => p.remove(), 1000);
 }
 </script>
-<script src="main.js?v=29"></script>
+<script src="main.js?v=30"></script>
 <script src="liquid.js"></script>
 </body>
 </html>
