@@ -236,6 +236,25 @@ const worksData = {
       'images/cosplay/rem-yukata-15.jpg'
     ]
   },
+  'pekora': {
+    title: 'Pekora Usada',
+    meta: 'acosta 「アコスタ！」 · May 30, 2025',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/cosplay/pekora-1.jpg',
+      'images/cosplay/pekora-2.jpg',
+      'images/cosplay/pekora-3.jpg',
+      'images/cosplay/pekora-4.jpg',
+      'images/cosplay/pekora-5.jpg',
+      'images/cosplay/pekora-6.jpg',
+      'images/cosplay/pekora-7.jpg',
+      'images/cosplay/pekora-8.jpg',
+      'images/cosplay/pekora-9.jpg',
+      'images/cosplay/pekora-10.jpg',
+      'images/cosplay/pekora-11.jpg'
+    ]
+  },
   'blanc': {
     title: 'Blanc',
     meta: 'Goddess of Victory: Nikke · Blanc · 高雄動漫城 KACG2606 · June 14, 2026',
@@ -1135,6 +1154,7 @@ document.addEventListener('keydown', e => {
     { key: 'marin-kitagawa',   sub: '幻日祭 · Nov 2025' },
     { key: 'blanc-kica',       sub: 'KICA 高雄國際動漫節 · Oct 2025' },
     { key: 'arcana',           sub: '【CWT-K48】高雄場 · Sep 2025' },
+    { key: 'pekora',           sub: 'acosta 「アコスタ！」 · May 2025' },
     { key: 'blanc-shoot',       sub: '二三室攝影棚 · May 2025' },
     { key: 'rem-yukata',       sub: '【CWT-K47】高雄場 · Mar 2025' },
     { key: 'rizu-kyun',        sub: '開拓動漫祭 FF44 · Feb 2025' },
