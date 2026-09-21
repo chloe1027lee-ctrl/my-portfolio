@@ -213,6 +213,29 @@ const worksData = {
       'images/cosplay/blanc-shoot-20.jpg'
     ]
   },
+  'rem-yukata': {
+    title: 'Rem · Yukata Ver.',
+    meta: '【CWT-K47】高雄場 · March 09, 2025',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/cosplay/rem-yukata-1.jpg',
+      'images/cosplay/rem-yukata-2.jpg',
+      'images/cosplay/rem-yukata-3.jpg',
+      'images/cosplay/rem-yukata-4.jpg',
+      'images/cosplay/rem-yukata-5.jpg',
+      'images/cosplay/rem-yukata-6.jpg',
+      'images/cosplay/rem-yukata-7.jpg',
+      'images/cosplay/rem-yukata-8.jpg',
+      'images/cosplay/rem-yukata-9.jpg',
+      'images/cosplay/rem-yukata-10.jpg',
+      'images/cosplay/rem-yukata-11.jpg',
+      'images/cosplay/rem-yukata-12.jpg',
+      'images/cosplay/rem-yukata-13.jpg',
+      'images/cosplay/rem-yukata-14.jpg',
+      'images/cosplay/rem-yukata-15.jpg'
+    ]
+  },
   'blanc': {
     title: 'Blanc',
     meta: 'Goddess of Victory: Nikke · Blanc · 高雄動漫城 KACG2606 · June 14, 2026',
@@ -1113,6 +1136,7 @@ document.addEventListener('keydown', e => {
     { key: 'blanc-kica',       sub: 'KICA 高雄國際動漫節 · Oct 2025' },
     { key: 'arcana',           sub: '【CWT-K48】高雄場 · Sep 2025' },
     { key: 'blanc-shoot',       sub: '二三室攝影棚 · May 2025' },
+    { key: 'rem-yukata',       sub: '【CWT-K47】高雄場 · Mar 2025' },
     { key: 'rizu-kyun',        sub: '開拓動漫祭 FF44 · Feb 2025' },
     { key: 'yae-miko',         sub: 'KICA 高雄國際動漫節 · Oct 2024' }
   ];
