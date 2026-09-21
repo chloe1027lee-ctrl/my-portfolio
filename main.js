@@ -185,6 +185,34 @@ const worksData = {
       'images/cosplay/club-29.jpg'
     ]
   },
+  'blanc-shoot': {
+    title: 'Blanc (Pajama Ver.)',
+    meta: 'Outside Photoshoot · 二三室攝影棚 · May 4, 2025',
+    description: 'A KAS Cosplay Club outside photoshoot at 二三室攝影棚 with professional photographers Elven Peng (瑤光), 郭琛, and 王文辰. 9 participants, 7 hours total.',
+    thumbs: true,
+    images: [
+      'images/cosplay/blanc-shoot-1.jpg',
+      'images/cosplay/blanc-shoot-2.jpg',
+      'images/cosplay/blanc-shoot-3.jpg',
+      'images/cosplay/blanc-shoot-4.jpg',
+      'images/cosplay/blanc-shoot-5.jpg',
+      'images/cosplay/blanc-shoot-6.jpg',
+      'images/cosplay/blanc-shoot-7.jpg',
+      'images/cosplay/blanc-shoot-8.jpg',
+      'images/cosplay/blanc-shoot-9.jpg',
+      'images/cosplay/blanc-shoot-10.jpg',
+      'images/cosplay/blanc-shoot-11.jpg',
+      'images/cosplay/blanc-shoot-12.jpg',
+      'images/cosplay/blanc-shoot-13.jpg',
+      'images/cosplay/blanc-shoot-14.jpg',
+      'images/cosplay/blanc-shoot-15.jpg',
+      'images/cosplay/blanc-shoot-16.jpg',
+      'images/cosplay/blanc-shoot-17.jpg',
+      'images/cosplay/blanc-shoot-18.jpg',
+      'images/cosplay/blanc-shoot-19.jpg',
+      'images/cosplay/blanc-shoot-20.jpg'
+    ]
+  },
   'blanc': {
     title: 'Blanc',
     meta: 'Goddess of Victory: Nikke · Blanc · 高雄動漫城 KACG2606 · June 14, 2026',
