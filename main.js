@@ -1243,16 +1243,10 @@ document.addEventListener('keydown', e => {
     { key: 'yae-miko',         sub: 'KICA 高雄國際動漫節 · Oct 2024' }
   ];
 
-  const row1 = document.createElement('div');
-  row1.className = 'cosplay-cover-row photo-strip';
-  const row2 = document.createElement('div');
-  row2.className = 'cosplay-cover-row photo-strip';
-  const coverEls = [];
-  const panelEls = [];
-  const reveal1 = document.createElement('div');
-  reveal1.className = 'cosplay-reveal';
-  const reveal2 = document.createElement('div');
-  reveal2.className = 'cosplay-reveal';
+  const row = document.createElement('div');
+  row.className = 'cosplay-cover-row photo-strip';
+  const reveal = document.createElement('div');
+  reveal.className = 'cosplay-reveal';
 
   const esc = s => String(s).replace(/"/g, '&quot;');
 
@@ -1275,7 +1269,7 @@ document.addEventListener('keydown', e => {
         '<div class="cosplay-cover-name">' + esc(w.title) + '</div>' +
         '<div class="cosplay-cover-sub">' + esc(cat.sub) + '</div>' +
       '</div>';
-    coverEls.push(cover);
+    row.appendChild(cover);
 
     const panel = document.createElement('div');
     panel.className = 'cosplay-panel';
@@ -1311,49 +1305,39 @@ document.addEventListener('keydown', e => {
         '<div class="cosplay-panel-state"></div>' +
       '</div>' +
       body;
-    panelEls.push(panel);
+    reveal.appendChild(panel);
   });
 
-  // Build a row into a slider strip with prev/next arrows + auto-scroll + fades.
-  function makeRowSlider(rowEl) {
-    const s = document.createElement('div');
-    s.className = 'photo-slider cosplay-cover-slider';
-    s.setAttribute('data-autoscroll', 'pingpong');
-    const prev = document.createElement('button');
-    prev.type = 'button';
-    prev.className = 'photo-slider-arrow prev';
-    prev.setAttribute('aria-label', 'Previous');
-    prev.innerHTML = '&#8249;';
-    prev.addEventListener('click', () => slidePhotos(prev, -1));
-    const next = document.createElement('button');
-    next.type = 'button';
-    next.className = 'photo-slider-arrow next';
-    next.setAttribute('aria-label', 'Next');
-    next.innerHTML = '&#8250;';
-    next.addEventListener('click', () => slidePhotos(next, 1));
-    s.appendChild(prev);
-    s.appendChild(rowEl);
-    s.appendChild(next);
-    return s;
-  }
+  // Wrap the cover row in the same slider chrome as the photography sliders
+  // (auto-scroll motion + arrows + edge fades), keeping the captions intact.
+  const sliderWrap = document.createElement('div');
+  sliderWrap.className = 'photo-slider cosplay-cover-slider';
+  sliderWrap.setAttribute('data-autoscroll', 'pingpong');
+  const prevBtn = document.createElement('button');
+  prevBtn.type = 'button';
+  prevBtn.className = 'photo-slider-arrow prev';
+  prevBtn.setAttribute('aria-label', 'Previous');
+  prevBtn.innerHTML = '&#8249;';
+  prevBtn.addEventListener('click', () => slidePhotos(prevBtn, -1));
+  const nextBtn = document.createElement('button');
+  nextBtn.type = 'button';
+  nextBtn.className = 'photo-slider-arrow next';
+  nextBtn.setAttribute('aria-label', 'Next');
+  nextBtn.innerHTML = '&#8250;';
+  nextBtn.addEventListener('click', () => slidePhotos(nextBtn, 1));
+  sliderWrap.appendChild(prevBtn);
+  sliderWrap.appendChild(row);
+  sliderWrap.appendChild(nextBtn);
+  mount.appendChild(sliderWrap);
+  mount.appendChild(reveal);
 
-  // Split covers into two even rows; each row's expanded panels reveal right
-  // beneath that row (top-row sets open between the rows, bottom-row below).
-  const half = Math.ceil(coverEls.length / 2);
-  coverEls.forEach((c, i) => (i < half ? row1 : row2).appendChild(c));
-  panelEls.forEach((p, i) => (i < half ? reveal1 : reveal2).appendChild(p));
-  mount.appendChild(makeRowSlider(row1));
-  mount.appendChild(reveal1);
-  mount.appendChild(makeRowSlider(row2));
-  mount.appendChild(reveal2);
-
-  const covers = Array.from(mount.querySelectorAll('.cosplay-cover'));
-  const panels = Array.from(mount.querySelectorAll('.cosplay-panel'));
+  const covers = Array.from(row.querySelectorAll('.cosplay-cover'));
+  const panels = Array.from(reveal.querySelectorAll('.cosplay-panel'));
   let pinned = null, hovered = null;
 
   function apply() {
     const key = hovered || pinned;
-    [reveal1, reveal2].forEach(rv => rv.classList.toggle('open', !!(key && rv.querySelector('.cosplay-panel[data-cat="' + key + '"]'))));
+    reveal.classList.toggle('open', !!key);
     panels.forEach(p => p.classList.toggle('open', p.dataset.cat === key));
     covers.forEach(c => {
       c.classList.toggle('active', c.dataset.cat === key);

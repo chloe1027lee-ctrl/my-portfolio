@@ -150,12 +150,6 @@ section.active { display: block; }
 .design-ticket:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.5); }
 .drama-row { display: flex; gap: 0.9rem; max-width: 900px; }
 .drama-row .design-ticket { flex: 1 1 0; min-width: 0; margin-bottom: 0; }
-.anime-event { margin-top: 1.4rem; }
-.anime-event:first-of-type { margin-top: 0; }
-.anime-thumb { display: block; width: 100%; border-radius: 6px; overflow: hidden; background: #111; cursor: none; transition: transform 0.25s ease, box-shadow 0.25s ease; }
-.anime-thumb img { width: 100%; height: auto; display: block; }
-.anime-thumb:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.5); }
-.anime-event .editorial-link { margin-top: 0.7rem; font-size: 0.7rem; }
 .design-club-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; align-items: start; }
 .design-club-columns > .design-box { margin-bottom: 0; }
 .design-event .design-row, .design-box.club-box .design-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.7rem; }
@@ -273,7 +267,6 @@ section.active { display: block; }
 
 /* Cosplay · one-row covers, hover to preview the full set, click to keep it open */
 .cosplay-gallery { margin-top: 0.5rem; }
-.cosplay-cover-rows { display: flex; flex-direction: column; gap: 1.3rem; }
 .cosplay-cover-row { display: flex; gap: 0.9rem; overflow-x: auto; padding: 0.3rem 0 0.5rem; scrollbar-width: none; -ms-overflow-style: none; }
 .cosplay-cover-row::-webkit-scrollbar { display: none; }
 .cosplay-scrollbar { position: relative; height: 8px; background: #191919; border-radius: 4px; margin: 0.15rem 0 1.5rem; cursor: pointer; overflow: hidden; }
@@ -965,34 +958,12 @@ section.active { display: block; }
   </div>
   </div>
 
-  <div class="design-club-columns">
   <div class="design-box">
     <div class="design-box-head"><span class="design-box-title">Drama Club</span><span class="design-box-meta">Ticket Design · The Little Match Girl · Grade 10</span></div>
-    <div class="design-ticket" data-work="drama-club" data-index="0"><img src="images/design/drama-club-1.jpg" alt="Drama Club · The Little Match Girl ticket 1" loading="lazy" decoding="async"></div>
-    <div class="design-ticket" data-work="drama-club" data-index="1"><img src="images/design/drama-club-2.jpg" alt="Drama Club · The Little Match Girl ticket 2" loading="lazy" decoding="async"></div>
-  </div>
-
-  <div class="design-box">
-    <div class="design-box-head"><span class="design-box-title">Anime Club</span><span class="design-box-meta">Publications · Grades 9–11</span></div>
-
-    <div class="anime-event">
-      <div class="design-event-label">2025–2026 · Calendar</div>
-      <a href="https://drive.google.com/drive/folders/1-4ArvsxAxEn6bNqyg4nvx6BrGgHDphiC?usp=sharing" target="_blank" rel="noopener" class="anime-thumb"><img src="images/design/anime-club-calendar.jpg" alt="Anime Club calendar 2025–2026" loading="lazy" decoding="async"></a>
-      <a href="https://drive.google.com/drive/folders/1-4ArvsxAxEn6bNqyg4nvx6BrGgHDphiC?usp=sharing" target="_blank" rel="noopener" class="editorial-link">↗ View the calendar</a>
+    <div class="drama-row">
+      <div class="design-ticket" data-work="drama-club" data-index="0"><img src="images/design/drama-club-1.jpg" alt="Drama Club · The Little Match Girl ticket 1" loading="lazy" decoding="async"></div>
+      <div class="design-ticket" data-work="drama-club" data-index="1"><img src="images/design/drama-club-2.jpg" alt="Drama Club · The Little Match Girl ticket 2" loading="lazy" decoding="async"></div>
     </div>
-
-    <div class="anime-event">
-      <div class="design-event-label">2024–2025 · Manga</div>
-      <a href="https://canva.link/e849vd5xd0xfhth" target="_blank" rel="noopener" class="anime-thumb"><img src="images/design/anime-club-manga.jpg" alt="Anime Club manga · All Saints Are Dead" loading="lazy" decoding="async"></a>
-      <a href="https://canva.link/e849vd5xd0xfhth" target="_blank" rel="noopener" class="editorial-link">↗ Read the manga</a>
-    </div>
-
-    <div class="anime-event">
-      <div class="design-event-label">2023–2024 · Animation</div>
-      <a href="https://drive.google.com/file/d/1jcK2wAfwrP49xfxurye-TLoEy-2D1-pU/view?usp=sharing" target="_blank" rel="noopener" class="anime-thumb"><img src="images/design/anime-club-animation.jpg" alt="Anime Club animation 2023–2024" loading="lazy" decoding="async"></a>
-      <a href="https://drive.google.com/file/d/1jcK2wAfwrP49xfxurye-TLoEy-2D1-pU/view?usp=sharing" target="_blank" rel="noopener" class="editorial-link">↗ Watch the animation</a>
-    </div>
-  </div>
   </div>
 
 </section>
@@ -1934,7 +1905,7 @@ function spawnParticle(x, y) {
   setTimeout(() => p.remove(), 1000);
 }
 </script>
-<script src="main.js?v=37"></script>
+<script src="main.js?v=38"></script>
 <script src="liquid.js"></script>
 </body>
 </html>
