@@ -1243,8 +1243,11 @@ document.addEventListener('keydown', e => {
     { key: 'yae-miko',         sub: 'KICA 高雄國際動漫節 · Oct 2024' }
   ];
 
-  const row = document.createElement('div');
-  row.className = 'cosplay-cover-row photo-strip';
+  const row1 = document.createElement('div');
+  row1.className = 'cosplay-cover-row photo-strip';
+  const row2 = document.createElement('div');
+  row2.className = 'cosplay-cover-row photo-strip';
+  const coverEls = [];
   const reveal = document.createElement('div');
   reveal.className = 'cosplay-reveal';
 
@@ -1269,7 +1272,7 @@ document.addEventListener('keydown', e => {
         '<div class="cosplay-cover-name">' + esc(w.title) + '</div>' +
         '<div class="cosplay-cover-sub">' + esc(cat.sub) + '</div>' +
       '</div>';
-    row.appendChild(cover);
+    coverEls.push(cover);
 
     const panel = document.createElement('div');
     panel.className = 'cosplay-panel';
@@ -1308,30 +1311,23 @@ document.addEventListener('keydown', e => {
     reveal.appendChild(panel);
   });
 
-  // Wrap the cover row in the same slider chrome as the photography sliders
-  // (auto-scroll motion + arrows + edge fades), keeping the captions intact.
-  const sliderWrap = document.createElement('div');
-  sliderWrap.className = 'photo-slider cosplay-cover-slider';
-  sliderWrap.setAttribute('data-autoscroll', 'pingpong');
-  const prevBtn = document.createElement('button');
-  prevBtn.type = 'button';
-  prevBtn.className = 'photo-slider-arrow prev';
-  prevBtn.setAttribute('aria-label', 'Previous');
-  prevBtn.innerHTML = '&#8249;';
-  prevBtn.addEventListener('click', () => slidePhotos(prevBtn, -1));
-  const nextBtn = document.createElement('button');
-  nextBtn.type = 'button';
-  nextBtn.className = 'photo-slider-arrow next';
-  nextBtn.setAttribute('aria-label', 'Next');
-  nextBtn.innerHTML = '&#8250;';
-  nextBtn.addEventListener('click', () => slidePhotos(nextBtn, 1));
-  sliderWrap.appendChild(prevBtn);
-  sliderWrap.appendChild(row);
-  sliderWrap.appendChild(nextBtn);
-  mount.appendChild(sliderWrap);
+  // Split the covers into two even rows (chronological), each an auto-scrolling
+  // strip with edge fades (same moving style as before, stacked).
+  const half = Math.ceil(coverEls.length / 2);
+  coverEls.forEach((c, i) => (i < half ? row1 : row2).appendChild(c));
+  const rowsWrap = document.createElement('div');
+  rowsWrap.className = 'cosplay-cover-rows';
+  [row1, row2].forEach(r => {
+    const s = document.createElement('div');
+    s.className = 'photo-slider cosplay-cover-slider';
+    s.setAttribute('data-autoscroll', 'pingpong');
+    s.appendChild(r);
+    rowsWrap.appendChild(s);
+  });
+  mount.appendChild(rowsWrap);
   mount.appendChild(reveal);
 
-  const covers = Array.from(row.querySelectorAll('.cosplay-cover'));
+  const covers = Array.from(mount.querySelectorAll('.cosplay-cover'));
   const panels = Array.from(reveal.querySelectorAll('.cosplay-panel'));
   let pinned = null, hovered = null;
 
