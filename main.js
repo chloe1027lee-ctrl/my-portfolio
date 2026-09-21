@@ -187,8 +187,8 @@ const worksData = {
   },
   'blanc-shoot': {
     title: 'Blanc (Pajama Ver.)',
-    meta: 'Outside Photoshoot · 二三室攝影棚 · May 4, 2025',
-    description: 'A KAS Cosplay Club outside photoshoot at 二三室攝影棚 with professional photographers Elven Peng (瑤光), 郭琛, and 王文辰. 9 participants, 7 hours total.',
+    meta: '二三室攝影棚 · May 04, 2025',
+    description: 'Blanc (Pajama Ver.) studio photoshoot at <a href="https://ponpai.tw/studio/lockinge2-2" target="_blank" rel="noopener" style="color:#e8e2d9;text-decoration:underline;">二三室攝影棚</a>.<br><br>Photographers: <a href="https://www.facebook.com/profile.php?id=100007716220864" target="_blank" rel="noopener" style="color:#e8e2d9;text-decoration:underline;">Elven Peng (瑤光)</a>, <a href="https://www.facebook.com/chenkuo1991" target="_blank" rel="noopener" style="color:#e8e2d9;text-decoration:underline;">郭琛</a>, <a href="https://www.facebook.com/wenchen.wang.79" target="_blank" rel="noopener" style="color:#e8e2d9;text-decoration:underline;">王文辰</a>.',
     thumbs: true,
     images: [
       'images/cosplay/blanc-shoot-1.jpg',
@@ -1112,6 +1112,7 @@ document.addEventListener('keydown', e => {
     { key: 'marin-kitagawa',   sub: '幻日祭 · Nov 2025' },
     { key: 'blanc-kica',       sub: 'KICA 高雄國際動漫節 · Oct 2025' },
     { key: 'arcana',           sub: '【CWT-K48】高雄場 · Sep 2025' },
+    { key: 'blanc-shoot',       sub: '二三室攝影棚 · May 2025' },
     { key: 'rizu-kyun',        sub: '開拓動漫祭 FF44 · Feb 2025' },
     { key: 'yae-miko',         sub: 'KICA 高雄國際動漫節 · Oct 2024' }
   ];
