@@ -241,14 +241,14 @@ section.active { display: block; }
 .cosplay-social-bar a { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: #cfc9bf; text-decoration: none; font-weight: bold; border: 1px solid #3a3a3a; padding: 0.6rem 1.15rem; border-radius: 999px; transition: color 0.2s, border-color 0.2s, background 0.2s; }
 .cosplay-social-bar a:hover { color: #0a0a0a; background: #e8e2d9; border-color: #e8e2d9; }
 /* Avatar + speech bubble (right side of cosplay header) */
-.cosplay-chat { display: flex; align-items: center; gap: 0.85rem; }
-.cosplay-avatar { width: 62px; height: 62px; flex-shrink: 0; border-radius: 50%; overflow: hidden; border: 2px solid #2f2f2f; background: #111; }
+.cosplay-chat { display: flex; align-items: center; gap: 1rem; }
+.cosplay-avatar { width: 92px; height: 92px; flex-shrink: 0; border-radius: 50%; overflow: hidden; border: 2px solid #2f2f2f; background: #111; }
 .cosplay-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center 28%; display: block; }
-.cosplay-bubble { position: relative; background: #141414; border: 1px solid #2a2a2a; border-radius: 14px; padding: 0.7rem 0.95rem; font-size: 0.72rem; line-height: 1.55; letter-spacing: 0.01em; color: #cfc9bf; max-width: 330px; }
+.cosplay-bubble { position: relative; background: #141414; border: 1px solid #2a2a2a; border-radius: 16px; padding: 1rem 1.3rem; font-size: 0.92rem; line-height: 1.6; letter-spacing: 0.01em; color: #cfc9bf; max-width: 440px; }
 .cosplay-bubble::before, .cosplay-bubble::after { content: ""; position: absolute; top: 50%; transform: translateY(-50%); width: 0; height: 0; border-style: solid; }
-.cosplay-bubble::before { right: -9px; border-width: 8px 0 8px 9px; border-color: transparent transparent transparent #2a2a2a; }
-.cosplay-bubble::after { right: -7px; border-width: 7px 0 7px 8px; border-color: transparent transparent transparent #141414; }
-@media (max-width: 620px) { .cosplay-chat { width: 100%; } .cosplay-bubble { max-width: none; flex: 1; } }
+.cosplay-bubble::before { right: -11px; border-width: 10px 0 10px 11px; border-color: transparent transparent transparent #2a2a2a; }
+.cosplay-bubble::after { right: -9px; border-width: 9px 0 9px 10px; border-color: transparent transparent transparent #141414; }
+@media (max-width: 640px) { .cosplay-chat { width: 100%; } .cosplay-bubble { max-width: none; flex: 1; } }
 
 .cosplay-category { padding: 3rem 0; border-bottom: 1px solid #141414; }
 .cosplay-cat-top { margin-bottom: 1.8rem; }
