@@ -282,6 +282,9 @@ nav { z-index: 100; }
 .fashion-tile:hover img { transform: scale(1.04); }
 .fashion-sketch-grid .fashion-tile { aspect-ratio: 3/4; }
 .fashion-ref-row .fashion-tile { aspect-ratio: 1/1; }
+.fashion-working-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+.fashion-working-cols .fashion-subgroup-label { margin-top: 0; }
+@media (max-width: 640px) { .fashion-working-cols { grid-template-columns: 1fr; gap: 1.3rem; } }
 
 /* ── LIGHTBOX ── */
 .lightbox-overlay {
