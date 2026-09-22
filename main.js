@@ -136,6 +136,97 @@ if (heroTitle) {
 
 /* ── WORKS DATA ── */
 const worksData = {
+  'fashion-sketch-reality': {
+    title: 'Fashion Sketches · Reality',
+    meta: 'States of Preservation · Fashion Collection',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/fashion/fashion-sketch-reality-1.jpg',
+      'images/fashion/fashion-sketch-reality-2.jpg',
+      'images/fashion/fashion-sketch-reality-3.jpg',
+      'images/fashion/fashion-sketch-reality-4.jpg',
+      'images/fashion/fashion-sketch-reality-5.jpg'
+    ]
+  },
+  'fashion-sketch-fantasy': {
+    title: 'Fashion Sketches · Fantasy',
+    meta: 'States of Preservation · Fashion Collection',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/fashion/fashion-sketch-fantasy-1.jpg',
+      'images/fashion/fashion-sketch-fantasy-2.jpg',
+      'images/fashion/fashion-sketch-fantasy-3.jpg',
+      'images/fashion/fashion-sketch-fantasy-4.jpg',
+      'images/fashion/fashion-sketch-fantasy-5.jpg'
+    ]
+  },
+  'fashion-working-reality': {
+    title: 'Working Sketches · Reality',
+    meta: 'States of Preservation · Fashion Collection',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/fashion/fashion-working-reality-1.jpg',
+      'images/fashion/fashion-working-reality-2.jpg'
+    ]
+  },
+  'fashion-working-fantasy': {
+    title: 'Working Sketches · Fantasy',
+    meta: 'States of Preservation · Fashion Collection',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/fashion/fashion-working-fantasy-1.jpg',
+      'images/fashion/fashion-working-fantasy-2.jpg'
+    ]
+  },
+  'fashion-collage': {
+    title: 'Collage Designs',
+    meta: 'States of Preservation · Fashion Collection',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/fashion/fashion-collage-1.jpg',
+      'images/fashion/fashion-collage-2.jpg',
+      'images/fashion/fashion-collage-3.jpg',
+      'images/fashion/fashion-collage-4.jpg'
+    ]
+  },
+  'fashion-met': {
+    title: 'MET-Inspired Designs',
+    meta: 'States of Preservation · Fashion Collection',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/fashion/fashion-met-1.jpg',
+      'images/fashion/fashion-met-2.jpg'
+    ]
+  },
+  'fashion-paperdoll': {
+    title: 'Paper Dolls',
+    meta: 'States of Preservation · Fashion Collection',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/fashion/fashion-paperdoll-1.jpg',
+      'images/fashion/fashion-paperdoll-2.jpg'
+    ]
+  },
+  'fashion-ref': {
+    title: 'References &amp; Inspiration',
+    meta: 'States of Preservation · Fashion Collection',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/fashion/fashion-ref-1.jpg',
+      'images/fashion/fashion-ref-2.jpg',
+      'images/fashion/fashion-ref-3.jpg',
+      'images/fashion/fashion-ref-4.jpg',
+      'images/fashion/fashion-ref-5.jpg'
+    ]
+  },
   'club-collage': {
     title: 'KAS Cosplay Club',
     meta: 'Club photo collage',
