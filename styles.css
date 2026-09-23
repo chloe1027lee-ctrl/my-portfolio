@@ -272,7 +272,7 @@ nav { z-index: 100; }
 .fashion-ph-label { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: #9a9a9a; font-weight: bold; }
 .fashion-ph-hint { font-size: 0.54rem; letter-spacing: 0.12em; text-transform: uppercase; color: #555; }
 
-.fashion-sketch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(185px, 1fr)); gap: 0.9rem; }
+.fashion-sketch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(185px, 1fr)); gap: 0.9rem; }
 .fashion-sketch-grid .fashion-ph { aspect-ratio: 3/4; }
 .fashion-ref-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.9rem; }
 .fashion-ref-row .fashion-ph { aspect-ratio: 1/1; }
