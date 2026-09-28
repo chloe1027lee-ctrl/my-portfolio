@@ -704,31 +704,31 @@ const worksData = {
   },
   'homete': {
     title: '褒めてくれるなら何でもする (I\'ll Do Anything if You Praise Me)',
-    meta: 'Chloe. <em>褒めてくれるなら何でもする (I\'ll Do Anything if You Praise Me)</em>. 2024. Digital Illustration. 1600 × 1600 px.',
+    meta: 'Lee, Chloe. <em>褒めてくれるなら何でもする (I\'ll Do Anything if You Praise Me)</em>. 2024. Digital Illustration. 1600 × 1600 px.',
     description: 'Why do people drown in praise but still feel alone?<br><br>I drew this because I kept wondering what compliments actually mean. When you rely on others\' approval, praise feels like the only thing keeping you upright, so you shape yourself around getting more of it: doing anything, becoming anything, as long as someone says you did well. But praise for a performed version of yourself never reaches the part actually asking to be seen. That is the loneliness I wanted to draw: surrounded by kind words and still hollow, because none were aimed at the real you.<br><br>The figure sits curled and hollowed out, a black silhouette drained of detail, while the space around her is packed with compliments in Japanese, closing in like static. The banner reads 褒め言葉に弱い, "weak to compliments." She is buried in the very thing she wanted, and it still is not enough. The piece asks whether a compliment is really care, or just a currency we mistake for it.',
     images: ['images/art/homete-1.jpg']
   },
   'fan-no-ai': {
     title: 'ファンの愛に包まれて (Embraced by Fans\' Love)',
-    meta: 'Chloe. <em>ファンの愛に包まれて (Embraced by Fans\' Love)</em>. 2023. Digital Illustration. 2300 × 3000 px. Kaohsiung, Taiwan.',
+    meta: 'Lee, Chloe. <em>ファンの愛に包まれて (Embraced by Fans\' Love)</em>. 2023. Digital Illustration. 2300 × 3000 px.',
     description: 'Your love gives me strength to shine brighter than ever. Thank you for always supporting me. In their eyes, I see the reason I keep moving forward.<br><br>This piece is about Japanese idol (アイドル) culture and the bond it builds between an idol and her fans. Her whole image is powered by that affection: the cheering, the letters, the gifts. She is expected to shine, and the energy to keep shining is meant to come straight from the people who love her. Here she lies surrounded by heart-shaped chocolates, roses, and stacks of love letters, winking and throwing peace signs, wrapped completely in that warmth.<br><br>Unlike my darker 地雷系 work, I wanted this one to sit fully in the bright, sweet side of the fantasy, the joyful version of being adored. But a quiet question stays under the sparkle: when your strength depends on being loved by an audience, how much of that shine is really yours? I kept it soft rather than sharp, because the feeling is genuinely happy.',
     images: ['images/art/fan-no-ai-1.jpg']
   },
   'aisaretai': {
     title: '愛されたいという病 (The Sickness of Wanting to Be Loved)',
-    meta: 'Chloe. <em>愛されたいという病 (The Sickness of Wanting to Be Loved)</em>. 2025. Digital Illustration. 2100 × 3000 px.',
+    meta: 'Lee, Chloe. <em>愛されたいという病 (The Sickness of Wanting to Be Loved)</em>. 2025. Digital Illustration. 2100 × 3000 px.',
     description: 'Why do people seek love from others instead of themselves?<br><br>I drew this thinking about a feeling that hits hardest in adolescence: the point where being loved by others starts to feel like the only proof you are worth anything. Your sense of self is still forming, so you outsource it, looking for reassurance in someone else\'s eyes instead of your own, until the need grows so large it stops feeling like affection and starts feeling like a sickness you carry rather than choose. The Japanese text reads 溺れるくらい愛してよ, "love me enough that I drown in it": wanting love so badly that the wanting itself becomes the thing that hurts.<br><br>The image works in a 地雷系 (jirai-kei) and 病みかわいい (yamikawaii) register: spiralled eyes, a held eyeball, glowing hearts against a dark scratched ground, cute and unsettling at once. The prettiness is real, but so is the desperation under it. The work asks whether that hunger for outside love is something to fix, or just something almost everyone quietly passes through.',
     images: ['images/art/aisaretai-1.jpg']
   },
   'kawaikunai': {
     title: '可愛くないとダメ？ (Am I Not Enough Without Being Cute?)',
-    meta: 'Chloe. <em>可愛くないとダメ？ (Am I Not Enough Without Being Cute?)</em>. 2023. Digital Illustration. 720 × 720 px.',
+    meta: 'Lee, Chloe. <em>可愛くないとダメ？ (Am I Not Enough Without Being Cute?)</em>. 2023. Digital Illustration. 720 × 720 px.',
     description: 'Cuteness is my comfort, even if it\'s exhausting to keep up.<br><br>可愛くないとダメ？ works in the visual language of 地雷系 (jirai-kei): black and pink twin tails, ribbon and lace, fluffy hair ties, winged hearts and pixel hearts floating across a soft pink field. Everything on the surface reads as almost too sweet. But jirai-kei has always carried something underneath the cuteness, an aesthetic worn by girls who present as adorable while quietly struggling, where the softness is both a real comfort and a performance that has to be maintained.<br><br>The title asks the question directly. If the cuteness slipped, would there still be enough left to be worth loving? The piece sits in that gap between the comfort of being cute and the exhaustion of never being allowed to stop.',
     images: ['images/art/kawaikunai-1.jpg']
   },
   'anime-club-mascot': {
     title: 'アニメで繋がる夢 (Dreams Connected Through Anime)',
-    meta: 'Chloe. <em>アニメで繋がる夢 (Dreams Connected Through Anime)</em>. 2024. Digital Illustration. 2300 × 300 px.',
+    meta: 'Lee, Chloe. <em>アニメで繋がる夢 (Dreams Connected Through Anime)</em>. 2024. Digital Illustration. 2300 × 3000 px.',
     description: 'Through anime and shared passions, we\'ve created a place where anyone can belong. A world where imagination takes flight on the wings of a dragon.<br><br>アニメで繋がる夢 is the mascot designed for our school\'s anime club. The design reinterprets the school\'s own emblem and mascot, a dragon, as an anime character: the dragon becomes a girl with curled red horns, small membranous wings tucked into her hair, fanged canines, and heterochromatic eyes of red and blue. A flame pendant and a red bomber jacket carry the school colors and the dragon\'s fire into an everyday, approachable form.<br><br>The goal was to keep the spirit of the original crest, its energy and its fire, while translating it into a friendly face the club could actually rally around: something that reads instantly as ours, but also as anime.',
     images: ['images/art/anime-club-mascot-1.jpg']
   },
@@ -982,7 +982,7 @@ const worksData = {
   },
   'stop-moving': {
     title: 'Stop Moving',
-    meta: 'Lee, Chloe. <em>Stop Moving</em>. 2026. Oil Pastel, Colored Pencil, Cut Paper.',
+    meta: 'Lee, Chloe. <em>Stop Moving</em>. 2026. Oil Pastel, Colored Pencil, Cut Paper. 94 × 67 cm.',
     description: '<em>Stop Moving. Let the scattered mess reflect your mind. Don\'t tidy up. Let it capture the moment.</em><br><br>A still life of personal objects drawn exactly where they were: Dior, Miss Dior, brushes, a comb, bottles, tubes. The surface of a desk mid-rush. Stream-of-consciousness text is written across the objects, capturing the internal monologue of running late.<br><br>The piece is cut out in the irregular shape of the arrangement itself, refusing the containment of a rectangular frame. The mess is not backdrop. It is the subject. Tidying it would have been a lie.',
     images: ['images/art/stop-moving-1.jpg']
   },
@@ -1018,7 +1018,7 @@ const worksData = {
   },
   'old-quarter': {
     title: 'Old Quarter',
-    meta: 'Lee, Chloe. <em>Old Quarter</em>. 2025. Acrylic Monoprint. 28 × 14 cm.',
+    meta: 'Lee, Chloe. <em>Old Quarter</em>. 2025. Acrylic Monoprint. 31 × 17 cm.',
     description: 'An aerial view of old buildings, fragmented by the printmaking process into something between documentation and abstraction. The goal was not to capture a specific place but a feeling: the weight of aged architecture, the sense that buildings accumulate time visibly in their surfaces and shadows.<br><br>The black and white removes color entirely, leaving only structure. Cross-hatching, parallel lines, and gestural marks stand in for different textures and materials, each suggesting a different surface or era. Seen from above, the familiar geometry of rooftops and walls becomes harder to place, more disorienting, closer to ruin than to residence.',
     images: ['images/art/old-quarter-1.jpg']
   },
