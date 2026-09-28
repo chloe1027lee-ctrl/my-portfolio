@@ -749,7 +749,7 @@ const worksData = {
   },
   'scintilla': {
     title: 'Scintilla',
-    meta: 'Lee, Chloe. <em>Scintilla</em>. 2026. Aluminium Wire, Mesh, and Iridescent Film. Installation.',
+    meta: 'Lee, Chloe. <em>Scintilla</em>. 2026. Aluminium Wire, Mesh, and Iridescent Film. Site-Specific Installation.',
     description: 'Scintilla is a large-scale wire sculpture of a mosquito, built from aluminium wire, mesh, and iridescent film and installed on top of the locker unit in the KAS locker hallway. It began with a simple observation: many students avoid their lockers, one reason being mosquitoes, which thrive in Taiwan\'s warm, humid air and are usually met with annoyance and discomfort. I was struck by how something so small could provoke such a large psychological response.<br><br>By scaling the insect to monumental size, I let it become something else. Under the light the iridescent film shifts between blue, green, purple, and orange, so what reads as threatening from a distance turns unexpectedly beautiful up close, then unsettling again. An enlarged, distorted shadow stretches across the wall and ceiling, mirroring how fear magnifies our perception. Scintilla asks whether the fear was ever really about the insect, or about what we project onto things we choose not to look at closely.',
     thumbs: true,
     images: [
@@ -760,7 +760,9 @@ const worksData = {
       'images/art/scintilla-5.jpg',
       'images/art/scintilla-6.jpg',
       'images/art/scintilla-7.jpg',
-      'images/art/scintilla-8.jpg'
+      'images/art/scintilla-8.jpg',
+      'images/art/scintilla-9.jpg',
+      'images/art/scintilla-10.jpg'
     ]
   },
   'ceramic-plate': {
@@ -943,7 +945,10 @@ const worksData = {
       'images/art/noctilucent-2.jpg',
       'images/art/noctilucent-3.jpg',
       'images/art/noctilucent-4.jpg',
-      'images/art/noctilucent-5.jpg'
+      'images/art/noctilucent-5.jpg',
+      'images/art/noctilucent-6.jpg',
+      'images/art/noctilucent-7.jpg',
+      'images/art/noctilucent-8.jpg'
     ]
   },
   'penumbra': {
