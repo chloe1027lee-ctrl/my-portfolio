@@ -734,7 +734,7 @@ const worksData = {
   },
   'elan-vital': {
     title: 'Élan Vital',
-    meta: 'Lee, Chloe. <em>Élan Vital</em>. 2026. Epoxy Resin and Alcohol Ink.',
+    meta: 'Lee, Chloe. <em>Élan Vital</em>. 2026. Epoxy Resin and Alcohol Ink. 8 × 36 × 36 cm.',
     description: 'Élan Vital explores how fluid materials can create the illusion of life. I allowed alcohol ink to spread, collide, and react unpredictably within resin, forming structures that resemble petals, cells, and other organic forms. The title refers to Henri Bergson\'s idea of élan vital, or a "vital impulse" associated with life and continual becoming. Influenced by Damien Hirst\'s use of preservation and color, I encased these fluid forms in transparent resin, permanently suspending their movement. Although physically frozen, the saturated colors and expanding forms still appear alive, creating a contradiction between growth and preservation, movement and stillness.',
     thumbs: true,
     images: [
@@ -749,7 +749,7 @@ const worksData = {
   },
   'scintilla': {
     title: 'Scintilla',
-    meta: 'Lee, Chloe. <em>Scintilla</em>. 2026. Aluminium Wire, Mesh, and Iridescent Film. Site-Specific Installation.',
+    meta: 'Lee, Chloe. <em>Scintilla</em>. 2026. Aluminium Wire, Mesh, and Iridescent Film. Site-Specific Installation. 86.4 × 78.7 × 30.5 cm.',
     description: 'Scintilla is a large-scale wire sculpture of a mosquito, built from aluminium wire, mesh, and iridescent film and installed on top of the locker unit in the KAS locker hallway. It began with a simple observation: many students avoid their lockers, one reason being mosquitoes, which thrive in Taiwan\'s warm, humid air and are usually met with annoyance and discomfort. I was struck by how something so small could provoke such a large psychological response.<br><br>By scaling the insect to monumental size, I let it become something else. Under the light the iridescent film shifts between blue, green, purple, and orange, so what reads as threatening from a distance turns unexpectedly beautiful up close, then unsettling again. An enlarged, distorted shadow stretches across the wall and ceiling, mirroring how fear magnifies our perception. Scintilla asks whether the fear was ever really about the insect, or about what we project onto things we choose not to look at closely.',
     thumbs: true,
     images: [
@@ -1024,7 +1024,7 @@ const worksData = {
   },
   'kabukicho': {
     title: 'Shibuya × Kabukicho',
-    meta: 'Lee, Chloe. <em>Shibuya × Kabukicho</em>. 2026. Ink Relief Printmaking, Highlighter, Marker, Colored Pencil.',
+    meta: 'Lee, Chloe. <em>Shibuya × Kabukicho</em>. 2026. Ink Relief Printmaking, Highlighter, Marker, Colored Pencil. 54 × 39 cm.',
     description: 'How can layered color, built through highlighters and markers, communicate a personal, emotional response to an urban environment?<br><br>This piece merges two of Tokyo\'s most distinct districts into one image: Shibuya\'s crossings and commercial density folding into Kabukicho\'s entertainment sprawl. Neither is documented faithfully; the two are collapsed together, the city rebuilt from memory and feeling rather than observation.<br><br>Ink relief printmaking forms the base layer, giving the marks physical weight before color is added. Highlighter yellows and acid greens press against deep purples and blues; manga characters spill into the borders as architecture and cultural image blur. The layered marks build atmosphere the way memory does: not one clear image but an accumulation. Urban environment as emotional territory.',
     images: ['images/art/kabukicho-1.jpg']
   },
