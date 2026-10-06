@@ -435,10 +435,7 @@ section.active { display: block; }
 .mag-caption { margin-top: 1rem; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #555; font-weight: bold; }
 
 /* JOURNAL */
-.journal-intro { font-size: 0.95rem; line-height: 1.9; color: #666; max-width: 560px; margin-bottom: 3rem; font-style: italic; }
-.journal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1px; background: #1a1a1a; }
-.journal-item { aspect-ratio: 1/1; background: #111; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; cursor: none; }
-.journal-item span { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: #333; font-weight: bold; }
+.journal-intro { font-size: 0.95rem; line-height: 1.75; color: #b3b3b3; max-width: 660px; margin: -0.4rem 0 1.8rem; letter-spacing: 0.005em; }
 
 /* CONTACT */
 .contact-wrap { max-width: 520px; }
@@ -538,7 +535,6 @@ section.active { display: block; }
     <li><a onclick="show('materia')">Materia</a></li>
     <li><a onclick="show('fashion')">Fashion</a></li>
     <li><a onclick="show('photography')">Photography</a></li>
-    <li><a onclick="show('journal')">Journal</a></li>
     <li><a onclick="show('about')">About</a></li>
     <li><a onclick="show('contact')">Contact</a></li>
   </ul>
@@ -846,6 +842,81 @@ section.active { display: block; }
       </div>
     </div>
   </div>
+
+  <div class="art-wip-header" id="journal">
+    <span>Journal + Workspace</span>
+    <span class="art-wip-note">Process · 2022–2026</span>
+  </div>
+  <p class="journal-intro">A record of process: sketches, notes, experiments, and the space between ideas and finished work.</p>
+  <div class="gallery-grid gallery-grid--journal">
+    <div class="gallery-item" data-work="journal" data-index="0">
+      <img src="images/journal/journal-1.jpg" alt="Journal page 1" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Journal Page</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="journal" data-index="1">
+      <img src="images/journal/journal-2.jpg" alt="Journal page 2" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Journal Page</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="journal" data-index="2">
+      <img src="images/journal/journal-3.jpg" alt="Journal page 3" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Journal Page</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="journal" data-index="3">
+      <img src="images/journal/journal-4.jpg" alt="Journal page 4" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Journal Page</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="journal" data-index="4">
+      <img src="images/journal/journal-5.jpg" alt="Journal page 5" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Journal Page</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="journal" data-index="5">
+      <img src="images/journal/journal-6.jpg" alt="Journal page 6" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Journal Page</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="journal" data-index="6">
+      <img src="images/journal/journal-7.jpg" alt="Journal page 7" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Journal Page</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="journal" data-index="7">
+      <img src="images/journal/journal-8.jpg" alt="Journal page 8" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Journal Page</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="journal" data-index="8">
+      <img src="images/journal/journal-9.jpg" alt="Journal page 9" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Journal Page</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="journal" data-index="9">
+      <img src="images/journal/journal-10.jpg" alt="Journal page 10" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Journal Page</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="journal" data-index="10">
+      <img src="images/journal/journal-11.jpg" alt="Journal page 11" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Journal Page</div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- DESIGN -->
@@ -1531,18 +1602,6 @@ section.active { display: block; }
     </div>
   </div>
 
-</section>
-
-<!-- JOURNAL -->
-<section id="journal">
-  <div class="section-header">Journal + Workspace</div>
-  <p class="journal-intro">A record of process: sketches, notes, experiments, and the space between ideas and finished work. 2022–2026.</p>
-  <div class="journal-grid">
-    <div class="journal-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#333" stroke-width="1"/><line x1="8" y1="12" x2="28" y2="12" stroke="#222" stroke-width="0.5"/><line x1="8" y1="18" x2="28" y2="18" stroke="#222" stroke-width="0.5"/><line x1="8" y1="24" x2="20" y2="24" stroke="#222" stroke-width="0.5"/></svg><span>Add page</span></div>
-    <div class="journal-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#333" stroke-width="1"/><line x1="8" y1="12" x2="28" y2="12" stroke="#222" stroke-width="0.5"/><line x1="8" y1="18" x2="28" y2="18" stroke="#222" stroke-width="0.5"/><line x1="8" y1="24" x2="20" y2="24" stroke="#222" stroke-width="0.5"/></svg><span>Add page</span></div>
-    <div class="journal-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#333" stroke-width="1"/><line x1="8" y1="12" x2="28" y2="12" stroke="#222" stroke-width="0.5"/><line x1="8" y1="18" x2="28" y2="18" stroke="#222" stroke-width="0.5"/><line x1="8" y1="24" x2="20" y2="24" stroke="#222" stroke-width="0.5"/></svg><span>Add page</span></div>
-    <div class="journal-item"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" stroke="#333" stroke-width="1"/><line x1="8" y1="12" x2="28" y2="12" stroke="#222" stroke-width="0.5"/><line x1="8" y1="18" x2="28" y2="18" stroke="#222" stroke-width="0.5"/><line x1="8" y1="24" x2="20" y2="24" stroke="#222" stroke-width="0.5"/></svg><span>Add page</span></div>
-  </div>
 </section>
 
 <!-- ABOUT -->

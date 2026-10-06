@@ -765,6 +765,25 @@ const worksData = {
       'images/art/scintilla-10.jpg'
     ]
   },
+  'journal': {
+    title: 'Journal Pages',
+    meta: 'Lee, Chloe. <em>Journal Pages</em>. 2022–2026. Sketchbook.',
+    description: '',
+    thumbs: true,
+    images: [
+      'images/journal/journal-1.jpg',
+      'images/journal/journal-2.jpg',
+      'images/journal/journal-3.jpg',
+      'images/journal/journal-4.jpg',
+      'images/journal/journal-5.jpg',
+      'images/journal/journal-6.jpg',
+      'images/journal/journal-7.jpg',
+      'images/journal/journal-8.jpg',
+      'images/journal/journal-9.jpg',
+      'images/journal/journal-10.jpg',
+      'images/journal/journal-11.jpg'
+    ]
+  },
   'ceramic-plate': {
     title: 'Untitled',
     meta: 'Lee, Chloe. <em>Untitled</em>. 2024. Glazed Ceramic.',
