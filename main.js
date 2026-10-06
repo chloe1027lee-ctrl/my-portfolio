@@ -781,7 +781,8 @@ const worksData = {
       'images/journal/journal-8.jpg',
       'images/journal/journal-9.jpg',
       'images/journal/journal-10.jpg',
-      'images/journal/journal-11.jpg'
+      'images/journal/journal-11.jpg',
+      'images/journal/journal-12.jpg'
     ]
   },
   'ceramic-plate': {
