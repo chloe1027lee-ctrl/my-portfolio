@@ -657,6 +657,29 @@ const worksData = {
       'images/cosplay/rapi-red-hood-24.jpg'
     ]
   },
+  'megurine-luka': {
+    title: 'Megurine Luka',
+    meta: 'Vocaloid · Megurine Luka · KICA 高雄國際動漫節 · October 12, 2024',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/cosplay/megurine-luka-1.jpg','images/cosplay/megurine-luka-2.jpg','images/cosplay/megurine-luka-3.jpg',
+      'images/cosplay/megurine-luka-4.jpg','images/cosplay/megurine-luka-5.jpg','images/cosplay/megurine-luka-6.jpg',
+      'images/cosplay/megurine-luka-7.jpg','images/cosplay/megurine-luka-8.jpg','images/cosplay/megurine-luka-9.jpg',
+      'images/cosplay/megurine-luka-10.jpg','images/cosplay/megurine-luka-11.jpg','images/cosplay/megurine-luka-12.jpg'
+    ]
+  },
+  'kurumi-tokisaki': {
+    title: 'Kurumi Tokisaki',
+    meta: 'Date A Live · Kurumi Tokisaki · 【CWT-K45】高雄場 · August 24, 2024',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/cosplay/kurumi-tokisaki-1.jpg','images/cosplay/kurumi-tokisaki-2.jpg','images/cosplay/kurumi-tokisaki-3.jpg',
+      'images/cosplay/kurumi-tokisaki-4.jpg','images/cosplay/kurumi-tokisaki-5.jpg','images/cosplay/kurumi-tokisaki-6.jpg',
+      'images/cosplay/kurumi-tokisaki-7.jpg','images/cosplay/kurumi-tokisaki-8.jpg','images/cosplay/kurumi-tokisaki-9.jpg'
+    ]
+  },
   'ms-model': {
     title: 'The M&S Man',
     meta: 'London Pride · Soho Street Parties · June 2025 · Sony A6400 · Lightroom',
@@ -1381,7 +1404,9 @@ document.addEventListener('keydown', e => {
     { key: 'rizu-kyun',        sub: '開拓動漫祭 FF44 · Feb 2025' },
     { key: 'shizuku',          sub: '駁二動漫祭同人誌創作展 · Dec 2024' },
     { key: 'kinako',           sub: '幻日祭 · Nov 2024' },
-    { key: 'yae-miko',         sub: 'KICA 高雄國際動漫節 · Oct 2024' }
+    { key: 'megurine-luka',    sub: 'KICA 高雄國際動漫節 · Oct 2024' },
+    { key: 'yae-miko',         sub: 'KICA 高雄國際動漫節 · Oct 2024' },
+    { key: 'kurumi-tokisaki',  sub: '【CWT-K45】高雄場 · Aug 2024' }
   ];
 
   const row = document.createElement('div');
