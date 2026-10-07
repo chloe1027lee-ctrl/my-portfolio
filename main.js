@@ -785,15 +785,6 @@ const worksData = {
       'images/journal/journal-12.jpg'
     ]
   },
-  'ceramic-plate': {
-    title: 'Untitled',
-    meta: 'Lee, Chloe. <em>Untitled</em>. 2024. Glazed Ceramic.',
-    description: '',
-    thumbs: true,
-    images: [
-      'images/art/ceramic-plate-1.jpg'
-    ]
-  },
   'blue-tongue': {
     title: '青い舌 (Blue Tongue)',
     meta: 'Lee, Chloe. <em>青い舌 (Blue Tongue)</em>. 2025. Digital Illustration.',
