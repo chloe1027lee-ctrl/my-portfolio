@@ -765,6 +765,17 @@ const worksData = {
       'images/art/scintilla-10.jpg'
     ]
   },
+  'untitled-plate': {
+    title: 'Untitled',
+    meta: 'Lee, Chloe. <em>Untitled</em>. 2024. Glazed Ceramic. 31 × 23 × 3 cm.',
+    description: '',
+    thumbs: true,
+    images: [
+      'images/art/untitled-plate-1.jpg',
+      'images/art/untitled-plate-2.jpg',
+      'images/art/untitled-plate-3.jpg'
+    ]
+  },
   'journal': {
     title: 'Journal Pages',
     meta: 'Lee, Chloe. <em>Journal Pages</em>. 2022–2026. Sketchbook.',
