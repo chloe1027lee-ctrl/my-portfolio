@@ -1027,7 +1027,7 @@ const worksData = {
   },
   'stop-moving': {
     title: 'Stop Moving',
-    meta: 'Lee, Chloe. <em>Stop Moving</em>. 2026. Oil Pastel, Colored Pencil, Cut Paper. 94 × 67 cm.',
+    meta: 'Lee, Chloe. <em>Stop Moving</em>. 2024. Oil Pastel, Colored Pencil, Cut Paper. 94 × 67 cm.',
     description: '<em>Stop Moving. Let the scattered mess reflect your mind. Don\'t tidy up. Let it capture the moment.</em><br><br>A still life of personal objects drawn exactly where they were: Dior, Miss Dior, brushes, a comb, bottles, tubes. The surface of a desk mid-rush. Stream-of-consciousness text is written across the objects, capturing the internal monologue of running late.<br><br>The piece is cut out in the irregular shape of the arrangement itself, refusing the containment of a rectangular frame. The mess is not backdrop. It is the subject. Tidying it would have been a lie.',
     images: ['images/art/stop-moving-1.jpg']
   },
