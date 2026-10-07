@@ -540,7 +540,6 @@ const worksData = {
       'images/cosplay/nikke-cinderella-7.jpg',
       'images/cosplay/nikke-cinderella-8.jpg',
       'images/cosplay/nikke-cinderella-9.jpg',
-      'images/cosplay/nikke-cinderella-10.jpg',
       'images/cosplay/nikke-cinderella-11.jpg',
       'images/cosplay/nikke-cinderella-12.jpg',
       'images/cosplay/nikke-cinderella-13.jpg',
