@@ -1409,7 +1409,7 @@ document.addEventListener('keydown', e => {
   ];
 
   const row = document.createElement('div');
-  row.className = 'cosplay-cover-row photo-strip';
+  row.className = 'cosplay-tile-grid';
   const reveal = document.createElement('div');
   reveal.className = 'cosplay-reveal';
 
@@ -1422,18 +1422,17 @@ document.addEventListener('keydown', e => {
 
     const cover = document.createElement('button');
     cover.type = 'button';
-    cover.className = 'cosplay-cover';
+    cover.className = 'cosplay-tile';
     cover.dataset.cat = cat.key;
+    cover.dataset.name = w.title;
+    cover.dataset.sub = cat.sub;
+    cover.dataset.badge = w.bts ? 'Behind the Scenes' : n + ' photos';
+    cover.dataset.cover = w.images[0];
     cover.innerHTML =
-      '<div class="cosplay-cover-thumb">' +
+      '<div class="cosplay-tile-thumb">' +
         '<img src="' + w.images[0] + '" alt="' + esc(w.title) + '" loading="lazy" decoding="async">' +
-        '<span class="cosplay-cover-badge">' + (w.bts ? 'Behind the Scenes' : n + ' photos') + '</span>' +
-        '<span class="cosplay-cover-pin">Pinned</span>' +
       '</div>' +
-      '<div class="cosplay-cover-cap">' +
-        '<div class="cosplay-cover-name">' + esc(w.title) + '</div>' +
-        '<div class="cosplay-cover-sub">' + esc(cat.sub) + '</div>' +
-      '</div>';
+      '<div class="cosplay-tile-name">' + esc(w.title) + '</div>';
     row.appendChild(cover);
 
     const panel = document.createElement('div');
@@ -1473,45 +1472,68 @@ document.addEventListener('keydown', e => {
     reveal.appendChild(panel);
   });
 
-  // Wrap the cover row in the same slider chrome as the photography sliders
-  // (auto-scroll motion + arrows + edge fades), keeping the captions intact.
-  const sliderWrap = document.createElement('div');
-  sliderWrap.className = 'photo-slider cosplay-cover-slider';
-  sliderWrap.setAttribute('data-autoscroll', 'pingpong');
-  const prevBtn = document.createElement('button');
-  prevBtn.type = 'button';
-  prevBtn.className = 'photo-slider-arrow prev';
-  prevBtn.setAttribute('aria-label', 'Previous');
-  prevBtn.innerHTML = '&#8249;';
-  prevBtn.addEventListener('click', () => slidePhotos(prevBtn, -1));
-  const nextBtn = document.createElement('button');
-  nextBtn.type = 'button';
-  nextBtn.className = 'photo-slider-arrow next';
-  nextBtn.setAttribute('aria-label', 'Next');
-  nextBtn.innerHTML = '&#8250;';
-  nextBtn.addEventListener('click', () => slidePhotos(nextBtn, 1));
-  sliderWrap.appendChild(prevBtn);
-  sliderWrap.appendChild(row);
-  sliderWrap.appendChild(nextBtn);
-  mount.appendChild(sliderWrap);
+  // Featured slot: a fixed place the preview lands in, so the eye does not
+  // have to travel to a panel below while sweeping across the tiles.
+  const pick = document.createElement('div');
+  pick.className = 'cosplay-pick';
+  const feature = document.createElement('div');
+  feature.className = 'cosplay-feature';
+  feature.innerHTML =
+    '<div class="cosplay-feature-thumb"><img alt=""><span class="cosplay-feature-badge"></span></div>' +
+    '<div class="cosplay-feature-name"></div>' +
+    '<div class="cosplay-feature-sub"></div>' +
+    '<div class="cosplay-feature-hint"></div>';
+  pick.appendChild(feature);
+  pick.appendChild(row);
+  mount.appendChild(pick);
   mount.appendChild(reveal);
 
-  const covers = Array.from(row.querySelectorAll('.cosplay-cover'));
+  const fThumb = feature.querySelector('.cosplay-feature-thumb');
+  const fImg = feature.querySelector('.cosplay-feature-thumb img');
+  const fBadge = feature.querySelector('.cosplay-feature-badge');
+  const fName = feature.querySelector('.cosplay-feature-name');
+  const fSub = feature.querySelector('.cosplay-feature-sub');
+  const fHint = feature.querySelector('.cosplay-feature-hint');
+
+  let featKey = null, swapTimer = null;
+  function setFeature(tile, instant) {
+    if (!tile || tile.dataset.cat === featKey) return;
+    featKey = tile.dataset.cat;
+    const paint = () => {
+      fImg.src = tile.dataset.cover;
+      fImg.alt = tile.dataset.name;
+      fBadge.textContent = tile.dataset.badge;
+      fName.textContent = tile.dataset.name;
+      fSub.textContent = tile.dataset.sub;
+    };
+    clearTimeout(swapTimer);
+    if (instant) { paint(); return; }
+    // Brief fade so sweeping the grid does not strobe the slot.
+    fThumb.classList.add('swapping');
+    swapTimer = setTimeout(() => { paint(); fThumb.classList.remove('swapping'); }, 120);
+  }
+
+  const covers = Array.from(row.querySelectorAll('.cosplay-tile'));
   const panels = Array.from(reveal.querySelectorAll('.cosplay-panel'));
   let pinned = null, hovered = null;
 
   function apply() {
-    const key = hovered || pinned;
-    reveal.classList.toggle('open', !!key);
-    panels.forEach(p => p.classList.toggle('open', p.dataset.cat === key));
+    // Only a pinned set opens the panel below; hovering just drives the
+    // featured slot, so the page no longer jumps while browsing.
+    const key = hovered || pinned || covers[0].dataset.cat;
+    reveal.classList.toggle('open', !!pinned);
+    panels.forEach(p => p.classList.toggle('open', p.dataset.cat === pinned));
     covers.forEach(c => {
       c.classList.toggle('active', c.dataset.cat === key);
       c.classList.toggle('pinned', c.dataset.cat === pinned);
     });
-    const active = panels.find(p => p.dataset.cat === key);
+    const tile = covers.find(c => c.dataset.cat === key);
+    setFeature(tile, featKey === null);
+    fHint.textContent = (pinned === key) ? 'Pinned · click again to close' : 'Click to open the set';
+    const active = panels.find(p => p.dataset.cat === pinned);
     if (active) {
       const st = active.querySelector('.cosplay-panel-state');
-      if (st) st.textContent = (pinned === key) ? 'Pinned · click cover to close' : 'Click cover to keep open';
+      if (st) st.textContent = 'Pinned · click the tile to close';
     }
   }
 
