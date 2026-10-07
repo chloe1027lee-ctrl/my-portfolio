@@ -1516,7 +1516,9 @@ document.addEventListener('keydown', e => {
 
   const covers = Array.from(row.querySelectorAll('.cosplay-tile'));
   const panels = Array.from(reveal.querySelectorAll('.cosplay-panel'));
-  let pinned = null, hovered = null;
+  // Open the newest set on load, so the panel below is never empty and the
+  // page shows photos rather than covers alone.
+  let pinned = covers.length ? covers[0].dataset.cat : null, hovered = null;
 
   function apply() {
     // Only a pinned set opens the panel below; hovering just drives the
