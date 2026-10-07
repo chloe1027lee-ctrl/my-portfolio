@@ -765,6 +765,18 @@ const worksData = {
       'images/art/scintilla-10.jpg'
     ]
   },
+  'syzygy': {
+    title: 'Syzygy',
+    meta: 'Lee, Chloe. <em>Syzygy</em>. 2026. Acrylic Paint and Gloss Medium. UV Reactive. 60 × 60 cm.',
+    description: 'Syzygy imagines an impossible astronomical conjunction in which disparate surfaces, atmospheres, light, and matter occupy the same space. Inspired by the phenomenon of syzygy, when separate celestial bodies temporarily align, I explored how seemingly incompatible elements can coexist as a unified whole without losing their individual presence.<br><br>I applied fluorescent colors, irregular marks, and contrasting textures to a circular surface, allowing forms to overlap until they became difficult to isolate. Up close, the composition appears fragmented and chaotic, while from afar, its components coalesce into a single celestial form. Under UV light, the fluorescent pigments intensify, making the surface appear to emit its own radiation and transforming the way the imagined body is perceived.',
+    thumbs: true,
+    images: [
+      'images/art/syzygy-1.jpg',
+      'images/art/syzygy-2.jpg',
+      'images/art/syzygy-3.jpg',
+      'images/art/syzygy-4.jpg'
+    ]
+  },
   'untitled-plate': {
     title: 'Untitled',
     meta: 'Lee, Chloe. <em>Untitled</em>. 2024. Glazed Ceramic. 31 × 23 × 3 cm.',
