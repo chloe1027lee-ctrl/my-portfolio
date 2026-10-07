@@ -891,6 +891,17 @@ const worksData = {
       'images/design/business-club-6.jpg'
     ]
   },
+  'anime-club': {
+    title: 'Anime Club',
+    meta: 'Animation · Calendar · Manga · Led and art-directed by Chloe Lee, with artwork by club members.',
+    description: '',
+    thumbs: true,
+    images: [
+      'images/design/anime-club-animation.jpg',
+      'images/design/anime-club-calendar.jpg',
+      'images/design/anime-club-manga.jpg'
+    ]
+  },
   'drama-club': {
     title: 'Drama Club',
     meta: 'Ticket Design · The Little Match Girl · Grade 10',
@@ -1064,7 +1075,7 @@ const worksData = {
   },
   'specimen-of-absence': {
     title: 'Specimen of Absence',
-    meta: 'Lee, Chloe. <em>Specimen of Absence</em>. 2026. Vitrine; Oil Pastel, Modelling Paste, Acrylic Paint, Found Objects. 60 × 45 cm.',
+    meta: 'Lee, Chloe. <em>Specimen of Absence</em>. 2026. Vitrine; Oil Pastel, Modelling Paste, Acrylic Paint, Found Objects. 60 × 45 × 20 cm.',
     description: 'A prismatic skeleton crouches inside a white shadow box vitrine, surrounded at its base by empty pill blister packs and a strip of photographic prints. The companion piece renders the same figure in charcoal grey, color stripped back to structure.<br><br>The display format is borrowed from scientific and museum presentation: the vitrine, the isolated specimen, the clinical white frame. By placing the skeleton within this context, the work reframes a symbol of death as an object of study: a contemporary memento mori that carries the symbolic and emotional weight institutional display assigns to its specimens.<br><br>Absence asserts itself as loudly as presence. The missing flesh, the hollow pills, the faces preserved on film. What is visible is always shaped by what is no longer there.',
     images: [
       'images/art/specimen-1.jpg',

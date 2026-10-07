@@ -150,6 +150,10 @@ section.active { display: block; }
 .design-ticket:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.5); }
 .drama-row { display: flex; gap: 0.9rem; max-width: 900px; }
 .drama-row .design-ticket { flex: 1 1 0; min-width: 0; margin-bottom: 0; }
+.anime-row { display: flex; gap: 0.9rem; flex-wrap: wrap; align-items: flex-start; }
+.anime-row .design-item { height: 230px; width: auto; aspect-ratio: auto; border-radius: 6px; flex: 0 0 auto; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.anime-row .design-item img { width: auto; height: 100%; object-fit: contain; }
+.anime-row .design-item:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.5); }
 .design-club-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; align-items: start; }
 .design-club-columns > .design-box { margin-bottom: 0; }
 .design-event .design-row, .design-box.club-box .design-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.7rem; }
@@ -659,7 +663,7 @@ section.active { display: block; }
       <img src="images/art/specimen-1.jpg" alt="Specimen of Absence" loading="lazy" decoding="async">
       <div class="overlay">
         <div class="overlay-title">Specimen of Absence</div>
-        <div class="overlay-medium">2026 · Oil Pastel, Modelling Paste, Acrylic, Found Objects · Vitrine · 60 × 45 cm</div>
+        <div class="overlay-medium">2026 · Oil Pastel, Modelling Paste, Acrylic, Found Objects · Vitrine · 60 × 45 × 20 cm</div>
       </div>
     </div>
     <div class="gallery-item gi-big" data-work="noctilucent">
@@ -967,6 +971,16 @@ section.active { display: block; }
     <div class="drama-row">
       <div class="design-ticket" data-work="drama-club" data-index="0"><img src="images/design/drama-club-1.jpg" alt="Drama Club · The Little Match Girl ticket 1" loading="lazy" decoding="async"></div>
       <div class="design-ticket" data-work="drama-club" data-index="1"><img src="images/design/drama-club-2.jpg" alt="Drama Club · The Little Match Girl ticket 2" loading="lazy" decoding="async"></div>
+    </div>
+  </div>
+
+  <div class="design-box">
+    <div class="design-box-head"><span class="design-box-title">Anime Club</span><span class="design-box-meta">Animation · Calendar · Manga</span></div>
+    <p class="design-event-note">Club projects led and art-directed by Chloe, with artwork produced collaboratively by club members.</p>
+    <div class="anime-row">
+      <div class="design-item" data-work="anime-club" data-index="0"><img src="images/design/anime-club-animation.jpg" alt="Anime Club · Animation" loading="lazy" decoding="async"><div class="overlay"><div class="overlay-title">Animation</div></div></div>
+      <div class="design-item" data-work="anime-club" data-index="1"><img src="images/design/anime-club-calendar.jpg" alt="Anime Club · Calendar illustration" loading="lazy" decoding="async"><div class="overlay"><div class="overlay-title">Calendar</div></div></div>
+      <div class="design-item" data-work="anime-club" data-index="2"><img src="images/design/anime-club-manga.jpg" alt="Anime Club · Manga cover · All Saints Are Dead" loading="lazy" decoding="async"><div class="overlay"><div class="overlay-title">Manga Cover</div></div></div>
     </div>
   </div>
 
