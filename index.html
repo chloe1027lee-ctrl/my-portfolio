@@ -287,6 +287,8 @@ section.active { display: block; }
 .cosplay-feature-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; filter: saturate(1.08) brightness(1.03); opacity: 1; transition: opacity 0.18s ease; }
 .cosplay-feature-thumb.swapping img { opacity: 0; }
 .cosplay-feature-badge { position: absolute; left: 0; bottom: 0; background: rgba(0,0,0,0.72); color: #e8e2d9; font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.4rem 0.6rem; }
+.cosplay-feature-scroll { position: absolute; left: 0; right: 0; top: 0; background: rgba(0,0,0,0.78); color: #e8e2d9; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.55rem 0.6rem; text-align: center; opacity: 0; transform: translateY(-100%); transition: opacity 0.25s ease, transform 0.25s ease; pointer-events: none; }
+.cosplay-feature-scroll.show { opacity: 1; transform: translateY(0); }
 .cosplay-feature-name { font-size: 1.05rem; font-weight: bold; letter-spacing: 0.04em; color: #e8e2d9; margin-top: 0.85rem; }
 .cosplay-feature-sub { font-size: 0.72rem; letter-spacing: 0.06em; color: #9a9a9a; margin-top: 0.3rem; line-height: 1.55; }
 .cosplay-feature-hint { font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: #6a6a6a; margin-top: 0.7rem; }
@@ -1317,7 +1319,7 @@ section.active { display: block; }
       <a href="https://www.facebook.com/klchloe102/" target="_blank">↗ Facebook · Kuroi Chan</a>
     </div>
     <div class="cosplay-chat">
-      <div class="cosplay-bubble">Hover a cosplay for a quick look, click to keep it open! Not everything's here, so check my socials!</div>
+      <div class="cosplay-bubble">Hover a cosplay for a quick look, then click to open the full set — scroll down to see all the photos! Not everything's here, so check my socials!</div>
       <div class="cosplay-avatar"><img src="images/chloe-avatar.jpg?v=1" alt="Chloe" loading="lazy" decoding="async"></div>
     </div>
   </div>

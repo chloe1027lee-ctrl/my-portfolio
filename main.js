@@ -1479,7 +1479,7 @@ document.addEventListener('keydown', e => {
   const feature = document.createElement('div');
   feature.className = 'cosplay-feature';
   feature.innerHTML =
-    '<div class="cosplay-feature-thumb"><img alt=""><span class="cosplay-feature-badge"></span></div>' +
+    '<div class="cosplay-feature-thumb"><img alt=""><span class="cosplay-feature-badge"></span><span class="cosplay-feature-scroll"></span></div>' +
     '<div class="cosplay-feature-name"></div>' +
     '<div class="cosplay-feature-sub"></div>' +
     '<div class="cosplay-feature-hint"></div>';
@@ -1494,6 +1494,7 @@ document.addEventListener('keydown', e => {
   const fName = feature.querySelector('.cosplay-feature-name');
   const fSub = feature.querySelector('.cosplay-feature-sub');
   const fHint = feature.querySelector('.cosplay-feature-hint');
+  const fScroll = feature.querySelector('.cosplay-feature-scroll');
 
   let featKey = null, swapTimer = null;
   function setFeature(tile, instant) {
@@ -1530,6 +1531,9 @@ document.addEventListener('keydown', e => {
     const tile = covers.find(c => c.dataset.cat === key);
     setFeature(tile, featKey === null);
     fHint.textContent = (pinned === key) ? 'Pinned · click again to close' : 'Click to open the set';
+    const pinnedTile = covers.find(c => c.dataset.cat === pinned);
+    fScroll.textContent = pinnedTile ? '↓ Scroll down for all ' + pinnedTile.dataset.badge.replace(' photos', ' photos').replace('Behind the Scenes', 'the behind-the-scenes shots') : '';
+    fScroll.classList.toggle('show', !!pinned);
     const active = panels.find(p => p.dataset.cat === pinned);
     if (active) {
       const st = active.querySelector('.cosplay-panel-state');
