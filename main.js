@@ -658,7 +658,7 @@ const worksData = {
   },
   'diesel': {
     title: 'Diesel',
-    meta: '動漫遊戲展 Wing Stage AniMkt · March 22, 2025',
+    meta: 'Goddess of Victory: Nikke · Diesel · 動漫遊戲展 Wing Stage AniMkt · March 22, 2025',
     description: '',
     thumbs: false,
     images: [
