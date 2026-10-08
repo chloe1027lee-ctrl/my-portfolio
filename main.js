@@ -577,7 +577,7 @@ const worksData = {
   },
   'dorothy': {
     title: 'Dorothy',
-    meta: '2025高雄駁二動漫祭 FFK18 · December 13, 2025',
+    meta: 'Goddess of Victory: Nikke · Dorothy · 2025高雄駁二動漫祭 FFK18 · December 13, 2025',
     description: '',
     thumbs: false,
     images: [
@@ -689,6 +689,16 @@ const worksData = {
       'images/cosplay/kurumi-tokisaki-1.jpg','images/cosplay/kurumi-tokisaki-2.jpg','images/cosplay/kurumi-tokisaki-3.jpg',
       'images/cosplay/kurumi-tokisaki-4.jpg','images/cosplay/kurumi-tokisaki-5.jpg','images/cosplay/kurumi-tokisaki-6.jpg',
       'images/cosplay/kurumi-tokisaki-7.jpg','images/cosplay/kurumi-tokisaki-8.jpg','images/cosplay/kurumi-tokisaki-9.jpg'
+    ]
+  },
+  'suigintou': {
+    title: 'Suigintou',
+    meta: 'Rozen Maiden · Suigintou · 【CWT-K44】高雄場 · March 10, 2024',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/cosplay/suigintou-1.jpg','images/cosplay/suigintou-2.jpg','images/cosplay/suigintou-3.jpg',
+      'images/cosplay/suigintou-4.jpg','images/cosplay/suigintou-5.jpg','images/cosplay/suigintou-6.jpg'
     ]
   },
   'ms-model': {
@@ -1418,7 +1428,8 @@ document.addEventListener('keydown', e => {
     { key: 'kinako',           sub: '幻日祭 · Nov 2024' },
     { key: 'megurine-luka',    sub: 'KICA 高雄國際動漫節 · Oct 2024' },
     { key: 'yae-miko',         sub: 'KICA 高雄國際動漫節 · Oct 2024' },
-    { key: 'kurumi-tokisaki',  sub: '【CWT-K45】高雄場 · Aug 2024' }
+    { key: 'kurumi-tokisaki',  sub: '【CWT-K45】高雄場 · Aug 2024' },
+    { key: 'suigintou',        sub: '【CWT-K44】高雄場 · Mar 2024' }
   ];
 
   const row = document.createElement('div');
