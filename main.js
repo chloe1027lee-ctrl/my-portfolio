@@ -915,7 +915,7 @@ const worksData = {
   },
   'anime-club': {
     title: 'Anime Club',
-    meta: 'Animation · Calendar · Manga · Led and art-directed by the exec team, with artwork by club members.',
+    meta: 'Animation · Calendar · Manga · Led and art-directed by the exec team, with artwork by club members. Manga cover illustrated by a club member.',
     description: '',
     thumbs: true,
     images: [
