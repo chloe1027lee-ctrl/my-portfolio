@@ -656,6 +656,18 @@ const worksData = {
       'images/cosplay/rapi-red-hood-24.jpg'
     ]
   },
+  'diesel': {
+    title: 'Diesel',
+    meta: '動漫遊戲展 Wing Stage AniMkt · March 22, 2025',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/cosplay/diesel-1.jpg','images/cosplay/diesel-2.jpg','images/cosplay/diesel-3.jpg',
+      'images/cosplay/diesel-4.jpg','images/cosplay/diesel-5.jpg','images/cosplay/diesel-6.jpg',
+      'images/cosplay/diesel-7.jpg','images/cosplay/diesel-8.jpg','images/cosplay/diesel-9.jpg',
+      'images/cosplay/diesel-10.jpg','images/cosplay/diesel-11.jpg'
+    ]
+  },
   'megurine-luka': {
     title: 'Megurine Luka',
     meta: 'Vocaloid · Megurine Luka · KICA 高雄國際動漫節 · October 12, 2024',
@@ -1398,6 +1410,7 @@ document.addEventListener('keydown', e => {
     { key: 'arcana',           sub: '【CWT-K48】高雄場 · Sep 2025' },
     { key: 'pekora',           sub: 'acosta 「アコスタ！」 · May 2025' },
     { key: 'blanc-shoot',       sub: '二三室攝影棚 · May 2025' },
+    { key: 'diesel',           sub: '動漫遊戲展 Wing Stage AniMkt · Mar 2025' },
     { key: 'rem-yukata',       sub: '【CWT-K47】高雄場 · Mar 2025' },
     { key: 'nino',             sub: '(WS49) 永集動漫遊戲展 · Feb 2025' },
     { key: 'rizu-kyun',        sub: '開拓動漫祭 FF44 · Feb 2025' },
