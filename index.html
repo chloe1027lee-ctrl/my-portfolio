@@ -1873,7 +1873,14 @@ function show(id) {
   applyBackground(id);
   window.scrollTo(0,0);
   if (id === 'cosplay') { setupCosplayScrollbar(); hintCosplayScroll(); }
-  if (id === 'art' && window.layoutGalleryMasonry) { requestAnimationFrame(window.layoutGalleryMasonry); }
+  // Grids measure to zero height while their section is hidden, so whichever
+  // section just became visible has to be laid out again. This used to run
+  // for the art tab only, which left the journal tiles at a default height
+  // with a block of background showing under each photo.
+  requestAnimationFrame(function () {
+    if (window.layoutGalleryMasonry) window.layoutGalleryMasonry();
+    if (window.layoutJustifiedGallery) window.layoutJustifiedGallery();
+  });
 }
 
 // Custom always-visible scrollbar under the cover row (macOS hides the native
