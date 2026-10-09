@@ -1906,3 +1906,49 @@ window.layoutGalleryMasonry = layoutGalleryMasonry;
   });
   layoutGalleryMasonry();
 })();
+
+/* ── JAPANESE STUDY LOG ──
+   Pulls recent posts from the blog's public API and renders them in the site's
+   own styling, rather than embedding the blog in an iframe (which would carry
+   WordPress's free-plan ad bar and a nested scrollbar). Posts are images of
+   handwritten notes with no body text, so each card is the note plus its date,
+   linking through to the post. If the request fails the section hides itself,
+   leaving the read-the-log link to stand on its own. */
+(function buildStudyLog() {
+  const grid = document.getElementById('study-grid');
+  const state = document.getElementById('study-state');
+  if (!grid || !state) return;
+
+  const COUNT = 12;
+  const API = 'https://public-api.wordpress.com/rest/v1.1/sites/myjapanese5.wordpress.com/posts/'
+    + '?number=' + COUNT + '&fields=title,date,URL,content';
+
+  const fmt = iso => {
+    const d = new Date(iso);
+    return isNaN(d) ? '' : d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+  };
+
+  fetch(API)
+    .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)))
+    .then(data => {
+      const posts = (data && data.posts) || [];
+      const cards = posts.map(p => {
+        const m = /<img[^>]+src="([^"]+)"/.exec(p.content || '');
+        if (!m) return '';
+        // Ask the CDN for a sensibly sized copy instead of the full upload.
+        const src = m[1].split('?')[0] + '?w=600';
+        const date = fmt(p.date);
+        return '<a class="study-card" href="' + p.URL + '" target="_blank" rel="noopener">' +
+          '<div class="study-thumb"><img src="' + src + '" alt="Study notes, ' + date + '" loading="lazy" decoding="async"></div>' +
+          '<div class="study-date">' + date + '</div>' +
+        '</a>';
+      }).filter(Boolean);
+
+      if (!cards.length) { state.remove(); return; }
+      grid.innerHTML = cards.join('');
+      const total = data.found || posts.length;
+      state.textContent = 'Showing the ' + cards.length + ' most recent of ' + total + ' entries.';
+      state.style.cssText = 'font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:#777;margin-bottom:1rem;';
+    })
+    .catch(() => { state.remove(); });
+})();

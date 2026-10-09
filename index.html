@@ -461,6 +461,21 @@ section.active { display: block; }
 
 /* JOURNAL */
 .journal-intro { font-size: 0.95rem; line-height: 1.75; color: #b3b3b3; max-width: 660px; margin: -1.4rem 0 2.4rem; letter-spacing: 0.005em; font-style: italic; }
+.study-head { display: flex; align-items: baseline; gap: 1.2rem; flex-wrap: wrap; font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase; color: #888; font-weight: bold; padding: 2.8rem 0 1.2rem; border-top: 1px solid #1e1e1e; margin-top: 2.6rem; }
+.study-note { font-size: 0.62rem; letter-spacing: 0.25em; color: #666; font-style: italic; }
+.study-intro { font-size: 0.95rem; line-height: 1.75; color: #b3b3b3; max-width: 660px; margin: -0.4rem 0 1.6rem; }
+.study-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.8rem; }
+.study-card { display: block; text-decoration: none; cursor: none; }
+.study-thumb { position: relative; width: 100%; aspect-ratio: 3/4; overflow: hidden; border: 1px solid #1e1e1e; background: #0c0c0c; transition: border-color 0.2s; }
+.study-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.35s; }
+.study-card:hover .study-thumb { border-color: #e8e2d9; }
+.study-card:hover .study-thumb img { transform: scale(1.04); }
+.study-date { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: #9a9a9a; margin-top: 0.45rem; }
+.study-card:hover .study-date { color: #e8e2d9; }
+.study-state { font-size: 0.8rem; color: #777; letter-spacing: 0.04em; }
+.study-more { display: inline-block; margin-top: 1.4rem; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: #b5b5b5; text-decoration: none; border-bottom: 1px solid #2a2a2a; padding-bottom: 0.25rem; cursor: none; }
+.study-more:hover { color: #e8e2d9; border-color: #e8e2d9; }
+@media (max-width: 600px) { .study-grid { grid-template-columns: repeat(auto-fill, minmax(125px, 1fr)); gap: 0.55rem; } }
 
 /* CONTACT */
 
@@ -1642,6 +1657,16 @@ section.active { display: block; }
       </div>
     </div>
   </div>
+
+  <div class="study-head" id="study-log">
+    <span>Japanese Study Log</span>
+    <span class="study-note">Ongoing · JLPT N2</span>
+  </div>
+  <p class="study-intro">Pages from my daily Japanese practice, posted as I go.</p>
+  <div class="study-state" id="study-state">Loading recent entries…</div>
+  <div class="study-grid" id="study-grid"></div>
+  <a class="study-more" href="https://myjapanese5.wordpress.com/" target="_blank" rel="noopener">↗ Read the full study log</a>
+
 </section>
 
 <!-- ABOUT -->
@@ -1992,7 +2017,7 @@ function spawnParticle(x, y) {
   setTimeout(() => p.remove(), 1000);
 }
 </script>
-<script src="main.js?v=43"></script>
+<script src="main.js?v=44"></script>
 <script src="liquid.js"></script>
 </body>
 </html>
