@@ -1878,6 +1878,7 @@ function createParticleField(canvas) {
    fill gaps instead of sitting in aligned rows. .gi-big items span 2 columns. */
 function layoutGalleryMasonry() {
   document.querySelectorAll('.gallery-grid').forEach(function (grid) {
+    if (grid.classList.contains('gallery-grid--justified')) return; // laid out in rows instead
     var cs = getComputedStyle(grid);
     var rowH = parseFloat(cs.gridAutoRows) || 8;
     var gap = parseFloat(cs.rowGap || cs.gap) || 10;
@@ -1951,4 +1952,126 @@ window.layoutGalleryMasonry = layoutGalleryMasonry;
       state.style.cssText = 'font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:#777;margin-bottom:1rem;';
     })
     .catch(() => { state.remove(); });
+})();
+
+/* ── JUSTIFIED ART GALLERY ──
+   Column masonry fills top-to-bottom in document order, so the columns finish
+   at different heights and the grid ends on a ragged edge. These grids are laid
+   out in rows instead: every row is scaled to fill the width exactly, which
+   flattens the bottom and closes the gaps between tiles without cropping any
+   artwork. Featured pieces carry extra weight so they still read as larger. */
+(function justifiedGallery() {
+  var TARGET_H = 420;   // preferred row height before a row is fitted to width
+  var MAX_H    = 520;   // stops a short final row from ballooning
+  var BIG_BOOST = 1.45; // how much wider .gi-big pieces sit in their row
+
+  function ratioOf(item) {
+    var img = item.querySelector('img');
+    var r = (img && img.naturalWidth && img.naturalHeight)
+      ? img.naturalWidth / img.naturalHeight
+      : 1;
+    if (item.classList.contains('gi-big')) r *= BIG_BOOST;
+    return Math.max(0.3, Math.min(r, 4));
+  }
+
+  function unwrapRows(grid) {
+    Array.prototype.slice.call(grid.querySelectorAll('.gallery-row')).forEach(function (re) {
+      while (re.firstChild) grid.insertBefore(re.firstChild, re);
+      re.remove();
+    });
+  }
+
+  function layoutGrid(grid) {
+    // Measure before touching the DOM. A pass that runs while the section is
+    // hidden measures zero, and unwrapping first would tear down a good layout
+    // and leave nothing in its place.
+    var width = Math.floor(grid.getBoundingClientRect().width);
+    if (width <= 0) return;
+
+    var items = Array.prototype.slice.call(grid.querySelectorAll('.gallery-item'));
+    if (!items.length) return;
+    var gap = parseFloat(getComputedStyle(grid).columnGap) || 12;
+
+    // Narrow screens fall back to a single column; rows of one look wrong.
+    if (width < 560) {
+      unwrapRows(grid);
+      items.forEach(function (it) { it.style.width = ''; it.style.height = ''; });
+      return;
+    }
+
+    // Items live inside per-row wrappers. Relying on flex-wrap with explicit
+    // pixel widths is unreliable at the edges; an explicit row element cannot
+    // be split, so every row ends exactly where it is told to.
+    unwrapRows(grid);
+    items = Array.prototype.slice.call(grid.querySelectorAll('.gallery-item'));
+
+    var ratios = items.map(ratioOf);
+    var totalR = ratios.reduce(function (a, b) { return a + b; }, 0);
+    var rowCount = Math.max(1, Math.round(totalR * TARGET_H / width));
+    var perRow = totalR / rowCount;
+
+    var rows = [], cur = [], curSum = 0;
+    ratios.forEach(function (r, i) {
+      cur.push({ el: items[i], r: r });
+      curSum += r;
+      var roomLeft = rowCount - rows.length - 1;
+      if (curSum >= perRow && roomLeft > 0 && items.length - i - 1 >= roomLeft) {
+        rows.push({ items: cur, sum: curSum });
+        cur = []; curSum = 0;
+      }
+    });
+    if (cur.length) rows.push({ items: cur, sum: curSum });
+
+    // One piece stretched across the full width reads as a banner rather than
+    // part of the grid, so pull a neighbour down to keep it company.
+    if (rows.length > 1) {
+      var tail = rows[rows.length - 1];
+      var above = rows[rows.length - 2];
+      if (tail.items.length === 1 && above.items.length > 2) {
+        var moved = above.items.pop();
+        above.sum -= moved.r;
+        tail.items.unshift(moved);
+        tail.sum += moved.r;
+      }
+    }
+
+    rows.forEach(function (r) {
+      var avail = width - gap * (r.items.length - 1);
+      var h = avail / r.sum;
+      if (h > MAX_H) h = MAX_H;   // object-fit absorbs a sparse row
+      var rowEl = document.createElement('div');
+      rowEl.className = 'gallery-row';
+      rowEl.style.gap = gap + 'px';
+      var used = 0;
+      r.items.forEach(function (o, i) {
+        var isLast = (i === r.items.length - 1);
+        // Floor all but the last tile, then give the last the exact remainder,
+        // so each row fills its width without ever exceeding it.
+        var w = isLast ? Math.max(1, avail - used) : Math.floor(o.r * h);
+        used += w;
+        o.el.style.width = w + 'px';
+        o.el.style.height = Math.round(h) + 'px';
+        o.el.style.gridRowEnd = '';
+        rowEl.appendChild(o.el);
+      });
+      grid.appendChild(rowEl);
+    });
+  }
+
+  function layoutAll() {
+    document.querySelectorAll('.gallery-grid--justified').forEach(layoutGrid);
+  }
+
+  window.layoutJustifiedGallery = layoutAll;
+
+  var t;
+  function schedule() { clearTimeout(t); t = setTimeout(layoutAll, 80); }
+  window.addEventListener('resize', schedule);
+  window.addEventListener('load', layoutAll);
+  document.querySelectorAll('.gallery-grid--justified img').forEach(function (img) {
+    if (img.complete) return;
+    img.addEventListener('load', schedule);
+    img.addEventListener('error', schedule);
+  });
+  layoutAll();
 })();
