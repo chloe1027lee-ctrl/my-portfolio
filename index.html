@@ -1883,10 +1883,14 @@ function show(id) {
   // section just became visible has to be laid out again. This used to run
   // for the art tab only, which left the journal tiles at a default height
   // with a block of background showing under each photo.
-  requestAnimationFrame(function () {
+  var relayout = function () {
     if (window.layoutGalleryMasonry) window.layoutGalleryMasonry();
     if (window.layoutJustifiedGallery) window.layoutJustifiedGallery();
-  });
+  };
+  // Both passes are idempotent, and rAF can be starved in a background tab, so
+  // a timer backs it up rather than leaving the grid unlaid.
+  requestAnimationFrame(relayout);
+  setTimeout(relayout, 120);
 }
 
 // Custom always-visible scrollbar under the cover row (macOS hides the native
