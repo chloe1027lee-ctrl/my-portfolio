@@ -1974,29 +1974,36 @@ window.layoutGalleryMasonry = layoutGalleryMasonry;
     return Math.max(0.3, Math.min(r, 4));
   }
 
-  function layoutGrid(grid) {
-    // Items live inside per-row wrappers. Relying on flex-wrap with explicit
-    // pixel widths is unreliable at the edges; an explicit row element cannot
-    // be split, so every row ends exactly where it is told to.
-    var rowsEls = Array.prototype.slice.call(grid.querySelectorAll('.gallery-row'));
-    if (rowsEls.length) {
-      rowsEls.forEach(function (re) {
-        while (re.firstChild) grid.insertBefore(re.firstChild, re);
-        re.remove();
-      });
-    }
-    var items = Array.prototype.slice.call(grid.querySelectorAll('.gallery-item'));
-    if (!items.length) return;
+  function unwrapRows(grid) {
+    Array.prototype.slice.call(grid.querySelectorAll('.gallery-row')).forEach(function (re) {
+      while (re.firstChild) grid.insertBefore(re.firstChild, re);
+      re.remove();
+    });
+  }
 
+  function layoutGrid(grid) {
+    // Measure before touching the DOM. A pass that runs while the section is
+    // hidden measures zero, and unwrapping first would tear down a good layout
+    // and leave nothing in its place.
     var width = Math.floor(grid.getBoundingClientRect().width);
     if (width <= 0) return;
+
+    var items = Array.prototype.slice.call(grid.querySelectorAll('.gallery-item'));
+    if (!items.length) return;
     var gap = parseFloat(getComputedStyle(grid).columnGap) || 12;
 
     // Narrow screens fall back to a single column; rows of one look wrong.
     if (width < 560) {
+      unwrapRows(grid);
       items.forEach(function (it) { it.style.width = ''; it.style.height = ''; });
       return;
     }
+
+    // Items live inside per-row wrappers. Relying on flex-wrap with explicit
+    // pixel widths is unreliable at the edges; an explicit row element cannot
+    // be split, so every row ends exactly where it is told to.
+    unwrapRows(grid);
+    items = Array.prototype.slice.call(grid.querySelectorAll('.gallery-item'));
 
     var ratios = items.map(ratioOf);
     var totalR = ratios.reduce(function (a, b) { return a + b; }, 0);
