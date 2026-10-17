@@ -1970,20 +1970,20 @@ window.layoutGalleryMasonry = layoutGalleryMasonry;
    Column masonry fills top-to-bottom in document order, so the columns finish
    at different heights and the grid ends on a ragged edge. These grids are laid
    out in rows instead: every row is scaled to fill the width exactly, which
-   flattens the bottom and closes the gaps between tiles without cropping any
-   artwork. Featured pieces carry extra weight so they still read as larger. */
+   flattens the bottom and closes the gaps between tiles. Each tile keeps its
+   picture's own proportions, so nothing is cropped to make a row fit. */
 (function justifiedGallery() {
   var TARGET_H = 420;   // preferred row height before a row is fitted to width
-  var MAX_H    = 520;   // stops a short final row from ballooning
-  var BIG_BOOST = 1.45; // how much wider .gi-big pieces sit in their row
+  var MAX_H    = 520;   // stops a sparse final row from ballooning
 
   function ratioOf(item) {
     var img = item.querySelector('img');
     var r = (img && img.naturalWidth && img.naturalHeight)
       ? img.naturalWidth / img.naturalHeight
       : 1;
-    if (item.classList.contains('gi-big')) r *= BIG_BOOST;
-    return Math.max(0.3, Math.min(r, 4));
+    // The true aspect ratio, so the tile matches the picture and object-fit
+    // has nothing to trim. Weighting a piece wider here would crop it.
+    return Math.max(0.2, Math.min(r, 6));
   }
 
   function unwrapRows(grid) {
@@ -2047,10 +2047,13 @@ window.layoutGalleryMasonry = layoutGalleryMasonry;
       }
     }
 
-    rows.forEach(function (r) {
+    rows.forEach(function (r, ri) {
       var avail = width - gap * (r.items.length - 1);
       var h = avail / r.sum;
-      if (h > MAX_H) h = MAX_H;   // object-fit absorbs a sparse row
+      // Only a sparse final row is capped. It then sits at its natural width
+      // rather than having its last tile stretched, which would crop that one.
+      var fill = true;
+      if (ri === rows.length - 1 && h > MAX_H) { h = MAX_H; fill = false; }
       var rowEl = document.createElement('div');
       rowEl.className = 'gallery-row';
       rowEl.style.gap = gap + 'px';
@@ -2059,7 +2062,7 @@ window.layoutGalleryMasonry = layoutGalleryMasonry;
         var isLast = (i === r.items.length - 1);
         // Floor all but the last tile, then give the last the exact remainder,
         // so each row fills its width without ever exceeding it.
-        var w = isLast ? Math.max(1, avail - used) : Math.floor(o.r * h);
+        var w = (isLast && fill) ? Math.max(1, avail - used) : Math.round(o.r * h);
         used += w;
         o.el.style.width = w + 'px';
         o.el.style.height = Math.round(h) + 'px';
