@@ -1138,7 +1138,9 @@ const worksData = {
       'images/art/specimen-2.jpg',
       'images/art/specimen-3.jpg',
       'images/art/specimen-4.jpg',
-      'images/art/specimen-5.jpg'
+      'images/art/specimen-5.jpg',
+      'images/art/specimen-6.jpg',
+      'images/art/specimen-7.jpg'
     ]
   },
   'club-magazine': {
