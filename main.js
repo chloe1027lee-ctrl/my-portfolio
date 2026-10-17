@@ -832,6 +832,18 @@ const worksData = {
       'images/art/untitled-plate-3.jpg'
     ]
   },
+  'cheki': {
+    title: 'Cheki · Charity Series',
+    meta: 'Lee, Chloe. <em>Cheki</em>. 2025. Paint Pen and Deco Stickers on Instant Film. 86 × 54 mm each.',
+    description: 'Instant photos from my own cosplay shoots, drawn over by hand with paint pen and finished with deco stickers, then sold. Every piece is one of a kind, and all the proceeds went to the Love and Hope Child Care Center (愛與希望兒少關懷中心).',
+    thumbs: true,
+    images: [
+      'images/art/cheki-1.jpg','images/art/cheki-2.jpg','images/art/cheki-3.jpg',
+      'images/art/cheki-4.jpg','images/art/cheki-5.jpg','images/art/cheki-6.jpg',
+      'images/art/cheki-7.jpg','images/art/cheki-8.jpg','images/art/cheki-9.jpg',
+      'images/art/cheki-10.jpg','images/art/cheki-11.jpg'
+    ]
+  },
   'journal': {
     title: 'Journal Pages',
     meta: 'Lee, Chloe. <em>Journal Pages</em>. 2022–2026. Sketchbook.',
