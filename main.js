@@ -227,6 +227,13 @@ const worksData = {
       'images/fashion/fashion-ref-5.jpg'
     ]
   },
+  'club-collage-2': {
+    title: 'KAS Cosplay Club',
+    meta: 'Yearbook photo collage · 2024/2025',
+    description: '',
+    thumbs: false,
+    images: ['images/cosplay/club-collage-2.jpg']
+  },
   'club-collage': {
     title: 'KAS Cosplay Club',
     meta: 'Club photo collage',
