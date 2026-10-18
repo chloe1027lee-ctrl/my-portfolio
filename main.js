@@ -425,6 +425,18 @@ const worksData = {
       'images/cosplay/kinako-17.jpg'
     ]
   },
+  'hsin': {
+    title: 'Hsin',
+    meta: 'Wuthering Waves · Hsin · 伊頓婚紗工作室 ETON WEDDING · October 09, 2026',
+    description: 'Studio photoshoot at 伊頓婚紗工作室 (ETON Wedding), Kaohsiung. 5 hours total.',
+    thumbs: false,
+    images: [
+      'images/cosplay/hsin-1.jpg','images/cosplay/hsin-2.jpg','images/cosplay/hsin-3.jpg',
+      'images/cosplay/hsin-4.jpg','images/cosplay/hsin-5.jpg','images/cosplay/hsin-6.jpg',
+      'images/cosplay/hsin-7.jpg','images/cosplay/hsin-8.jpg','images/cosplay/hsin-9.jpg',
+      'images/cosplay/hsin-10.jpg','images/cosplay/hsin-11.jpg','images/cosplay/hsin-12.jpg'
+    ]
+  },
   'blanc': {
     title: 'Blanc',
     meta: 'Goddess of Victory: Nikke · Blanc · 高雄動漫城 KACG2606 · June 14, 2026',
@@ -1423,6 +1435,7 @@ document.addEventListener('keydown', e => {
 
   // Display order + a short caption for each cover (full meta comes from worksData)
   const cats = [
+    { key: 'hsin',             sub: '伊頓婚紗工作室 ETON WEDDING · Oct 2026' },
     { key: 'blanc',            sub: '高雄動漫城 KACG2606 · Jun 2026' },
     { key: 'nikke-cinderella', sub: 'acosta 「アコスタ！」· Apr 2026' },
     { key: 'rapi-red-hood',    sub: 'CWT-K50 高雄場 · Mar 2026' },
