@@ -202,6 +202,10 @@ section.active { display: block; }
 .mag-shelf-cover--wip.no-img img { display: none; }
 .mag-shelf-cover--wip.no-img::after { content: "Cover Coming Soon"; font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: #444; text-align: center; padding: 0 1rem; }
 .mag-shelf-wip-overlay { position: absolute; top: 0.8rem; left: 0.8rem; font-size: 0.52rem; letter-spacing: 0.22em; text-transform: uppercase; color: #e8e2d9; background: rgba(0,0,0,0.7); padding: 0.25rem 0.6rem; border: 1px solid #333; }
+/* Read-the-issue link inside the lightbox: larger than the body copy and
+   lit so it reads as the thing to click. */
+.lb-read { display: inline-block; margin-top: 0.4rem; color: #e8e2d9; font-size: 0.98rem; letter-spacing: 0.1em; text-decoration: none; padding-bottom: 0.2rem; border-bottom: 1px solid rgba(232,226,217,0.45); text-shadow: 0 0 14px rgba(232,226,217,0.45); transition: text-shadow 0.25s ease, border-color 0.25s ease, color 0.25s ease; }
+.lb-read:hover { color: #fff; border-bottom-color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.85), 0 0 26px rgba(232,226,217,0.6); }
 .mag-shelf-hover { position: absolute; inset: 0; background: rgba(0,0,0,0.55); display: flex; align-items: center; justify-content: center; font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: #e8e2d9; opacity: 0; transition: opacity 0.25s; }
 .mag-shelf-item:hover .mag-shelf-hover { opacity: 1; }
 .mag-shelf-label { text-align: center; }
@@ -2150,7 +2154,7 @@ function spawnParticle(x, y) {
   setTimeout(() => p.remove(), 1000);
 }
 </script>
-<script src="main.js?v=55"></script>
+<script src="main.js?v=56"></script>
 <script src="liquid.js"></script>
 </body>
 </html>

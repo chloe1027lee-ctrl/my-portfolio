@@ -1188,7 +1188,7 @@ const worksData = {
   'club-magazine': {
     title: 'KAS Cosplay Club Magazine · Volume 1',
     meta: 'Kaohsiung American School Cosplay Club · Vol. 1 · 2024/2025',
-    description: 'The official magazine of the KAS Cosplay Club, the first cosplay club at Kaohsiung American School, founded by Chloe Lee.<br><br>Volume 1 documents the founding year: member introductions, photoshoot process, makeup breakdowns, and contact lens guides. Also covers the club\'s community service collaboration with the Love and Hope Child Care Center (愛與希望兒少關懷中心). A physical copy was placed in the school library.<br><br>Conceived, designed, and produced by Chloe Lee, with personal sections by club members.<br><br><a href="https://canva.link/kascosplayclub2425mag" target="_blank" style="color:#e8e2d9;letter-spacing:0.1em;text-decoration:underline;font-size:0.8rem;">↗ Read Volume 1</a>',
+    description: 'The official magazine of the KAS Cosplay Club, the first cosplay club at Kaohsiung American School, founded by Chloe Lee.<br><br>Volume 1 documents the founding year: member introductions, photoshoot process, makeup breakdowns, and contact lens guides. Also covers the club\'s community service collaboration with the Love and Hope Child Care Center (愛與希望兒少關懷中心). A physical copy was placed in the school library.<br><br>Conceived, designed, and produced by Chloe Lee, with personal sections by club members.<br><br><a href="https://canva.link/kascosplayclub2425mag" target="_blank" class="lb-read">↗ Read Volume 1</a>',
     images: [
       'images/design/kas-mag-1.jpg',
       'images/design/kas-mag-2.jpg',
@@ -1207,7 +1207,7 @@ const worksData = {
   'club-magazine-vol2': {
     title: 'KAS Cosplay Club Magazine · Volume 2',
     meta: 'Kaohsiung American School Cosplay Club · Vol. 2 · 2025/2026',
-    description: 'Volume 2 of the KAS Cosplay Club Magazine, a step forward in design and scope.<br><br>Covers member profiles, a bakery-themed photoshoot, makeup guides, and the club\'s Fall Festival participation. Also features the proper introduction of ラムネちゃん (Ramune-chan), the club\'s original mascot, with an illustration by Chloe Lee.<br><br>Distributed to the entire school via the weekly newsletter and placed in the school library.<br><br>Conceived, designed, and produced by Chloe Lee, with personal sections by club members.<br><a href="https://canva.link/kascosplayclub202526mag" target="_blank" style="color:#e8e2d9;letter-spacing:0.1em;text-decoration:underline;font-size:0.8rem;">↗ Read Volume 2</a>',
+    description: 'Volume 2 of the KAS Cosplay Club Magazine, a step forward in design and scope.<br><br>Covers member profiles, a bakery-themed photoshoot, makeup guides, and the club\'s Fall Festival participation. Also features the proper introduction of ラムネちゃん (Ramune-chan), the club\'s original mascot, with an illustration by Chloe Lee.<br><br>Distributed to the entire school via the weekly newsletter and placed in the school library.<br><br>Conceived, designed, and produced by Chloe Lee, with personal sections by club members.<br><a href="https://canva.link/kascosplayclub202526mag" target="_blank" class="lb-read">↗ Read Volume 2</a>',
     images: [
       'images/design/kas-mag2-1.jpg',
       'images/design/kas-mag2-2.jpg',
