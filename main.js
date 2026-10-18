@@ -714,6 +714,28 @@ const worksData = {
       'images/cosplay/suigintou-4.jpg','images/cosplay/suigintou-5.jpg','images/cosplay/suigintou-6.jpg'
     ]
   },
+  'liliel': {
+    title: 'Liliel',
+    meta: 'NCF 成大同人場 · May 18, 2025',
+    description: '',
+    thumbs: false,
+    images: [
+      'images/cosplay/liliel-1.jpg','images/cosplay/liliel-2.jpg','images/cosplay/liliel-3.jpg',
+      'images/cosplay/liliel-4.jpg','images/cosplay/liliel-5.jpg','images/cosplay/liliel-6.jpg',
+      'images/cosplay/liliel-7.jpg','images/cosplay/liliel-8.jpg','images/cosplay/liliel-9.jpg'
+    ]
+  },
+  'nino-shoot': {
+    title: 'Nakano Nino',
+    meta: 'Photographer: <a href="https://www.facebook.com/5idereal" target="_blank" rel="noopener" style="color:#cfc9bf;text-decoration:underline;">Enfeng Tsao</a> (<a href="https://www.instagram.com/5idereal._/" target="_blank" rel="noopener" style="color:#cfc9bf;text-decoration:underline;">Instagram</a>) · SKM Park Outlets, Kaohsiung · January 19, 2025',
+    description: 'Outdoor photoshoot at SKM Park Outlets, Kaohsiung. Photographed by Enfeng Tsao. 8 hours total.',
+    thumbs: false,
+    images: [
+      'images/cosplay/nino-shoot-1.jpg','images/cosplay/nino-shoot-2.jpg','images/cosplay/nino-shoot-3.jpg',
+      'images/cosplay/nino-shoot-4.jpg','images/cosplay/nino-shoot-5.jpg','images/cosplay/nino-shoot-6.jpg',
+      'images/cosplay/nino-shoot-7.jpg','images/cosplay/nino-shoot-8.jpg','images/cosplay/nino-shoot-9.jpg'
+    ]
+  },
   'ms-model': {
     title: 'The M&S Man',
     meta: 'London Pride · Soho Street Parties · June 2025 · Sony A6400 · Lightroom',
@@ -1447,11 +1469,13 @@ document.addEventListener('keydown', e => {
     { key: 'blanc-kica',       sub: 'KICA 高雄國際動漫節 · Oct 2025' },
     { key: 'arcana',           sub: '【CWT-K48】高雄場 · Sep 2025' },
     { key: 'pekora',           sub: 'acosta 「アコスタ！」 · May 2025' },
+    { key: 'liliel',           sub: 'NCF 成大同人場 · May 2025' },
     { key: 'blanc-shoot',       sub: '二三室攝影棚 · May 2025' },
     { key: 'diesel',           sub: '動漫遊戲展 Wing Stage AniMkt · Mar 2025' },
     { key: 'rem-yukata',       sub: '【CWT-K47】高雄場 · Mar 2025' },
     { key: 'nino',             sub: '(WS49) 永集動漫遊戲展 · Feb 2025' },
     { key: 'rizu-kyun',        sub: '開拓動漫祭 FF44 · Feb 2025' },
+    { key: 'nino-shoot',       sub: 'SKM Park Outlets · Jan 2025' },
     { key: 'shizuku',          sub: '駁二動漫祭同人誌創作展 · Dec 2024' },
     { key: 'kinako',           sub: '幻日祭 · Nov 2024' },
     { key: 'megurine-luka',    sub: 'KICA 高雄國際動漫節 · Oct 2024' },
