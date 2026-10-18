@@ -440,22 +440,37 @@ section.active { display: block; }
 @keyframes cueBob { 0%,100% { bottom: 2rem; } 50% { bottom: 1.4rem; } }
 
 .cosplay-resume { margin-top: 4.5rem; }
-.cosplay-resume-section-title { font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: #777; margin-bottom: 2rem; padding-bottom: 0.8rem; border-bottom: 1px solid #1a1a1a; }
-.cosplay-resume-year-block { display: grid; grid-template-columns: 72px 1fr; gap: 0 2rem; margin-bottom: 0.5rem; }
-.cosplay-resume-year { font-size: 0.62rem; letter-spacing: 0.2em; color: #777; padding-top: 0.65rem; text-transform: uppercase; }
+.cosplay-resume-section-title { font-size: 0.74rem; letter-spacing: 0.32em; text-transform: uppercase; color: #b5b5b5; margin-bottom: 2rem; padding-bottom: 0.8rem; border-bottom: 1px solid #242424; }
+.cosplay-resume-year-block { display: grid; grid-template-columns: 84px 1fr; gap: 0 2rem; margin-bottom: 0.5rem; }
+.cosplay-resume-year { font-size: 0.78rem; letter-spacing: 0.18em; color: #cfc9bf; font-weight: bold; padding-top: 0.75rem; text-transform: uppercase; }
 .cosplay-resume-entries { display: flex; flex-direction: column; }
-.cosplay-resume-row { display: grid; grid-template-columns: 210px 1fr 90px; gap: 1rem; padding: 0.6rem 0; border-bottom: 1px solid #1a1a1a; align-items: baseline; }
-.cosplay-resume-character { font-size: 0.72rem; letter-spacing: 0.07em; color: #d8d2c9; }
-.cosplay-resume-event { font-size: 0.65rem; letter-spacing: 0.04em; color: #888; }
-.cosplay-resume-date { font-size: 0.62rem; letter-spacing: 0.1em; color: #777; text-align: right; }
-.cosplay-resume-note { font-size: 0.62rem; letter-spacing: 0.15em; color: #666; font-style: italic; margin: 0.3rem 0 0.8rem; }
+.cosplay-resume-row { display: grid; grid-template-columns: 240px 1fr 110px; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid #1e1e1e; align-items: baseline; }
+.cosplay-resume-character { font-size: 0.88rem; letter-spacing: 0.05em; color: #e8e2d9; }
+.cosplay-resume-event { font-size: 0.8rem; letter-spacing: 0.03em; color: #aba59c; }
+.cosplay-resume-date { font-size: 0.74rem; letter-spacing: 0.08em; color: #96918a; text-align: right; }
+.cosplay-resume-note { font-size: 0.74rem; letter-spacing: 0.12em; color: #938e86; font-style: italic; margin: 0.4rem 0 0.9rem; }
 
 .cosplay-shoots { margin-top: 3rem; }
-.cosplay-shoot-row { display: grid; grid-template-columns: 200px 1fr 120px; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid #0d0d0d; align-items: baseline; }
+.cosplay-shoot-row { display: grid; grid-template-columns: 230px 1fr 130px; gap: 1rem; padding: 0.85rem 0; border-bottom: 1px solid #1e1e1e; align-items: baseline; }
 .cosplay-shoot-club { grid-template-columns: 70px 170px 1fr 120px; }
-.cosplay-shoot-label { font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase; color: #666; }
-.cosplay-shoot-character { font-size: 0.72rem; letter-spacing: 0.07em; color: #aaa; }
-.cosplay-shoot-detail { font-size: 0.62rem; letter-spacing: 0.04em; color: #777; }
+.cosplay-shoot-label { font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase; color: #cfc9bf; }
+.cosplay-shoot-character { font-size: 0.88rem; letter-spacing: 0.05em; color: #e8e2d9; }
+.cosplay-shoot-detail { font-size: 0.8rem; letter-spacing: 0.03em; color: #aba59c; }
+@media (max-width: 700px) {
+  /* Fixed columns do not fit a phone, so each entry stacks: name and date on
+     one line, the event underneath. */
+  .cosplay-resume-year-block { grid-template-columns: 1fr; gap: 0; }
+  .cosplay-resume-year { padding-top: 1.4rem; }
+  .cosplay-resume-row { grid-template-columns: minmax(0, 1fr) auto; gap: 0.15rem 0.8rem; }
+  .cosplay-resume-character { grid-column: 1; grid-row: 1; }
+  .cosplay-resume-date { grid-column: 2; grid-row: 1; }
+  .cosplay-resume-event { grid-column: 1 / -1; grid-row: 2; }
+  .cosplay-shoot-row { grid-template-columns: minmax(0, 1fr) auto; gap: 0.15rem 0.8rem; }
+  .cosplay-shoot-label { grid-column: 1 / -1; }
+  .cosplay-shoot-character { grid-column: 1; }
+  .cosplay-shoot-row .cosplay-resume-date { grid-column: 2; }
+  .cosplay-shoot-detail { grid-column: 1 / -1; }
+}
 
 /* MAGAZINE */
 .mag-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1px; background: #1a1a1a; }
