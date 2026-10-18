@@ -236,7 +236,7 @@ const worksData = {
   },
   'club-collage': {
     title: 'KAS Cosplay Club',
-    meta: 'Club photo collage',
+    meta: 'Yearbook photo collage · 2025/2026',
     description: '',
     thumbs: false,
     images: ['images/cosplay/club-collage.jpg']
