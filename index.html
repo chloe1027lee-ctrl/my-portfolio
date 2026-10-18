@@ -378,7 +378,10 @@ section.active { display: block; }
 @media (max-width: 760px) { .club-mags-row .mag-shelf-item { flex: 0 1 45%; } .club-collage-wrap { flex: 1 1 100%; } }
 .club-collage:hover img { transform: scale(1.02); }
 /* A collage shown on the shelf is presented exactly like a magazine cover,
-   but keeps the page's own proportions so nothing is cropped away. */
+   but keeps the page's own proportions so nothing is cropped away. The page
+   is squarer than a 2/3 cover, so the tile is grown by the same factor
+   (1.5 x 1696/2400) and its bottom edge lands level with the volumes. */
+.club-mags-row .mag-shelf-item--collage { flex: 1.0604 1 0; }
 .mag-shelf-cover--collage { aspect-ratio: 1696 / 2400; }
 .club-collage-hint { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); padding: 2.5rem 1rem 0.9rem; font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: #e8e2d9; opacity: 0; transition: opacity 0.25s; text-align: right; }
 .club-collage:hover .club-collage-hint { opacity: 1; }
@@ -694,7 +697,7 @@ section.active { display: block; }
           </button>
           <div class="mag-shelf-label"><div class="mag-shelf-title">Yearbook Design</div><div class="mag-shelf-issue">Photo Collage</div></div>
         </div>
-        <div class="mag-shelf-item" data-work="club-collage-2">
+        <div class="mag-shelf-item mag-shelf-item--collage" data-work="club-collage-2">
           <div class="mag-shelf-cover mag-shelf-cover--collage"><img src="images/cosplay/club-collage-2.jpg" alt="KAS Cosplay Club yearbook collage 2024/2025" loading="lazy" decoding="async"><div class="mag-shelf-hover">Open ↗</div></div>
           <div class="mag-shelf-label"><div class="mag-shelf-title">Yearbook Design</div><div class="mag-shelf-issue">2024/2025</div></div>
         </div>
