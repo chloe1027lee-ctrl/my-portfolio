@@ -352,6 +352,9 @@ nav { z-index: 100; }
   object-fit: contain;
   object-position: center;
   display: block;
+  /* The grids tint their thumbnails, so without this a piece visibly dulls
+     the moment it is opened. */
+  filter: saturate(1.25);
 }
 
 .lightbox-thumbs {
@@ -373,6 +376,7 @@ nav { z-index: 100; }
   width: 54px;
   height: 54px;
   object-fit: cover;
+  filter: saturate(1.25);
   opacity: 0.4;
   cursor: pointer;
   transition: opacity 0.2s;

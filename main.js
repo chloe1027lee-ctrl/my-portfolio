@@ -830,7 +830,8 @@ const worksData = {
       'images/art/elan-vital-4.jpg',
       'images/art/elan-vital-5.jpg',
       'images/art/elan-vital-6.jpg',
-      'images/art/elan-vital-7.jpg'
+      'images/art/elan-vital-7.jpg',
+      'images/art/elan-vital-8.jpg'
     ]
   },
   'scintilla': {
