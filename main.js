@@ -2034,7 +2034,7 @@ window.layoutGalleryMasonry = layoutGalleryMasonry;
 (function justifiedGallery() {
   var TARGET_H = 420;   // preferred row height before a row is fitted to width
   var MAX_H    = 520;   // stops a sparse final row from ballooning
-  var LEAD_PER_ROW = 2; // pieces sharing a row with a .gi-lead piece
+  var LEAD_PER_ROW = 3; // pieces sharing a row with a .gi-lead piece
 
   function ratioOf(item) {
     var img = item.querySelector('img');
