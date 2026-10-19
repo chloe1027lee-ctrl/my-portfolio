@@ -2034,7 +2034,6 @@ window.layoutGalleryMasonry = layoutGalleryMasonry;
 (function justifiedGallery() {
   var TARGET_H = 420;   // preferred row height before a row is fitted to width
   var MAX_H    = 520;   // stops a sparse final row from ballooning
-  var LEAD_PER_ROW = 3; // pieces sharing a row with a .gi-lead piece
 
   function ratioOf(item) {
     var img = item.querySelector('img');
@@ -2082,24 +2081,14 @@ window.layoutGalleryMasonry = layoutGalleryMasonry;
     var rowCount = Math.max(1, Math.round(totalR * TARGET_H / width));
     var perRow = totalR / rowCount;
 
-    var rows = [], cur = [], curSum = 0, curHasLead = false;
+    var rows = [], cur = [], curSum = 0;
     ratios.forEach(function (r, i) {
-      // A lead piece gets a sparse row so it is drawn larger. Widening a tile
-      // beyond its picture would only crop it, so the row carries fewer pieces
-      // instead. Start a fresh row for the lead, then close it early.
-      var lead = items[i].classList.contains('gi-lead');
-      if (lead && cur.length) {
-        rows.push({ items: cur, sum: curSum });
-        cur = []; curSum = 0; curHasLead = false;
-      }
       cur.push({ el: items[i], r: r });
       curSum += r;
-      if (lead) curHasLead = true;
       var roomLeft = rowCount - rows.length - 1;
-      var closeForLead = curHasLead && cur.length >= LEAD_PER_ROW;
-      if ((closeForLead || curSum >= perRow) && roomLeft > 0 && items.length - i - 1 >= roomLeft) {
+      if (curSum >= perRow && roomLeft > 0 && items.length - i - 1 >= roomLeft) {
         rows.push({ items: cur, sum: curSum });
-        cur = []; curSum = 0; curHasLead = false;
+        cur = []; curSum = 0;
       }
     });
     if (cur.length) rows.push({ items: cur, sum: curSum });
