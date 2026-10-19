@@ -851,6 +851,18 @@ const worksData = {
       'images/art/scintilla-10.jpg'
     ]
   },
+  'mycelium': {
+    title: 'Mycelium',
+    meta: 'Lee, Chloe. <em>Mycelium</em>. 2026. Acrylic and Fluorescent Paint on Canvas, UV Activated. 143 × 112 cm.',
+    description: 'Psychedelic imagery interests me because the eye struggles to settle on a single point. I wanted to recreate this instability on a large scale, layering, scraping, and splattering fluorescent paint until forms began to obscure one another.<br><br>As the composition grew denser, branching black lines reminded me of mycelium, fungal threads that spread largely unseen. I extended these lines across the canvas, then stretched nylon stockings over the surface to create another network. The translucent fibers interrupt the saturated colors, while openings reveal fragments of the painting beneath. I wanted the viewer\'s attention to keep shifting between these overlapping layers.',
+    thumbs: true,
+    images: [
+      'images/art/mycelium-1.jpg',
+      'images/art/mycelium-2.jpg',
+      'images/art/mycelium-3.jpg',
+      'images/art/mycelium-4.jpg'
+    ]
+  },
   'syzygy': {
     title: 'Syzygy',
     meta: 'Lee, Chloe. <em>Syzygy</em>. 2026. Acrylic Paint and Gloss Medium. UV Reactive. 60 × 60 cm.',
@@ -2022,6 +2034,7 @@ window.layoutGalleryMasonry = layoutGalleryMasonry;
 (function justifiedGallery() {
   var TARGET_H = 420;   // preferred row height before a row is fitted to width
   var MAX_H    = 520;   // stops a sparse final row from ballooning
+  var LEAD_PER_ROW = 2; // pieces sharing a row with a .gi-lead piece
 
   function ratioOf(item) {
     var img = item.querySelector('img');
@@ -2069,14 +2082,24 @@ window.layoutGalleryMasonry = layoutGalleryMasonry;
     var rowCount = Math.max(1, Math.round(totalR * TARGET_H / width));
     var perRow = totalR / rowCount;
 
-    var rows = [], cur = [], curSum = 0;
+    var rows = [], cur = [], curSum = 0, curHasLead = false;
     ratios.forEach(function (r, i) {
+      // A lead piece gets a sparse row so it is drawn larger. Widening a tile
+      // beyond its picture would only crop it, so the row carries fewer pieces
+      // instead. Start a fresh row for the lead, then close it early.
+      var lead = items[i].classList.contains('gi-lead');
+      if (lead && cur.length) {
+        rows.push({ items: cur, sum: curSum });
+        cur = []; curSum = 0; curHasLead = false;
+      }
       cur.push({ el: items[i], r: r });
       curSum += r;
+      if (lead) curHasLead = true;
       var roomLeft = rowCount - rows.length - 1;
-      if (curSum >= perRow && roomLeft > 0 && items.length - i - 1 >= roomLeft) {
+      var closeForLead = curHasLead && cur.length >= LEAD_PER_ROW;
+      if ((closeForLead || curSum >= perRow) && roomLeft > 0 && items.length - i - 1 >= roomLeft) {
         rows.push({ items: cur, sum: curSum });
-        cur = []; curSum = 0;
+        cur = []; curSum = 0; curHasLead = false;
       }
     });
     if (cur.length) rows.push({ items: cur, sum: curSum });

@@ -716,7 +716,7 @@ section.active { display: block; }
   <div class="section-header">Art</div>
   <p class="art-hint">↗ Click any piece to see more photos and details.</p>
   <div class="gallery-grid gallery-grid--justified">
-    <div class="gallery-item gi-big" data-work="elan-vital">
+    <div class="gallery-item gi-big gi-lead" data-work="elan-vital">
       <img src="images/art/elan-vital-1.jpg" alt="Élan Vital" loading="lazy" decoding="async">
       <div class="overlay">
         <div class="overlay-title">Élan Vital</div>
@@ -742,6 +742,13 @@ section.active { display: block; }
       <div class="overlay">
         <div class="overlay-title">Noctilucent</div>
         <div class="overlay-medium">2026 · Acrylic Pour, Silicone Oil · UV Activated · 53 × 45 cm × 2 (Diptych)</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-work="mycelium">
+      <img src="images/art/mycelium-1.jpg" alt="Mycelium" loading="lazy" decoding="async">
+      <div class="overlay">
+        <div class="overlay-title">Mycelium</div>
+        <div class="overlay-medium">2026 · Acrylic, Fluorescent Paint on Canvas · UV Activated · 143 × 112 cm</div>
       </div>
     </div>
     <div class="gallery-item" data-work="syzygy">
@@ -2154,7 +2161,7 @@ function spawnParticle(x, y) {
   setTimeout(() => p.remove(), 1000);
 }
 </script>
-<script src="main.js?v=57"></script>
+<script src="main.js?v=59"></script>
 <script src="liquid.js"></script>
 </body>
 </html>
