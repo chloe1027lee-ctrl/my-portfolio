@@ -442,7 +442,7 @@ const worksData = {
       'images/cosplay/hsin-4.jpg','images/cosplay/hsin-5.jpg','images/cosplay/hsin-6.jpg',
       'images/cosplay/hsin-7.jpg','images/cosplay/hsin-8.jpg','images/cosplay/hsin-9.jpg',
       'images/cosplay/hsin-10.jpg','images/cosplay/hsin-11.jpg','images/cosplay/hsin-12.jpg',
-      'images/cosplay/hsin-13.jpg'
+      'images/cosplay/hsin-13.jpg','images/cosplay/hsin-14.jpg'
     ]
   },
   'blanc': {
