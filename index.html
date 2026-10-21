@@ -390,7 +390,7 @@ section.active { display: block; }
 .club-feature-eyebrow { font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; color: #888; font-weight: bold; margin-bottom: 0.6rem; }
 .club-feature-title { font-size: 1.8rem; font-weight: bold; letter-spacing: 0.04em; text-transform: uppercase; color: #e8e2d9; margin-bottom: 0.4rem; line-height: 1.05; }
 .club-feature-sub { font-size: 0.66rem; letter-spacing: 0.15em; color: #777; }
-.club-feature-main { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.club-feature-main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem; align-items: start; }
 .club-feature-left { display: flex; flex-direction: column; gap: 1.5rem; }
 .club-feature-left .club-more { margin-top: 0.3rem; }
 .club-feature-left .club-ig-card { max-width: none; }
@@ -414,8 +414,10 @@ section.active { display: block; }
 .club-feature-photo { position: relative; display: block; width: 100%; padding: 0; border: 1px solid #1e1e1e; background: #111; overflow: hidden; cursor: pointer; font-family: inherit; }
 .club-feature-photo img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform 0.5s; filter: saturate(1.06) brightness(1.03); }
 .club-feature-photo:hover img { transform: scale(1.03); }
-.club-privacy-note { grid-column: 1; font-size: 0.72rem; letter-spacing: 0.04em; color: #8f8f8f; font-style: italic; margin: 0.7rem 0 0; line-height: 1.6; }
-@media (max-width: 900px) { .club-privacy-note { grid-column: auto; } }
+/* The note rides with the photo in one grid cell. As a third grid child it
+   would start a new row and push the text column down. */
+.club-feature-photo-col { display: flex; flex-direction: column; min-width: 0; }
+.club-privacy-note { font-size: 0.72rem; letter-spacing: 0.04em; color: #8f8f8f; font-style: italic; margin: 0.7rem 0 0; line-height: 1.6; }
 .club-feature-photo-hint { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.78)); padding: 2.5rem 1rem 0.9rem; font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: #e8e2d9; opacity: 0; transition: opacity 0.25s; text-align: right; }
 .club-feature-photo:hover .club-feature-photo-hint { opacity: 1; }
 .club-feature-text { padding-top: 0.2rem; }
@@ -460,7 +462,7 @@ section.active { display: block; }
 .club-gallery-item { position: relative; overflow: hidden; border-radius: 7px; background: #111; cursor: pointer; aspect-ratio: 1/1; }
 .club-gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.45s ease, filter 0.45s ease; filter: saturate(1.06) brightness(1.02); }
 .club-gallery-item:hover img { transform: scale(1.06); filter: saturate(1.14) brightness(1.06); }
-@media (max-width: 900px) { .club-feature-main { grid-template-columns: 1fr; gap: 1.6rem; } .club-feature-left { max-width: 440px; } .club-feature-intro { grid-template-columns: 1fr; gap: 1.6rem; } }
+@media (max-width: 900px) { .club-feature-main { grid-template-columns: minmax(0, 1fr); gap: 1.6rem; } .club-feature-left { max-width: 440px; } .club-feature-intro { grid-template-columns: 1fr; gap: 1.6rem; } }
 @media (max-width: 560px) { .club-gallery { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); } }
 
 /* Club feature living on the Home page (full-bleed panel below the hero) */
@@ -648,11 +650,13 @@ section.active { display: block; }
       <div class="club-feature-sub">Kaohsiung American School · The first cosplay club on campus</div>
     </div>
     <div class="club-feature-main">
-      <button type="button" class="club-feature-photo" data-work="kas-club" data-index="0">
-        <img src="images/cosplay/club-1.jpg" alt="KAS Cosplay Club group photo" loading="lazy" decoding="async">
-        <span class="club-feature-photo-hint">View all photos ↗</span>
-      </button>
-      <p class="club-privacy-note">Some faces are covered to protect the privacy of the children involved.</p>
+      <div class="club-feature-photo-col">
+        <button type="button" class="club-feature-photo" data-work="kas-club" data-index="0">
+          <img src="images/cosplay/club-1.jpg" alt="KAS Cosplay Club group photo" loading="lazy" decoding="async">
+          <span class="club-feature-photo-hint">View all photos ↗</span>
+        </button>
+        <p class="club-privacy-note">Some faces are covered to protect the privacy of the children involved.</p>
+      </div>
       <div class="club-feature-text">
         <p class="club-feature-desc">I founded KAS Cosplay Club because cosplay had given me so much happiness: a space to create freely, grow more confident, and connect with people who loved what I loved. I wanted to share that feeling, not keep it to myself. What began as a club for students to explore cosplay grew into something more meaningful: bringing characters to life for children at the Love and Hope Child Care Center (愛與希望兒少關懷中心) through costumes, games, dance, and photography. Watching something that made me happy become a source of happiness for someone else changed what cosplay meant to me. The club grew into more than a creative community: a way to turn something I love into something I could give.</p>
         <div class="club-stats">
