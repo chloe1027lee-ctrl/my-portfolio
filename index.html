@@ -200,9 +200,11 @@ section.active { display: block; }
 
 /* ABOUT */
 .about-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); gap: 4rem; align-items: start; }
-.about-photo { aspect-ratio: 3/4; background: #111; border: 1px solid #222; overflow: hidden; }
+/* No fixed ratio: the frame takes the photo's own shape, so nothing is
+   cropped and a future portrait of any proportion still fits. */
+.about-photo { background: #111; border: 1px solid #222; overflow: hidden; line-height: 0; }
 @media (max-width: 760px) { .about-grid { grid-template-columns: minmax(0, 1fr); gap: 2rem; } .about-photo { max-width: 360px; } }
-.about-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(15%); }
+.about-photo img { width: 100%; height: auto; display: block; filter: grayscale(15%); }
 .about-text h2 { font-size: 2.5rem; font-weight: bold; margin-bottom: 0.3rem; line-height: 1.1; text-transform: uppercase; letter-spacing: 0.05em; }
 .about-text .about-role { font-size: 0.74rem; letter-spacing: 0.2em; text-transform: uppercase; color: #a8a8a8; margin-bottom: 2rem; font-weight: bold; }
 .about-text p { font-size: 1rem; line-height: 1.85; color: #bbb; margin-bottom: 1.2rem; }
