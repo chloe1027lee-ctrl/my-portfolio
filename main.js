@@ -836,7 +836,7 @@ const worksData = {
   },
   'scintilla': {
     title: 'Scintilla',
-    meta: 'Lee, Chloe. <em>Scintilla</em>. 2026. Aluminium Wire, Mesh, and Iridescent Film. Site-Specific Installation. 86.4 × 78.7 × 30.5 cm.',
+    meta: 'Lee, Chloe. <em>Scintilla</em>. 2026. Aluminium Wire, Mesh, and Iridescent Film. Site-Specific Installation. 30.5 × 78.7 × 86.4 cm (H × W × D).',
     description: 'Scintilla is a large-scale wire sculpture of a mosquito, built from aluminium wire, mesh, and iridescent film and installed on top of the locker unit in the KAS locker hallway. It began with a simple observation: many students avoid their lockers, one reason being mosquitoes, which thrive in Taiwan\'s warm, humid air and are usually met with annoyance and discomfort. I was struck by how something so small could provoke such a large psychological response.<br><br>By scaling the insect to monumental size, I let it become something else. Under the light the iridescent film shifts between blue, green, purple, and orange, so what reads as threatening from a distance turns unexpectedly beautiful up close, then unsettling again. An enlarged, distorted shadow stretches across the wall and ceiling, mirroring how fear magnifies our perception. Scintilla asks whether the fear was ever really about the insect, or about what we project onto things we choose not to look at closely.',
     thumbs: true,
     images: [
@@ -1109,7 +1109,7 @@ const worksData = {
   },
   'penumbra': {
     title: 'Penumbra',
-    meta: 'Lee, Chloe. <em>Penumbra</em>. 2026. Oil Pastel, Acrylic Paint, Neon Fluorescent Paint, Modelling Paste, Resin, Linseed Oil and Mixed Media on Paper, UV Reactive. 57.5 × 14 cm. Mounted in constructed box frame.',
+    meta: 'Lee, Chloe. <em>Penumbra</em>. 2026. Oil Pastel, Acrylic Paint, Neon Fluorescent Paint, Modelling Paste, Resin, Linseed Oil and Mixed Media on Paper, UV Reactive. 60 × 45 × 20 cm (H × W × D). Mounted in constructed box frame.',
     description: 'Penumbra takes its title from the region of partial shadow at the edge of total darkness: not fully concealed, not fully visible, caught in between. Where Behind the Pink examined concealment performed for others, Penumbra moves inward. The figure is no longer performing for an audience; she is alone in a midnight bedroom where social pressure dissolves and the mind turns over itself: each possible decision, each unresolved identity, each future self coexisting without resolution.<br><br>A single figure inhabits a pitch black ground of burnished oil pastel dissolved with linseed oil, its density enacting the weight of the night. A diffuse pink halo reads both as a residue of innocence and as an unwanted spotlight: even alone, she remains seen. Her neon body, built from layered oil pastel and fluorescent acrylic dripped downward with pouring medium, gives each color a distinct, simultaneous unresolved self occupying the same form.<br><br>Modelling paste beneath the drips raises the forms off the surface, the texture enacting thoughts that overflow and consume the figure. The box frame seals her inside, referencing Hsu Shu Han\'s framing of the girl under the gaze, while the resin surface and vibrant palette carry the seductive pull of Damien Hirst.<br><br>Under UV light the work activates completely: what seemed contained is revealed in full intensity, the surface finally showing what the figure has been holding.',
     images: [
       'images/art/penumbra-1.jpg',
@@ -1186,7 +1186,7 @@ const worksData = {
   },
   'specimen-of-absence': {
     title: 'Specimen of Absence',
-    meta: 'Lee, Chloe. <em>Specimen of Absence</em>. 2025. Vitrine; Oil Pastel, Modelling Paste, Acrylic Paint, Found Objects. 60 × 45 × 20 cm.',
+    meta: 'Lee, Chloe. <em>Specimen of Absence</em>. 2025. Vitrine; Oil Pastel, Modelling Paste, Acrylic Paint, Found Objects. 60 × 45 × 30 cm (H × W × D).',
     description: 'A prismatic skeleton crouches inside a white shadow box vitrine, surrounded at its base by empty pill blister packs and a strip of photographic prints. The companion piece renders the same figure in charcoal grey, color stripped back to structure.<br><br>The display format is borrowed from scientific and museum presentation: the vitrine, the isolated specimen, the clinical white frame. By placing the skeleton within this context, the work reframes a symbol of death as an object of study: a contemporary memento mori that carries the symbolic and emotional weight institutional display assigns to its specimens.<br><br>Absence asserts itself as loudly as presence. The missing flesh, the hollow pills, the faces preserved on film. What is visible is always shaped by what is no longer there.',
     images: [
       'images/art/specimen-1.jpg',
