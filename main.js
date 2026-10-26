@@ -2150,3 +2150,68 @@ window.layoutGalleryMasonry = layoutGalleryMasonry;
   });
   layoutAll();
 })();
+
+/* ── CLUB FEATURE PHOTO ROTATOR ──
+   Crossfades the big club photo between a few shots. The base image keeps
+   defining the frame and a second layer fades in over it, so the box never
+   moves and the rest of the page does not shift. Clicking still opens the
+   lightbox, now at whichever photo is showing. */
+(function rotateClubFeaturePhoto() {
+  var btn = document.querySelector('.club-feature-photo');
+  if (!btn || typeof worksData === 'undefined') return;
+  var work = worksData[btn.dataset.work];
+  if (!work || !work.images || work.images.length < 2) return;
+
+  var HOLD = 5000;      // time each photo is held
+  var FADE = 900;       // must match the css transition
+
+  // Chosen shots, by their position in the set. Keeping the real index means a
+  // click still opens the lightbox on whichever photo is showing.
+  var PICKED = [0, 5, 7, 10, 15, 17, 18, 22, 27];
+  var shots = PICKED.filter(function (n) { return work.images[n]; })
+                    .map(function (n) { return { src: work.images[n], idx: n }; });
+  if (shots.length < 2) return;
+  var base = btn.querySelector('img');
+  if (!base) return;
+
+  var fade = document.createElement('img');
+  fade.className = 'club-feature-fade';
+  fade.alt = '';
+  fade.setAttribute('aria-hidden', 'true');
+  fade.decoding = 'async';
+  base.insertAdjacentElement('afterend', fade);
+
+  // Warm the cache so a fade never reveals a half-loaded photo.
+  shots.forEach(function (s) { var p = new Image(); p.src = s.src; });
+
+  var i = 0, timer = null, running = false;
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function step() {
+    var next = (i + 1) % shots.length;
+    fade.src = shots[next].src;
+    var swap = function () {
+      base.src = shots[next].src;
+      btn.dataset.index = String(shots[next].idx);
+      fade.classList.remove('show');
+      i = next;
+      timer = setTimeout(step, HOLD);
+    };
+    if (still) { swap(); return; }
+    fade.classList.add('show');
+    setTimeout(swap, FADE);
+  }
+
+  function start() { if (!running) { running = true; timer = setTimeout(step, HOLD); } }
+  function stop() { running = false; clearTimeout(timer); }
+
+  // Only run while the photo is on screen and the tab is in front.
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.isIntersecting && !document.hidden ? start() : stop(); });
+    }, { threshold: 0.2 }).observe(btn);
+  } else {
+    start();
+  }
+  document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
+})();

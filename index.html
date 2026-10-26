@@ -416,6 +416,11 @@ section.active { display: block; }
 .club-collage:hover .club-collage-hint { opacity: 1; }
 .club-feature-photo { position: relative; display: block; width: 100%; padding: 0; border: 1px solid #1e1e1e; background: #111; overflow: hidden; cursor: pointer; font-family: inherit; }
 .club-feature-photo img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform 0.5s; filter: saturate(1.06) brightness(1.03); }
+/* Second layer for the crossfade. The base image keeps defining the box, so
+   the frame never moves while the photos change. */
+.club-feature-photo .club-feature-fade { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; opacity: 0; transition: opacity 0.9s ease; pointer-events: none; }
+.club-feature-photo .club-feature-fade.show { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .club-feature-photo .club-feature-fade { transition: none; } }
 .club-feature-photo:hover img { transform: scale(1.03); }
 /* The note rides with the photo in one grid cell. As a third grid child it
    would start a new row and push the text column down. */
@@ -2193,7 +2198,7 @@ function spawnParticle(x, y) {
   setTimeout(() => p.remove(), 1000);
 }
 </script>
-<script src="main.js?v=68"></script>
+<script src="main.js?v=70"></script>
 <script src="liquid.js"></script>
 </body>
 </html>
