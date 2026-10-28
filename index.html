@@ -443,10 +443,28 @@ section.active { display: block; }
 .club-feature-photo:hover .club-feature-photo-hint { opacity: 1; }
 .club-feature-text { padding-top: 0.2rem; }
 .club-feature-desc { font-size: 0.9rem; line-height: 1.9; color: #b0aaa0; margin-bottom: 1.6rem; }
+.club-feature-note { font-size: 0.84rem; line-height: 1.85; color: #cfc9bf; border-left: 2px solid #3a3a3a; padding-left: 1.05rem; margin: 0 0 1.7rem; }
 .club-stats { display: flex; gap: 2.2rem; flex-wrap: wrap; margin-bottom: 1.7rem; padding: 1.1rem 0; border-top: 1px solid #1e1e1e; border-bottom: 1px solid #1e1e1e; }
 .club-stat b { display: block; font-size: 1.35rem; font-weight: bold; color: #e8e2d9; letter-spacing: 0.02em; }
 .club-stat span { display: block; font-size: 0.54rem; letter-spacing: 0.18em; text-transform: uppercase; color: #777; margin-top: 0.35rem; }
 .club-links { display: flex; flex-direction: column; gap: 1.05rem; align-items: center; }
+.club-stats-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.3rem 2rem; padding: 1.1rem 0; border-top: 1px solid #1e1e1e; border-bottom: 1px solid #1e1e1e; margin-bottom: 1.6rem; }
+.club-stats-row .club-stats { margin: 0; padding: 0; border: none; }
+.club-stats-row .club-links { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0.9rem; }
+.club-stats-row .club-ig-chip { gap: 0.6rem; padding: 0.4rem 0.5rem; }
+.club-stats-row .club-ig-chip .club-ig-avatar { width: 42px; height: 42px; }
+.club-stats-row .club-ig-chip .club-ig-chip-handle { font-size: 0.82rem; }
+.club-stats-row .club-ig-chip .club-ig-follow { font-size: 0.72rem; padding: 0.44rem 1rem; }
+.club-stats-row .club-links a { font-size: 0.72rem; padding: 0.66rem 1.25rem; }
+@media (max-width: 640px) {
+  .club-stats-row .club-ig-chip { gap: 0.38rem; padding: 0.3rem 0.38rem; max-width: 100%; }
+  .club-stats-row .club-ig-chip .club-ig-avatar { width: 32px; height: 32px; }
+  .club-stats-row .club-ig-chip .club-ig-chip-handle { font-size: 0.64rem; }
+  .club-stats-row .club-ig-chip .club-ig-follow { font-size: 0.6rem; padding: 0.34rem 0.7rem; }
+  .club-stats-row .club-links a { font-size: 0.66rem; padding: 0.6rem 1rem; }
+}
+.club-chat { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.7rem; }
+.club-chat .cosplay-bubble { font-size: 0.85rem; max-width: none; flex: 1 1 auto; min-width: 0; }
 .club-links a { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: #cfc9bf; text-decoration: none; font-weight: bold; border: 1px solid #3a3a3a; padding: 0.78rem 1.6rem; border-radius: 999px; transition: color 0.2s, background 0.2s, border-color 0.2s; cursor: pointer; }
 .club-links a:hover { color: #0a0a0a; background: #e8e2d9; border-color: #e8e2d9; }
 .club-more { margin-top: 2.6rem; }
@@ -680,18 +698,24 @@ section.active { display: block; }
       </div>
       <div class="club-feature-text">
         <p class="club-feature-desc">I founded KAS Cosplay Club because cosplay had brought me so much happiness. It gave me the freedom to create while helping me become more confident and connect with people who shared my interests. I wanted to share that feeling rather than keep it to myself. Although the club initially provided a space for students to explore cosplay together, its purpose gradually extended outside our school. Through visits to the Love and Hope Child Care Center (愛與希望兒少關懷中心), we brought characters to life for children through costumes and interactive activities, including dance and language learning. Watching something that made me happy become a source of happiness for others changed what cosplay meant to me. The club became more than a creative community; it gave me a way to turn something I loved into something I could give.</p>
-        <div class="club-stats">
-          <div class="club-stat"><b>40+</b><span>Volunteer Hours</span></div>
-          <div class="club-stat"><b>140+</b><span>Magazine Pages</span></div>
-          <div class="club-stat"><b>30+</b><span>Children Reached</span></div>
-        </div>
-        <div class="club-links">
-          <div class="club-ig-chip">
-            <span class="club-ig-avatar"><img src="images/cosplay/club-1.jpg" alt="KAS Cosplay Club" loading="lazy" decoding="async"></span>
-            <a class="club-ig-chip-handle" href="https://www.instagram.com/kascosplayclub/" target="_blank">@kascosplayclub</a>
-            <a class="club-ig-follow" href="https://www.instagram.com/kascosplayclub/" target="_blank">Follow</a>
+        <div class="club-stats-row">
+          <div class="club-stats">
+            <div class="club-stat"><b>40+</b><span>Volunteer Hours</span></div>
+            <div class="club-stat"><b>140+</b><span>Magazine Pages</span></div>
+            <div class="club-stat"><b>30+</b><span>Children Reached</span></div>
           </div>
-          <a onclick="show('magazine')">↗ Read the Club Magazines</a>
+          <div class="club-links">
+            <div class="club-ig-chip">
+              <span class="club-ig-avatar"><img src="images/cosplay/club-1.jpg" alt="KAS Cosplay Club" loading="lazy" decoding="async"></span>
+              <a class="club-ig-chip-handle" href="https://www.instagram.com/kascosplayclub/" target="_blank">@kascosplayclub</a>
+              <a class="club-ig-follow" href="https://www.instagram.com/kascosplayclub/" target="_blank">Follow</a>
+            </div>
+            <a onclick="show('magazine')">↗ Read the Magazines</a>
+          </div>
+        </div>
+        <div class="club-chat">
+          <div class="cosplay-bubble">Both issues were distributed to the entire high school community by our principal and placed in the school library for anyone to read.</div>
+          <div class="cosplay-avatar"><img src="images/chloe-avatar.jpg?v=1" alt="Chloe" loading="lazy" decoding="async"></div>
         </div>
       </div>
     </div>
