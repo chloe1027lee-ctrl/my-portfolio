@@ -279,10 +279,18 @@ section.active { display: block; }
 .cosplay-social-bar { display: flex; flex-wrap: wrap; gap: 1rem; }
 .cosplay-social-bar a { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: #cfc9bf; text-decoration: none; font-weight: bold; border: 1px solid #3a3a3a; padding: 0.6rem 1.15rem; border-radius: 999px; transition: color 0.2s, border-color 0.2s, background 0.2s; }
 .cosplay-social-bar a:hover { color: #0a0a0a; background: #e8e2d9; border-color: #e8e2d9; }
-.cosplay-reach { display: flex; align-items: center; flex-wrap: wrap; gap: 0.35rem 1.2rem; margin-left: 0.4rem; padding-left: 1.4rem; border-left: 1px solid #2a2a2a; }
-.cosplay-reach span { font-size: 0.58rem; letter-spacing: 0.17em; text-transform: uppercase; color: #777; white-space: nowrap; }
-.cosplay-reach b { font-size: 0.82rem; font-weight: bold; letter-spacing: 0.02em; color: #e8e2d9; margin-right: 0.4rem; }
-@media (max-width: 1000px) { .cosplay-reach { margin-left: 0; padding-left: 0; border-left: none; width: 100%; } }
+.cosplay-reach { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem 1.9rem; flex-shrink: 0; }
+.cosplay-reach span { font-size: 0.56rem; letter-spacing: 0.17em; text-transform: uppercase; color: #777; white-space: nowrap; }
+.cosplay-reach b { display: block; font-size: 1.3rem; font-weight: bold; letter-spacing: 0.02em; color: #e8e2d9; margin-bottom: 0.32rem; }
+@media (max-width: 1099px) { .cosplay-reach { width: 100%; } }
+/* Wide screens: links, numbers and the bubble all share one line, with the
+   account pills stacked so the row stays short enough to hold them. */
+@media (min-width: 1100px) {
+  .cosplay-header-row { flex-wrap: nowrap; }
+  .cosplay-social-bar { flex-direction: column; align-items: flex-start; gap: 0.65rem; flex-shrink: 0; }
+  .cosplay-chat { flex: 0 1 auto; min-width: 0; }
+  .cosplay-bubble { min-width: 0; }
+}
 /* Avatar + speech bubble (right side of cosplay header) */
 .cosplay-chat { display: flex; align-items: center; gap: 1rem; }
 .cosplay-avatar { width: 92px; height: 92px; flex-shrink: 0; border-radius: 50%; overflow: hidden; border: 2px solid #2f2f2f; background: #111; }
@@ -1501,11 +1509,11 @@ section.active { display: block; }
     <div class="cosplay-social-bar">
       <a href="https://www.instagram.com/kuro1_cos/" target="_blank">↗ Instagram · @kuro1_cos</a>
       <a href="https://www.facebook.com/klchloe102/" target="_blank">↗ Facebook · Kuroi Chan</a>
-      <div class="cosplay-reach">
-        <span><b>770K+</b>Views</span>
-        <span><b>42K+</b>Interactions</span>
-        <span><b>220+</b>Posts</span>
-      </div>
+    </div>
+    <div class="cosplay-reach">
+      <span><b>770K+</b>Views</span>
+      <span><b>42K+</b>Interactions</span>
+      <span><b>220+</b>Posts</span>
     </div>
     <div class="cosplay-chat">
       <div class="cosplay-bubble">Hover for a quick look, click to open the full set below! Not everything's here, so check my socials!</div>
