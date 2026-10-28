@@ -279,6 +279,8 @@ section.active { display: block; }
 .cosplay-social-bar { display: flex; flex-wrap: wrap; gap: 1rem; }
 .cosplay-social-bar a { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: #cfc9bf; text-decoration: none; font-weight: bold; border: 1px solid #3a3a3a; padding: 0.6rem 1.15rem; border-radius: 999px; transition: color 0.2s, border-color 0.2s, background 0.2s; }
 .cosplay-social-bar a:hover { color: #0a0a0a; background: #e8e2d9; border-color: #e8e2d9; }
+.cosplay-stats { border-top: none; padding-top: 0; margin-bottom: 0.9rem; }
+.cosplay-stats-note { font-size: 0.72rem; line-height: 1.6; color: #6a6a6a; font-style: italic; margin-bottom: 2rem; max-width: 46ch; }
 /* Avatar + speech bubble (right side of cosplay header) */
 .cosplay-chat { display: flex; align-items: center; gap: 1rem; }
 .cosplay-avatar { width: 92px; height: 92px; flex-shrink: 0; border-radius: 50%; overflow: hidden; border: 2px solid #2f2f2f; background: #111; }
@@ -1503,6 +1505,13 @@ section.active { display: block; }
       <div class="cosplay-avatar"><img src="images/chloe-avatar.jpg?v=1" alt="Chloe" loading="lazy" decoding="async"></div>
     </div>
   </div>
+
+  <div class="club-stats cosplay-stats">
+    <div class="club-stat"><b>770K+</b><span>Views</span></div>
+    <div class="club-stat"><b>42K+</b><span>Interactions</span></div>
+    <div class="club-stat"><b>220+</b><span>Posts</span></div>
+  </div>
+  <p class="cosplay-stats-note">Combined Instagram and Facebook totals. Views count post impressions rather than unique viewers.</p>
 
   <div class="cosplay-gallery" id="cosplay-gallery"></div>
 
