@@ -465,6 +465,8 @@ section.active { display: block; }
 }
 .club-chat { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.7rem; }
 .club-chat .cosplay-bubble { font-size: 0.85rem; max-width: none; flex: 1 1 auto; min-width: 0; }
+.mag-chat { max-width: 720px; margin: -0.4rem 0 2.6rem; }
+@media (max-width: 640px) { .club-chat .cosplay-avatar { width: 60px; height: 60px; } }
 .club-links a { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: #cfc9bf; text-decoration: none; font-weight: bold; border: 1px solid #3a3a3a; padding: 0.78rem 1.6rem; border-radius: 999px; transition: color 0.2s, background 0.2s, border-color 0.2s; cursor: pointer; }
 .club-links a:hover { color: #0a0a0a; background: #e8e2d9; border-color: #e8e2d9; }
 .club-more { margin-top: 2.6rem; }
@@ -1443,6 +1445,11 @@ section.active { display: block; }
 <!-- MAGAZINE -->
 <section id="magazine">
   <div class="section-header">Magazine</div>
+
+  <div class="club-chat mag-chat">
+    <div class="cosplay-bubble">FLAIR is my cosplay lookbook, where I styled each character and researched the history and culture behind their outfits! The KAS volumes are the club magazines our members put together.</div>
+    <div class="cosplay-avatar"><img src="images/chloe-avatar.jpg?v=1" alt="Chloe" loading="lazy" decoding="async"></div>
+  </div>
 
   <div class="mag-shelf">
 
