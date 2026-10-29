@@ -465,7 +465,10 @@ section.active { display: block; }
 }
 .club-chat { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.7rem; }
 .club-chat .cosplay-bubble { font-size: 0.95rem; max-width: none; flex: 1 1 auto; min-width: 0; }
-.mag-chat { max-width: 720px; margin: -0.4rem 0 2.6rem auto; }
+.mag-header-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.8rem 2.5rem; margin-bottom: 2.6rem; }
+.mag-chat { max-width: 720px; margin: 0 0 0 auto; flex: 0 1 auto; min-width: 0; }
+.mag-reach { gap: 0.5rem 2.4rem; }
+@media (max-width: 1180px) { .mag-reach { width: 100%; } }
 .cosplay-bubble p { margin: 0; }
 .cosplay-bubble p + p { margin-top: 0.7rem; }
 @media (max-width: 640px) { .club-chat .cosplay-avatar { width: 60px; height: 60px; } }
@@ -1448,9 +1451,16 @@ section.active { display: block; }
 <section id="magazine">
   <div class="section-header">Magazine</div>
 
-  <div class="club-chat mag-chat">
-    <div class="cosplay-bubble"><p>FLAIR is my cosplay lookbook, where I styled each character and researched the history and culture behind their outfits!</p><p>The KAS volumes are the club magazines our members put together.</p></div>
-    <div class="cosplay-avatar"><img src="images/chloe-avatar.jpg?v=1" alt="Chloe" loading="lazy" decoding="async"></div>
+  <div class="mag-header-row">
+    <div class="cosplay-reach mag-reach">
+      <span><b>300+</b>Pages Published</span>
+      <span><b>40+</b>Sources Researched</span>
+      <span><b>100+</b>Photographers</span>
+    </div>
+    <div class="club-chat mag-chat">
+      <div class="cosplay-bubble"><p>FLAIR is my cosplay lookbook, where I styled each character and researched the history and culture behind their outfits!</p><p>The KAS volumes are the club magazines our members put together.</p></div>
+      <div class="cosplay-avatar"><img src="images/chloe-avatar.jpg?v=1" alt="Chloe" loading="lazy" decoding="async"></div>
+    </div>
   </div>
 
   <div class="mag-shelf">
