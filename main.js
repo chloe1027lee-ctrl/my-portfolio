@@ -507,20 +507,12 @@ const worksData = {
   'yae-miko': {
     title: 'Yae Miko',
     meta: 'KICA 高雄國際動漫節 · October 10, 2024',
-    description: 'A look behind the scenes of this build: hand-making and styling the wig and props from scratch, alongside the finished photoshoot.',
+    description: 'Yae Miko, with the wig and props hand-made and styled from scratch.',
     thumbs: true,
-    bts: true,
-    features: 3,
     images: [
       'images/cosplay/yae-miko-1.jpg',
       'images/cosplay/yae-miko-2.jpg',
-      'images/cosplay/yae-miko-3.jpg',
-      'images/cosplay/yae-miko-bts-1.jpg',
-      'images/cosplay/yae-miko-bts-2.jpg',
-      'images/cosplay/yae-miko-bts-3.jpg',
-      'images/cosplay/yae-miko-bts-4.jpg',
-      'images/cosplay/yae-miko-bts-5.jpg',
-      'images/cosplay/yae-miko-bts-6.jpg'
+      'images/cosplay/yae-miko-3.jpg'
     ]
   },
   'rizu-kyun': {
