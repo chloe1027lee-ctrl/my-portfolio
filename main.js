@@ -518,6 +518,70 @@ const worksData = {
       'images/cosplay/yae-miko-6.jpg'
     ]
   },
+  'wig-hsin': {
+    title: 'Hsin · Wig Styling',
+    meta: 'Before and after',
+    description: 'Cut and layered from a plain white wig, with the fox ears built and mounted and the ornaments set in by hand.',
+    thumbs: true,
+    images: [
+      'images/cosplay/hsin-wig-before-1.jpg',
+      'images/cosplay/hsin-wig-before-2.jpg',
+      'images/cosplay/hsin-wig-after-1.jpg',
+      'images/cosplay/hsin-wig-after-2.jpg',
+      'images/cosplay/hsin-wig-after-3.jpg'
+    ]
+  },
+  'wig-qingxiao': {
+    title: 'Qingxiao · Wig Styling',
+    meta: 'Before and after',
+    description: 'Cut and shaped from a plain blue wig, with the horn pieces made and mounted by hand.',
+    thumbs: true,
+    images: [
+      'images/cosplay/qingxiao-wig-before-1.jpg',
+      'images/cosplay/qingxiao-wig-before-2.jpg',
+      'images/cosplay/qingxiao-wig-after-1.jpg',
+      'images/cosplay/qingxiao-wig-after-2.jpg',
+      'images/cosplay/qingxiao-wig-after-3.jpg'
+    ]
+  },
+  'wig-yae-miko': {
+    title: 'Yae Miko · Wig Styling',
+    meta: 'Before and after',
+    description: 'Cut and layered from a plain pink wig, with the ears and the crown piece built and mounted by hand.',
+    thumbs: true,
+    images: [
+      'images/cosplay/yae-miko-wig-before-1.jpg',
+      'images/cosplay/yae-miko-wig-before-2.jpg',
+      'images/cosplay/yae-miko-wig-after-1.jpg',
+      'images/cosplay/yae-miko-wig-after-2.jpg'
+    ]
+  },
+  'eye-makeup': {
+    title: 'Eye Makeup',
+    meta: 'Around 2 hours, every shoot',
+    description: 'Done by hand for every character: the brows covered and redrawn, the liner shaped to the reference, lashes and lenses chosen to match.',
+    thumbs: true,
+    images: [
+      'images/cosplay/makeup-1.jpg',
+      'images/cosplay/makeup-2.jpg',
+      'images/cosplay/makeup-3.jpg',
+      'images/cosplay/makeup-4.jpg',
+      'images/cosplay/makeup-5.jpg',
+      'images/cosplay/makeup-6.jpg',
+      'images/cosplay/makeup-7.jpg',
+      'images/cosplay/makeup-8.jpg'
+    ]
+  },
+  'four-years': {
+    title: 'Four Years',
+    meta: '2022 and 2026',
+    description: 'The first wig I styled myself, next to one that took eight hours.',
+    thumbs: true,
+    images: [
+      'images/cosplay/first-hutao-wig-2022.jpg',
+      'images/cosplay/last-hsin-wig-2026.jpg'
+    ]
+  },
   'rizu-kyun': {
     title: 'Rizu Kyun',
     meta: '開拓動漫祭 FF44 · February 09, 2025',

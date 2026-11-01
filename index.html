@@ -540,11 +540,15 @@ section.active { display: block; }
 .cosplay-makeup-shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .cosplay-craft-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem 3rem; align-items: flex-start; }
 .cosplay-compare { display: flex; gap: 1.2rem; flex: 0 1 auto; }
-.cosplay-compare figure { margin: 0; width: 262px; max-width: 100%; }
+.cosplay-compare figure { margin: 0; width: 376px; max-width: 100%; }
+.cosplay-wig-shot, .cosplay-makeup-shot, .cosplay-compare-frame { cursor: pointer; }
+.cosplay-wig-shot img, .cosplay-makeup-shot img, .cosplay-compare-frame img { transition: transform 0.3s, opacity 0.25s; }
+.cosplay-wig-shot:hover img, .cosplay-makeup-shot:hover img, .cosplay-compare-frame:hover img { transform: scale(1.04); opacity: 0.88; }
 .cosplay-compare-frame { width: 100%; aspect-ratio: 3/4; overflow: hidden; border: 1px solid #1e1e1e; }
 .cosplay-compare-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .cosplay-compare figcaption { margin-top: 0.7rem; font-size: 0.72rem; letter-spacing: 0.06em; color: #96918a; line-height: 1.5; text-align: center; }
 .cosplay-compare figcaption b { display: block; font-size: 0.8rem; letter-spacing: 0.18em; color: #cfc9bf; margin-bottom: 0.3rem; }
+@media (max-width: 830px) { .cosplay-compare { width: 100%; } .cosplay-compare figure { width: calc(50% - 0.6rem); } }
 @media (max-width: 520px) {
   .cosplay-compare { gap: 0.8rem; width: 100%; }
   .cosplay-compare figure { width: calc(50% - 0.4rem); }
@@ -1611,17 +1615,17 @@ section.active { display: block; }
         <div class="cosplay-wig-strip">
           <div class="cosplay-wig-group">
             <div class="cosplay-wig-imgs">
-              <div class="cosplay-wig-shot"><img src="images/cosplay/hsin-wig-before-1.jpg" alt="Hsin wig before styling" loading="lazy" decoding="async"></div>
-              <div class="cosplay-wig-shot"><img src="images/cosplay/hsin-wig-before-2.jpg" alt="Hsin wig before styling" loading="lazy" decoding="async"></div>
+              <div class="cosplay-wig-shot" data-work="wig-hsin" data-index="0"><img src="images/cosplay/hsin-wig-before-1.jpg" alt="Hsin wig before styling" loading="lazy" decoding="async"></div>
+              <div class="cosplay-wig-shot" data-work="wig-hsin" data-index="1"><img src="images/cosplay/hsin-wig-before-2.jpg" alt="Hsin wig before styling" loading="lazy" decoding="async"></div>
             </div>
             <span class="cosplay-wig-step">Before</span>
           </div>
           <div class="cosplay-wig-rule"></div>
           <div class="cosplay-wig-group">
             <div class="cosplay-wig-imgs">
-              <div class="cosplay-wig-shot"><img src="images/cosplay/hsin-wig-after-1.jpg" alt="Hsin wig after styling" loading="lazy" decoding="async"></div>
-              <div class="cosplay-wig-shot"><img src="images/cosplay/hsin-wig-after-2.jpg" alt="Hsin wig after styling" loading="lazy" decoding="async"></div>
-              <div class="cosplay-wig-shot"><img src="images/cosplay/hsin-wig-after-3.jpg" alt="Hsin wig after styling" loading="lazy" decoding="async"></div>
+              <div class="cosplay-wig-shot" data-work="wig-hsin" data-index="2"><img src="images/cosplay/hsin-wig-after-1.jpg" alt="Hsin wig after styling" loading="lazy" decoding="async"></div>
+              <div class="cosplay-wig-shot" data-work="wig-hsin" data-index="3"><img src="images/cosplay/hsin-wig-after-2.jpg" alt="Hsin wig after styling" loading="lazy" decoding="async"></div>
+              <div class="cosplay-wig-shot" data-work="wig-hsin" data-index="4"><img src="images/cosplay/hsin-wig-after-3.jpg" alt="Hsin wig after styling" loading="lazy" decoding="async"></div>
             </div>
             <span class="cosplay-wig-step">After</span>
           </div>
@@ -1632,17 +1636,17 @@ section.active { display: block; }
         <div class="cosplay-wig-strip">
           <div class="cosplay-wig-group">
             <div class="cosplay-wig-imgs">
-              <div class="cosplay-wig-shot"><img src="images/cosplay/qingxiao-wig-before-1.jpg" alt="Qingxiao wig before styling" loading="lazy" decoding="async"></div>
-              <div class="cosplay-wig-shot"><img src="images/cosplay/qingxiao-wig-before-2.jpg" alt="Qingxiao wig before styling" loading="lazy" decoding="async"></div>
+              <div class="cosplay-wig-shot" data-work="wig-qingxiao" data-index="0"><img src="images/cosplay/qingxiao-wig-before-1.jpg" alt="Qingxiao wig before styling" loading="lazy" decoding="async"></div>
+              <div class="cosplay-wig-shot" data-work="wig-qingxiao" data-index="1"><img src="images/cosplay/qingxiao-wig-before-2.jpg" alt="Qingxiao wig before styling" loading="lazy" decoding="async"></div>
             </div>
             <span class="cosplay-wig-step">Before</span>
           </div>
           <div class="cosplay-wig-rule"></div>
           <div class="cosplay-wig-group">
             <div class="cosplay-wig-imgs">
-              <div class="cosplay-wig-shot"><img src="images/cosplay/qingxiao-wig-after-1.jpg" alt="Qingxiao wig after styling" loading="lazy" decoding="async"></div>
-              <div class="cosplay-wig-shot"><img src="images/cosplay/qingxiao-wig-after-2.jpg" alt="Qingxiao wig after styling" loading="lazy" decoding="async"></div>
-              <div class="cosplay-wig-shot"><img src="images/cosplay/qingxiao-wig-after-3.jpg" alt="Qingxiao wig after styling" loading="lazy" decoding="async"></div>
+              <div class="cosplay-wig-shot" data-work="wig-qingxiao" data-index="2"><img src="images/cosplay/qingxiao-wig-after-1.jpg" alt="Qingxiao wig after styling" loading="lazy" decoding="async"></div>
+              <div class="cosplay-wig-shot" data-work="wig-qingxiao" data-index="3"><img src="images/cosplay/qingxiao-wig-after-2.jpg" alt="Qingxiao wig after styling" loading="lazy" decoding="async"></div>
+              <div class="cosplay-wig-shot" data-work="wig-qingxiao" data-index="4"><img src="images/cosplay/qingxiao-wig-after-3.jpg" alt="Qingxiao wig after styling" loading="lazy" decoding="async"></div>
             </div>
             <span class="cosplay-wig-step">After</span>
           </div>
@@ -1653,16 +1657,16 @@ section.active { display: block; }
         <div class="cosplay-wig-strip">
           <div class="cosplay-wig-group">
             <div class="cosplay-wig-imgs">
-              <div class="cosplay-wig-shot"><img src="images/cosplay/yae-miko-wig-before-1.jpg" alt="Yae Miko wig before styling" loading="lazy" decoding="async"></div>
-              <div class="cosplay-wig-shot"><img src="images/cosplay/yae-miko-wig-before-2.jpg" alt="Yae Miko wig before styling" loading="lazy" decoding="async"></div>
+              <div class="cosplay-wig-shot" data-work="wig-yae-miko" data-index="0"><img src="images/cosplay/yae-miko-wig-before-1.jpg" alt="Yae Miko wig before styling" loading="lazy" decoding="async"></div>
+              <div class="cosplay-wig-shot" data-work="wig-yae-miko" data-index="1"><img src="images/cosplay/yae-miko-wig-before-2.jpg" alt="Yae Miko wig before styling" loading="lazy" decoding="async"></div>
             </div>
             <span class="cosplay-wig-step">Before</span>
           </div>
           <div class="cosplay-wig-rule"></div>
           <div class="cosplay-wig-group">
             <div class="cosplay-wig-imgs">
-              <div class="cosplay-wig-shot"><img src="images/cosplay/yae-miko-wig-after-1.jpg" alt="Yae Miko wig after styling" loading="lazy" decoding="async"></div>
-              <div class="cosplay-wig-shot"><img src="images/cosplay/yae-miko-wig-after-2.jpg" alt="Yae Miko wig after styling" loading="lazy" decoding="async"></div>
+              <div class="cosplay-wig-shot" data-work="wig-yae-miko" data-index="2"><img src="images/cosplay/yae-miko-wig-after-1.jpg" alt="Yae Miko wig after styling" loading="lazy" decoding="async"></div>
+              <div class="cosplay-wig-shot" data-work="wig-yae-miko" data-index="3"><img src="images/cosplay/yae-miko-wig-after-2.jpg" alt="Yae Miko wig after styling" loading="lazy" decoding="async"></div>
             </div>
             <span class="cosplay-wig-step">After</span>
           </div>
@@ -1674,27 +1678,27 @@ section.active { display: block; }
       <div class="cosplay-craft-col">
         <div class="cosplay-craft-label">Eye Makeup · Every Shoot</div>
         <div class="cosplay-makeup-grid">
-          <div class="cosplay-makeup-shot"><img src="images/cosplay/makeup-1.jpg" alt="Eye makeup close-up 1" loading="lazy" decoding="async"></div>
-          <div class="cosplay-makeup-shot"><img src="images/cosplay/makeup-2.jpg" alt="Eye makeup close-up 2" loading="lazy" decoding="async"></div>
-          <div class="cosplay-makeup-shot"><img src="images/cosplay/makeup-3.jpg" alt="Eye makeup close-up 3" loading="lazy" decoding="async"></div>
-          <div class="cosplay-makeup-shot"><img src="images/cosplay/makeup-4.jpg" alt="Eye makeup close-up 4" loading="lazy" decoding="async"></div>
-          <div class="cosplay-makeup-shot"><img src="images/cosplay/makeup-5.jpg" alt="Eye makeup close-up 5" loading="lazy" decoding="async"></div>
-          <div class="cosplay-makeup-shot"><img src="images/cosplay/makeup-6.jpg" alt="Eye makeup close-up 6" loading="lazy" decoding="async"></div>
-          <div class="cosplay-makeup-shot"><img src="images/cosplay/makeup-7.jpg" alt="Eye makeup close-up 7" loading="lazy" decoding="async"></div>
-          <div class="cosplay-makeup-shot"><img src="images/cosplay/makeup-8.jpg" alt="Eye makeup close-up 8" loading="lazy" decoding="async"></div>
+          <div class="cosplay-makeup-shot" data-work="eye-makeup" data-index="0"><img src="images/cosplay/makeup-1.jpg" alt="Eye makeup close-up 1" loading="lazy" decoding="async"></div>
+          <div class="cosplay-makeup-shot" data-work="eye-makeup" data-index="1"><img src="images/cosplay/makeup-2.jpg" alt="Eye makeup close-up 2" loading="lazy" decoding="async"></div>
+          <div class="cosplay-makeup-shot" data-work="eye-makeup" data-index="2"><img src="images/cosplay/makeup-3.jpg" alt="Eye makeup close-up 3" loading="lazy" decoding="async"></div>
+          <div class="cosplay-makeup-shot" data-work="eye-makeup" data-index="3"><img src="images/cosplay/makeup-4.jpg" alt="Eye makeup close-up 4" loading="lazy" decoding="async"></div>
+          <div class="cosplay-makeup-shot" data-work="eye-makeup" data-index="4"><img src="images/cosplay/makeup-5.jpg" alt="Eye makeup close-up 5" loading="lazy" decoding="async"></div>
+          <div class="cosplay-makeup-shot" data-work="eye-makeup" data-index="5"><img src="images/cosplay/makeup-6.jpg" alt="Eye makeup close-up 6" loading="lazy" decoding="async"></div>
+          <div class="cosplay-makeup-shot" data-work="eye-makeup" data-index="6"><img src="images/cosplay/makeup-7.jpg" alt="Eye makeup close-up 7" loading="lazy" decoding="async"></div>
+          <div class="cosplay-makeup-shot" data-work="eye-makeup" data-index="7"><img src="images/cosplay/makeup-8.jpg" alt="Eye makeup close-up 8" loading="lazy" decoding="async"></div>
         </div>
       </div>
       <div class="cosplay-craft-col">
         <div class="cosplay-craft-label">Four Years</div>
         <div class="cosplay-compare">
         <figure>
-          <div class="cosplay-compare-frame">
+          <div class="cosplay-compare-frame" data-work="four-years" data-index="0">
             <img src="images/cosplay/first-hutao-wig-2022.jpg" alt="Hu Tao, 2022" loading="lazy" decoding="async">
           </div>
           <figcaption><b>2022</b>first wig I styled myself</figcaption>
         </figure>
         <figure>
-          <div class="cosplay-compare-frame">
+          <div class="cosplay-compare-frame" data-work="four-years" data-index="1">
             <img src="images/cosplay/last-hsin-wig-2026.jpg" alt="Hsin, 2026" loading="lazy" decoding="async">
           </div>
           <figcaption><b>2026</b>8 hours on this one</figcaption>
@@ -2396,7 +2400,7 @@ function spawnParticle(x, y) {
   setTimeout(() => p.remove(), 1000);
 }
 </script>
-<script src="main.js?v=72"></script>
+<script src="main.js?v=73"></script>
 <script src="liquid.js"></script>
 </body>
 </html>
