@@ -512,7 +512,10 @@ const worksData = {
     images: [
       'images/cosplay/yae-miko-1.jpg',
       'images/cosplay/yae-miko-2.jpg',
-      'images/cosplay/yae-miko-3.jpg'
+      'images/cosplay/yae-miko-3.jpg',
+      'images/cosplay/yae-miko-4.jpg',
+      'images/cosplay/yae-miko-5.jpg',
+      'images/cosplay/yae-miko-6.jpg'
     ]
   },
   'rizu-kyun': {
