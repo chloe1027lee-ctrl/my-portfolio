@@ -533,7 +533,7 @@ const worksData = {
   },
   'wig-qingxiao': {
     title: 'Qingxiao · Wig Styling',
-    meta: 'Before and after',
+    meta: 'Before, after and worn',
     description: '',
     thumbs: true,
     images: [
@@ -541,7 +541,8 @@ const worksData = {
       'images/cosplay/qingxiao-wig-before-2.jpg',
       'images/cosplay/qingxiao-wig-after-1.jpg',
       'images/cosplay/qingxiao-wig-after-2.jpg',
-      'images/cosplay/qingxiao-wig-after-3.jpg'
+      'images/cosplay/qingxiao-wig-after-3.jpg',
+      'images/cosplay/qingxiao-worn-1.jpg'
     ]
   },
   'wig-yae-miko': {
