@@ -521,7 +521,7 @@ const worksData = {
   'wig-hsin': {
     title: 'Hsin · Wig Styling',
     meta: 'Before and after',
-    description: 'Cut and layered from a plain white wig, with the fox ears built and mounted and the ornaments set in by hand.',
+    description: '',
     thumbs: true,
     images: [
       'images/cosplay/hsin-wig-before-1.jpg',
@@ -534,7 +534,7 @@ const worksData = {
   'wig-qingxiao': {
     title: 'Qingxiao · Wig Styling',
     meta: 'Before and after',
-    description: 'Cut and shaped from a plain blue wig, with the horn pieces made and mounted by hand.',
+    description: '',
     thumbs: true,
     images: [
       'images/cosplay/qingxiao-wig-before-1.jpg',
@@ -547,7 +547,7 @@ const worksData = {
   'wig-yae-miko': {
     title: 'Yae Miko · Wig Styling',
     meta: 'Before and after',
-    description: 'Cut and layered from a plain pink wig, with the ears and the crown piece built and mounted by hand.',
+    description: '',
     thumbs: true,
     images: [
       'images/cosplay/yae-miko-wig-before-1.jpg',
