@@ -522,24 +522,25 @@ section.active { display: block; }
 @keyframes cueBob { 0%,100% { bottom: 2rem; } 50% { bottom: 1.4rem; } }
 
 .cosplay-craft { margin-top: 4.5rem; }
-.cosplay-craft-label { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: #8a857e; margin-bottom: 1rem; }
-.cosplay-wigs { display: flex; flex-wrap: wrap; gap: 2rem 2.8rem; margin-bottom: 3.2rem; }
+.cosplay-craft-label { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: #8a857e; margin-bottom: 1rem; text-align: center; }
+.cosplay-wigs { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem 2.8rem; margin-bottom: 3.2rem; }
 .cosplay-wig-pair { display: grid; grid-template-columns: repeat(2, 150px); gap: 0.4rem 0.5rem; flex: 0 0 auto; }
 .cosplay-wig-shot { aspect-ratio: 3/4; overflow: hidden; border: 1px solid #1e1e1e; background: #0d0d0d; }
 .cosplay-wig-shot img { width: 100%; height: 100%; object-fit: cover; object-position: center 12%; display: block; }
-.cosplay-wig-step { font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase; color: #6f6b65; }
-.cosplay-wig-name { grid-column: 1 / -1; font-size: 0.8rem; letter-spacing: 0.05em; color: #cfc9bf; }
+.cosplay-wig-step { font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase; color: #6f6b65; text-align: center; }
+.cosplay-wig-name { grid-column: 1 / -1; font-size: 0.8rem; letter-spacing: 0.05em; color: #cfc9bf; text-align: center; }
 .cosplay-craft-col { min-width: 0; }
-.cosplay-makeup-grid { display: grid; grid-template-columns: repeat(2, 172px); gap: 0.5rem; }
+.cosplay-makeup-grid { display: grid; grid-template-columns: repeat(4, 160px); gap: 0.5rem; }
 .cosplay-makeup-shot { aspect-ratio: 2/1; overflow: hidden; border: 1px solid #1e1e1e; background: #0d0d0d; }
 .cosplay-makeup-shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.cosplay-craft-row { display: flex; flex-wrap: wrap; gap: 2.5rem 3rem; align-items: flex-start; }
+.cosplay-craft-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem 3rem; align-items: flex-start; }
 .cosplay-compare { display: flex; gap: 1.2rem; flex: 0 1 auto; }
 .cosplay-compare figure { margin: 0; width: 240px; max-width: 100%; }
 .cosplay-compare-frame { width: 100%; aspect-ratio: 3/4; overflow: hidden; border: 1px solid #1e1e1e; }
 .cosplay-compare-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.cosplay-compare figcaption { margin-top: 0.7rem; font-size: 0.72rem; letter-spacing: 0.06em; color: #96918a; line-height: 1.5; }
+.cosplay-compare figcaption { margin-top: 0.7rem; font-size: 0.72rem; letter-spacing: 0.06em; color: #96918a; line-height: 1.5; text-align: center; }
 .cosplay-compare figcaption b { display: block; font-size: 0.8rem; letter-spacing: 0.18em; color: #cfc9bf; margin-bottom: 0.3rem; }
+@media (max-width: 760px) { .cosplay-makeup-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; } }
 @media (max-width: 520px) {
   .cosplay-compare { gap: 0.8rem; width: 100%; }
   .cosplay-compare figure { width: calc(50% - 0.4rem); }
