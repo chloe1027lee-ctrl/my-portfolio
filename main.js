@@ -518,6 +518,16 @@ const worksData = {
       'images/cosplay/yae-miko-6.jpg'
     ]
   },
+  'shizuku-match': {
+    title: 'Matching the Frame',
+    meta: 'My Dress-Up Darling · Kuroe Shizuku',
+    description: 'The anime frame, and the photo built to match it: the bonnet, the roses, the wig and the makeup, shot on location against the same green.',
+    thumbs: false,
+    images: [
+      'images/cosplay/shizuku-compare-anime.jpg',
+      'images/cosplay/shizuku-compare-real.jpg'
+    ]
+  },
   'wig-hsin': {
     title: 'Hsin · Wig Styling',
     meta: 'Before and after',
