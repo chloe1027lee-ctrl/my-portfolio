@@ -522,6 +522,11 @@ section.active { display: block; }
 .hero-scroll-cue:hover { color: #0a0a0a; background: #e8e2d9; border-color: #e8e2d9; box-shadow: 0 0 34px rgba(255,255,255,0.4); }
 @keyframes cueBob { 0%,100% { bottom: 2rem; } 50% { bottom: 1.4rem; } }
 
+.cosplay-jump { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.6rem 1.5rem; margin: 0 0 2.8rem; padding-bottom: 0.9rem; border-bottom: 1px solid #1c1c1c; }
+.cosplay-jump-label { font-size: 0.56rem; letter-spacing: 0.22em; text-transform: uppercase; color: #5f5b56; margin-right: 0.2rem; }
+.cosplay-jump a { font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: #8a857e; text-decoration: none; cursor: pointer; transition: color 0.2s; }
+.cosplay-jump a:hover { color: #e8e2d9; }
+#cosplay-craft, #cosplay-log, #cosplay-shoots, #cosplay-gallery { scroll-margin-top: 5.5rem; }
 .cosplay-craft { margin-top: 4.5rem; }
 .cosplay-craft-label { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: #8a857e; margin-bottom: 1rem; text-align: center; }
 .cosplay-wigs { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
@@ -1624,9 +1629,17 @@ section.active { display: block; }
     </div>
   </div>
 
+  <nav class="cosplay-jump">
+    <span class="cosplay-jump-label">On this page</span>
+    <a href="#cosplay-gallery">Gallery</a>
+    <a href="#cosplay-craft">Behind the Look</a>
+    <a href="#cosplay-log">Appearance Log</a>
+    <a href="#cosplay-shoots">Professional Photoshoots</a>
+  </nav>
+
   <div class="cosplay-gallery" id="cosplay-gallery"></div>
 
-  <div class="cosplay-craft">
+  <div class="cosplay-craft" id="cosplay-craft">
     <div class="cosplay-resume-section-title">Behind the Look</div>
     <div class="cosplay-craft-label">Matching the Frame</div>
 
@@ -1754,7 +1767,7 @@ section.active { display: block; }
     </div>
   </div>
 
-  <div class="cosplay-resume">
+  <div class="cosplay-resume" id="cosplay-log">
     <div class="cosplay-resume-section-title">Appearance Log</div>
 
     <div class="cosplay-resume-year-block">
@@ -1968,7 +1981,7 @@ section.active { display: block; }
     </div>
   </div>
 
-  <div class="cosplay-resume cosplay-shoots">
+  <div class="cosplay-resume cosplay-shoots" id="cosplay-shoots">
     <div class="cosplay-resume-section-title">Professional Photoshoots</div>
     <div class="cosplay-chat shoot-chat">
       <div class="cosplay-bubble"><p>After my shoot with ETON WEDDING, the studio began advertising cosplay sessions alongside its wedding work.</p></div>
