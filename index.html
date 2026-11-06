@@ -562,6 +562,16 @@ section.active { display: block; }
 .cosplay-makeup-grid { display: grid; grid-template-columns: repeat(2, 236px); gap: 0.6rem; }
 .cosplay-makeup-shot { aspect-ratio: 2/1; overflow: hidden; border: 1px solid #1e1e1e; background: #0d0d0d; }
 .cosplay-makeup-shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cosplay-breakdown-wrap { margin-top: 3.2rem; }
+.cosplay-breakdown-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem; }
+.cosplay-breakdown-fig { margin: 0; flex: 1 1 250px; max-width: 310px; min-width: 0; }
+.cosplay-breakdown-shot { width: 100%; aspect-ratio: 1320/1845; overflow: hidden; border: 1px solid #1e1e1e; background: #0d0d0d; cursor: pointer; }
+.cosplay-breakdown-shot img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s, opacity 0.25s; }
+.cosplay-breakdown-shot:hover img { transform: scale(1.04); opacity: 0.88; }
+.cosplay-breakdown-fig figcaption { margin-top: 0.6rem; font-size: 0.6rem; line-height: 1.5; color: #8a857e; text-align: left; }
+.cosplay-breakdown-fig figcaption b { display: block; font-size: 0.56rem; letter-spacing: 0.22em; text-transform: uppercase; color: #b5b5b5; margin-bottom: 0.35rem; }
+.cosplay-breakdown-note { font-size: 0.6rem; line-height: 1.6; color: #6f6b66; text-align: center; margin-top: 1.4rem; font-style: italic; }
+@media (max-width: 700px) { .cosplay-breakdown-fig { flex: 1 1 100%; max-width: 420px; } }
 .cosplay-craft-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem 3rem; align-items: flex-start; }
 .cosplay-compare { display: flex; gap: 1.2rem; flex: 0 1 auto; }
 .cosplay-compare figure { margin: 0; width: 376px; max-width: 100%; }
@@ -1766,6 +1776,31 @@ section.active { display: block; }
         </div>
       </div>
     </div>
+
+    <div class="cosplay-breakdown-wrap">
+      <div class="cosplay-craft-label">Makeup Breakdown &middot; Product by Product</div>
+      <div class="cosplay-breakdown-row">
+        <figure class="cosplay-breakdown-fig">
+          <div class="cosplay-breakdown-shot" data-work="makeup-breakdown" data-index="0">
+            <img src="images/cosplay/makeup-breakdown-nino.jpg" alt="Annotated makeup breakdown for Nakano Nino" loading="lazy" decoding="async">
+          </div>
+          <figcaption><b>Nakano Nino</b>Strawberry tones picked to match her hair, and the berry shade kept deliberately light to suit how the animation draws her.</figcaption>
+        </figure>
+        <figure class="cosplay-breakdown-fig">
+          <div class="cosplay-breakdown-shot" data-work="makeup-breakdown" data-index="1">
+            <img src="images/cosplay/makeup-breakdown-shizuku.jpg" alt="Annotated makeup breakdown for Shizuku Tan" loading="lazy" decoding="async">
+          </div>
+          <figcaption><b>Shizuku Tan</b>Brows redrawn in purple shadow to sit under the wig, and liquid shading laid before powder so the contour does not go patchy.</figcaption>
+        </figure>
+        <figure class="cosplay-breakdown-fig">
+          <div class="cosplay-breakdown-shot" data-work="makeup-breakdown" data-index="2">
+            <img src="images/cosplay/makeup-breakdown-rizukyun.jpg" alt="Annotated makeup breakdown for Rizu-kyun" loading="lazy" decoding="async">
+          </div>
+          <figcaption><b>Rizu-kyun</b>Natural brows gelled flat, taped down and covered with concealer, then redrawn to the character&rsquo;s own shape.</figcaption>
+        </figure>
+      </div>
+      <div class="cosplay-breakdown-note">Click any sheet to read the full annotations.</div>
+    </div>
   </div>
 
   <div class="cosplay-resume" id="cosplay-log">
@@ -2464,7 +2499,7 @@ function spawnParticle(x, y) {
   setTimeout(() => p.remove(), 1000);
 }
 </script>
-<script src="main.js?v=77"></script>
+<script src="main.js?v=78"></script>
 <script src="liquid.js"></script>
 </body>
 </html>

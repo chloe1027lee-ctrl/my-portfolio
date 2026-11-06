@@ -528,6 +528,17 @@ const worksData = {
       'images/cosplay/shizuku-compare-real.jpg'
     ]
   },
+  'makeup-breakdown': {
+    title: 'Makeup Breakdown',
+    meta: 'Product by product, for three characters',
+    description: 'Every product, where it went on the face, and why that one. Colours are chosen against the character\'s own palette, and the intensity is pulled back or pushed depending on how the source material is drawn.',
+    thumbs: false,
+    images: [
+      'images/cosplay/makeup-breakdown-nino.jpg',
+      'images/cosplay/makeup-breakdown-shizuku.jpg',
+      'images/cosplay/makeup-breakdown-rizukyun.jpg'
+    ]
+  },
   'wig-hsin': {
     title: 'Hsin · Wig Styling',
     meta: 'Before and after',
